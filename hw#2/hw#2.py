@@ -1,3 +1,3 @@
 
 item_list = ['Murzik', 'Barsik', 'Pantera']
-print(f'List: {item_list}')
+print(', '.join(map(str, item_list)))
