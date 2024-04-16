@@ -1,8 +1,7 @@
 
-x = int(input('Enter your value "x":'))
-y = int(input('Enter your value "y":'))
+x = int(input('Enter a: '))
+y = int(input('Enter b: '))
 res_sum = x + y
 res_product = x * y
-info = [res_sum, res_product]
-for item in info:
-    print(item)
+print(f'{x} + {y} = {res_sum}')
+print(f'{x} + {y} = {res_product}')
