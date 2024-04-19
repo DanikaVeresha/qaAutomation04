@@ -9,6 +9,7 @@ max_width_v4 = 9
 
 
 while True:
+    print('To test this file, read the teachers requirements at the link: https://lms.ithillel.ua/groups/65b95f9a581cb89d38bea262/homeworks/66213c710eb47a7edbd54707')
     min_width = int(input('Enter minimal width: '))
     max_width = int(input('Enter maximal width: '))
 
@@ -50,30 +51,40 @@ while True:
                 print(i)
             for i in range(max_width, min_width, -4):
                 i = ' ' * ((max_width - i) // 2) + '*' * i
-                print(i[0], (' ' * 2), i[-1])
+                print('', i[0], '', i[-1])
             for i in range(max_width, min_width, -4):
                 i = ' ' * ((max_width - i) // 2) + '*' * i
-                print(i[0], (' ' * 3), i[-1])
+                print(i[0], '', ' ', i[-1])
             for i in range(max_width, min_width, -4):
                 i = ' ' * ((max_width - i) // 2) + '*' * i
-                print(i[0], (' ' * 2), i[-1])
+                print('', i[0], '', i[-1])
             for i in range(min_width, max_width, 4):
                 i = ' ' * ((max_width - i) // 2) + '*' * i
                 print(i)
 
         elif min_width == min_width_v4 and max_width == max_width_v4:
-            for i in range(min_width, max_width, 1):
+            for i in range(min_width, max_width, 6):
                 i = ' ' * ((max_width - i) // 2) + '*' * i
                 print(i)
-            for i in range(max_width, min_width, -4):
+            for i in range(max_width, min_width, -6):
                 i = ' ' * ((max_width - i) // 2) + '*' * i
-                print(i[0], (' ' * 2), i[-1])
-            for i in range(max_width, min_width, -4):
+                print(' ', i[0], ' ', i[-1])
+            for i in range(max_width, min_width, -6):
                 i = ' ' * ((max_width - i) // 2) + '*' * i
-                print(i[0], (' ' * 3), i[-1])
-            for i in range(max_width, min_width, -4):
+                print('', i[0], ' ', ' ', i[-1])
+            for i in range(max_width, min_width, -6):
                 i = ' ' * ((max_width - i) // 2) + '*' * i
-                print(i[0], (' ' * 2), i[-1])
-            for i in range(min_width, max_width, 4):
+                print(i[0], ' ',' ',' ',  i[-1])
+            for i in range(max_width, min_width, -6):
+                i = ' ' * ((max_width - i) // 2) + '*' * i
+                print('', i[0], ' ', ' ', i[-1])
+            for i in range(max_width, min_width, -6):
+                i = ' ' * ((max_width - i) // 2) + '*' * i
+                print(' ', i[0], ' ', i[-1])
+            for i in range(min_width, max_width, 6):
                 i = ' ' * ((max_width - i) // 2) + '*' * i
                 print(i)
+        else:
+            print('To test this file, enter the correct values for each block, according to the teacher’s\n'
+                  ' requirements! You can view the requirements at the link: https://lms.ithillel.ua/groups/65b95f9a581cb89d38bea262/homeworks/66213c710eb47a7edbd54707')
+            break
