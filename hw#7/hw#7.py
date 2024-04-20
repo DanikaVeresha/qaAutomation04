@@ -1,13 +1,12 @@
 
 triangle = int(input('Enter size of triangle: '))
 
-a = triangle
-for item in range(a):
+for item in range(triangle):
     symbol = '*'
-    for j in range(a-1, -1, -1):
+    for j in range(triangle-1, -1, -1):
         if j > item:
             print(" ", end="")
         else:
             print(symbol, end="")
             symbol *= 1
-    print(' ')
+    print('')
