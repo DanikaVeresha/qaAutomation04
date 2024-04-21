@@ -1,11 +1,10 @@
 
-number = int(input('Enter value: '))
 
-m = (2 * number) - 2
-for i in range(0, number):
-    for j in range(0, m):
-        print(end=" ")
-    m = m - 1
-    for j in range(0, i + 1):
-        print(i, end=' ')
-    print(" ")
+n = int(input("Enter value 'n': "))
+for j in range(1, n+1):
+    print(' ' * 2 * (n-j), end='')
+    for i in range(1, 2 * j):
+        print(i if i <= j else 2 * j-i, end='')
+        if i < 2 * j - 1:
+            print(' ', end='')
+    print()
