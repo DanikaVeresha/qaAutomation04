@@ -8,5 +8,4 @@ for item in range(triangle):
             print(" ", end="")
         else:
             print(symbol, end="")
-            symbol *= 1
-    print('')
+    print()
