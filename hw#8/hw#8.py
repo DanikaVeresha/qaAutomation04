@@ -1,7 +1,8 @@
 
 
 while True:
-    print('To test this file, read the teachers requirements at the link: https://lms.ithillel.ua/groups/65b95f9a581cb89d38bea262/homeworks/66213c710eb47a7edbd54707')
+    print('To test this file, read the teachers requirements \n'
+          'at the link: https://lms.ithillel.ua/groups/65b95f9a581cb89d38bea262/homeworks/66213c710eb47a7edbd54707')
     min_width = int(input('Enter minimal width: '))
     max_width = int(input('Enter maximal width: '))
 
