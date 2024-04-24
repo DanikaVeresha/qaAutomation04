@@ -1,6 +1,6 @@
 # var1
-word = input('Enter word:').lower().casefold().strip()
-reversed_word = word[::-1].lower().casefold().strip()
+word = input('Enter word:').casefold().strip()
+reversed_word = word[::-1]
 
 comparison_result = (reversed_word == word)
 
