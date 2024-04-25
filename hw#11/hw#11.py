@@ -5,7 +5,7 @@ print(arr)
 result = ''
 for i in arr:
     result += str(len(i.split())) + ', '
-print(result)
+print(f'[{result}]')
 
 
 
