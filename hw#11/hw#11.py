@@ -1,12 +1,10 @@
-
 sentences = "Hello all. Here`s pretty cold and hot. Choose yourself"
 arr = sentences.split('.')
 print(arr)
-result = ''
+result = []
 for i in arr:
-    result += str(len(i.split())) + ', '
-print(f'[{result}]')
-
+    result += str(len(i.split()))
+print(f'[{", ".join(result)}]')
 
 
 
