@@ -1,5 +1,6 @@
 
 string = "This tool is cool. But that owl is awful. MAGIC TOOLS Ltd."
+print(f'String: {string}')
 symbol = "o"
 result = ''
 for item in string.split('.'):
