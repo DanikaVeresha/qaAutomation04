@@ -6,7 +6,6 @@ email = 'Desh288diesh@gmail.com'
 # email = 'desh288gmail.com'
 # email = 'desh288@gmail@.com'
 # email = 'desh288@gmail..com'
-# email = 'desh_288@gmail..com'
 
 
 check_email = (email.find('@') < email.find('.') and
@@ -20,5 +19,7 @@ if check_email:
 else:
     print(f'Email: {email} - is incorrect\n'
           f'Result checking email: {check_email}')
+
+
 
 
