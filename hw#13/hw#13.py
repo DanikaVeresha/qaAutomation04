@@ -1,5 +1,13 @@
 
-email = 'desh288diesh@gmail.com'
+email = 'Desh288diesh@gmail.com'
+# email = '@desh288@gmail.com'
+# email = 'desh288@gmail.com.'
+# email = 'desh288@gmailcom'
+# email = 'desh288gmail.com'
+# email = 'desh288@gmail@.com'
+# email = 'desh288@gmail..com'
+# email = 'desh_288@gmail..com'
+
 
 check_email = (email.find('@') < email.find('.') and
                email.find('.') != -1 and email.find('@') != 0 and
