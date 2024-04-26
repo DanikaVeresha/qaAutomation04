@@ -5,8 +5,8 @@ email = 'Desh288diesh@gmail.com'
 # email = 'desh288diesh@gmailcom.'
 # email = 'desh_288diesh@gmail.com'
 # email = 'desh288diesh@gmail.co_m'
-# email = 'desh288diesh@@gmail.com'
-# email = 'desh288@diesh@gmail.c.om'
+# email = 'desh288@diesh@gmail.com'
+# email = 'desh288diesh@gmail.c.om'
 
 check_email_1 = email.find('@') < email.find('.')
 check_email_2 = email.find('@') != 0 and email.find('.') != len(email) - 1
