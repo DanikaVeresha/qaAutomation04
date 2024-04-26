@@ -1,6 +1,6 @@
 
 string = "This tool is cool. But that owl is awful. MAGIC TOOLS Ltd."
-# string = "This toool is cool. But that owl is awful. MAGIC TOOOLS Ltd."
+# string = "This tol is cool. But that owl is awful. MAGIC TOOOLS Ltd."
 
 print(f'String: {string}')
 symbol = "o"
