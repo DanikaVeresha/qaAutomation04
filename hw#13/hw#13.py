@@ -44,15 +44,15 @@ condition_10 = email.count('.') > 1 and email.count('@') > 1 # NegativeTC
 condition_11 = email.count('.') == 0 or email.count('@') == 0 # NegativeTC
 condition_12 = email.count('.') >= 1 or email.count('@') >= 1 # NegativeTC
 
-successful_check_email = (condition_0 and condition_1 and condition_3 and condition_7
+correct_email = (condition_0 and condition_1 and condition_3 and condition_7
                           and condition_8)
-unsuccesful_check_email = (condition_2 or condition_4 or condition_5 or condition_6
+incorrect_email = (condition_2 or condition_4 or condition_5 or condition_6
                            or condition_9 or condition_10 or condition_11 or condition_12)
 
 try:
-    if successful_check_email:
+    if correct_email:
         print(f'Email: {email} - is correct "True"')
-    elif unsuccesful_check_email:
+    elif incorrect_email:
         print(f'Email: {email} - is incorrect "False"')
     else:
         print(f'Email: {email} - test case not covered')
