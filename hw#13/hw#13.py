@@ -26,23 +26,23 @@ email = ' '
 # email = 'aaa.bbbccc'
 # email = 'aaa@bbbccc'
 
-condition_0 = (email != '') # True
+condition_0 = (email != '') # PositiveTC
 
-condition_1 = email.find('@') < email.find('.') # True
-condition_2 = email.find('.') > email.find('@') # False
+condition_1 = email.find('@') < email.find('.') # PositiveTC
+condition_2 = email.find('.') > email.find('@') # NegativeTC
 
-condition_3 = email.find('@') != 0 and email.find('.') != len(email) - 1 # True
-condition_4 = email.find('@') == 0 and email.find('.') == len(email) - 1 # False
-condition_5 = email.find('@') == 0 or email.find('.') == len(email) - 1 # False
-condition_6 = email.find('.') == 0 or email.find('@') == len(email) - 1 # False
+condition_3 = email.find('@') != 0 and email.find('.') != len(email) - 1 # PositiveTC
+condition_4 = email.find('@') == 0 and email.find('.') == len(email) - 1 # NegativeTC
+condition_5 = email.find('@') == 0 or email.find('.') == len(email) - 1 # NegativeTC
+condition_6 = email.find('.') == 0 or email.find('@') == len(email) - 1 # NegativeTC
 
-condition_7 = email.replace('@', '').replace('.', '').isalnum() # True
+condition_7 = email.replace('@', '').replace('.', '').isalnum() # PositiveTC
 
-condition_8 = email.count('@') == 1 and email.count('.') == 1 # True
-condition_9 = email.count('@') == 0 and email.count('.') == 0 # False
-condition_10 = email.count('.') > 1 and email.count('@') > 1 # False
-condition_11 = email.count('.') == 0 or email.count('@') == 0 # False
-condition_12 = email.count('.') >= 1 or email.count('@') >= 1 # False
+condition_8 = email.count('@') == 1 and email.count('.') == 1 # PositiveTC
+condition_9 = email.count('@') == 0 and email.count('.') == 0 # NegativeTC
+condition_10 = email.count('.') > 1 and email.count('@') > 1 # NegativeTC
+condition_11 = email.count('.') == 0 or email.count('@') == 0 # NegativeTC
+condition_12 = email.count('.') >= 1 or email.count('@') >= 1 # NegativeTC
 
 successful_check_email = (condition_0 and condition_1 and condition_3 and condition_7
                           and condition_8)
