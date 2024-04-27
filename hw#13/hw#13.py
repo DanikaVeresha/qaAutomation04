@@ -1,5 +1,5 @@
-# email = ' '
-email = 'aaa@bbb.ccc'
+email = ' '
+# email = 'aaa@bbb.ccc'
 
 # email = '@aaabbbccc.'
 # email = '@aaabbbccc'
@@ -21,8 +21,10 @@ email = 'aaa@bbb.ccc'
 # email = 'a_aa@bbb.cc/c'
 # email = '_aaa@bbb.ccc/'
 
-# email = 'aaa@bbb.c@c@c'
-# email = 'aaa.bbb.ccc@cc.c'
+# email = 'aaa@bbb..c@c@c'
+# email = 'aaa.bbb.ccc@c@c.c'
+# email = 'aaa.bbbccc'
+# email = 'aaa@bbbccc'
 
 condition_0 = (email != '') # True
 
