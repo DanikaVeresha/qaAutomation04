@@ -30,9 +30,9 @@ check_email = (email != ' '
                and email.count('.') != 0)
 
 if check_email:
-    print(f'Result check email: {email} - "True"')
+    print(f'Email verification result: {email} - "True"')
 else:
-    print(f'Result check email: {email} - "False"')
+    print(f'Email verification result: {email} - "False"')
 
 
 
