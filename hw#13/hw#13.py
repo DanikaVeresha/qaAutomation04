@@ -5,9 +5,9 @@ email = 'aaa277@bbb.ccc' # True
 # email = '.aaa277bbbccc'
 # email = 'aaa277bbbccc@'
 # email = 'aaa277bbbccc.'
-
+# email = '@aaa277@bbb.ccc'
 # email = 'aaa277@bbbccc'
-
+# email = 'aaa277@bbb.ccc.'
 # email = 'aaa277bbb.ccc'
 # email = 'aaa277@bbbccc'
 # email = 'aaa277@bbb.c.cc'
