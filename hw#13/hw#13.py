@@ -39,8 +39,8 @@ condition_7 = email.replace('@', '').replace('.', '').isalnum() # True
 condition_8 = email.count('@') == 1 and email.count('.') == 1 # True
 condition_9 = email.count('@') == 0 and email.count('.') == 0 # False
 condition_10 = email.count('.') > 1 and email.count('@') > 1 # False
-condition_11 = email.count('.') == 0 or email.count('@') >= 1 # False
-condition_12 = email.count('.') >= 1 or email.count('@') == 0 # False
+condition_11 = email.count('.') == 0 or email.count('@') == 0 # False
+condition_12 = email.count('.') >= 1 or email.count('@') >= 1 # False
 
 successful_check_email = (condition_0 and condition_1 and condition_3 and condition_7
                           and condition_8)
