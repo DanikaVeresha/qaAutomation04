@@ -9,3 +9,8 @@ print(list(item for item in number_list if item % 5 == 0 and item % 3 != 0))
 
 # Elements are divisible by 3 and 5
 print(list(item for item in number_list if item % 3 == 0 and item % 5 == 0))
+
+# Output:
+print(list(item for item in range(16) if item % 3 == 0 and item % 5 != 0))
+print(list(item for item in range(16) if item % 5 == 0 and item % 3 != 0))
+print(list(item for item in range(16) if item % 3 == 0 and item % 5 == 0))
