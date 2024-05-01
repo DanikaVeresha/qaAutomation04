@@ -22,7 +22,17 @@ else:
     print(f'Sum_: {None}; Product: {None}; '
           f'List is: {check}')
 
-
+# if check:
+#     sum_ = sum(check)
+#     value_0 = 1
+#     for i in check:
+#         value_0 *= i
+# else:
+#     sum_ = None
+#     value_0 = None
+#
+# print(f'Sum_: {sum(check)}; Product: {value_0}; '
+#       f'List is: {check}')
 
 
 
