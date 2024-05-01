@@ -1,5 +1,5 @@
-lst = [2, 4, 6, 2, 1, 1, 9, 4, 6]
-# lst = [2, 9, 9, 2, 1, 1, 9, 9, 9]
+# lst = [2, 4, 6, 2, 1, 1, 9, 4, 6]
+lst = [2, 9, 9, 2, 1, 1, 9, 9, 9]
 # lst = [2, 1, 1, 2, 1, 1, 9, 1, 1]
 
 min_value = 3
@@ -17,8 +17,13 @@ if condition:
     print(f'Sum_: {sum(condition)}; Product: {prod}; '
           f'List is: {list(condition)}')
 else:
-    print(f'Sum_: {list(condition)}; Product: {list(condition)}; '
-          f'Becouse list is None')
+    # print(f'Sum_: {list(condition)}; Product: {list(condition)}; '
+    #       f'Becouse list is empty')
+    # or
+    # res = None
+    # print(f'Sum_: {res}; Product: {res}; '
+    #       f'Becouse list is empty')
+
 
 
 
