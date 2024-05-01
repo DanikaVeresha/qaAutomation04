@@ -4,18 +4,18 @@ min_value = 3
 max_value = 6
 
 
-condition = (x for x in lst if min_value <= x <= max_value)
+for x in lst:
+    condition = [x for x in lst if min_value <= x <= max_value]
+
+    prod = 1
+    for i in condition:
+        prod *= i
 
 if condition:
-    print(f'Sum_: {sum(condition)}')
+    print(f'Sum_: {sum(condition)}; Product: {prod};  - List: {list(condition)}')
+else:
+    print(f'List: {list(condition)}')
 
-# and
-condition_1 = (x for x in lst if min_value <= x <= max_value)
-if condition_1:
-    prod = 1
-    for i in condition_1:
-        prod *= i
-    print(f'Product: {prod}')
 
 
 
