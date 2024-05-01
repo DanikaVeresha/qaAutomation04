@@ -1,28 +1,26 @@
-# lst = [2, 4, 6, 2, 1, 1, 9, 4, 6]
+lst = [2, 4, 6, 2, 1, 1, 9, 4, 6]   # True
 # lst = [2, 9, 9, 2, 1, 1, 9, 9, 9]
-lst = [2, 1, 1, 2, 1, 1, 9, 1, 1]
+# lst = [2, 1, 1, 2, 1, 1, 9, 1, 1]
+# lst = []
+# lst = [0, 0, 0, 0, 0, 0, 0, 0, 0]
 
-min_value = 3
-max_value = 6
+MIN = 3
+MAX = 6
 
+# for item in lst:
+check = [x for x in lst if MIN <= x <= MAX]
+# product of all elements in the new list
+value_0 = 1
+for i in check:
+    value_0 *= i
 
-for x in lst:
-    condition = [x for x in lst if min_value <= x <= max_value]
-
-    prod = 1
-    for i in condition:
-        prod *= i
-
-if condition:
-    print(f'Sum_: {sum(condition)}; Product: {prod}; '
-          f'List is: {list(condition)}')
+# checking the sum of all elements of the new list and their product
+if check:
+    print(f'Sum_: {sum(check)}; Product: {value_0}; '
+          f'List is: {check}')
 else:
-    # print(f'Sum_: {list(condition)}; Product: {list(condition)}; '
-    #       f'Becouse list is empty')
-    # or
-    res = None
-    print(f'Sum_: {res}; Product: {res}; '
-          f'Becouse list is None')
+    print(f'Sum_: {None}; Product: {None}; '
+          f'List is: {check}')
 
 
 
