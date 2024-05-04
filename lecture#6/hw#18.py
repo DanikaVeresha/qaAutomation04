@@ -18,6 +18,8 @@ only_testers_scripts = (
       (set(test_scripters) & set(reviewers)) - (set(test_design_writers) & set(reviewers))
 )
 print(f'Testers who can only write scripts: {sorted(only_testers_scripts)}')
+# print(f'Testers who can only write scripts: '
+#       f'{sorted(set(test_scripters) - (set(test_design_writers) | set(reviewers)))}')
 
 all_testers_on_work = (
       set(all_testers) - set(out_of_office_today)
