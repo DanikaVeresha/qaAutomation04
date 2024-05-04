@@ -6,11 +6,15 @@ users = [
     {'name': 'Brun Du Barnstokr',
      'age': 19},
     {'name': 'Bob Anderwood',
-     'age': 56},
+     'age': 11},
     {'name': 'Anny Winchester',
      'age': 15},
 ]
 
 # Method
+print(f'------Sourse data------')
+for item in users:
+    print(f'{item["name"]} - {item["age"]}')
 result = [user['name'] for user in users if user['age'] >= 18]
-print(f'Result: {result}')
+print(f'--------Result---------\n'
+      f'Result: {result}')
