@@ -4,7 +4,11 @@ users = [
     {'name': 'Olaf Andvarafors',
      'age': 18},
     {'name': 'Brun Du Barnstokr',
-     'age': 19}
+     'age': 19},
+    {'name': 'Bob Anderwood',
+     'age': 56},
+    {'name': 'Anny Winchester',
+     'age': 15},
 ]
 
 # Method
