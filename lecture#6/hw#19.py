@@ -12,7 +12,7 @@ users = [
 ]
 
 # Method
-print(f'------Sourse data------')
+print(f'------Source data------')
 for item in users:
     print(f'{item["name"]} - {item["age"]}')
 result = [user['name'] for user in users if user['age'] >= 18]
