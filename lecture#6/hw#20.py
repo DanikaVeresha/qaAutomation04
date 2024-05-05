@@ -7,9 +7,6 @@ with open('hw#20.txt', 'w') as f:
                   'Danika\n', 'DESH288DIESH@GMAIL.COM\n', 'DESH288DIESH@GMAIL.ccc\n'])
 
 print('------------TextFile---------------')
-# with open('hw#20.txt', 'r') as x:
-#     data = x.read()
-#     print(data)
 for item in open('hw#20.txt', 'r'):
     print(f'{item}')
 print('----------Last Max Word------------')
