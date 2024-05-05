@@ -13,7 +13,6 @@ with open('hw#20.txt', 'r') as x:
     print('----------Last Max Word------------')
     list_words = list(data.split())
     MAX = list_words[0]
-    MIN = list_words[0]
     for i in list_words:
         if len(i) >= len(MAX):
             MAX = i
