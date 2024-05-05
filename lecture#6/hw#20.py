@@ -7,16 +7,19 @@ with open('hw#20.txt', 'w') as f:
                   'Danika\n', 'DESH288DIESH@GMAIL.COM\n', 'DESH288DIESH@GMAIL.ccc\n'])
 
 print('------------TextFile---------------')
-with open('hw#20.txt', 'r') as x:
-    data = x.read()
-    print(data)
-    print('----------Last Max Word------------')
-    list_words = list(data.split())
-    MAX = list_words[0]
-    for i in list_words:
-        if len(i) >= len(MAX):
-            MAX = i
-    print(f'The last word in the file with the maximum lengthh: {MAX}\n'
-          f'Word lenght: {len(MAX)} symbols')
+# with open('hw#20.txt', 'r') as x:
+#     data = x.read()
+#     print(data)
+for item in open('hw#20.txt', 'r'):
+    print(f'{item}')
+print('----------Last Max Word------------')
+list_words = list(item.split())
+MAX = list_words[0]
+for i in list_words:
+    if len(i) >= len(MAX):
+        MAX = i
+print(f'The last string in the file with the maximum lengthh: {MAX}\n'
+      f'String lenght: {len(MAX)} symbols\n'
+      f'Type: {type(MAX)}\n')
 
 
