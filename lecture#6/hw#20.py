@@ -9,12 +9,12 @@ with open('hw#20.txt', 'w') as f:
 print('----------Last Max Word------------')
 for item in open('hw#20.txt', 'r'):
     list_words = list(item)
-    MAX = list_words[0]
-    if len(item) >= len(MAX):
-        MAX = item
-print(f'The last string in the file with the maximum lengthh: {MAX}'
-      f'String lenght: {len(MAX)} symbols\n'
-      f'Type: {type(MAX)}')
+    max_value = list_words[0]
+    if len(item) >= len(max_value):
+        max_value = item
+print(f'The last string in the file with the maximum lengthh: {max_value}'
+      f'String lenght: {len(max_value)} symbols\n'
+      f'Type: {type(max_value)}')
 
 
 
