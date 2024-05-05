@@ -17,6 +17,7 @@ with open('hw#20.txt', 'r') as x:
     for i in list_words:
         if len(i) >= len(MAX):
             MAX = i
-    print(f'The last word in the file with the maximum lengthh: {MAX} - Word lenght: {len(MAX)} symbols')
+    print(f'The last word in the file with the maximum lengthh: {MAX}\n'
+          f'Word lenght: {len(MAX)} symbols')
 
 
