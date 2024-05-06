@@ -11,6 +11,7 @@ result = [i for i in res if os.path.getsize(i) <= 120]
 with open('combined_files.txt', 'w') as x:
     output = [os.path.basename(i) for i in result]
     x.write(str(output))
+    x.write('\n')
     for item in result:
         with open(item, 'r') as f:
             x.write(f.read())
