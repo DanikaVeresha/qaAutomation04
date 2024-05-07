@@ -15,6 +15,9 @@ with open('combined_files.txt', 'w') as x:
         with open(item, 'r') as f:
             x.write(f'{os.path.basename(item)}\n')
             x.write(f'{f.read()}\n')
-
+            
+# path = "source_directory"
+# pattern_to_search = os.path.join(path, '**/*.txt')
+# res = glob.glob(pattern_to_search, recursive=True)
 
 
