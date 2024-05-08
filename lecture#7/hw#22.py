@@ -35,3 +35,6 @@ def list2dict_json(lst):
 
 print(f'Result: {list2dict_json(lst2dict)}; Type: {type(list2dict_json(lst2dict))}')
 print(f'Result: {list2dict_json(lst2dict1)}; Type: {type(list2dict_json(lst2dict1))}')
+
+
+
