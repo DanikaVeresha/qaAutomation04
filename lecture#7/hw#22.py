@@ -6,21 +6,21 @@ lst2dict = ([0, 1, 2, 3])
 # lst2dict = None
 
 
-# def list2dict(lst):
-#     if len(lst) % 2 != 0:
-#         lst.pop()
-#         result = {lst[i]: lst[i + 1] for i in range(0, len(lst), 2)}
-#     else:
-#         result = {lst[i]: lst[i + 1] for i in range(0, len(lst), 2)}
-#     return result
-
 def list2dict(lst):
     if len(lst) % 2 != 0:
         lst.pop()
         result = {lst[i]: lst[i + 1] for i in range(0, len(lst), 2)}
     else:
-        return None
+        result = {lst[i]: lst[i + 1] for i in range(0, len(lst), 2)}
     return result
+
+# def list2dict(lst):
+#     if len(lst) % 2 != 0:
+#         lst.pop()
+#         result = {lst[i]: lst[i + 1] for i in range(0, len(lst), 2)}
+#     else:
+#         return None
+#     return result
 
 
 print(f'List: {lst2dict}; Type: {type(lst2dict)}')
