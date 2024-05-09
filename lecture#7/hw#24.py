@@ -1,6 +1,14 @@
-dates = ['14-Dec', '12-Apr', '13-Apr', '31-Dec', '1-Jan', '12-Jan']
+# dates = ['14-Dec', '12-Apr', '13-Apr', '31-Dec', '1-Jan', '12-Jan']
+dates = ['1-Dec', '12-Apr', '17-Apr', '31-Dec', '19-Jan', '4-Jan', '12-Dec']
 
-# Output
-dates.sort(key=lambda x: int(x.split('-')[0] if x.split('-')[1] != 'Jan' else 0))
+
+def sortdates(dates):
+    month_order = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    month = month_order.index(dates.split('-')[1])
+    day = int(dates.split('-')[0])
+    return month, day
+
+
+dates.sort(key=sortdates)
 print(dates)
 
