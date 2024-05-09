@@ -13,7 +13,7 @@ def list2dict_(lst):
 
 
 # Output
-print(f'Copy source list`s result after run of function: {list2dict_(lst2dict)}')
+print(f'Result of a copy of the input list after running the function: {list2dict_(lst2dict)}')
 print(f'Source list: {lst2dict}')
 
 
