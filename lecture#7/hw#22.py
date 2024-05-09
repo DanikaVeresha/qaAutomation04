@@ -6,13 +6,15 @@ lst2dict = (['a', 'A', 'b', 'B', 'c'])
 
 
 def list2dict_(lst):
-    if len(lst) % 2 != 0:
-        lst.pop()
-    return {lst[i]: lst[i + 1] for i in range(0, len(lst), 2)}
+    test_lst = lst.copy()
+    if len(test_lst) % 2 != 0:
+        test_lst.pop()
+    return {test_lst[i]: test_lst[i + 1] for i in range(0, len(test_lst), 2)}
 
 
 # Output
-print(list2dict_(lst2dict))
+print(f'List`s result after run of function: {list2dict_(lst2dict)}')
+print(f'Source list: {lst2dict}')
 
 
 
