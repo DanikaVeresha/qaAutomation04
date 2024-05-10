@@ -1,5 +1,4 @@
 
-
 def skip_if(condition, reason=''):
     def decorator(func):
         def wrapper(*args, **kwargs):
@@ -11,15 +10,18 @@ def skip_if(condition, reason=''):
     return decorator
 
 
-@skip_if(True, 'This test is skipped')
-def test_sum():
-    assert sum([1, 2, 3]) == 6
+def test_skip_if(*args, **kwargs):
+    result = sum(args, **kwargs) == 5
+    @skip_if(result, f'becouse sum entered values is equal to 5 so condition is met.')
+    def test_func(*args, **kwargs):
+        assert result, (f'The expected sum of the values entered should be 5, but we '
+                        f'got {sum(args, **kwargs)}')
+
+    test_func(*args, **kwargs)
 
 
-@skip_if(False)
-def test_sum_():
-    assert sum([2, 2, 3]) == 6, 'Expected 6'
+test_skip_if(1, 1, 3)
 
 
-test_sum()
-test_sum_()
+
+
