@@ -1,18 +1,18 @@
 
-
-def dec(func):
-    def wrapper(*args, **kwargs):
-        if func(*args, **kwargs):
-            return ('Reason: The test is skipped because the condition is met, '
-                    'the sum of the entered values is equal to the specified condition')
-        else:
-            return func(*args, **kwargs)
-    return wrapper
-
-@dec
-def func(*args, **kwargs):
-    result = sum(args, **kwargs) == 10
-    return result
+def dec(if_, reason=''):
+    def decorator(func):
+        def wrapper(*args, **kwargs):
+            if if_:
+                return f'Skipping test "{func.__name__}". Reason: {reason}'
+            else:
+                return func(*args, **kwargs)
+        return wrapper
+    return decorator
 
 
-print(func(10, 0))
+@dec(sum([10, 15]) == 25, 'becouse sum entered values is equal to 25 and so condition is met.')
+def test_func(*args, **kwargs):
+    return sum(args, **kwargs) == 25
+
+
+print(test_func())
