@@ -18,7 +18,7 @@ if_ = 25
          reason=f'becouse sum entered values is equal to {sum(values)} and so condition is met.')
 def test_func(values):
     result = sum(values)
-    return f'{result == if_}. Sum entered values is {sum(values)} but expected {if_}.'
+    return f'{result == if_}'
 
 
 print(test_func(values))
