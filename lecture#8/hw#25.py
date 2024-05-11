@@ -10,14 +10,15 @@ def skip_if(condition, reason=''):
     return decorator
 
 
-values = [10, 10, 5]
+values = [10, 5, 5]
 if_ = 25
 
 
 @skip_if(condition=sum(values) == if_,
          reason=f'becouse sum entered values is equal to {sum(values)} and so condition is met.')
 def test_func(values):
-    return sum(values)
+    result = sum(values)
+    return f'{result == if_}. Sum entered values is {sum(values)} but expected {if_}.'
 
 
 print(test_func(values))
