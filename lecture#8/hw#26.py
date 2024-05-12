@@ -1,21 +1,23 @@
-import datetime
+from datetime import datetime
 
 
 def call_counter(path):
+
     def inner(func):
-        time = datetime.datetime.now()
         func.calls = 0
-        def wrapper(*args, **kwargs):
-            func(*args, **kwargs)
+
+        def wrapper(*args):
+            start_time = datetime.now()
+            func(*args)
             func.calls += 1
             with open(path, 'a') as file:
                 file.write(f'Function "{func.__name__}". Information below:\n'
                            f'Was called {func.calls} times\n'
                            f'Args: {args}\n'
                            f'Return: {func.__doc__}\n'
-                           f'Function start time: {datetime.datetime.now()}\n'
-                           f'Function transit time: ${datetime.datetime.now() - time}$\n\n')
-            return func(*args, **kwargs)
+                           f'Function start time: {datetime.now()}\n'
+                           f'Function execution time: {datetime.now() - start_time}\n\n')
+            return func(*args)
         return wrapper
     return inner
 
