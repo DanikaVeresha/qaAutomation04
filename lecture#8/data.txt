@@ -1,0 +1,49 @@
+Function "sum_". Information below:
+Was called 1 times
+Args: (1, 2)
+Return: Sum of numbers
+Function start time: 2024-05-12 14:45:38.917287
+Function transit time: $0:00:00.002392$
+
+Function "sum_". Information below:
+Was called 2 times
+Args: (3, 4)
+Return: Sum of numbers
+Function start time: 2024-05-12 14:45:38.918352
+Function transit time: $0:00:00.003457$
+
+Function "mul_". Information below:
+Was called 1 times
+Args: (2, 3)
+Return: Multiplication of numbers
+Function start time: 2024-05-12 14:45:38.919452
+Function transit time: $0:00:00.004557$
+
+Function "div_". Information below:
+Was called 1 times
+Args: (6, 3)
+Return: Division of numbers
+Function start time: 2024-05-12 14:45:38.920525
+Function transit time: $0:00:00.005630$
+
+Function "div_". Information below:
+Was called 2 times
+Args: (6, 1)
+Return: Division of numbers
+Function start time: 2024-05-12 14:45:38.921659
+Function transit time: $0:00:00.006764$
+
+Function "div_". Information below:
+Was called 3 times
+Args: (6, 2)
+Return: Division of numbers
+Function start time: 2024-05-12 14:45:38.922750
+Function transit time: $0:00:00.007855$
+
+Function "sub_". Information below:
+Was called 1 times
+Args: (6, 2)
+Return: Subtraction of numbers
+Function start time: 2024-05-12 14:45:38.924710
+Function transit time: $0:00:00.009815$
+
