@@ -25,6 +25,8 @@ def generator(lst: list, iter_num: int = None):
 lst_obj = ['a', 'b']
 for item in generator(lst_obj, 4):
     print(item)
+
+
 # """Iteration option when the iter_num is None"""
 # for item in generator(lst_obj):
 #     print(item)
