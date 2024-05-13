@@ -1,4 +1,4 @@
-"""My version, but it`s not entirely correct"""
+"""Task 27. My version, but it`s not entirely correct"""
 # def generator(lst: list, iter_num: int = None):
 #     while iter_num is None:
 #         for i_lst in range(len(lst)):
@@ -13,8 +13,8 @@ def generator(lst: list, iter_num: int = None):
     """Correct version of generator function"""
     while True:
         if iter_num is None:
-            for i_lst in range(len(lst)):
-                yield lst[i_lst]
+            for items in lst:
+                yield items
         else:
             for _ in range(iter_num):
                 for item_lst in lst:
@@ -27,6 +27,6 @@ for item in generator(lst_obj, 4):
     print(item)
 
 
-# """Iteration option when the iter_num is None"""
+"""Iteration option when the iter_num is None"""
 # for item in generator(lst_obj):
 #     print(item)
