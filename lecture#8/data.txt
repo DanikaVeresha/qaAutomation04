@@ -1,0 +1,56 @@
+Function "sum_". Information below:
+Was called 1 times
+Args: (1, 2)
+Return: Sum of numbers
+Function start time: 2024-05-13 23:10:57.979106
+Function execution time: 0.0013667999301105738
+
+Function "sum_". Information below:
+Was called 2 times
+Args: (3, 4)
+Return: Sum of numbers
+Function start time: 2024-05-13 23:10:57.981096
+Function execution time: 0.000443900004029274
+
+Function "mul_". Information below:
+Was called 1 times
+Args: (2, 3)
+Return: Multiplication of numbers
+Function start time: 2024-05-13 23:10:57.982098
+Function execution time: 0.0003877999261021614
+
+Function "div_". Information below:
+Was called 1 times
+Args: (6, 3)
+Return: Division of numbers
+Function start time: 2024-05-13 23:10:57.982098
+Function execution time: 0.00044950004667043686
+
+Function "div_". Information below:
+Was called 2 times
+Args: (6, 1)
+Return: Division of numbers
+Function start time: 2024-05-13 23:10:57.984219
+Function execution time: 0.0006148999091237783
+
+Function "div_". Information below:
+Was called 3 times
+Args: (6, 2)
+Return: Division of numbers
+Function start time: 2024-05-13 23:10:57.985211
+Function execution time: 0.00041470001451671124
+
+Function "sub_". Information below:
+Was called 1 times
+Args: (6, 2)
+Return: Subtraction of numbers
+Function start time: 2024-05-13 23:10:57.985211
+Function execution time: 0.00032839993946254253
+
+Function "sub_". Information below:
+Was called 2 times
+Args: (6, 1)
+Return: Subtraction of numbers
+Function start time: 2024-05-13 23:10:57.986211
+Function execution time: 0.00046989996917545795
+
