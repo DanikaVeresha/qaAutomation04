@@ -6,7 +6,9 @@ def email_validator(email: str):
     """Function to validate email address using regular expressions"""
     email_pattern_true = (
             r'[@.]'
-            and r'^[\w]+@[\w]+\.[\w]+$'
+            and r'^\w[^@_.!#$%^&*()-+=\|/`~?><;\[\"\]\,{}]'
+                r'+@\w[^@_.!#$%^&*()-+=\|/`~?><;\[\"\]\,{}]'
+                r'+\.\w[^@_.!#$%^&*()-+=\|/`~?><;\[\"\]\,{}]+$'
     )
     email_pattern_false = (
             r'^[@_!#$%^&*()-+=\|/`~?><;\[\"\]\,{}]|[\._!#$%^&*()-+=\|/`~?><;\[\"\]\,{}]$'
@@ -15,10 +17,12 @@ def email_validator(email: str):
             or r'^\s|\s$'
             or email == ' '
             or r'@{1}|\.{1}'
+            or r'_'
     )
 
     if re.findall(email_pattern_true, email) and not re.findall(email_pattern_false, email):
         print(f'Email verification result: {email} - "True"')
+        print(re.findall(email_pattern_false, email))
 
     else:
         print(f'Email verification result: {email} - "False"')
@@ -75,3 +79,5 @@ email_validator('a_aa@bbb.cc/c')
 email_validator('_aaa@bbb.ccc')
 email_validator('aaa@bbb..c@c@c')
 email_validator('aaa.bbb.ccc@c@c.c')
+email_validator('aaa_123@bbb.ccc')
+email_validator('aaa#123@bbb.ccc')
