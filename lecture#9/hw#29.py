@@ -2,7 +2,7 @@
 def linearize_list(lst):
     result = []
     for i in lst:
-        if type(i) == list:
+        if type(i) is list:
             result += linearize_list(i)
         else:
             result.append(i)
