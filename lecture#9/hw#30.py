@@ -30,6 +30,8 @@ def time_schedule(date: str, time: str, total_lectures: int):
         yield 'Sorry, there are no lectures on this day.'
 
 
+# res = time_schedule('11042024', '1915', 32)
+# print(res.__sizeof__()) # 320 bytes
 # print(time_schedule('11042024', '1915', 32))
 for item in time_schedule('11042024', '1915', 32):
     print(item)
