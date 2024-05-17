@@ -2,7 +2,7 @@
 from datetime import timedelta, datetime
 
 
-def time_schedule(date, time, total_lectures):
+def time_schedule(date: str, time: str, total_lectures: int):
     """Version 1 of the solution: Generator Function that returns the time schedule lecture(my favorite version)"""
     days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
     months = ['Jany', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
