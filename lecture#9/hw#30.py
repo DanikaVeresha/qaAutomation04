@@ -10,7 +10,7 @@ def time_schedule(date, time, total_lectures):
     time = datetime.strptime(time, '%H%M')
     if date.strftime('%A') == 'Thursday':
         for number in range(1, total_lectures + 1):
-            yield (f'Lecture {number}: {days[date.weekday()]} {date.day} {months[date.month - 1]} '
+            yield (f'Lecture {number:>2}: {days[date.weekday()]} {date.day} {months[date.month - 1]} '
                    f'{date.year} {time.strftime("%H:%M")}')
             if number % 2 != 0:
                 date += timedelta(days=4)
@@ -19,7 +19,7 @@ def time_schedule(date, time, total_lectures):
 
     elif date.strftime('%A') == 'Monday':
         for number in range(1, total_lectures + 1):
-            yield (f'Lecture {number}: {days[date.weekday()]} {date.day} {months[date.month - 1]} '
+            yield (f'Lecture {number:>2}: {days[date.weekday()]} {date.day} {months[date.month - 1]} '
                    f'{date.year} {time.strftime("%H:%M")}')
             if number % 2 != 0:
                 date += timedelta(days=3)
@@ -35,7 +35,7 @@ for item in time_schedule('11042024', '1915', 32):
 
 
 """Version 2 of the solution(main version)"""
-start_lectures_date = '11042024'
+start_lectures_date = '15042024'
 time_start_lecture = '1915'
 total_lessons = 32
 
@@ -45,7 +45,7 @@ date_ = datetime.strptime(start_lectures_date, '%d%m%Y')
 time_ = datetime.strptime(time_start_lecture, '%H%M')
 if date_.strftime('%A') == 'Thursday':
     for i in range(1, total_lessons + 1):
-        print(f'Lecture {i}: {list_days[date_.weekday()]} {date_.day} {list_months[date_.month - 1]} '
+        print(f'Lecture {i:>2}: {list_days[date_.weekday()]} {date_.day} {list_months[date_.month - 1]} '
               f'{date_.year} {time_.strftime("%H:%M")}')
         if i % 2 != 0:
             date_ += timedelta(days=4)
@@ -54,7 +54,7 @@ if date_.strftime('%A') == 'Thursday':
 
 elif date_.strftime('%A') == 'Monday':
     for i in range(1, total_lessons + 1):
-        print(f'Lecture {i}: {list_days[date_.weekday()]} {date_.day} {list_months[date_.month - 1]} '
+        print(f'Lecture {i:>2}: {list_days[date_.weekday()]} {date_.day} {list_months[date_.month - 1]} '
               f'{date_.year} {time_.strftime("%H:%M")}')
         if i % 2 != 0:
             date_ += timedelta(days=3)
