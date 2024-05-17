@@ -37,8 +37,9 @@ for item in time_schedule('11042024', '1915', 32):
     print(item)
 
 
+print('------------------------------------------')
 """Version 2 of the solution(main version)"""
-start_lectures_date = '15042024'
+start_lectures_date = '11042024'
 time_start_lecture = '1915'
 total_lessons = 32
 
