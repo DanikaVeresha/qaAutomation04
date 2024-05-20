@@ -24,27 +24,8 @@ for item_v1 in get_links_v1('wiki_page.txt'):
 print('-----------------Version 2 of the solution-----------------------')
 
 
-def get_links_v2(doc):
-    """Version 2 of the solution"""
-    with open(doc, 'r') as file:
-        soup = BeautifulSoup(file, 'html.parser')
-        links = []
-        for link in soup.find_all('a'):
-            links.append(link.get('href'))
-        return links
-
-
-# res_v2 = get_links_v2('wiki_page.txt')
-# print(f'{res_v2.__sizeof__()} bytes')
-for item_v2 in get_links_v2('wiki_page.txt'):
-    print(item_v2)
-
-
-print('-----------------Version 3 of the solution-----------------------')
-
-
 def get_links_v3(doc):
-    """Version 3 of the solution"""
+    """Version 2 of the solution"""
     with (open(doc, 'r') as file):
         for line in file:
             if '<a' in line:
