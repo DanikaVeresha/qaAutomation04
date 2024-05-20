@@ -6,9 +6,9 @@ from bs4 import BeautifulSoup
 print('-----------------Version 1 of the solution-----------------------')
 
 
-def get_links_v1(html):
+def get_links_v1(doc):
     """Version 1 of the solution with using regular expressions"""
-    with open(html, 'r') as file:
+    with open(doc, 'r') as file:
         for link in re.findall('a href="(.+?)"', file.read()):
             yield link
 
@@ -22,9 +22,9 @@ for item_v1 in get_links_v1('wiki_page.txt'):
 print('-----------------Version 2 of the solution-----------------------')
 
 
-def get_links_v2(html):
+def get_links_v2(doc):
     """Version 2 of the solution"""
-    with open(html, 'r') as file:
+    with open(doc, 'r') as file:
         soup = BeautifulSoup(file, 'html.parser')
         links = []
         for link in soup.find_all('a'):
