@@ -8,3 +8,11 @@
 <h3><span class="mw-headline" id="Web_forms">Web forms</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="555/w/index.php?title=Query_string&amp;action=edit&amp;section=2555" title="Edit section: Web forms"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></h3>
 <p>One of the original uses was to contain the content of an <a href="666/wiki/Form_(HTML)666" class="mw-redirect" title="Form (HTML)">HTML form</a>, also known as web form. In particular, when a form containing the fields <code>field1</code>, <code>field2</code>, <code>field3</code> is submitted, the content of the fields is encoded as a query string as follows:
 </p>
+<a class="mw-redirect" title="Form (HTML)" href="777/wiki/Form_(HTML)777">HTML form</a>
+<a href="888/wiki/Form_(HTML)888"class="mw-redirect" title="Form (HTML)" >HTML form</a>
+<p>One of the original uses was to contain the content of an
+<a class="mw-redirect" href="999/wiki/Form_(HTML)999" title="Form (HTML)">HTML form</a>,
+also known as web form. In particular, when a form containing the fields <code>field1</code>,
+<code>field2</code>, <code>field3</code> is submitted, the content of the fields is encoded as a
+query string as follows:
+</p>

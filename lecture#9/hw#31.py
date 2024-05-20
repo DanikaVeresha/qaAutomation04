@@ -9,8 +9,10 @@ print('-----------------Version 1 of the solution-----------------------')
 def get_links_v1(doc):
     """Version 1 of the solution with using regular expressions"""
     with open(doc, 'r') as file:
-        for link in re.findall('a href="(.+?)"', file.read()):
-            yield link
+        for line in file:
+            if '<a' in line:
+                for link in re.findall(r'href="(.+?)"', line):
+                    yield link
 
 
 # res_v1 = get_links_v1('wiki_page.txt')
@@ -45,11 +47,11 @@ def get_links_v3(doc):
     """Version 3 of the solution"""
     with (open(doc, 'r') as file):
         for line in file:
-            if 'a href=' in line:
-                first_enter = (line.find('a href="') + 8,
-                               line.find('"', line.find('a href="') + 8))
-                second_enter = (line.rfind('a href="') + 8,
-                                line.find('"', line.rfind('a href="') + 8))
+            if '<a' in line:
+                first_enter = (line.find('href="') + 6,
+                               line.find('"', line.find('href="') + 6))
+                second_enter = (line.rfind('href="') + 6,
+                                line.find('"', line.rfind('href="') + 6))
                 if first_enter[0] != second_enter[0] and first_enter[1] != second_enter[1]:
                     yield line[first_enter[0]:first_enter[1]]
                 yield line[second_enter[0]:second_enter[1]]
