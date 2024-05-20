@@ -1,6 +1,5 @@
 """Task 31. Obtaining attribute value"""
 import re
-from bs4 import BeautifulSoup
 
 
 print('-----------------Version 1 of the solution-----------------------')
