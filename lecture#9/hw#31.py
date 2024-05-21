@@ -1,44 +1,22 @@
-"""Task 31. Obtaining attribute value"""
+"""Task 31. Please look at the wiki_page.txt file because I have changed it."""
 import re
 
 
-print('-----------------Version 1 of the solution-----------------------')
-
-
-def get_links_v1(doc):
-    """Version 1 of the solution with using regular expressions"""
-    with open(doc, 'r') as file:
+def get_links(html_file):
+    """Get value of href attribute for tag 'a'. Do it: using string methods"""
+    with open(html_file, 'r') as file:
         for line in file:
-            if '<a' in line:
-                for link in re.findall(r'href="(.+?)"', line):
-                    yield link
+            value = line.find('<a')
+            value_end = line.rfind('</a>')
+            line_values = line[value:value_end]
+            result = re.findall(r'href="([^"]*)"', line_values)
+            for res_line in result:
+                yield res_line
 
 
-# res_v1 = get_links_v1('wiki_page.txt')
-# print(f'{res_v1.__sizeof__()} bytes')
-for item_v1 in get_links_v1('wiki_page.txt'):
-    print(item_v1)
+for item in get_links('wiki_page.txt'):
+    print(item)
 
 
-print('-----------------Version 2 of the solution-----------------------')
 
-
-def get_links_v3(doc):
-    """Version 2 of the solution"""
-    with (open(doc, 'r') as file):
-        for line in file:
-            if '<a' in line:
-                first_enter = (line.find('href="') + 6,
-                               line.find('"', line.find('href="') + 6))
-                second_enter = (line.rfind('href="') + 6,
-                                line.find('"', line.rfind('href="') + 6))
-                if first_enter[0] != second_enter[0] and first_enter[1] != second_enter[1]:
-                    yield line[first_enter[0]:first_enter[1]]
-                yield line[second_enter[0]:second_enter[1]]
-
-
-# res_v3 = get_links_v3('wiki_page.txt')
-# print(f'{res_v3.__sizeof__()} bytes')
-for item_v3 in get_links_v3('wiki_page.txt'):
-    print(item_v3)
 
