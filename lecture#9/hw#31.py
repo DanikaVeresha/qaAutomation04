@@ -1,38 +1,34 @@
 """Task 31. Please look at the wiki_page.txt file because I have changed it."""
-# import re
+import re
 
 
-def get_links(html_file):
+def get_links_re(html_file):
+    """Get value of href attribute for tag 'a'. Do it: using regular expressions"""
+    with open(html_file, 'r') as file:
+        for line in file:
+            if 'href' in line:
+                yield from re.findall(r'<a.*?href="(.+?)"', line)
+
+
+for i in get_links_re('wiki_page.txt'):
+    print(i)
+
+print('------------------------------------------------')
+
+
+def get_links_str(html_file):
     """Get value of href attribute for tag 'a'. Do it: using string methods"""
     with open(html_file, 'r') as file:
         for line in file:
-            value = line.find('<a')
-            value_end = line.find('</a>')
-            value_ends = line.rfind('<a')
-            value_end_ends = line.rfind('</a>')
-            line_values = line[value:value_end]
-            # print(line_values)
-            line_values_end = line[value_ends:value_end_ends]
-            # print(line_values_end)
-            if line_values == line_values_end:
-                if 'href="' in line_values:
-                    start = line_values.find('href="') + len('href="')
-                    end = line_values.find('"', start)
-                    yield line_values[start:end]
-            else:
-                if 'href="' in line_values and 'href="' in line_values_end:
-                    start = line_values.find('href="') + len('href="') and line_values_end.find('href="') + len('href="')
-                    end = line_values.find('"', start) and line_values_end.find('"', start)
-                    yield line_values[start:end], line_values_end[start:end]
+            start_of_range = line.find("<a", 0, len(line))
+            end_of_rnage = line.find("</a>", 0, len(line))
+            while start_of_range != -1:
+                yield line[line.find('href="', start_of_range, end_of_rnage) + len('href="'):
+                           line.find('"', line.find('href="', start_of_range,  end_of_rnage) + len('href="'), end_of_rnage)]
+                start_of_range = line.find("<a", start_of_range + 1, len(line))
+                end_of_rnage = line.find("</a>", end_of_rnage + 1, len(line))
 
 
-for item in get_links('wiki_page.txt'):
-    if type(item) is tuple:
-        for i in item:
-            print(i)
-    else:
-        print(item)
-# get_links('wiki_page.txt')
-
-
+for item in get_links_str('wiki_page.txt'):
+    print(item)
 
