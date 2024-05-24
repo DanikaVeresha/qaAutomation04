@@ -5,7 +5,6 @@ TO DO: Write function, that takes function and several lists (number of lists sh
 parameters for function). Function should return list of results of applying a function to corresponding
 elements of lists. If passed lists have different length, result should be formed by shortest one.
 """
-from itertools import chain
 
 
 def custom_map(func, *args):
