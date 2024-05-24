@@ -12,7 +12,7 @@ def custom_zip(*args, full=False, default=None):
             res.append(tuple(arg[i] if i < len(arg) else default for arg in args))
         return res
     else:
-        return [tuple(arg[item] for arg in args) for item in range(min(len(arg) for arg in args))]
+        return [tuple(arg[i] for arg in args) for i in range(min(len(arg) for arg in args))]
 
 
 # lst = [1, 3, 5, 7, 8, 9, 10, 11]
