@@ -21,6 +21,7 @@ lst = [1, 3, 5, 7]
 lst2 = [2, 4, 6, 8, 9, 10, 11]
 print(custom_zip(lst, lst2))
 print(type(custom_zip(lst, lst2)))
+print('----------------------------')
 print(custom_zip(lst, lst2, full=True, default="X"))
 print(type(custom_zip(lst, lst2, full=True, default="X")))
 
