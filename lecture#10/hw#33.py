@@ -1,9 +1,6 @@
 """
 Task 33.
 Name: Custom map
-TO DO: Write function, that takes function and several lists (number of lists should be the number of
-parameters for function). Function should return list of results of applying a function to corresponding
-elements of lists. If passed lists have different length, result should be formed by shortest one.
 """
 
 
