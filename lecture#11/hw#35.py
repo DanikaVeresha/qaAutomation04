@@ -92,14 +92,14 @@ class BTCAccount(BankAccount):
                 f'Number of bitcoins: {self.btc}\nDate of operation: {self.date}')
 
     @staticmethod
-    def btc_delta(volume_of_sales, volume_of_buy, period):
-        """Bitcoin cumulative delta indicator for the month"""
-        delta = round(volume_of_sales - volume_of_buy / period, 4)
-        if delta > 0:
-            return (f'Bitcoin cumulative delta indicator for the month: +{delta}\n'
+    def btc_delta(bid, ask):
+        """Bitcoin cumulative delta indicator for the one day"""
+        cum_delta = bid - ask
+        if cum_delta > 0:
+            return (f'Bitcoin cumulative delta indicator for the month V: +{cum_delta}\n'
                     f'The market is dominated by buyers')
         else:
-            return (f'Bitcoin cumulative delta indicator for the month: {delta}\n'
+            return (f'Bitcoin cumulative delta indicator for the month: {cum_delta}\n'
                     f'The market is dominated by sellers')
 
     @classmethod
@@ -152,9 +152,9 @@ print(str(btc_account.buy_btc(69074.44)))
 print()
 print(str(btc_account.sell_btc(69089.79)))
 print()
-print(str(BTCAccount.btc_delta(1300000, 1700060, 30)))
+print(str(BTCAccount.btc_delta(1300000, 1700060)))
 print()
-print(str(btc_account.btc_delta(1300000, 1700060, 30)))
+print(str(btc_account.btc_delta(1300000, 1700060)))
 print()
 print(f'Old BTC exchange rate buy: {str(BTCAccount.btc_exchange_rate_buy)}')
 print(f'Old BTC exchange rate sell: {str(BTCAccount.btc_exchange_rate_sell)}')
@@ -168,9 +168,9 @@ print(str(btc_account.buy_btc(69074.44)))
 print()
 print(str(btc_account.sell_btc(69089.79)))
 print()
-print(str(BTCAccount.btc_delta(1234000, 900060, 30)))
+print(str(BTCAccount.btc_delta(1234000, 900060)))
 print()
-print(str(btc_account.btc_delta(1234000, 900060, 30)))
+print(str(btc_account.btc_delta(1234000, 900060)))
 print()
 print(f'Old BTC exchange rate buy: {str(BTCAccount.btc_exchange_rate_buy)}')
 print(f'Old BTC exchange rate sell: {str(BTCAccount.btc_exchange_rate_sell)}')
