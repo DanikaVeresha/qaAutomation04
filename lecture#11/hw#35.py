@@ -113,13 +113,15 @@ class BTCAccount(BankAccount):
     def btc_change(cls, new_btc_exchange_rate_buy, new_btc_exchange_rate_sell, total_btc):
         """The method calculates the cost of buying and selling bitcoins and returns the difference
         at the changed bitcoin rate"""
+        print(f'Old price BTC buy: {cls.btc_exchange_rate_buy}$ - New price BTC: {new_btc_exchange_rate_buy}$')
+        print(f'Old price BTC sell: {cls.btc_exchange_rate_sell}$ - New price BTC: {new_btc_exchange_rate_sell}$')
         cls.number_btc = total_btc
         cls.btc_exchange_rate_buy = new_btc_exchange_rate_buy
         cls.btc_exchange_rate_sell = new_btc_exchange_rate_sell
         cost = total_btc * new_btc_exchange_rate_buy
         income = total_btc * new_btc_exchange_rate_sell
-        return f'Cost of buying {total_btc} bitcoins: {cost}$\nIncome from selling {total_btc} bitcoins: {income}$\n' \
-               f'Difference: {income - cost}$'
+        return f'Cost of buying {total_btc} bitcoins at the new price: {cost}$\n' \
+               f'Income from selling {total_btc} bitcoins at the new price: {income}$\n'
 
     def __str__(self):
         """Returns the account owner's name, balance, number of bitcoins, and account opening date.
@@ -151,9 +153,7 @@ print()
 print(str(BTCAccount.btc_delta(1300000, 1700060)))
 print(str(btc_account.btc_delta(1300000, 1700060)))
 print()
-print(f'Old BTC exchange rate buy: {str(BTCAccount.btc_exchange_rate_buy)}')
-print(f'Old BTC exchange rate sell: {str(BTCAccount.btc_exchange_rate_sell)}')
-print(str(BTCAccount.btc_change(69079.45, 69099.45, 5)))
+print(str(BTCAccount.btc_change(69079.45, 69099.45, 2)))
 print()
 
 
