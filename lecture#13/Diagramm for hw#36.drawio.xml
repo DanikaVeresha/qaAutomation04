@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2024-06-04T08:54:19.727Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36" etag="Jdu-a2ZwOnWEmiIUuOM_" version="24.4.13" type="google">
+  <diagram name="Страница — 1" id="C7zsDLVsdGY93kK5nq6R">
+    <mxGraphModel dx="794" dy="412" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="JQNjE-N_aRSqGxlrevs1-1" value="&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;b&gt;Person&lt;/b&gt;&lt;/font&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="40" width="280" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="JQNjE-N_aRSqGxlrevs1-2" value="+ name: str&lt;div&gt;+ position: str&lt;/div&gt;&lt;div&gt;+ level: str&lt;/div&gt;&lt;div&gt;+departament: str&lt;/div&gt;&lt;div&gt;- uuid: None&lt;/div&gt;&lt;div&gt;+ working_hours: int&lt;/div&gt;&lt;div&gt;+ bank_info: None&lt;/div&gt;&lt;div&gt;+ kwargs: dict&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="60" width="280" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="JQNjE-N_aRSqGxlrevs1-3" value="+ say(): None&lt;div&gt;+ get_id(): UUID&lt;/div&gt;&lt;div&gt;+ get_time_exit(): datetime&lt;/div&gt;&lt;div&gt;+ get_bank_information(): list[UUID | int]&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="180" width="280" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="JQNjE-N_aRSqGxlrevs1-4" value="&lt;b&gt;Subordinate&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="360" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JQNjE-N_aRSqGxlrevs1-5" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="390" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JQNjE-N_aRSqGxlrevs1-6" value="+ get_projects(): str&lt;div&gt;+ get_bonus(): int&lt;/div&gt;&lt;div&gt;+ get_salary(): int&lt;/div&gt;&lt;div&gt;+ write_information(): None&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="420" width="280" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="JQNjE-N_aRSqGxlrevs1-7" value="&lt;b&gt;Supervisor&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="360" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JQNjE-N_aRSqGxlrevs1-8" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="390" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JQNjE-N_aRSqGxlrevs1-9" value="+ get_percent(): float&lt;div&gt;+ get_salary(): float&lt;/div&gt;&lt;div&gt;+ write_information(): None&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="420" width="280" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="JQNjE-N_aRSqGxlrevs1-10" value="&lt;b&gt;Company&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="640" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JQNjE-N_aRSqGxlrevs1-11" value="+ name: str" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="670" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JQNjE-N_aRSqGxlrevs1-12" value="+ add_subordinate(subordanate: None): None&lt;div&gt;+ add_supervisor(supervisor: None): None&lt;/div&gt;&lt;div&gt;+ add_uuid(number: None): None&lt;/div&gt;&lt;div&gt;+ add_visitor(visitor: None): None&amp;nbsp;&lt;/div&gt;&lt;div&gt;+ show_employees(): None&lt;/div&gt;&lt;div&gt;+ show_visitors(): None&lt;/div&gt;&lt;div&gt;+ scan_pass_card(person: None): None&amp;nbsp;&lt;/div&gt;&lt;div&gt;+ run_elevator(person: None): None&lt;/div&gt;&lt;div&gt;+ get_info_employee(person: None): str&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;u&gt;+ get_info_checkpoint(): str&lt;/u&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ run(person: None): str&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="700" width="280" height="201" as="geometry" />
+        </mxCell>
+        <mxCell id="JQNjE-N_aRSqGxlrevs1-13" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.424;exitY=-0.133;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="JQNjE-N_aRSqGxlrevs1-4" target="JQNjE-N_aRSqGxlrevs1-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="120" y="350" as="sourcePoint" />
+            <mxPoint x="277" y="120" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="160" y="120" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JQNjE-N_aRSqGxlrevs1-14" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.564;exitY=-0.133;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="JQNjE-N_aRSqGxlrevs1-7" target="JQNjE-N_aRSqGxlrevs1-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="680" y="230" as="sourcePoint" />
+            <mxPoint x="730" y="180" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="680" y="120" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JQNjE-N_aRSqGxlrevs1-15" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="JQNjE-N_aRSqGxlrevs1-12">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="120" y="801" as="sourcePoint" />
+            <mxPoint x="260" y="800" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JQNjE-N_aRSqGxlrevs1-16" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="JQNjE-N_aRSqGxlrevs1-12">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="720" y="800" as="sourcePoint" />
+            <mxPoint x="750" y="750" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JQNjE-N_aRSqGxlrevs1-17" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.286;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="JQNjE-N_aRSqGxlrevs1-6">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="120" y="800" as="sourcePoint" />
+            <mxPoint x="140" y="610" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JQNjE-N_aRSqGxlrevs1-18" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="720" y="800" as="sourcePoint" />
+            <mxPoint x="720" y="490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
