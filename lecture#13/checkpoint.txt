@@ -1,0 +1,24 @@
+Subordinate: Daria Veresha
+ID: 9bc0ea3b-1aca-409f-b692-a80ce9dcd183
+Position: Tester
+Department: IT
+Time of entry to work: 2024-06-04 11:47:28.286527
+Working hours: 10
+Time of exit from work: 2024-06-04 21:47:28.286527
+
+Supervisor: Alex Litvinov
+ID: 70f4927c-0334-410e-bf2d-5eca57637072
+Position: Qa Engineer
+Department: IT
+Time of entry to work: 2024-06-04 11:47:28.296775
+Working hours: 7
+Time of exit from work: 2024-06-04 18:47:28.296775
+
+Visitor: Jon Smith
+Meeting curator: Alex Litvinov
+Position: Back-End
+Level: Trainee
+Department: IT
+Time of entry to work: 2024-06-04 11:48:12.730800
+Time of exit from work: 2024-06-04 12:08:12.730800
+
