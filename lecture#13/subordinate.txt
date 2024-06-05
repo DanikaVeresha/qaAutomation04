@@ -1,19 +1,16 @@
-Subordinate: Daria Veresha
-ID: 9bc0ea3b-1aca-409f-b692-a80ce9dcd183
+Employee: Daria Veresha
+UUID: 18406030-b840-4829-ab7f-f1310dde6028
 Position: Tester
 Level: Junior
 Department: IT
-Time of entry to work: 2024-06-04 11:47:28.273394
+Limelight Networks login time: 2024-06-06 02:19:31.385383
 Working hours: 10
-Time of exit from work: 2024-06-04 21:47:28.273394
+Limelight Networks exit time: 2024-06-06 12:19:31.421264
 Financial data of Daria Veresha ->
 Salary: 1000$
-Percent of the salary in $: 600.0$
-Income with bonus: 1600.0$
+Income with the bonus: 1150.0$
 Bank information of Daria Veresha ->
-ID account: 8411466f-bd27-4e6a-bff6-327fc7fdadaa
-Checking account: 711049941
-His/Her projects: ('Flask', 'Django', 'FastAPI')
-Last data of Daria Veresha: ->
-Last his/her project: FastAPI
+ID account: 72a571a2-7d1c-414b-b12b-fe6a290b64dd
+Checking account: 586757147
+Bank card number: 9718527524167561
 
