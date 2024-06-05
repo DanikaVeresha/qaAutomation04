@@ -1,0 +1,26 @@
+PROJECT DESCRIPTION:
+
+Our company is located in a business center ranging from floors 5 to 22 inclusive.
+On the ground floor of the center in the hall there is a turnstile with a monitor and a pass scanner.
+
+Operation in the lobby ->
+When a person approaches the turnstile, he scans his pass card and the system performs an identity
+check (ID):
+- if a person is in the company’s database as an employee or a registered visitor, the turnstile opens
+and the person can follow the elevator to go up to the desired floor of his company.
+- if a person is not in the company database as an employee or a registered visitor, the turnstile is
+closed and the person cannot proceed to the floor he needs, about which the system gives him a notification.
+
+Next ->
+
+Elevator operation ->
+- A person presses the floor he needs, which belongs to the company in the database in which he is
+registered - the elevator goes to the floor he needs.
+- If a person presses a button for a floor that does not belong to the company in the database in which
+the person is registered, the elevator does not follow and asks the person to enter the correct floor
+number for the company in which he works.
+Identity verification in accordance with registration in the company database is carried out by Last Name,
+First Name and UUID of the person if the person is an employee, if a visitor then only by Last Name,
+First Name in the Visitor database
+
+# Я очень старалась исправить и откорректировать данный проект в соответствии с Вашими замечаниями.

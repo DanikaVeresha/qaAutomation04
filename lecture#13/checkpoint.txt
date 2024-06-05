@@ -1,24 +1,24 @@
-Subordinate: Daria Veresha
-ID: 9bc0ea3b-1aca-409f-b692-a80ce9dcd183
+Employee: Daria Veresha
+UUID: 5811673d-ccca-4a5b-ac16-0660f2e6a4d1
 Position: Tester
 Department: IT
-Time of entry to work: 2024-06-04 11:47:28.286527
+Limelight Networks login time: 2024-06-05 22:22:26.949658
 Working hours: 10
-Time of exit from work: 2024-06-04 21:47:28.286527
+Approximate Limelight Networks exit time: 2024-06-06 08:22:26.949658
 
-Supervisor: Alex Litvinov
-ID: 70f4927c-0334-410e-bf2d-5eca57637072
+Employee: Alex Litvinov
+UUID: a9ca028d-f728-4782-a551-360cdaf6cacd
 Position: Qa Engineer
 Department: IT
-Time of entry to work: 2024-06-04 11:47:28.296775
+Limelight Networks login time: 2024-06-05 22:22:56.758066
 Working hours: 7
-Time of exit from work: 2024-06-04 18:47:28.296775
+Approximate Limelight Networks exit time: 2024-06-06 05:22:56.758066
 
 Visitor: Jon Smith
 Meeting curator: Alex Litvinov
 Position: Back-End
 Level: Trainee
 Department: IT
-Time of entry to work: 2024-06-04 11:48:12.730800
-Time of exit from work: 2024-06-04 12:08:12.730800
+Limelight Networks login time: 2024-06-05 22:23:15.357589
+Approximate Limelight Networks login time: 2024-06-05 22:43:15.357589
 

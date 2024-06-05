@@ -1,20 +1,18 @@
-Supervisor: Alex Litvinov
-ID: 70f4927c-0334-410e-bf2d-5eca57637072
+
+
+Employee: Alex Litvinov
+UUID: a9ca028d-f728-4782-a551-360cdaf6cacd
 Position: Qa Engineer
 Level: Senior
 Department: IT
-Time of entry to work: 2024-06-04 11:47:28.291774
+Limelight Networks login time: 2024-06-05 22:22:53.752245
 Working hours: 7
-Time of exit from work: 2024-06-04 18:47:28.291774
+Limelight Networks exit time: 2024-06-06 05:22:53.752245
 Financial data of Alex Litvinov ->
 Salary: 12000$
-Percent of the salary in $: 11832.0$
-Income with bonus: 23832.0$
+Income with the bonus: 19800.0$
 Bank information of Alex Litvinov ->
-ID account: 021f26f5-7ee4-457b-afcc-9e3e25adc941
-Checking account: 815473719
-Last data of Alex Litvinov: ->
-Rating: 98.6
-His/Her projects: ('Flask', 'FastAPI', 'Django')
-Last his/her project: Django
+ID account: f9cd5ecd-7dda-4237-903b-b7a58c69b3fb
+Checking account: 623196362
+Bank card number: 9954468776799846
 

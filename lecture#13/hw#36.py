@@ -1,27 +1,4 @@
-"""
-Task 36. Company`s Checkpoint
-Description:
-The essence of this project is this: we have a checkpoint of a company that is located in a business
-center, it is allocated a certain number of floors and this is (the Hall where there are a number of
-turnstiles lined up, the main entrance to the company is an elevator, which can only be called by
-scanning an employee’s pass, a monitor and person (company security service) behind the monitor)
-The program works as follows:
-1. A person (current employee) enters the company lobby, approaches the turnstile and scans his pass card,
-after which the system checks the person’s first and last name in the company database, if there is one
-- the turnstile opens and the employee goes to the elevator to go up the floor he needs.
-2. The employee calls the elevator by scanning his pass card, then the system asks the employee for
-the floor number where he wants to arrive.
-3. The employee enters his request (floor number) on the monitor. The system again checks the employee’s
-first and last name in the company database, and the 2nd level of verification also comes into force
-- the system checks the employee’s yuuid for his presence in the company database. If there is one, the
-system approves the employee’s request and the elevator moves to the floor specified by the employee.
-4. At the request of the company's security service, more detailed information, financial data or the
-latest work data can be obtained for any employee.
-5. If a person is not in the company’s database as a subordinate or manager or visitor (in this case,
-the system contacts the HR department and assigns him support from among the managers), then at the first
-level of verification the system issues a warning about this and asks the non-working person to contact
-the company’s Security Service or the appropriate person who made the appointment for him.
-"""
+"""Task 36. Company`s Checkpoint"""
 import time
 import uuid
 import datetime
@@ -34,148 +11,157 @@ def delay_time():
 
 class Person:
 
-    def __init__(self, name, position, level, department, working_hours,
-                 id_employee=None, bank_info=None, **kwargs):
+    def __init__(self, name, position, level, department, working_hours=None,
+                 salary=None, bonus=None, id_employee=None, bank_account=None, bank_card=None):
         """Initializes the Person class...."""
         self.name = name.title()
         self.position = position.title()
         self.level = level.capitalize()
         self.department = department.upper()
-        self.__uuid = id_employee
         self.working_hours = working_hours
-        self.bank_info = bank_info
-        self.kwargs = kwargs
+        self.salary = salary
+        self.bonus = bonus
+        self.__uuid = id_employee
+        self.bank_account = bank_account
+        self.bank_card = bank_card
 
     def say(self):
         """Person says...."""
         print(f"{self.name} says: > Hi, I`m a {self.position} from {self.department} departament.\n")
 
-    def get_id(self):
+    def create_id(self):
         """Returns the employee identifier in uuid format...."""
-        if self.__uuid is not None:
-            return self.__uuid
-        else:
+        if self.__uuid is None:
             self.__uuid = uuid.uuid4()
-            return self.__uuid
+        return self.__uuid
 
-    def get_time_exit(self):
+    def get_exit_time(self):
         """Returns the time the employee left work...."""
         return datetime.datetime.now() + datetime.timedelta(hours=self.working_hours)
 
-    def get_bank_information(self):
+    def create_bank_account(self):
         """Returns the bank information of the employee...."""
-        if self.bank_info is not None:
-            return self.bank_info
-        else:
-            self.bank_info = [
+        if self.bank_account is None:
+            self.bank_account = [
                 uuid.uuid4(),
                 random.randint(1000000, 1000000000)
             ]
-            return self.bank_info
+        return self.bank_account
+
+    def get_bonus(self):
+        """Returns the bonus in $...."""
+        return self.salary * self.bonus / 100
+
+    def get_salary(self):
+        """Returns the total salary in $...."""
+        return self.salary + self.get_bonus()
+
+    @staticmethod
+    def create_bank_card(number):
+        """Returns the bank card number of the employee...."""
+        while True:
+            card = ''.join([str(random.randint(0, 9)) for _ in range(number)])
+            if card[0] != '0':
+                break
+        return card
+
+    def write_employee_in_db(self, path):
+        """Writes information about an employee to the database( .txt file)...."""
+        with open(path, 'a') as file:
+            file.write(f"Employee: {self.name}\n"
+                       f"UUID: {self.create_id()}\n"
+                       f"Position: {self.position}\n"
+                       f"Level: {self.level}\n"
+                       f"Department: {self.department}\n"
+                       f"{company.name} login time: {datetime.datetime.now()}\n"
+                       f"Working hours: {self.working_hours}\n"
+                       f"{company.name} exit time: {self.get_exit_time()}\n"
+                       f"Financial data of {self.name} ->\n"
+                       f"Salary: {self.salary}$\n"
+                       f"Income with the bonus: {self.get_salary()}$\n"
+                       f"Bank information of {self.name} ->\n"
+                       f"ID account: {self.create_bank_account()[0]}\n"
+                       f"Checking account: {self.create_bank_account()[1]}\n"
+                       f"Bank card number: {self.create_bank_card(16)}\n\n")
+
+    def write_information_for_checkpoint(self):
+        """Records information about an employee at the checkpoint( .txt file)...."""
+        with open('checkpoint.txt', 'a') as file_checkpoint:
+            file_checkpoint.write(f"Employee: {self.name}\n"
+                                  f"UUID: {self.create_id()}\n"
+                                  f"Position: {self.position}\n"
+                                  f"Department: {self.department}\n"
+                                  f"{company.name} login time: {datetime.datetime.now()}\n"
+                                  f"Working hours: {self.working_hours}\n"
+                                  f"Approximate {company.name} exit time: {self.get_exit_time()}\n\n")
+        print(f"->  {self.name} was registered at the checkpoint\n")
 
 
 class Subordinate(Person):
     """Subordinate class of the Person...."""
 
-    def __init__(self, name, position, level, department, working_hours, **kwargs):
+    def __init__(self, name, position, level, department, working_hours,
+                 salary, bonus, projects, started_to_work):
         """Initializes the Subordinate class ...."""
         super().__init__(name, position, level, department, working_hours,
-                         id_employee=None, bank_info=None, **kwargs)
+                         salary, bonus, id_employee=None, bank_account=None, bank_card=None)
+        self.projects = projects
+        self.started_to_work = started_to_work
 
     def get_projects(self):
-        """Returns the names of all projects...."""
-        return self.kwargs.get('project', 'No key <projects>')
+        """Returns the projects of the employee...."""
+        return self.projects
 
-    def get_bonus(self):
-        """Returns the bonus in $...."""
-        result = []
-        for item in self.kwargs['percent_bonus']:
-            res = self.kwargs['salary'] * item / 100
-            result.append(res)
-        return sum(result)
+    def get_profit_form_the_project(self):
+        """Returns the profit from the project...."""
+        total_bonus = len(self.projects) * self.bonus
+        bonus_for_project = self.salary * total_bonus / 100
+        return self.salary + bonus_for_project
 
-    def get_salary(self):
-        """Returns the total salary in $...."""
-        return self.kwargs['salary'] + self.get_bonus()
+    def get_experience(self):
+        """Returns the experience of the employee...."""
+        return datetime.datetime.now().year - self.started_to_work
 
-    def write_information(self):
-        """Writes information of the subordinate to a .txt file"""
-        with open('subordinate.txt', 'a') as file_subordinate:
-            file_subordinate.write(f"Subordinate: {self.name}\n"
-                                   f"ID: {self.get_id()}\n"
-                                   f"Position: {self.position}\n"
-                                   f"Level: {self.level}\n"
-                                   f"Department: {self.department}\n"
-                                   f"Time of entry to work: {datetime.datetime.now()}\n"
-                                   f"Working hours: {self.working_hours}\n"
-                                   f"Time of exit from work: {self.get_time_exit()}\n"
-                                   f"Financial data of {self.name} ->\n"
-                                   f"Salary: {self.kwargs['salary']}$\n"
-                                   f"Percent of the salary in $: {self.get_bonus()}$\n"
-                                   f"Income with bonus: {self.get_salary()}$\n"
-                                   f"Bank information of {self.name} ->\n"
-                                   f"ID account: {self.get_bank_information()[0]}\n"
-                                   f"Checking account: {self.get_bank_information()[1]}\n"
-                                   f"His/Her projects: {self.get_projects()}\n"
-                                   f"Last data of {self.name}: ->\n"
-                                   f"Last his/her project: {self.kwargs['project'][-1]}\n\n")
-        with open('checkpoint.txt', 'a') as file_checkpoint:
-            file_checkpoint.write(f"Subordinate: {self.name}\n"
-                                  f"ID: {self.get_id()}\n"
-                                  f"Position: {self.position}\n"
-                                  f"Department: {self.department}\n"
-                                  f"Time of entry to work: {datetime.datetime.now()}\n"
-                                  f"Working hours: {self.working_hours}\n"
-                                  f"Time of exit from work: {self.get_time_exit()}\n\n")
-        print(f"->  Information about {self.name} was successfully written to the file subordinate.txt")
+    def write_latest_data(self):
+        """Writes the last data of the subordinate...."""
+        with open('data_of_employees.txt', 'a') as file_last_data:
+            file_last_data.write(f"\nLatest data of {self.name} ->\n"
+                                 f"Level: {self.level}\n"
+                                 f"Position: {self.position}\n"
+                                 f"Experience: {self.get_experience()} years\n")
+            for project in self.projects:
+                file_last_data.write(f"Project: {project}\n"
+                                     f"Profit from the project: {self.get_profit_form_the_project()}$\n")
 
 
 class Supervisor(Person):
 
-    def __init__(self, name, position, level, department, working_hours, **kwargs):
-        """Initializes the Supervisor class ...."""
+    def __init__(self, name, position, level, department, working_hours,
+                 salary, bonus, places_of_work, term):
+        """Initializes the Subordinate class ...."""
         super().__init__(name, position, level, department, working_hours,
-                         id_employee=None, bank_info=None, **kwargs)
+                         salary, bonus, id_employee=None, bank_account=None, bank_card=None)
+        self.places_of_work = places_of_work
+        self.term = term
 
-    def get_percent(self):
-        """Returns the percent in $...."""
-        return self.kwargs['salary'] * self.kwargs['rating'] / 100
+    def get_places_of_work(self):
+        """Returns the places of work of the employee...."""
+        return self.places_of_work
 
-    def get_salary(self):
-        """Returns the salary in $...."""
-        return self.kwargs['salary'] + self.get_percent()
+    @staticmethod
+    def get_term_of_work():
+        """Returns the term of work of the employee...."""
+        return random.randint(1, 10)
 
-    def write_information(self):
-        """Writes information of the supervisor to a .txt file"""
-        with open('supervisor.txt', 'a') as file_supervisor:
-            file_supervisor.write(f"Supervisor: {self.name}\n"
-                                  f"ID: {self.get_id()}\n"
-                                  f"Position: {self.position}\n"
-                                  f"Level: {self.level}\n"
-                                  f"Department: {self.department}\n"
-                                  f"Time of entry to work: {datetime.datetime.now()}\n"
-                                  f"Working hours: {self.working_hours}\n"
-                                  f"Time of exit from work: {self.get_time_exit()}\n"
-                                  f"Financial data of {self.name} ->\n"
-                                  f"Salary: {self.kwargs['salary']}$\n"
-                                  f"Percent of the salary in $: {self.get_percent()}$\n"
-                                  f"Income with bonus: {self.get_salary()}$\n"
-                                  f"Bank information of {self.name} ->\n"
-                                  f"ID account: {self.get_bank_information()[0]}\n"
-                                  f"Checking account: {self.get_bank_information()[1]}\n"
-                                  f"Last data of {self.name}: ->\n"
-                                  f"Rating: {self.kwargs['rating']}\n"
-                                  f"His/Her projects: {self.kwargs['project']}\n"
-                                  f"Last his/her project: {self.kwargs['project'][-1]}\n\n")
-        with open('checkpoint.txt', 'a') as file_checkpoint:
-            file_checkpoint.write(f"Supervisor: {self.name}\n"
-                                  f"ID: {self.get_id()}\n"
-                                  f"Position: {self.position}\n"
-                                  f"Department: {self.department}\n"
-                                  f"Time of entry to work: {datetime.datetime.now()}\n"
-                                  f"Working hours: {self.working_hours}\n"
-                                  f"Time of exit from work: {self.get_time_exit()}\n\n")
-        print(f"->  Information about {self.name} was successfully written to the file supervisor.txt")
+    def write_last_data(self):
+        """Writes the last data of the supervisor...."""
+        with open('data_of_employees.txt', 'a') as file_last_data:
+            file_last_data.write(f"\nData of {self.name} ->\n"
+                                 f"Level: {self.level}\n"
+                                 f"Position: {self.position}\n")
+            for place in self.places_of_work:
+                file_last_data.write(f"Place of work: {place}\n"
+                                     f"Term of work: {self.get_term_of_work()} years\n")
 
 
 class Company:
@@ -200,7 +186,7 @@ class Company:
 
     def add_uuid(self, number):
         """Adds the uuid to the employee in DB...."""
-        print(f"->  UUID was created and added to the database of the company {self.name}")
+        print(f"->  Employee UUID was created and added to the database of the company {self.name}")
         return self.list_uuid.append(number)
 
     def add_visitor(self, visitor):
@@ -222,34 +208,50 @@ class Company:
         for visitor in self.visitors:
             print(f"  Visitor: {visitor.name}")
 
+    def register_visitor_at_the_checkpoint(self, person):
+        """Registers the visitor at the checkpoint...."""
+        with open('checkpoint.txt', 'a') as file_checkpoint:
+            file_checkpoint.write(f"Visitor: {person.name}\n"
+                                  f"Meeting curator: {random.choice(self.supervisors).name}\n"
+                                  f"Position: {person.position}\n"
+                                  f"Level: {person.level}\n"
+                                  f"Department: {person.department}\n"
+                                  f"{company.name} login time: {datetime.datetime.now()}\n"
+                                  f"Approximate {company.name} login time: {datetime.datetime.now() + datetime.timedelta(minutes=20)}\n\n")
+        print(f"->  {person.name} was registered at the checkpoint\n")
+
     def scan_pass_card(self, person):
         """Scans the pass-card of the employee...."""
         if person not in self.subordinates + self.supervisors + self.visitors:
             print(f"->  Pass-card of {person.name} was scanned.... > FAILED\n"
                   f"->  WARNING!!! {person.name} is DENIED ENTRY to company {self.name}\n")
         elif person in self.visitors:
+            self.register_visitor_at_the_checkpoint(person)
             print(f"->  {person.name} > candidate for the position of 'Trainee'\n"
                   f"->  {person.name} scheduled interview {datetime.datetime.now() + datetime.timedelta(hours=2)}\n"
                   f"->  Company meeting curator: {random.choice(self.supervisors).name}\n")
-            with open('checkpoint.txt', 'a') as file_checkpoint:
-                file_checkpoint.write(f"Visitor: {person.name}\n"
-                                      f"Meeting curator: {random.choice(self.supervisors).name}\n"
-                                      f"Position: {person.position}\n"
-                                      f"Level: {person.level}\n"
-                                      f"Department: {person.department}\n"
-                                      f"Time of entry to work: {datetime.datetime.now()}\n"
-                                      f"Time of exit from work: {datetime.datetime.now() + datetime.timedelta(minutes=20)}\n\n")
         else:
+            if person in self.subordinates:
+                person.write_employee_in_db('subordinate.txt')
+                delay_time()
+                person.write_information_for_checkpoint()
+                delay_time()
+                person.write_latest_data()
+            elif person in self.supervisors:
+                person.write_employee_in_db('supervisor.txt')
+                delay_time()
+                person.write_information_for_checkpoint()
+                delay_time()
+                person.write_last_data()
             print(f"->  Pass-card of {person.name} was scanned.... > SUCCESSFULLY\n"
                   f"->  {person.name} is ALLOWED ENTRY to the company {self.name}\n")
 
     def run_elevator(self, person):
         """We go up to the desired floor...."""
         while True:
-            if int(input(f"->  {person.name} enter the floor you need: ")) <= 22:
+            if 5 <= int(input(f"->  {person.name} enter the floor you need: ")) <= 22:
                 if person in self.subordinates + self.supervisors:
-                    for item in self.list_uuid:
-                        assert isinstance(item, uuid.UUID), f"{person.name} -> Your ID is not class <UUID>!"
+                    assert person.create_id() in self.list_uuid, f"->  UUID {person.name} is not found\n"
                     print(f"->  {person.name} REQUEST IS APPROVED\n")
                     break
                 elif person in self.visitors:
@@ -263,22 +265,29 @@ class Company:
                 print(f"->  {person.name} you have entered a floor that does not belong to {self.name}.\n"
                       f"->  Please try again\n")
 
-    def get_info_employee(self, person):
+    @staticmethod
+    def get_info_employees(category):
         """->  Returns the information about the employee...."""
-        if person in self.subordinates:
+        if category == 'subordinate':
             with open('subordinate.txt', 'r') as file_subordinate:
                 return file_subordinate.read()
-        elif person in self.supervisors:
+        elif category == 'supervisor':
             with open('supervisor.txt', 'r') as file_supervisor:
                 return file_supervisor.read()
         else:
-            return f"->  {person.name} does not work for company {self.name}"
+            return f"->  ERROR!!! The category {category} is not found\n"
 
     @staticmethod
     def get_info_checkpoint():
         """->  Returns the information with checkpoint of the company...."""
         with open('checkpoint.txt', 'r') as file_checkpoint:
             return file_checkpoint.read()
+
+    @staticmethod
+    def get_latest_data_of_employee():
+        """->  Returns the latest data of employees...."""
+        with open('data_of_employees.txt', 'r') as latest_data:
+            return latest_data.read()
 
     def run(self, person):
         """->  Run the program...."""
@@ -302,23 +311,20 @@ class Company:
 
 company = Company("limelight networks")
 user1 = Subordinate('daria veresha', 'tester', 'junior', 'it',
-                    10, project=('Flask', 'Django', 'FastAPI'),
-                    percent_bonus=(10, 20, 30), salary=1000)
+                    10, 1000, 15,
+                    ['Selenium', 'Pytest'], 2019)
 user2 = Supervisor('alex litvinov', 'QA Engineer', 'senior', 'it',
-                   7, project=('Flask', 'FastAPI', 'Django'),
-                   rating=98.6, salary=12000)
+                   7, 12000, 65, ['Epam', 'Google'], 5)
 user3 = Person("jon smith", "back-end", "trainee", 'it',
                None)
 user4 = Person("john doe", "front-end", "trainee", 'it',
                None)
 
-user1.write_information()
-user2.write_information()
 company.add_subordinate(user1)
 company.add_supervisor(user2)
 company.add_visitor(user3)
-company.add_uuid(user1.get_id())
-company.add_uuid(user2.get_id())
+company.add_uuid(user1.create_id())
+company.add_uuid(user2.create_id())
 print('-------------------------------------------')
 delay_time()
 company.show_employees()
@@ -336,17 +342,22 @@ delay_time()
 company.run(user4)
 print('-------------------------------------------')
 delay_time()
+print(company.get_info_employees.__doc__)
+delay_time()
+print(company.get_info_employees('subordinate'))
+print('-------------------------------------------')
+delay_time()
+print(company.get_info_employees.__doc__)
+delay_time()
+print(company.get_info_employees('supervisor'))
+print('-------------------------------------------')
+delay_time()
 print(company.get_info_checkpoint.__doc__)
+delay_time()
 print(company.get_info_checkpoint())
 print('-------------------------------------------')
 delay_time()
-print(company.get_info_employee.__doc__)
-print(company.get_info_employee(user1))
-print('-------------------------------------------')
+print(company.get_latest_data_of_employee.__doc__)
 delay_time()
-print(company.get_info_employee.__doc__)
-print(company.get_info_employee(user2))
+print(company.get_latest_data_of_employee())
 print('-------------------------------------------')
-delay_time()
-print(company.get_info_employee.__doc__)
-print(company.get_info_employee(user3))
