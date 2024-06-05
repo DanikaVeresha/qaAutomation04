@@ -1,18 +1,18 @@
 
 
 Employee: Alex Litvinov
-UUID: e9d30909-c0c9-4218-b71a-ee78f48c6a1a
+UUID: 13d6015b-1ee6-4444-9c32-2ca4a97f97b7
 Position: Qa Engineer
 Level: Senior
 Department: IT
-Limelight Networks login time: 2024-06-05 23:26:15.753529
+Limelight Networks login time: 2024-06-06 00:37:08.557388
 Working hours: 7
-Limelight Networks exit time: 2024-06-06 06:26:15.753529
+Limelight Networks exit time: 2024-06-06 07:37:08.557388
 Financial data of Alex Litvinov ->
 Salary: 12000$
 Income with the bonus: 19800.0$
 Bank information of Alex Litvinov ->
-ID account: 58b9b494-395a-40e4-ac02-871a54478f16
-Checking account: 179727570
-Bank card number: 1319114615151182
+ID account: 1b03915f-e168-43b1-9838-628cf9ba1613
+Checking account: 357667719
+Bank card number: 6886289920716811
 

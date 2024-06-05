@@ -12,6 +12,6 @@ Data of Alex Litvinov ->
 Level: Senior
 Position: Qa Engineer
 Place of work: Epam
-Term of work: 7 years
+Term of work: 2 years
 Place of work: Google
-Term of work: 10 years
+Term of work: 2 years
