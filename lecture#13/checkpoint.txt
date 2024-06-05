@@ -1,24 +1,24 @@
 Employee: Daria Veresha
-UUID: 45ffd592-b876-4620-9e51-44f1fe05eefe
+UUID: 920a4b08-b8ce-4e2d-963c-04deb1eadd6c
 Position: Tester
 Department: IT
-Limelight Networks login time: 2024-06-06 00:36:49.821180
+Limelight Networks login time: 2024-06-06 00:44:25.780271
 Working hours: 10
-Approximate Limelight Networks exit time: 2024-06-06 10:36:49.821180
+Approximate Limelight Networks exit time: 2024-06-06 10:44:25.780271
 
 Employee: Alex Litvinov
-UUID: 13d6015b-1ee6-4444-9c32-2ca4a97f97b7
+UUID: eb194712-2ed7-4c3d-a5a0-d1a0adfce15e
 Position: Qa Engineer
 Department: IT
-Limelight Networks login time: 2024-06-06 00:37:11.561253
+Limelight Networks login time: 2024-06-06 00:44:41.711957
 Working hours: 7
-Approximate Limelight Networks exit time: 2024-06-06 07:37:11.561253
+Approximate Limelight Networks exit time: 2024-06-06 07:44:41.711957
 
 Visitor: Jon Smith
 Meeting curator: Alex Litvinov
 Position: Back-End
 Level: Trainee
 Department: IT
-Limelight Networks login time: 2024-06-06 00:37:32.625237
-Approximate Limelight Networks exit time: 2024-06-06 00:57:32.625237
+Limelight Networks login time: 2024-06-06 00:44:53.201433
+Approximate Limelight Networks exit time: 2024-06-06 01:04:53.201433
 

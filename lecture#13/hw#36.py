@@ -6,7 +6,7 @@ import random
 
 
 def delay_time():
-    time.sleep(3)
+    time.sleep(2)
 
 
 class Person:
@@ -317,10 +317,15 @@ user2 = Supervisor('alex litvinov', 'QA Engineer', 'senior', 'it',
 user3 = Person("jon smith", "back-end", "trainee", 'it')
 user4 = Person("john doe", "front-end", "trainee", 'it')
 
+
 company.add_subordinate(user1)
+delay_time()
 company.add_supervisor(user2)
+delay_time()
 company.add_visitor(user3)
+delay_time()
 company.add_uuid(user1.create_id())
+delay_time()
 company.add_uuid(user2.create_id())
 print('-------------------------------------------')
 delay_time()
