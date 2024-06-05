@@ -217,7 +217,7 @@ class Company:
                                   f"Level: {person.level}\n"
                                   f"Department: {person.department}\n"
                                   f"{company.name} login time: {datetime.datetime.now()}\n"
-                                  f"Approximate {company.name} login time: {datetime.datetime.now() + datetime.timedelta(minutes=20)}\n\n")
+                                  f"Approximate {company.name} exit time: {datetime.datetime.now() + datetime.timedelta(minutes=20)}\n\n")
         print(f"->  {person.name} was registered at the checkpoint\n")
 
     def scan_pass_card(self, person):
@@ -310,15 +310,13 @@ class Company:
 
 
 company = Company("limelight networks")
-user1 = Subordinate('daria veresha', 'tester', 'junior', 'it',
-                    10, 1000, 15,
+user1 = Subordinate('daria veresha', 'tester', 'junior', 'it', 10,
+                    1000, 15,
                     ['Selenium', 'Pytest'], 2019)
 user2 = Supervisor('alex litvinov', 'QA Engineer', 'senior', 'it',
                    7, 12000, 65, ['Epam', 'Google'], 5)
-user3 = Person("jon smith", "back-end", "trainee", 'it',
-               None)
-user4 = Person("john doe", "front-end", "trainee", 'it',
-               None)
+user3 = Person("jon smith", "back-end", "trainee", 'it')
+user4 = Person("john doe", "front-end", "trainee", 'it')
 
 company.add_subordinate(user1)
 company.add_supervisor(user2)
