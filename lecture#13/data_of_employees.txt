@@ -1,0 +1,17 @@
+
+Latest data of Daria Veresha ->
+Level: Junior
+Position: Tester
+Experience: 5 years
+Project: Selenium
+Profit from the project: 1300.0$
+Project: Pytest
+Profit from the project: 1300.0$
+
+Data of Alex Litvinov ->
+Level: Senior
+Position: Qa Engineer
+Place of work: Epam
+Term of work: 5 years
+Place of work: Google
+Term of work: 8 years

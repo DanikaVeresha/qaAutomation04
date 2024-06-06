@@ -1,16 +1,16 @@
 Employee: Daria Veresha
-UUID: 18406030-b840-4829-ab7f-f1310dde6028
+UUID: bc2f53e2-7b8d-4e00-ad71-7b199a74a0ff
 Position: Tester
 Level: Junior
 Department: IT
-Limelight Networks login time: 2024-06-06 02:19:31.385383
+Limelight Networks login time: 2024-06-06 05:46:46.952605
 Working hours: 10
-Limelight Networks exit time: 2024-06-06 12:19:31.421264
+Limelight Networks exit time: 2024-06-06 15:46:46.957598
 Financial data of Daria Veresha ->
 Salary: 1000$
 Income with the bonus: 1150.0$
 Bank information of Daria Veresha ->
-ID account: 72a571a2-7d1c-414b-b12b-fe6a290b64dd
-Checking account: 586757147
-Bank card number: 9718527524167561
+ID account: 0aa01bf8-817c-413c-9daa-9a63298f48f4
+Checking account: 414815893
+Bank card number: 6782681580792234
 

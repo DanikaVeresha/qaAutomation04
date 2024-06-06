@@ -292,7 +292,8 @@ class Company:
     def run(self, person):
         """->  Run the program...."""
         if person not in self.subordinates + self.supervisors + self.visitors:
-            # print(f"-> {person.say()}")
+            print(f"->  {person.name} says: > Hi, I`m a {person.position} from {person.department} departament.\n")
+            delay_time()
             print(f"->  Pass-card of {person.name} was scanned.... > FAILED\n"
                   f"->  WARNING!!! {person.name} is DENIED ENTRY to company {self.name}\n"
                   f"->  {person.name} is not an employee of company {self.name}\n")
