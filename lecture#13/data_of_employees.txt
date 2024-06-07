@@ -8,10 +8,10 @@ Profit from the project: 1300.0$
 Project: Pytest
 Profit from the project: 1300.0$
 
-Data of Alex Litvinov ->
+Latest data of Alex Litvinov ->
 Level: Senior
 Position: Qa Engineer
 Place of work: Epam
-Term of work: 5 years
+Term of work: 7 years
 Place of work: Google
-Term of work: 8 years
+Term of work: 6 years

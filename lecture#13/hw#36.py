@@ -65,35 +65,47 @@ class Person:
                 break
         return card
 
+    @staticmethod
+    def opened_and_write_info_to_file(file_path, mode, data):
+        """Writes information to DB"""
+        with open(file_path, mode) as file:
+            file.write(data)
+
+    def get_data_about_employee(self):
+        return f"Employee: {self.name}\n" \
+               f"UUID: {self.create_id()}\n" \
+               f"Position: {self.position}\n" \
+               f"Level: {self.level}\n" \
+               f"Department: {self.department}\n" \
+               f"{company.name} login time: {datetime.datetime.now()}\n" \
+               f"Working hours: {self.working_hours}\n" \
+               f"{company.name} exit time: {self.get_exit_time()}\n" \
+               f"Financial data of {self.name} ->\n" \
+               f"Salary: {self.salary}$\n" \
+               f"Income with the bonus: {self.get_salary()}$\n" \
+               f"Bank information of {self.name} ->\n" \
+               f"ID account: {self.create_bank_account()[0]}\n" \
+               f"Checking account: {self.create_bank_account()[1]}\n" \
+               f"Bank card number: {self.create_bank_card(16)}\n\n" \
+
+
+    def get_data_for_checkpoint(self):
+        return f"Employee: {self.name}\n" \
+               f"UUID: {self.create_id()}\n" \
+               f"Position: {self.position}\n" \
+               f"Department: {self.department}\n" \
+               f"{company.name} login time: {datetime.datetime.now()}\n" \
+               f"Working hours: {self.working_hours}\n" \
+               f"Approximate {company.name} exit time: {self.get_exit_time()}\n\n" \
+
+
     def write_employee_in_db(self, path):
         """Writes information about an employee to the database( .txt file)...."""
-        with open(path, 'a') as file:
-            file.write(f"Employee: {self.name}\n"
-                       f"UUID: {self.create_id()}\n"
-                       f"Position: {self.position}\n"
-                       f"Level: {self.level}\n"
-                       f"Department: {self.department}\n"
-                       f"{company.name} login time: {datetime.datetime.now()}\n"
-                       f"Working hours: {self.working_hours}\n"
-                       f"{company.name} exit time: {self.get_exit_time()}\n"
-                       f"Financial data of {self.name} ->\n"
-                       f"Salary: {self.salary}$\n"
-                       f"Income with the bonus: {self.get_salary()}$\n"
-                       f"Bank information of {self.name} ->\n"
-                       f"ID account: {self.create_bank_account()[0]}\n"
-                       f"Checking account: {self.create_bank_account()[1]}\n"
-                       f"Bank card number: {self.create_bank_card(16)}\n\n")
+        self.opened_and_write_info_to_file(path, 'a', self.get_data_about_employee())
 
-    def write_information_for_checkpoint(self):
+    def write_data_for_checkpoint(self, path):
         """Records information about an employee at the checkpoint( .txt file)...."""
-        with open('checkpoint.txt', 'a') as file_checkpoint:
-            file_checkpoint.write(f"Employee: {self.name}\n"
-                                  f"UUID: {self.create_id()}\n"
-                                  f"Position: {self.position}\n"
-                                  f"Department: {self.department}\n"
-                                  f"{company.name} login time: {datetime.datetime.now()}\n"
-                                  f"Working hours: {self.working_hours}\n"
-                                  f"Approximate {company.name} exit time: {self.get_exit_time()}\n\n")
+        self.opened_and_write_info_to_file(path, 'a', self.get_data_for_checkpoint())
         print(f"->  {self.name} was registered at the checkpoint\n")
 
 
@@ -122,16 +134,22 @@ class Subordinate(Person):
         """Returns the experience of the employee...."""
         return datetime.datetime.now().year - self.started_to_work
 
-    def write_latest_data(self):
+    def get_latest_data(self):
+        """Returns the latest data...."""
+        return f"\nLatest data of {self.name} ->\n" \
+               f"Level: {self.level}\n" \
+               f"Position: {self.position}\n" \
+               f"Experience: {self.get_experience()} years\n" \
+
+
+    def write_latest_data(self, path):
         """Writes the last data of the subordinate...."""
-        with open('data_of_employees.txt', 'a') as file_last_data:
-            file_last_data.write(f"\nLatest data of {self.name} ->\n"
-                                 f"Level: {self.level}\n"
-                                 f"Position: {self.position}\n"
-                                 f"Experience: {self.get_experience()} years\n")
-            for project in self.projects:
-                file_last_data.write(f"Project: {project}\n"
-                                     f"Profit from the project: {self.get_profit_form_the_project()}$\n")
+        self.opened_and_write_info_to_file(path, 'a', self.get_latest_data())
+        for project in self.projects:
+            self.opened_and_write_info_to_file(path,
+                                               'a',
+                                               f"Project: {project}\n"
+                                               f"Profit from the project: {self.get_profit_form_the_project()}$\n")
 
 
 class Supervisor(Person):
@@ -153,18 +171,29 @@ class Supervisor(Person):
         """Returns the term of work of the employee...."""
         return random.randint(1, 10)
 
-    def write_last_data(self):
+    def get_latest_data(self):
+        """Returns the latest data...."""
+        return f"\nLatest data of {self.name} ->\n" \
+               f"Level: {self.level}\n" \
+               f"Position: {self.position}\n" \
+
+
+    def write_last_data(self, path):
         """Writes the last data of the supervisor...."""
-        with open('data_of_employees.txt', 'a') as file_last_data:
-            file_last_data.write(f"\nData of {self.name} ->\n"
-                                 f"Level: {self.level}\n"
-                                 f"Position: {self.position}\n")
-            for place in self.places_of_work:
-                file_last_data.write(f"Place of work: {place}\n"
-                                     f"Term of work: {self.get_term_of_work()} years\n")
+        self.opened_and_write_info_to_file(path, 'a', self.get_latest_data())
+        for place in self.places_of_work:
+            self.opened_and_write_info_to_file(path,
+                                               'a',
+                                               f"Place of work: {place}\n"
+                                               f"Term of work: {self.get_term_of_work()} years\n")
 
 
 class Company:
+
+    PATH_DATA_OF_EMPLOYEES = 'data_of_employees.txt'
+    PATH_CHECKPOINT = 'checkpoint.txt'
+    PATH_SUBORDINATE = 'subordinate.txt'
+    PATH_SUPERVISOR = 'supervisor.txt'
 
     def __init__(self, name):
         """Initializes the Company class...."""
@@ -208,16 +237,20 @@ class Company:
         for visitor in self.visitors:
             print(f"  Visitor: {visitor.name}")
 
+    def get_info_for_checkpoint(self, person):
+        """Returns the information about the visitor...."""
+        return f"Visitor: {person.name}\n" \
+               f"Meeting curator: {random.choice(self.supervisors).name}\n" \
+               f"Position: {person.position}\n" \
+               f"Level: {person.level}\n" \
+               f"Department: {person.department}\n" \
+               f"{company.name} login time: {datetime.datetime.now()}\n" \
+               f"Approximate {company.name} exit time: {datetime.datetime.now() + datetime.timedelta(minutes=20)}\n\n" \
+
+
     def register_visitor_at_the_checkpoint(self, person):
         """Registers the visitor at the checkpoint...."""
-        with open('checkpoint.txt', 'a') as file_checkpoint:
-            file_checkpoint.write(f"Visitor: {person.name}\n"
-                                  f"Meeting curator: {random.choice(self.supervisors).name}\n"
-                                  f"Position: {person.position}\n"
-                                  f"Level: {person.level}\n"
-                                  f"Department: {person.department}\n"
-                                  f"{company.name} login time: {datetime.datetime.now()}\n"
-                                  f"Approximate {company.name} exit time: {datetime.datetime.now() + datetime.timedelta(minutes=20)}\n\n")
+        person.opened_and_write_info_to_file(self.PATH_CHECKPOINT, 'a', self.get_info_for_checkpoint(person))
         print(f"->  {person.name} was registered at the checkpoint\n")
 
     def scan_pass_card(self, person):
@@ -232,17 +265,17 @@ class Company:
                   f"->  Company meeting curator: {random.choice(self.supervisors).name}\n")
         else:
             if person in self.subordinates:
-                person.write_employee_in_db('subordinate.txt')
+                person.write_employee_in_db(self.PATH_SUBORDINATE)
                 delay_time()
-                person.write_information_for_checkpoint()
+                person.write_data_for_checkpoint(self.PATH_CHECKPOINT)
                 delay_time()
-                person.write_latest_data()
+                person.write_latest_data(self.PATH_DATA_OF_EMPLOYEES)
             elif person in self.supervisors:
-                person.write_employee_in_db('supervisor.txt')
+                person.write_employee_in_db(self.PATH_SUPERVISOR)
                 delay_time()
-                person.write_information_for_checkpoint()
+                person.write_data_for_checkpoint(self.PATH_CHECKPOINT)
                 delay_time()
-                person.write_last_data()
+                person.write_last_data(self.PATH_DATA_OF_EMPLOYEES)
             print(f"->  Pass-card of {person.name} was scanned.... > SUCCESSFULLY\n"
                   f"->  {person.name} is ALLOWED ENTRY to the company {self.name}\n")
 
@@ -266,28 +299,26 @@ class Company:
                       f"->  Please try again\n")
 
     @staticmethod
-    def get_info_employees(category):
+    def get_data(path):
+        with open(path, 'r') as file:
+            return file.read()
+
+    def get_info_employees(self, category):
         """->  Returns the information about the employee...."""
         if category == 'subordinate':
-            with open('subordinate.txt', 'r') as file_subordinate:
-                return file_subordinate.read()
+            return self.get_data(self.PATH_SUBORDINATE)
         elif category == 'supervisor':
-            with open('supervisor.txt', 'r') as file_supervisor:
-                return file_supervisor.read()
+            return self.get_data(self.PATH_SUPERVISOR)
         else:
             return f"->  ERROR!!! The category {category} is not found\n"
 
-    @staticmethod
-    def get_info_checkpoint():
+    def get_info_checkpoint(self):
         """->  Returns the information with checkpoint of the company...."""
-        with open('checkpoint.txt', 'r') as file_checkpoint:
-            return file_checkpoint.read()
+        return self.get_data(self.PATH_CHECKPOINT)
 
-    @staticmethod
-    def get_latest_data_of_employee():
+    def get_latest_data_of_employee(self):
         """->  Returns the latest data of employees...."""
-        with open('data_of_employees.txt', 'r') as latest_data:
-            return latest_data.read()
+        return self.get_data(self.PATH_DATA_OF_EMPLOYEES)
 
     def run(self, person):
         """->  Run the program...."""
