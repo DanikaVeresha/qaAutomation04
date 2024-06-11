@@ -1,4 +1,4 @@
-
+"""Task 20."""
 
 with open('hw#20.txt', 'w') as f:
     f.writelines(['line2\n', '\n', 'line3\n',

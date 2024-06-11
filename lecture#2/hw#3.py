@@ -1,3 +1,4 @@
+"""Task 3."""
 
 country = ['Ukraine', 'Spain', 'Italy']
 capital = ['Kyiv', 'Madrid', 'Rome']

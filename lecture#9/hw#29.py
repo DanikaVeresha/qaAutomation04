@@ -1,4 +1,4 @@
-"""Task 29. List linearization"""
+"""Task 29. List linea_rization"""
 
 
 def linearize_list(lst):

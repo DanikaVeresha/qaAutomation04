@@ -1,3 +1,4 @@
+"""Task 4."""
 
 x = int(input('Enter a: '))
 y = int(input('Enter b: '))

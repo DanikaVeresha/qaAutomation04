@@ -1,7 +1,4 @@
-"""
-Task 34.
-Name: Custom zip
-"""
+"""Task 34."""
 
 
 def custom_zip(*args, full=False, default=None):

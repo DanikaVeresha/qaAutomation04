@@ -1,4 +1,5 @@
-"""Task 36. Company`s Checkpoint"""
+"""Task 36."""
+
 import time
 import uuid
 import datetime

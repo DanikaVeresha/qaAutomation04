@@ -1,4 +1,5 @@
 """Task 37."""
+
 from __future__ import division
 
 

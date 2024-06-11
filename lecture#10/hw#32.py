@@ -1,4 +1,5 @@
 """Task 32. Random string"""
+
 import random
 
 

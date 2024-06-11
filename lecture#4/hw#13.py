@@ -1,4 +1,5 @@
-#   List of email addresses for verification
+"""Task 13."""
+
 # email = ' '
 # email = 'aaa277@bbb.ccc'    # var: True
 # email = '@aaa277bbbccc.'

@@ -1,7 +1,4 @@
-"""
-Task 33.
-Name: Custom map
-"""
+"""Task 33."""
 
 
 def custom_map(func, *args):

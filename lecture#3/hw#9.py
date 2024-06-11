@@ -1,4 +1,4 @@
-
+"""Task 9."""
 
 n = int(input("Enter value 'n': "))
 for j in range(1, n+1):

@@ -1,3 +1,4 @@
+"""Task 12."""
 
 string = "This tool is cool. But that owl is awful. MAGIC TOOLS Ltd."
 # string = "This tol is cool. But that owl is awful. MAGIC TOOOLS Ltd."

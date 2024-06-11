@@ -1,6 +1,5 @@
-"""
-Task 35. Classes creation
-"""
+"""Task 35."""
+
 import datetime
 
 

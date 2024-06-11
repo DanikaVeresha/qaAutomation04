@@ -1,3 +1,4 @@
+"""Task 7. """
 
 triangle = int(input('Enter size of triangle: '))
 symbol = '*'

@@ -1,3 +1,4 @@
+"""Task 5."""
 
 value_a = int(input('Enter "a": '))
 value_b = int(input('Enter "b": '))

@@ -1,3 +1,5 @@
+"""Task 25."""
+
 
 def skip_if(condition, reason=''):
     def decorator(func):
