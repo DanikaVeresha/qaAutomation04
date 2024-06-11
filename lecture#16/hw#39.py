@@ -23,13 +23,13 @@ class Timer:
         self.elapsed_time = 0
 
 
-@contextmanager
-def timer():
-    """Context manager for measuring time."""
-    start = time.time()
-    yield
-    elapsed_time = time.time() - start
-    print(f'Elapsed time: {elapsed_time}')
+# @contextmanager
+# def timer():
+#     """Context manager for measuring time."""
+#     start = time.time()
+#     yield
+#     elapsed_time = time.time() - start
+#     print(f'Elapsed time: {elapsed_time}')
 
 
 if __name__ == '__main__':
