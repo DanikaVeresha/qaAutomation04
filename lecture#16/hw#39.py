@@ -50,23 +50,3 @@ if __name__ == '__main__':
     with t2:
         time.sleep(1)
     print(f'Elapsed time: {t2.elapsed_time}')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
