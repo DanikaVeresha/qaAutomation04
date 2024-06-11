@@ -41,6 +41,7 @@ if __name__ == '__main__':
     with t:
         time.sleep(1)
     print(f'Elapsed time: {t.elapsed_time}')
+    time.sleep(1)
 
     with Timer() as t2:
         time.sleep(1)
@@ -50,3 +51,4 @@ if __name__ == '__main__':
     with t2:
         time.sleep(1)
     print(f'Elapsed time: {t2.elapsed_time}')
+    time.sleep(1)
