@@ -4,81 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5ffb87c-aa6a-4257-b001-77ec1eb59bbc" name="Changes" comment="hw#40">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/qaAutomation04.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_05_2024_15_10_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_05_2024_15_10__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_05_2024_03_33_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_05_2024_03_33__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_06_2024_17_22_[Changes]/Diagramm for hw#36.drawio.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_06_2024_17_22_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_06_2024_17_22_[Changes]1/Diagramm for hw#36.drawio.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_06_2024_17_22_[Changes]1/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_06_2024_17_22__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_06_2024_17_22__Changes_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_06_2024_18_28_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_06_2024_18_28_[Changes]1/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_06_2024_18_28__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_06_2024_18_28__Changes_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_05_2024_17_10_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_05_2024_17_10__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_06_2024_18_53_[Changes]/Diagramm for hw#36.drawio.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_06_2024_18_53_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_06_2024_18_53_[Changes]1/Diagramm for hw#36.drawio.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_06_2024_18_53_[Changes]1/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_06_2024_18_53__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_06_2024_18_53__Changes_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_05_2024_22_42_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_05_2024_22_42__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lecture#10/hw#32.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lecture#10/hw#33.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lecture#10/hw#34.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lecture#11/hw#35.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lecture#13/Diagramm for hw#36.drawio.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lecture#13/Diagramm for hw#36.drawio.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lecture#13/checkpoint.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lecture#13/data_of_employees.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lecture#13/hw#36.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lecture#13/subordinate.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lecture#13/supervisor.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lecture#2/hw#2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lecture#2/hw#3.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lecture#2/hw#4.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lecture#3/hw#5.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lecture#3/hw#6.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lecture#3/hw#7.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lecture#3/hw#8.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lecture#3/hw#9.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lecture#4/hw#10.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lecture#4/hw#11.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lecture#4/hw#12.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lecture#4/hw#13.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lecture#5/hw#14.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lecture#5/hw#15.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lecture#5/hw#16.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lecture#5/hw#17.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lecture#6/hw#18.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lecture#6/hw#19.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lecture#6/hw#20.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lecture#6/hw#21.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lecture#7/hw#22.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lecture#7/hw#23.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lecture#7/hw#24.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lecture#8/data.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lecture#8/hw#25.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lecture#8/hw#26.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lecture#8/hw#27.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lecture#9/hw#28.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lecture#9/hw#29.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lecture#9/hw#30.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lecture#9/hw#31.py" afterDir="false" />
-    </list>
+    <list default="true" id="f5ffb87c-aa6a-4257-b001-77ec1eb59bbc" name="Changes" comment="hw#2-&gt;hw#40" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -94,7 +20,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="L-17" />
+        <entry key="$PROJECT_DIR$" value="LECTURE-17" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -175,18 +101,18 @@
     "Python.train.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "#43 on LECTURE-17",
-    "last_opened_file_path": "C:/Users/daria/projects/qaAutomation04/lecture#13",
+    "git-widget-placeholder": "LECTURE",
+    "last_opened_file_path": "C:/Users/daria/projects/qaAutomation04/lecture#15",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\daria\projects\qaAutomation04\lecture#15" />
+      <recent name="C:\Users\daria\projects\qaAutomation04\lecture#16" />
+      <recent name="C:\Users\daria\projects\qaAutomation04\lecture#14" />
       <recent name="C:\Users\daria\projects\qaAutomation04\lecture#13" />
       <recent name="C:\Users\daria\projects\qaAutomation04\lecture#11" />
-      <recent name="C:\Users\daria\projects\qaAutomation04\lecture#10" />
-      <recent name="C:\Users\daria\projects\qaAutomation04\lecture#9" />
-      <recent name="C:\Users\daria\projects\qaAutomation04\lecture#8" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\daria\projects\qaAutomation04\lecture#13" />
@@ -331,14 +257,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1715215002699</updated>
-    </task>
-    <task id="LOCAL-00064" summary="hw#31">
-      <option name="closed" value="true" />
-      <created>1716376974076</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1716376974079</updated>
     </task>
     <task id="LOCAL-00065" summary="hw#33">
       <option name="closed" value="true" />
@@ -724,7 +642,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718396959483</updated>
     </task>
-    <option name="localTasksCounter" value="113" />
+    <task id="LOCAL-00113" summary="hw#2-&gt;hw#40">
+      <option name="closed" value="true" />
+      <created>1718398541157</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1718398541157</updated>
+    </task>
+    <option name="localTasksCounter" value="114" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -762,6 +688,7 @@
     <MESSAGE value="hw#39" />
     <MESSAGE value="hw#2-&gt;hw#39" />
     <MESSAGE value="hw#40" />
-    <option name="LAST_COMMIT_MESSAGE" value="hw#40" />
+    <MESSAGE value="hw#2-&gt;hw#40" />
+    <option name="LAST_COMMIT_MESSAGE" value="hw#2-&gt;hw#40" />
   </component>
 </project>
