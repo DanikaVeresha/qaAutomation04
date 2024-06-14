@@ -1,5 +1,6 @@
 """Task 31. Please look at the wiki_page.txt file because I have changed it."""
 
+
 import re
 
 
@@ -32,4 +33,5 @@ def get_links_str(html_file):
 
 for item in get_links_str('wiki_page.txt'):
     print(item)
+
 

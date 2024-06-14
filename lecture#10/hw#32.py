@@ -1,5 +1,6 @@
 """Task 32. Random string"""
 
+
 import random
 
 
@@ -16,6 +17,7 @@ def random_string(length):
 
 print(f'Random string: {random_string(10)}')
 # print(type(random_string(10)))
+
 
 
 

@@ -1,5 +1,6 @@
 """Task 39."""
 
+
 import time
 from contextlib import contextmanager
 

@@ -1,5 +1,6 @@
 """Task 19."""
 
+
 users = [
     {'name': 'Luarvik L. Luarvik',
      'age': 17},

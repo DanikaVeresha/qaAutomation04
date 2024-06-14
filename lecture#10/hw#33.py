@@ -14,3 +14,4 @@ print(f'Minimum value in each list of the main list: {custom_map(min, [[1, 2, 3,
 print(f'Maximum value in each list of the main list: {custom_map(max, [[1, 2, 3, 4, 5], [1, 2, 3], [3, 5, 1, 5]])}')
 print(f'Prod: {custom_map(lambda x, y, z: x * y * z, [1, 2, 3, 4], [3, 5, 0], [1, 2, 3, 9])}')
 print(f'Division: {custom_map(lambda x, y, z: round(x / y / z, 2) if y != 0 and z !=0 else None, [1, 2, 3, 4], [3, 0, 1], [1, 2, 3, 9])}')
+

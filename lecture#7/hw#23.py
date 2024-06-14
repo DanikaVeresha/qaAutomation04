@@ -1,5 +1,6 @@
 """Task 40."""
 
+
 import math
 
 # second_largest_number = ([])  # None

@@ -1,3 +1,6 @@
+"""Generate a factory method for creating routes for vehicles: airplane, car, train"""
+
+
 from abc import ABC, abstractmethod
 from airplane import Airplane
 from car import Car

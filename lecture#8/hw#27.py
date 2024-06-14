@@ -1,5 +1,6 @@
 """Task 27. My version, but it`s not entirely correct"""
 
+
 # def generator(lst: list, iter_num: int = None):
 #     while iter_num is None:
 #         for i_lst in range(len(lst)):

@@ -1,5 +1,6 @@
 """Task 22."""
 
+
 # lst2dict = ([0, 1, 2, 3])
 lst2dict = (['a', 'A', 'b', 'B', 'c'])
 # lst2dict = (['a', None, 'C'])

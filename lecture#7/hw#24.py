@@ -1,5 +1,6 @@
 """Task 24."""
 
+
 # dates = ['14-Dec', '12-Apr', '13-Apr', '31-Dec', '1-Jan', '12-Jan']
 dates = ['1-Dec', '12-Apr', '17-Apr', '31-Dec', '19-Jan', '4-Jan', '12-Dec']
 

@@ -1,5 +1,6 @@
 """Task 11."""
 
+
 sentences = "Hello all. Here`s pretty cold and hot. Choose yourself"
 arr = sentences.split('.')
 print(f'Sentences: {arr}')

@@ -1,5 +1,6 @@
 """Task 26. My decorator`s version"""
 
+
 import time
 from datetime import datetime
 

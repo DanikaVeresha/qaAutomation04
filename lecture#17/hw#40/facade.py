@@ -1,3 +1,5 @@
+"""This module contains the Facade class."""
+
 from airplane import Airplane
 from car import Car
 from train import Train

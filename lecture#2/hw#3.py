@@ -1,5 +1,6 @@
 """Task 3."""
 
+
 country = ['Ukraine', 'Spain', 'Italy']
 capital = ['Kyiv', 'Madrid', 'Rome']
 info = dict(zip(country, capital))

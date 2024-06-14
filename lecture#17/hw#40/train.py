@@ -1,5 +1,6 @@
 """Calculate the distance between points for a train on the ground"""
 
+
 import datetime
 import random
 from geopy.geocoders import Nominatim

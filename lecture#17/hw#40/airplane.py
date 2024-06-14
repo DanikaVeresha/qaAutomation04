@@ -1,5 +1,6 @@
 """Calculate the distance between points for an airplane in the sky"""
 
+
 import datetime
 import random
 from geopy.geocoders import Nominatim

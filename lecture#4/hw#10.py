@@ -1,5 +1,6 @@
 """Task 10."""
 
+
 word = input('Enter word:').casefold().strip()
 reversed_word = word[::-1]
 
