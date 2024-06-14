@@ -1,6 +1,5 @@
 """Calculate the distance between points for an airplane in the sky"""
 
-
 import datetime
 import random
 from geopy.geocoders import Nominatim
@@ -54,5 +53,6 @@ class Airplane:
                f'Distance: {self.calculate_distance()} nautical miles\n' \
                f'Speed: {self.calculate_speed()} km/h\n' \
                f'Flight duration: {self.calculate_time()}\n'
+
 
 

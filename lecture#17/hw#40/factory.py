@@ -1,6 +1,5 @@
 """Generate a factory method for creating routes for vehicles: airplane, car, train"""
 
-
 from abc import ABC, abstractmethod
 from airplane import Airplane
 from car import Car
@@ -102,6 +101,7 @@ print(factory.create_route('airplane', 'Kyiv', 'New York'))
 print('----------------------------------------------------------------------------------')
 factory = factory_producer.get_factory('diesh')
 print(factory.create_route('diesh', 'Kyiv', 'New York'))
+
 
 
 
