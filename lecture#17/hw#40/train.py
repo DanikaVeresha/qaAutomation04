@@ -55,3 +55,4 @@ class Train:
                f'Travel duration: {self.calculate_time()}\n'
 
 
+

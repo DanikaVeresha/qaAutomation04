@@ -54,5 +54,3 @@ class Airplane:
                f'Speed: {self.calculate_speed()} km/h\n' \
                f'Flight duration: {self.calculate_time()}\n'
 
-
-
