@@ -1,0 +1,767 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f5ffb87c-aa6a-4257-b001-77ec1eb59bbc" name="Changes" comment="hw#40">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/qaAutomation04.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_05_2024_15_10_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_05_2024_15_10__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_05_2024_03_33_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_05_2024_03_33__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_06_2024_17_22_[Changes]/Diagramm for hw#36.drawio.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_06_2024_17_22_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_06_2024_17_22_[Changes]1/Diagramm for hw#36.drawio.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_06_2024_17_22_[Changes]1/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_06_2024_17_22__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_06_2024_17_22__Changes_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_06_2024_18_28_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_06_2024_18_28_[Changes]1/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_06_2024_18_28__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_06_2024_18_28__Changes_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_05_2024_17_10_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_05_2024_17_10__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_06_2024_18_53_[Changes]/Diagramm for hw#36.drawio.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_06_2024_18_53_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_06_2024_18_53_[Changes]1/Diagramm for hw#36.drawio.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_06_2024_18_53_[Changes]1/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_06_2024_18_53__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_06_2024_18_53__Changes_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_05_2024_22_42_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_05_2024_22_42__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lecture#10/hw#32.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lecture#10/hw#33.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lecture#10/hw#34.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lecture#11/hw#35.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lecture#13/Diagramm for hw#36.drawio.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lecture#13/Diagramm for hw#36.drawio.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lecture#13/checkpoint.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lecture#13/data_of_employees.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lecture#13/hw#36.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lecture#13/subordinate.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lecture#13/supervisor.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lecture#2/hw#2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lecture#2/hw#3.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lecture#2/hw#4.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lecture#3/hw#5.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lecture#3/hw#6.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lecture#3/hw#7.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lecture#3/hw#8.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lecture#3/hw#9.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lecture#4/hw#10.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lecture#4/hw#11.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lecture#4/hw#12.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lecture#4/hw#13.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lecture#5/hw#14.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lecture#5/hw#15.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lecture#5/hw#16.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lecture#5/hw#17.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lecture#6/hw#18.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lecture#6/hw#19.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lecture#6/hw#20.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lecture#6/hw#21.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lecture#7/hw#22.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lecture#7/hw#23.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lecture#7/hw#24.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lecture#8/data.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lecture#8/hw#25.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lecture#8/hw#26.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lecture#8/hw#27.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lecture#9/hw#28.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lecture#9/hw#29.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lecture#9/hw#30.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lecture#9/hw#31.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="L-17" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;DanikaVeresha&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/DanikaVeresha/qaAutomation04.git&quot;,
+    &quot;accountId&quot;: &quot;bb113795-272b-4208-b58c-71e523f63da0&quot;
+  },
+  &quot;recentNewPullRequestHead&quot;: {
+    &quot;server&quot;: {
+      &quot;useHttp&quot;: false,
+      &quot;host&quot;: &quot;github.com&quot;,
+      &quot;port&quot;: null,
+      &quot;suffix&quot;: null
+    },
+    &quot;owner&quot;: &quot;DanikaVeresha&quot;,
+    &quot;repository&quot;: &quot;qaAutomation04&quot;
+  }
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2gCwhvfNwMYpDJxw20Ua7vI6tzK" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Python.airplane (1).executor": "Run",
+    "Python.car.executor": "Run",
+    "Python.facade (1).executor": "Run",
+    "Python.facade.executor": "Run",
+    "Python.factory (1).executor": "Run",
+    "Python.factory.executor": "Run",
+    "Python.hw#13.executor": "Run",
+    "Python.hw#14.executor": "Run",
+    "Python.hw#22.executor": "Run",
+    "Python.hw#23.executor": "Run",
+    "Python.hw#24.executor": "Run",
+    "Python.hw#25.executor": "Run",
+    "Python.hw#26.executor": "Run",
+    "Python.hw#27.executor": "Run",
+    "Python.hw#28.executor": "Run",
+    "Python.hw#29.executor": "Run",
+    "Python.hw#30.executor": "Run",
+    "Python.hw#31.executor": "Run",
+    "Python.hw#32.executor": "Run",
+    "Python.hw#33.executor": "Run",
+    "Python.hw#34.executor": "Debug",
+    "Python.hw#35.executor": "Run",
+    "Python.hw#36 (1).executor": "Run",
+    "Python.hw#36.executor": "Run",
+    "Python.hw#37 (1).executor": "Run",
+    "Python.hw#37.executor": "Run",
+    "Python.hw#38.executor": "Run",
+    "Python.hw#39.executor": "Run",
+    "Python.tesr.executor": "Run",
+    "Python.test (1).executor": "Run",
+    "Python.test (2).executor": "Run",
+    "Python.test.executor": "Run",
+    "Python.tests.executor": "Run",
+    "Python.train.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "#43 on LECTURE-17",
+    "last_opened_file_path": "C:/Users/daria/projects/qaAutomation04/lecture#13",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\daria\projects\qaAutomation04\lecture#13" />
+      <recent name="C:\Users\daria\projects\qaAutomation04\lecture#11" />
+      <recent name="C:\Users\daria\projects\qaAutomation04\lecture#10" />
+      <recent name="C:\Users\daria\projects\qaAutomation04\lecture#9" />
+      <recent name="C:\Users\daria\projects\qaAutomation04\lecture#8" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\daria\projects\qaAutomation04\lecture#13" />
+      <recent name="C:\Users\daria\projects\qaAutomation04\Lecture#4" />
+      <recent name="C:\Users\daria\projects\qaAutomation04\Lecture#3" />
+      <recent name="C:\Users\daria\projects\qaAutomation04\lecture#2" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.factory (1)">
+    <configuration name="airplane (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="qaAutomation04" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lecture#17/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lecture#17/test/airplane.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="facade (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="qaAutomation04" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lecture#17/hw#40" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lecture#17/hw#40/facade.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="facade" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="qaAutomation04" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lecture#17/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lecture#17/test/facade.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="factory (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="qaAutomation04" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lecture#17/hw#40" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lecture#17/hw#40/factory.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="factory" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="qaAutomation04" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lecture#17/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lecture#17/test/factory.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.factory (1)" />
+        <item itemvalue="Python.facade (1)" />
+        <item itemvalue="Python.factory" />
+        <item itemvalue="Python.facade" />
+        <item itemvalue="Python.airplane (1)" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-5b207ade9991-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.17890.14" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f5ffb87c-aa6a-4257-b001-77ec1eb59bbc" name="Changes" comment="HW#22" />
+      <created>1715215002699</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1715215002699</updated>
+    </task>
+    <task id="LOCAL-00064" summary="hw#31">
+      <option name="closed" value="true" />
+      <created>1716376974076</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1716376974079</updated>
+    </task>
+    <task id="LOCAL-00065" summary="hw#33">
+      <option name="closed" value="true" />
+      <created>1716559809833</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1716559809834</updated>
+    </task>
+    <task id="LOCAL-00066" summary="hw#33">
+      <option name="closed" value="true" />
+      <created>1716560156104</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1716560156104</updated>
+    </task>
+    <task id="LOCAL-00067" summary="hw#34">
+      <option name="closed" value="true" />
+      <created>1716562894399</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1716562894400</updated>
+    </task>
+    <task id="LOCAL-00068" summary="hw#34">
+      <option name="closed" value="true" />
+      <created>1716562975606</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1716562975607</updated>
+    </task>
+    <task id="LOCAL-00069" summary="hw#34">
+      <option name="closed" value="true" />
+      <created>1716563095694</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1716563095694</updated>
+    </task>
+    <task id="LOCAL-00070" summary="hw#33">
+      <option name="closed" value="true" />
+      <created>1716563232230</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1716563232231</updated>
+    </task>
+    <task id="LOCAL-00071" summary="hw#34">
+      <option name="closed" value="true" />
+      <created>1716563477861</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1716563477861</updated>
+    </task>
+    <task id="LOCAL-00072" summary="hw#34">
+      <option name="closed" value="true" />
+      <created>1716563508459</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1716563508460</updated>
+    </task>
+    <task id="LOCAL-00073" summary="hw#35">
+      <option name="closed" value="true" />
+      <created>1716675816798</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1716675816799</updated>
+    </task>
+    <task id="LOCAL-00074" summary="hw#35">
+      <option name="closed" value="true" />
+      <created>1716720978455</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1716720978456</updated>
+    </task>
+    <task id="LOCAL-00075" summary="hw#35">
+      <option name="closed" value="true" />
+      <created>1716727357934</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1716727357934</updated>
+    </task>
+    <task id="LOCAL-00076" summary="hw#35">
+      <option name="closed" value="true" />
+      <created>1716816361019</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1716816361023</updated>
+    </task>
+    <task id="LOCAL-00077" summary="hw#35">
+      <option name="closed" value="true" />
+      <created>1716818162696</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1716818162698</updated>
+    </task>
+    <task id="LOCAL-00078" summary="hw#35">
+      <option name="closed" value="true" />
+      <created>1716839422739</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1716839422741</updated>
+    </task>
+    <task id="LOCAL-00079" summary="hw#35">
+      <option name="closed" value="true" />
+      <created>1716897233839</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1716897233843</updated>
+    </task>
+    <task id="LOCAL-00080" summary="hw#36">
+      <option name="closed" value="true" />
+      <created>1717017775652</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1717017775653</updated>
+    </task>
+    <task id="LOCAL-00081" summary="hw#36">
+      <option name="closed" value="true" />
+      <created>1717017895780</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1717017895781</updated>
+    </task>
+    <task id="LOCAL-00082" summary="hw#36">
+      <option name="closed" value="true" />
+      <created>1717287751403</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1717287751404</updated>
+    </task>
+    <task id="LOCAL-00083" summary="hw#36">
+      <option name="closed" value="true" />
+      <created>1717491563718</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1717491563723</updated>
+    </task>
+    <task id="LOCAL-00084" summary="hw#36">
+      <option name="closed" value="true" />
+      <created>1717617678007</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1717617678010</updated>
+    </task>
+    <task id="LOCAL-00085" summary="hw#36">
+      <option name="closed" value="true" />
+      <created>1717619271688</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1717619271689</updated>
+    </task>
+    <task id="LOCAL-00086" summary="hw#36">
+      <option name="closed" value="true" />
+      <created>1717623553643</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1717623553648</updated>
+    </task>
+    <task id="LOCAL-00087" summary="hw#36">
+      <option name="closed" value="true" />
+      <created>1717623957219</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1717623957228</updated>
+    </task>
+    <task id="LOCAL-00088" summary="hw#36">
+      <option name="closed" value="true" />
+      <created>1717629799816</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1717629799822</updated>
+    </task>
+    <task id="LOCAL-00089" summary="hw#36">
+      <option name="closed" value="true" />
+      <created>1717642136465</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1717642136467</updated>
+    </task>
+    <task id="LOCAL-00090" summary="hw#36">
+      <option name="closed" value="true" />
+      <created>1717758758393</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1717758758394</updated>
+    </task>
+    <task id="LOCAL-00091" summary="hw#37">
+      <option name="closed" value="true" />
+      <created>1717775865370</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1717775865371</updated>
+    </task>
+    <task id="LOCAL-00092" summary="hw#38">
+      <option name="closed" value="true" />
+      <created>1717940874433</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1717940874436</updated>
+    </task>
+    <task id="LOCAL-00093" summary="hw#37">
+      <option name="closed" value="true" />
+      <created>1717942785224</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1717942785225</updated>
+    </task>
+    <task id="LOCAL-00094" summary="hw#38">
+      <option name="closed" value="true" />
+      <created>1717946863857</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1717946863858</updated>
+    </task>
+    <task id="LOCAL-00095" summary="hw#39">
+      <option name="closed" value="true" />
+      <created>1718109656784</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1718109656786</updated>
+    </task>
+    <task id="LOCAL-00096" summary="hw#39">
+      <option name="closed" value="true" />
+      <created>1718112247837</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1718112247838</updated>
+    </task>
+    <task id="LOCAL-00097" summary="hw#39">
+      <option name="closed" value="true" />
+      <created>1718117173700</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1718117173707</updated>
+    </task>
+    <task id="LOCAL-00098" summary="hw#39">
+      <option name="closed" value="true" />
+      <created>1718117389534</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1718117389535</updated>
+    </task>
+    <task id="LOCAL-00099" summary="hw#39">
+      <option name="closed" value="true" />
+      <created>1718118043773</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1718118043775</updated>
+    </task>
+    <task id="LOCAL-00100" summary="hw#39">
+      <option name="closed" value="true" />
+      <created>1718121187465</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1718121187471</updated>
+    </task>
+    <task id="LOCAL-00101" summary="hw#39">
+      <option name="closed" value="true" />
+      <created>1718121331092</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1718121331093</updated>
+    </task>
+    <task id="LOCAL-00102" summary="hw#39">
+      <option name="closed" value="true" />
+      <created>1718123814455</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1718123814458</updated>
+    </task>
+    <task id="LOCAL-00103" summary="hw#39">
+      <option name="closed" value="true" />
+      <created>1718125231802</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1718125231816</updated>
+    </task>
+    <task id="LOCAL-00104" summary="hw#39">
+      <option name="closed" value="true" />
+      <created>1718125863416</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1718125863419</updated>
+    </task>
+    <task id="LOCAL-00105" summary="hw#2-&gt;hw#39">
+      <option name="closed" value="true" />
+      <created>1718127373754</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1718127373755</updated>
+    </task>
+    <task id="LOCAL-00106" summary="hw#40">
+      <option name="closed" value="true" />
+      <created>1718127854009</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1718127854009</updated>
+    </task>
+    <task id="LOCAL-00107" summary="hw#40">
+      <option name="closed" value="true" />
+      <created>1718128018145</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1718128018148</updated>
+    </task>
+    <task id="LOCAL-00108" summary="hw#40">
+      <option name="closed" value="true" />
+      <created>1718128284572</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1718128284573</updated>
+    </task>
+    <task id="LOCAL-00109" summary="hw#40">
+      <option name="closed" value="true" />
+      <created>1718128897923</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1718128897927</updated>
+    </task>
+    <task id="LOCAL-00110" summary="hw#40">
+      <option name="closed" value="true" />
+      <created>1718129060775</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1718129060778</updated>
+    </task>
+    <task id="LOCAL-00111" summary="hw#40">
+      <option name="closed" value="true" />
+      <created>1718395842968</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1718395842973</updated>
+    </task>
+    <task id="LOCAL-00112" summary="hw#40">
+      <option name="closed" value="true" />
+      <created>1718396959483</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1718396959483</updated>
+    </task>
+    <option name="localTasksCounter" value="113" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="HW#22" />
+    <MESSAGE value="HW#23" />
+    <MESSAGE value="HW#24" />
+    <MESSAGE value="HW#25" />
+    <MESSAGE value="HW#25_" />
+    <MESSAGE value="hw#25" />
+    <MESSAGE value="hw#27" />
+    <MESSAGE value="hw#26" />
+    <MESSAGE value="hw#28" />
+    <MESSAGE value="hw#29" />
+    <MESSAGE value="hw#30" />
+    <MESSAGE value="hw#32" />
+    <MESSAGE value="hw#31" />
+    <MESSAGE value="hw#33" />
+    <MESSAGE value="hw#34" />
+    <MESSAGE value="hw#35" />
+    <MESSAGE value="hw#36" />
+    <MESSAGE value="hw#37" />
+    <MESSAGE value="hw#38" />
+    <MESSAGE value="hw#39" />
+    <MESSAGE value="hw#2-&gt;hw#39" />
+    <MESSAGE value="hw#40" />
+    <option name="LAST_COMMIT_MESSAGE" value="hw#40" />
+  </component>
+</project>

@@ -1,0 +1,14 @@
+Index: lecture#15/hw#38.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\"\"\"Task 38.\"\"\"\r\nimport time\r\n\r\n\r\ndef cache(func):\r\n    cache_dict = {}\r\n\r\n    def wrapper(*args, **kwargs):\r\n        key = args + tuple(sorted(kwargs.items()))\r\n        if key not in cache_dict:\r\n            cache_dict[key] = func(*args, **kwargs)\r\n        return cache_dict[key]\r\n\r\n    return wrapper\r\n\r\n\r\n@cache\r\ndef add(x, y):\r\n    return x + y\r\n\r\n\r\n@cache\r\ndef sub(x, y):\r\n    return x - y\r\n\r\n\r\n@cache\r\ndef mul(x, y):\r\n    return x * y\r\n\r\n\r\n@cache\r\ndef div(x, y):\r\n    return x / y\r\n\r\n\r\nprint('-----Sum-----')\r\nprint(add(1, 2))\r\nprint(add(x=1, y=2))\r\nprint(add(y=2, x=1))\r\nprint('-----Sub-----')\r\nprint(sub(3, 4))\r\nprint(sub(x=3, y=4))\r\nprint(sub(y=4, x=3))\r\nprint('-----Mul-----')\r\nprint(mul(5, 6))\r\nprint(mul(x=5, y=6))\r\nprint(mul(y=6, x=5))\r\nprint('-----Div-----')\r\nprint(div(7, 8))\r\nprint(div(x=7, y=8))\r\nprint(div(y=8, x=7))\r\nprint('-----Mul[sum*sub]-----')\r\nprint(add(3, 5) * sub(4, 2))\r\n
+===================================================================
+diff --git a/lecture#15/hw#38.py b/lecture#15/hw#38.py
+--- a/lecture#15/hw#38.py	
++++ b/lecture#15/hw#38.py	
+@@ -1,5 +1,4 @@
+ """Task 38."""
+-import time
+ 
+ 
+ def cache(func):

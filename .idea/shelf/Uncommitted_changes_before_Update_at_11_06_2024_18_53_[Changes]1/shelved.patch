@@ -1,0 +1,2297 @@
+Index: lecture#13/subordinate.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lecture#13/subordinate.txt b/lecture#13/subordinate.txt
+new file mode 100644
+--- /dev/null	
++++ b/lecture#13/subordinate.txt	
+@@ -0,0 +1,18 @@
++
++
++Employee: Daria Veresha
++UUID: a9dd715d-80d2-4fd5-a697-ede615f1f9c1
++Position: Tester
++Level: Junior
++Department: IT
++Limelight Networks login time: 2024-06-07 14:10:15.286628
++Working hours: 10
++Limelight Networks exit time: 2024-06-08 00:10:15.288215
++Financial data of Daria Veresha ->
++Salary: 1000$
++Income with the bonus: 1150.0$
++Bank information of Daria Veresha ->
++ID account: 27369275-df05-448b-95ee-3544c33ffa27
++Checking account: 418803172
++Bank card number: 7961146446099277
++
+Index: lecture#13/hw#36.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lecture#13/hw#36.py b/lecture#13/hw#36.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#13/hw#36.py	
+@@ -0,0 +1,397 @@
++"""Task 36. Company`s Checkpoint"""
++import time
++import uuid
++import datetime
++import random
++
++
++def delay_time():
++    time.sleep(2)
++
++
++class Person:
++
++    def __init__(self, name, position, level, department, working_hours=None,
++                 salary=None, bonus=None, id_employee=None, bank_account=None, bank_card=None):
++        """Initializes the Person class...."""
++        self.name = name.title()
++        self.position = position.title()
++        self.level = level.capitalize()
++        self.department = department.upper()
++        self.working_hours = working_hours
++        self.salary = salary
++        self.bonus = bonus
++        self.__uuid = id_employee
++        self.bank_account = bank_account
++        self.bank_card = bank_card
++
++    def say(self):
++        """Person says...."""
++        print(f"{self.name} says: > Hi, I`m a {self.position} from {self.department} departament.\n")
++
++    def create_id(self):
++        """Returns the employee identifier in uuid format...."""
++        if self.__uuid is None:
++            self.__uuid = uuid.uuid4()
++        return self.__uuid
++
++    def get_exit_time(self):
++        """Returns the time the employee left work...."""
++        return datetime.datetime.now() + datetime.timedelta(hours=self.working_hours)
++
++    def create_bank_account(self):
++        """Returns the bank information of the employee...."""
++        if self.bank_account is None:
++            self.bank_account = [
++                uuid.uuid4(),
++                random.randint(1000000, 1000000000)
++            ]
++        return self.bank_account
++
++    def get_bonus(self):
++        """Returns the bonus in $...."""
++        return self.salary * self.bonus / 100
++
++    def get_salary(self):
++        """Returns the total salary in $...."""
++        return self.salary + self.get_bonus()
++
++    @staticmethod
++    def create_bank_card(number):
++        """Returns the bank card number of the employee...."""
++        while True:
++            card = ''.join([str(random.randint(0, 9)) for _ in range(number)])
++            if card[0] != '0':
++                break
++        return card
++
++    @staticmethod
++    def opened_and_write_info_to_file(file_path, mode, data):
++        """Writes information to DB"""
++        with open(file_path, mode) as file:
++            file.write(data)
++
++    def get_data_about_employee(self):
++        return f"Employee: {self.name}\n" \
++               f"UUID: {self.create_id()}\n" \
++               f"Position: {self.position}\n" \
++               f"Level: {self.level}\n" \
++               f"Department: {self.department}\n" \
++               f"{company.name} login time: {datetime.datetime.now()}\n" \
++               f"Working hours: {self.working_hours}\n" \
++               f"{company.name} exit time: {self.get_exit_time()}\n" \
++               f"Financial data of {self.name} ->\n" \
++               f"Salary: {self.salary}$\n" \
++               f"Income with the bonus: {self.get_salary()}$\n" \
++               f"Bank information of {self.name} ->\n" \
++               f"ID account: {self.create_bank_account()[0]}\n" \
++               f"Checking account: {self.create_bank_account()[1]}\n" \
++               f"Bank card number: {self.create_bank_card(16)}\n\n" \
++
++
++    def get_data_for_checkpoint(self):
++        return f"Employee: {self.name}\n" \
++               f"UUID: {self.create_id()}\n" \
++               f"Position: {self.position}\n" \
++               f"Department: {self.department}\n" \
++               f"{company.name} login time: {datetime.datetime.now()}\n" \
++               f"Working hours: {self.working_hours}\n" \
++               f"Approximate {company.name} exit time: {self.get_exit_time()}\n\n" \
++
++
++    def write_employee_in_db(self, path):
++        """Writes information about an employee to the database( .txt file)...."""
++        self.opened_and_write_info_to_file(path, 'a', self.get_data_about_employee())
++
++    def write_data_for_checkpoint(self, path):
++        """Records information about an employee at the checkpoint( .txt file)...."""
++        self.opened_and_write_info_to_file(path, 'a', self.get_data_for_checkpoint())
++        print(f"->  {self.name} was registered at the checkpoint\n")
++
++
++class Subordinate(Person):
++    """Subordinate class of the Person...."""
++
++    def __init__(self, name, position, level, department, working_hours,
++                 salary, bonus, projects, started_to_work):
++        """Initializes the Subordinate class ...."""
++        super().__init__(name, position, level, department, working_hours,
++                         salary, bonus, id_employee=None, bank_account=None, bank_card=None)
++        self.projects = projects
++        self.started_to_work = started_to_work
++
++    def get_projects(self):
++        """Returns the projects of the employee...."""
++        return self.projects
++
++    def get_profit_form_the_project(self):
++        """Returns the profit from the project...."""
++        total_bonus = len(self.projects) * self.bonus
++        bonus_for_project = self.salary * total_bonus / 100
++        return self.salary + bonus_for_project
++
++    def get_experience(self):
++        """Returns the experience of the employee...."""
++        return datetime.datetime.now().year - self.started_to_work
++
++    def get_latest_data(self):
++        """Returns the latest data...."""
++        return f"\nLatest data of {self.name} ->\n" \
++               f"Level: {self.level}\n" \
++               f"Position: {self.position}\n" \
++               f"Experience: {self.get_experience()} years\n" \
++
++
++    def write_latest_data(self, path):
++        """Writes the last data of the subordinate...."""
++        self.opened_and_write_info_to_file(path, 'a', self.get_latest_data())
++        for project in self.projects:
++            self.opened_and_write_info_to_file(path,
++                                               'a',
++                                               f"Project: {project}\n"
++                                               f"Profit from the project: {self.get_profit_form_the_project()}$\n")
++
++
++class Supervisor(Person):
++
++    def __init__(self, name, position, level, department, working_hours,
++                 salary, bonus, places_of_work, term):
++        """Initializes the Subordinate class ...."""
++        super().__init__(name, position, level, department, working_hours,
++                         salary, bonus, id_employee=None, bank_account=None, bank_card=None)
++        self.places_of_work = places_of_work
++        self.term = term
++
++    def get_places_of_work(self):
++        """Returns the places of work of the employee...."""
++        return self.places_of_work
++
++    @staticmethod
++    def get_term_of_work():
++        """Returns the term of work of the employee...."""
++        return random.randint(1, 10)
++
++    def get_latest_data(self):
++        """Returns the latest data...."""
++        return f"\nLatest data of {self.name} ->\n" \
++               f"Level: {self.level}\n" \
++               f"Position: {self.position}\n" \
++
++
++    def write_last_data(self, path):
++        """Writes the last data of the supervisor...."""
++        self.opened_and_write_info_to_file(path, 'a', self.get_latest_data())
++        for place in self.places_of_work:
++            self.opened_and_write_info_to_file(path,
++                                               'a',
++                                               f"Place of work: {place}\n"
++                                               f"Term of work: {self.get_term_of_work()} years\n")
++
++
++class Company:
++
++    PATH_DATA_OF_EMPLOYEES = 'data_of_employees.txt'
++    PATH_CHECKPOINT = 'checkpoint.txt'
++    PATH_SUBORDINATE = 'subordinate.txt'
++    PATH_SUPERVISOR = 'supervisor.txt'
++
++    def __init__(self, name):
++        """Initializes the Company class...."""
++        self.name = name.title()
++        self.subordinates = []
++        self.supervisors = []
++        self.list_uuid = []
++        self.visitors = []
++
++    def add_subordinate(self, subordinate):
++        """Adds the subordinate to the company...."""
++        print(f"->  Subordinate: {subordinate.name} was added to the company {self.name}")
++        return self.subordinates.append(subordinate)
++
++    def add_supervisor(self, supervisor):
++        """Adds the supervisor to the company...."""
++        print(f"->  Supervisor: {supervisor.name} was added to the company {self.name}")
++        return self.supervisors.append(supervisor)
++
++    def add_uuid(self, number):
++        """Adds the uuid to the employee in DB...."""
++        print(f"->  Employee UUID was created and added to the database of the company {self.name}")
++        return self.list_uuid.append(number)
++
++    def add_visitor(self, visitor):
++        """Adds the visitor to the DB "Visitors of Company"...."""
++        print(f"->  Visitor: {visitor.name} was added to the database 'Visitors of {self.name}'")
++        return self.visitors.append(visitor)
++
++    def show_employees(self):
++        """Shows all employees of the company...."""
++        print(f"->  Employees of {self.name}:")
++        for subordinate in self.subordinates:
++            print(f"  Subordinate: {subordinate.name}")
++        for supervisor in self.supervisors:
++            print(f"  Supervisor: {supervisor.name}")
++
++    def show_visitors(self):
++        """Shows all visitors of the company...."""
++        print(f"->  Visitors of {self.name}:")
++        for visitor in self.visitors:
++            print(f"  Visitor: {visitor.name}")
++
++    def get_info_for_checkpoint(self, person):
++        """Returns the information about the visitor...."""
++        return f"Visitor: {person.name}\n" \
++               f"Meeting curator: {random.choice(self.supervisors).name}\n" \
++               f"Position: {person.position}\n" \
++               f"Level: {person.level}\n" \
++               f"Department: {person.department}\n" \
++               f"{company.name} login time: {datetime.datetime.now()}\n" \
++               f"Approximate {company.name} exit time: {datetime.datetime.now() + datetime.timedelta(minutes=20)}\n\n" \
++
++
++    def register_visitor_at_the_checkpoint(self, person):
++        """Registers the visitor at the checkpoint...."""
++        person.opened_and_write_info_to_file(self.PATH_CHECKPOINT, 'a', self.get_info_for_checkpoint(person))
++        print(f"->  {person.name} was registered at the checkpoint\n")
++
++    def scan_pass_card(self, person):
++        """Scans the pass-card of the employee...."""
++        if person not in self.subordinates + self.supervisors + self.visitors:
++            print(f"->  Pass-card of {person.name} was scanned.... > FAILED\n"
++                  f"->  WARNING!!! {person.name} is DENIED ENTRY to company {self.name}\n")
++        elif person in self.visitors:
++            self.register_visitor_at_the_checkpoint(person)
++            print(f"->  {person.name} > candidate for the position of 'Trainee'\n"
++                  f"->  {person.name} scheduled interview {datetime.datetime.now() + datetime.timedelta(hours=2)}\n"
++                  f"->  Company meeting curator: {random.choice(self.supervisors).name}\n")
++        else:
++            if person in self.subordinates:
++                person.write_employee_in_db(self.PATH_SUBORDINATE)
++                delay_time()
++                person.write_data_for_checkpoint(self.PATH_CHECKPOINT)
++                delay_time()
++                person.write_latest_data(self.PATH_DATA_OF_EMPLOYEES)
++            elif person in self.supervisors:
++                person.write_employee_in_db(self.PATH_SUPERVISOR)
++                delay_time()
++                person.write_data_for_checkpoint(self.PATH_CHECKPOINT)
++                delay_time()
++                person.write_last_data(self.PATH_DATA_OF_EMPLOYEES)
++            print(f"->  Pass-card of {person.name} was scanned.... > SUCCESSFULLY\n"
++                  f"->  {person.name} is ALLOWED ENTRY to the company {self.name}\n")
++
++    def run_elevator(self, person):
++        """We go up to the desired floor...."""
++        while True:
++            if 5 <= int(input(f"->  {person.name} enter the floor you need: ")) <= 22:
++                if person in self.subordinates + self.supervisors:
++                    assert person.create_id() in self.list_uuid, f"->  UUID {person.name} is not found\n"
++                    print(f"->  {person.name} REQUEST IS APPROVED\n")
++                    break
++                elif person in self.visitors:
++                    print(f"->  {person.name} REQUEST IS APPROVED\n"
++                          f"->  {person.name} please wait for your meeting supervisor\n")
++                    break
++                else:
++                    print(f"->  {person.name} REQUEST IS DENIED\n")
++                    break
++            else:
++                print(f"->  {person.name} you have entered a floor that does not belong to {self.name}.\n"
++                      f"->  Please try again\n")
++
++    @staticmethod
++    def get_data(path):
++        with open(path, 'r') as file:
++            return file.read()
++
++    def get_info_employees(self, category):
++        """->  Returns the information about the employee...."""
++        if category == 'subordinate':
++            return self.get_data(self.PATH_SUBORDINATE)
++        elif category == 'supervisor':
++            return self.get_data(self.PATH_SUPERVISOR)
++        else:
++            return f"->  ERROR!!! The category {category} is not found\n"
++
++    def get_info_checkpoint(self):
++        """->  Returns the information with checkpoint of the company...."""
++        return self.get_data(self.PATH_CHECKPOINT)
++
++    def get_latest_data_of_employee(self):
++        """->  Returns the latest data of employees...."""
++        return self.get_data(self.PATH_DATA_OF_EMPLOYEES)
++
++    def run(self, person):
++        """->  Run the program...."""
++        if person not in self.subordinates + self.supervisors + self.visitors:
++            print(f"->  {person.name} says: > Hi, I`m a {person.position} from {person.department} departament.\n")
++            delay_time()
++            print(f"->  Pass-card of {person.name} was scanned.... > FAILED\n"
++                  f"->  WARNING!!! {person.name} is DENIED ENTRY to company {self.name}\n"
++                  f"->  {person.name} is not an employee of company {self.name}\n")
++        else:
++            return f"{delay_time()}" \
++                   f"{print(company.run.__doc__)}\n" \
++                   f"{delay_time()}" \
++                   f"{person.say()}\n" \
++                   f"{delay_time()}" \
++                   f"{company.scan_pass_card(person)}\n" \
++                   f"{delay_time()}" \
++                   f"{company.run_elevator(person)}\n" \
++
++
++
++company = Company("limelight networks")
++user1 = Subordinate('daria veresha', 'tester', 'junior', 'it', 10,
++                    1000, 15,
++                    ['Selenium', 'Pytest'], 2019)
++user2 = Supervisor('alex litvinov', 'QA Engineer', 'senior', 'it',
++                   7, 12000, 65, ['Epam', 'Google'], 5)
++user3 = Person("jon smith", "back-end", "trainee", 'it')
++user4 = Person("john doe", "front-end", "trainee", 'it')
++
++
++company.add_subordinate(user1)
++delay_time()
++company.add_supervisor(user2)
++delay_time()
++company.add_visitor(user3)
++delay_time()
++company.add_uuid(user1.create_id())
++delay_time()
++company.add_uuid(user2.create_id())
++print('-------------------------------------------')
++delay_time()
++company.show_employees()
++print('-------------------------------------------')
++delay_time()
++company.show_visitors()
++print('-------------------------------------------')
++company.run(user1)
++print('-------------------------------------------')
++company.run(user2)
++print('-------------------------------------------')
++company.run(user3)
++print('-------------------------------------------')
++delay_time()
++company.run(user4)
++print('-------------------------------------------')
++delay_time()
++print(company.get_info_employees.__doc__)
++delay_time()
++print(company.get_info_employees('subordinate'))
++print('-------------------------------------------')
++delay_time()
++print(company.get_info_employees.__doc__)
++delay_time()
++print(company.get_info_employees('supervisor'))
++print('-------------------------------------------')
++delay_time()
++print(company.get_info_checkpoint.__doc__)
++delay_time()
++print(company.get_info_checkpoint())
++print('-------------------------------------------')
++delay_time()
++print(company.get_latest_data_of_employee.__doc__)
++delay_time()
++print(company.get_latest_data_of_employee())
++print('-------------------------------------------')
+Index: lecture#13/supervisor.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lecture#13/supervisor.txt b/lecture#13/supervisor.txt
+new file mode 100644
+--- /dev/null	
++++ b/lecture#13/supervisor.txt	
+@@ -0,0 +1,18 @@
++
++
++Employee: Alex Litvinov
++UUID: 82a2235f-092e-4c9b-a2b2-f5a08cf7269d
++Position: Qa Engineer
++Level: Senior
++Department: IT
++Limelight Networks login time: 2024-06-07 14:10:31.879793
++Working hours: 7
++Limelight Networks exit time: 2024-06-07 21:10:31.879793
++Financial data of Alex Litvinov ->
++Salary: 12000$
++Income with the bonus: 19800.0$
++Bank information of Alex Litvinov ->
++ID account: 7d5f6478-21a0-427e-8083-7ee809e9cdab
++Checking account: 565825347
++Bank card number: 4557662848891714
++
+Index: lecture#5/hw#15.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lecture#5/hw#15.py b/lecture#5/hw#15.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#5/hw#15.py	
+@@ -0,0 +1,42 @@
++lst = [2, 4, 6, 2, 1, 1, 9, 4, 6]   # True
++# lst = [2, 9, 9, 2, 1, 1, 9, 9, 9]
++# lst = [2, 1, 1, 2, 1, 1, 9, 1, 1]
++# lst = []
++# lst = [0, 0, 0, 0, 0, 0, 0, 0, 0]
++
++MIN = 3
++MAX = 6
++
++# for item in lst:
++check = [x for x in lst if MIN <= x <= MAX]
++# product of all elements in the new list
++value_0 = 1
++for i in check:
++    value_0 *= i
++
++# checking the sum of all elements of the new list and their product
++if check:
++    print(f'Sum_: {sum(check)}; Product: {value_0}; '
++          f'List is: {check}')
++else:
++    print(f'Sum_: {None}; Product: {None}; '
++          f'List is: {check}')
++
++# if check:
++#     sum_ = sum(check)
++#     value_0 = 1
++#     for i in check:
++#         value_0 *= i
++# else:
++#     sum_ = None
++#     value_0 = None
++#
++# print(f'Sum_: {sum(check)}; Product: {value_0}; '
++#       f'List is: {check}')
++
++
++
++
++
++
++
+Index: lecture#14/hw#37.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lecture#14/hw#37.py b/lecture#14/hw#37.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#14/hw#37.py	
+@@ -0,0 +1,149 @@
++"""Task 37."""
++from __future__ import division
++
++
++class Pixel:
++
++    def __init__(self, red, green, blue):
++        if not 0 <= red <= 255 or not 0 <= green <= 255 or not 0 <= blue <= 255:
++            raise ValueError('Components must be in the range [0 .. 255]')
++        self.__red = red if isinstance(red, int) else int(red)
++        self.__green = green if isinstance(green, int) else int(green)
++        self.__blue = blue if isinstance(blue, int) else int(blue)
++
++    @property
++    def red(self):
++        """Getter for red component."""
++        return self.__red
++
++    @property
++    def green(self):
++        """Getter for green component."""
++        return self.__green
++
++    @property
++    def blue(self):
++        """Getter for blue component."""
++        return self.__blue
++
++    def __add__(self, other):
++        """Sum of two pixels."""
++        self.__red = 255 if self.__red + other.__red > 255 else self.__red + other.__red
++        self.__green = 255 if self.__green + other.__green > 255 else self.__green + other.__green
++        self.__blue = 255 if self.__blue + other.__blue > 255 else self.__blue + other.__blue
++
++        return Pixel(self.__red, self.__green, self.__blue)
++
++    def __sub__(self, other):
++        """Subtraction of two pixels."""
++        self.__red = 0 if self.__red - other.__red < 0 else self.__red - other.__red
++        self.__green = 0 if self.__green - other.__green < 0 else self.__green - other.__green
++        self.__blue = 0 if self.__blue - other.__blue < 0 else self.__blue - other.__blue
++
++        return Pixel(self.__red, self.__green, self.__blue)
++
++    def __mul__(self, other):
++        """Multiplication of a pixel by a number."""
++        if isinstance(other, (int, float)):
++            if other <= 0:
++                raise ValueError('The number must be greater than zero')
++            self.__red = 255 if self.__red * other > 255 else self.__red * other
++            self.__green = 255 if self.__green * other > 255 else self.__green * other
++            self.__blue = 255 if self.__blue * other > 255 else self.__blue * other
++
++            return Pixel(self.__red, self.__green, self.__blue)
++        raise TypeError('The number must be an integer or a floating point number')
++
++    def __rmul__(self, other):
++        """Multiplication of a pixel by a number."""
++        return self.__mul__(other)
++
++    def __truediv__(self, other):
++        """Division of a pixel by a number."""
++        if isinstance(other, (int, float)):
++            if other <= 0:
++                raise ValueError('The number must be greater than zero')
++            elif self.__red == 0 or self.__green == 0 or self.__blue == 0:
++                raise ValueError('The pixel components must be greater than zero')
++            elif self.__red / other > 255 or self.__green / other > 255 or self.__blue / other > 255:
++                return Pixel(255, 255, 255)
++
++            return Pixel(self.__red / other, self.__green / other, self.__blue / other)
++        raise TypeError('The number must be an integer or a floating point number')
++
++    def __rtruediv__(self, other):
++        """Division of a number by pixel."""
++        if isinstance(other, (int, float)):
++            if other <= 0:
++                raise ValueError('The number must be greater than zero')
++            elif self.__red == 0 or self.__green == 0 or self.__blue == 0:
++                raise ValueError('The pixel components must be greater than zero')
++            elif other / self.__red > 255 or other / self.__green > 255 or other / self.__blue > 255:
++                return Pixel(255, 255, 255)
++
++            return Pixel(other / self.__red, other / self.__green, other / self.__blue)
++
++    def __eq__(self, other):
++        """Comparison of two pixels."""
++        if not isinstance(other, Pixel):
++            return False
++        return self.__red == other.__red and self.__green == other.__green and self.__blue == other.__blue
++
++    def __str__(self):
++        """String representation of a pixel."""
++        return f'\tRed: {self.__red}\n' \
++               f'\tGreen: {self.__green}\n' \
++               f'\tBlue: {self.__blue}' \
++
++
++    def __repr__(self):
++        """Representation of a pixel."""
++        return f'Pixel({self.__red}, {self.__green}, {self.__blue})'
++
++
++# Tests
++pixel1 = Pixel(255.00, 0, 0)
++pixel2 = Pixel(255.00, 0, 0)
++
++pixel3 = Pixel(255, 0, 187.78)
++pixel4 = Pixel(0.9999, 10, 80)
++
++pixel5 = Pixel(102, 103, 0)
++
++pixel6 = Pixel(255, 255, 10)
++
++pixel7 = Pixel(1, 2, 0)
++pixel8 = Pixel(10.01, 11, 12)
++pixel9 = Pixel(10.01, 11, 12)
++
++print('--------------------str object-------------')
++print(str(pixel1))
++print('--------------------repr object------------')
++print(repr(pixel2))
++print(repr(pixel3))
++print(repr(pixel4))
++print(repr(pixel5))
++print(repr(pixel6))
++print(repr(pixel7))
++print(repr(pixel8))
++print(repr(pixel9))
++print('--------------------sum--------------------')
++print(repr(pixel1 + pixel2))
++print('--------------------sub--------------------')
++print(repr(pixel3 - pixel4))
++print('--------------------mul--------------------')
++print(repr(pixel5 * 2.5))
++print(repr(2.5 * pixel5))
++print('--------------------mul--------------------')
++# print(repr('b' * pixel5))
++print('--------------------div--------------------')
++print(repr(pixel6 / 255))
++print(repr(255 / pixel6))
++print('--------------------eq---------------------')
++print(repr(pixel7 == pixel8))
++print(repr(pixel8 == pixel9))
++print(repr(pixel1 == 'pixel2'))
++print(repr(pixel1 == 123))
++print('-------------------------------------------')
++# print(repr(id(pixel5)))
++# print(repr(id(pixel5 * 2.5)))
+Index: lecture#5/hw#14.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lecture#5/hw#14.py b/lecture#5/hw#14.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#5/hw#14.py	
+@@ -0,0 +1,16 @@
++number_list = range(16)
++print(list(number_list))    # List of numbers from 0 to 15
++
++# Elements are divisible by 3 but not by 5
++print(list(item for item in number_list if item % 3 == 0 and item % 5 != 0))
++
++# Elements are divisible by 5 but not by 3
++print(list(item for item in number_list if item % 5 == 0 and item % 3 != 0))
++
++# Elements are divisible by 3 and 5
++print(list(item for item in number_list if item % 3 == 0 and item % 5 == 0))
++
++# Output:
++print(list(item for item in range(16) if item % 3 == 0 and item % 5 != 0))
++print(list(item for item in range(16) if item % 5 == 0 and item % 3 != 0))
++print(list(item for item in range(16) if item % 3 == 0 and item % 5 == 0))
+Index: lecture#5/hw#17.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lecture#5/hw#17.py b/lecture#5/hw#17.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#5/hw#17.py	
+@@ -0,0 +1,30 @@
++
++arr = [['a', 'c', 'e'],
++       ['f', 'b', 'a'],
++       ['a', 'n', 'k'],
++       ['e', 'l', 'i']]
++
++
++# Method
++print('------Source arry below-----------')
++for i in arr:
++    print(i)
++print('------Result(sort for columns) below----------------')
++result = [[sorted(arr, key=lambda x: x[j])[i][j] for i in range(len(arr))] for j in range(len(arr[0]))]
++output = [[result[i][j] for i in range(len(result))] for j in range(len(result[0]))]
++for item in output:
++    print(item)
++
++
++
++
++
++
++
++
++
++
++
++
++
++
+Index: lecture#5/hw#16.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lecture#5/hw#16.py b/lecture#5/hw#16.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#5/hw#16.py	
+@@ -0,0 +1,13 @@
++# lst = [1, 2, 3, 4, 5]
++# lst = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
++# lst = [10, 12, 30]
++# lst = [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5]
++lst = [7, 9, 45, 78]
++
++# Method 1
++lst1 = lst.copy()
++result = [(lst1[i]+(lst1[i+1]))/2 for i in range(len(lst1)-1) if i != lst1[-1]]
++for item in result:
++    lst1.insert(result.index(item)*2+1, item)
++print(lst1)
++
+Index: lecture#16/test.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lecture#16/test.py b/lecture#16/test.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#16/test.py	
+@@ -0,0 +1,27 @@
++print("Привет") # Все верно
++print('1', '2', '3', None, True, sep='_', end='\n') # Все верно sep -> разделитель между элементами,
++                                                    # end -> окончание строки говорит о том что
++                                                    # следующий print будет на новой строке
++print('2', '4', '6', None, True, sep='-') # Все верно, None и True преобразуются в строки,
++                                          # None в пайтоне это значение типа NoneType,
++                                          # а True это значение типа bool(True/False)
++text = str(25000) # Преобразование числа в строку
++print(type(25000)) # Вывод типа переменной
++print(type(text)) # Вывод типа переменной
++print(int(text) + 25) # Преобразование строки в число и сложение
++
++# Можно было сделать так:
++print('Hello')
++a = 2
++b = 6
++print(f'Result: {a + b}, {type(a + b)}') # f-строки, в фигурных скобках можно писать выражения
++print(a * b)
++print(a / b)
++print(a // b)
++print(a - b)
++print(b - a)
++print(id(a), id(b)) # id - возвращает адрес переменной в памяти
++print(a ** b) # Возведение числа "а=2" в степень "b=6"
++
++
++
+Index: lecture#6/hw#19.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lecture#6/hw#19.py b/lecture#6/hw#19.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#6/hw#19.py	
+@@ -0,0 +1,20 @@
++users = [
++    {'name': 'Luarvik L. Luarvik',
++     'age': 17},
++    {'name': 'Olaf Andvarafors',
++     'age': 18},
++    {'name': 'Brun Du Barnstokr',
++     'age': 19},
++    {'name': 'Bob Anderwood',
++     'age': 11},
++    {'name': 'Anny Winchester',
++     'age': 15},
++]
++
++# Method
++print(f'------Source data------')
++for item in users:
++    print(f'{item["name"]} - {item["age"]}')
++result = [user['name'] for user in users if user['age'] >= 18]
++print(f'--------Result---------\n'
++      f'Result: {result}')
+Index: lecture#6/hw#18.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lecture#6/hw#18.py b/lecture#6/hw#18.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#6/hw#18.py	
+@@ -0,0 +1,33 @@
++test_design_writers = [1, 3, 5]
++test_scripters = [2, 3, 4, 6, 7, 8]
++reviewers = [1, 2, 3, 9, 10]
++out_of_office_today = [2, 5, 6, 1]
++
++print(f'-----------------Source data------------------\n'
++      f'Test design writers: {test_design_writers}\n'
++      f'Test scripters: {test_scripters}\n'
++      f'Reviewers: {reviewers}\n'
++      f'Out of office today: {out_of_office_today}')
++
++print('--------------------Result--------------------')
++all_testers = set(test_design_writers + test_scripters + reviewers)
++print(f'All testers in the team: {sorted(all_testers)}')
++
++only_testers_scripts = (
++      set(test_scripters) - (set(test_scripters) & set(test_design_writers)) -
++      (set(test_scripters) & set(reviewers)) - (set(test_design_writers) & set(reviewers))
++)
++print(f'Testers who can only write scripts: {sorted(only_testers_scripts)}')
++# print(f'Testers who can only write scripts: '
++#       f'{sorted(set(test_scripters) - (set(test_design_writers) | set(reviewers)))}')
++
++all_testers_on_work = (
++      set(all_testers) - set(out_of_office_today)
++)
++print(f'All testers who are at work today: {sorted(all_testers_on_work)}')
++
++all_tester_in_all_group_and_working_today = (
++      (set(all_testers) - set(out_of_office_today)) & set(test_design_writers) & set(test_scripters) & set(reviewers)
++)
++print(f'Testers who could write and review scripts, and are at work today: '
++      f'{sorted(all_tester_in_all_group_and_working_today)}')
+Index: lecture#6/hw#21.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lecture#6/hw#21.py b/lecture#6/hw#21.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#6/hw#21.py	
+@@ -0,0 +1,23 @@
++import glob
++import os
++
++
++path = "source_directory"
++os.chdir(path)
++
++res = glob.glob('**/*.txt', recursive=True)
++for items in res:
++    print(f'file: {os.path.basename(items)} - size: {os.path.getsize(items)} bytes')
++
++result = [i for i in res if os.path.getsize(i) <= 120]
++with open('combined_files.txt', 'w') as x:
++    for item in result:
++        with open(item, 'r') as f:
++            x.write(f'{os.path.basename(item)}\n')
++            x.write(f'{f.read()}\n')
++            
++# path = "source_directory"
++# pattern_to_search = os.path.join(path, '**/*.txt')
++# res = glob.glob(pattern_to_search, recursive=True)
++
++
+Index: lecture#6/hw#20.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lecture#6/hw#20.py b/lecture#6/hw#20.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#6/hw#20.py	
+@@ -0,0 +1,13 @@
++
++
++with open('hw#20.txt', 'w') as f:
++    f.writelines(['line2\n', '\n', 'line3\n',
++                  'line444444 444\n', 'line555555 555\n', 'line6\n'])
++print('--------Result------------')
++max_val = ''
++for item in open('hw#20.txt', 'r'):
++    if len(item) >= len(max_val):
++        max_val = item
++print(f'The last word in the file with the maximum lengthh: {max_val}')
++
++
+Index: lecture#7/hw#23.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lecture#7/hw#23.py b/lecture#7/hw#23.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#7/hw#23.py	
+@@ -0,0 +1,28 @@
++import math
++
++# second_largest_number = ([])  # None
++# second_largest_number = ([1, 1])  # None
++# second_largest_number = ([1, 2, 3, 4, 5])  # 4
++# second_largest_number = ([-1, -2, -3, -4, -5]) # -2
++# second_largest_number = [-2, -5, -6] # -5
++second_largest_number = ([0, 0, 0, 0, 0, 0]) # None
++
++
++def second_largest_number_(lst):
++    if len(lst) == 0:
++        return None
++    print(f'List`s len: {len(lst)}')
++    max_number = -math.inf
++    second_max_number = -math.inf
++    for i in lst:
++        if i > max_number:
++            second_max_number = max_number
++            max_number = i
++        elif i > second_max_number and i != max_number:
++            second_max_number = i
++    if second_max_number == -math.inf:
++        return None
++    return second_max_number
++
++
++print(second_largest_number_(second_largest_number))
+Index: lecture#7/hw#22.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lecture#7/hw#22.py b/lecture#7/hw#22.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#7/hw#22.py	
+@@ -0,0 +1,22 @@
++
++# lst2dict = ([0, 1, 2, 3])
++lst2dict = (['a', 'A', 'b', 'B', 'c'])
++# lst2dict = (['a', None, 'C'])
++# lst2dict = ([])
++
++
++def list2dict_(lst):
++    test_lst = lst.copy()
++    if len(test_lst) % 2 != 0:
++        test_lst.pop()
++    return {test_lst[i]: test_lst[i + 1] for i in range(0, len(test_lst), 2)}
++
++
++# Output
++print(f'Result of a copy of the input list after running the function: {list2dict_(lst2dict)}')
++print(f'Source list: {lst2dict}')
++
++
++
++
++
+Index: lecture#7/hw#24.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lecture#7/hw#24.py b/lecture#7/hw#24.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#7/hw#24.py	
+@@ -0,0 +1,15 @@
++# dates = ['14-Dec', '12-Apr', '13-Apr', '31-Dec', '1-Jan', '12-Jan']
++dates = ['1-Dec', '12-Apr', '17-Apr', '31-Dec', '19-Jan', '4-Jan', '12-Dec']
++
++
++def sortdates(dates):
++    month_ = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
++    month = month_.index(dates.split('-')[1])
++    day = int(dates.split('-')[0])
++    return month, day
++
++
++dates.sort(key=sortdates)
++print(dates)
++
++
+Index: lecture#8/hw#25.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lecture#8/hw#25.py b/lecture#8/hw#25.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#8/hw#25.py	
+@@ -0,0 +1,28 @@
++
++def skip_if(condition, reason=''):
++    def decorator(func):
++        def wrapper(*args, **kwargs):
++            if condition:
++                print(f'Skipping test "{func.__name__}". Reason: {reason}')
++            else:
++                return func(*args, **kwargs)
++        return wrapper
++    return decorator
++
++
++values = [10, 5, 5]
++if_ = 25
++
++
++@skip_if(condition=sum(values) == if_,
++         reason=f'becouse sum entered values is equal to {sum(values)} and so condition is met.')
++def test_func(values):
++    result = sum(values)
++    return f'{result == if_}'
++
++
++print(test_func(values))
++
++
++
++
+Index: lecture#8/data.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lecture#8/data.txt b/lecture#8/data.txt
+new file mode 100644
+--- /dev/null	
++++ b/lecture#8/data.txt	
+@@ -0,0 +1,56 @@
++Function "sum_". Information below:
++Was called 1 times
++Args: (1, 2)
++Return: Sum of numbers
++Function start time: 2024-05-13 23:10:57.979106
++Function execution time: 0.0013667999301105738
++
++Function "sum_". Information below:
++Was called 2 times
++Args: (3, 4)
++Return: Sum of numbers
++Function start time: 2024-05-13 23:10:57.981096
++Function execution time: 0.000443900004029274
++
++Function "mul_". Information below:
++Was called 1 times
++Args: (2, 3)
++Return: Multiplication of numbers
++Function start time: 2024-05-13 23:10:57.982098
++Function execution time: 0.0003877999261021614
++
++Function "div_". Information below:
++Was called 1 times
++Args: (6, 3)
++Return: Division of numbers
++Function start time: 2024-05-13 23:10:57.982098
++Function execution time: 0.00044950004667043686
++
++Function "div_". Information below:
++Was called 2 times
++Args: (6, 1)
++Return: Division of numbers
++Function start time: 2024-05-13 23:10:57.984219
++Function execution time: 0.0006148999091237783
++
++Function "div_". Information below:
++Was called 3 times
++Args: (6, 2)
++Return: Division of numbers
++Function start time: 2024-05-13 23:10:57.985211
++Function execution time: 0.00041470001451671124
++
++Function "sub_". Information below:
++Was called 1 times
++Args: (6, 2)
++Return: Subtraction of numbers
++Function start time: 2024-05-13 23:10:57.985211
++Function execution time: 0.00032839993946254253
++
++Function "sub_". Information below:
++Was called 2 times
++Args: (6, 1)
++Return: Subtraction of numbers
++Function start time: 2024-05-13 23:10:57.986211
++Function execution time: 0.00046989996917545795
++
+Index: lecture#8/hw#26.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lecture#8/hw#26.py b/lecture#8/hw#26.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#8/hw#26.py	
+@@ -0,0 +1,83 @@
++"""Task 26. My decorator`s version"""
++import time
++from datetime import datetime
++
++
++# def call_counter(path):
++#
++#     def inner(func):
++#         func.calls = 0
++#
++#         def wrapper(*args):
++#             start_time = datetime.now()
++#             func(*args)
++#             func.calls += 1
++#             with open(path, 'a') as file:
++#                 file.write(f'Function "{func.__name__}". Information below:\n'
++#                            f'Was called {func.calls} times\n'
++#                            f'Args: {args}\n'
++#                            f'Return: {func.__doc__}\n'
++#                            f'Function start time: {datetime.now()}\n'
++#                            f'Function execution time: {datetime.now() - start_time}\n\n')
++#             return func(*args)
++#         return wrapper
++#     return inner
++
++
++"""Task 26. Correct decorator`s version"""
++
++
++def call_counter(path):
++
++    def inner(func):
++        func.calls = 0
++
++        def wrapper(*args):
++            start_time = time.perf_counter()
++            func(*args)
++            func.calls += 1
++            with open(path, 'a') as file:
++                file.write(f'Function "{func.__name__}". Information below:\n'
++                           f'Was called {func.calls} times\n'
++                           f'Args: {args}\n'
++                           f'Return: {func.__doc__}\n'
++                           f'Function start time: {datetime.now()}\n'
++                           f'Function execution time: {time.perf_counter() - start_time}\n\n')
++            return func(*args)
++        return wrapper
++    return inner
++
++
++@call_counter('data.txt')
++def sum_(a, b):
++    """Sum of numbers"""
++    return sum((a, b))
++
++
++@call_counter('data.txt')
++def mul_(a, b):
++    """Multiplication of numbers"""
++    return a * b
++
++
++@call_counter('data.txt')
++def div_(a, b):
++    """Division of numbers"""
++    return a / b
++
++
++@call_counter('data.txt')
++def sub_(a, b):
++    """Subtraction of numbers"""
++    return a - b
++
++
++print(f'Sum: {sum_(1, 2)}')
++print(f'Sum: {sum_(3, 4)}')
++print(f'Mul: {mul_(2, 3)}')
++print(f'Div: {div_(6, 3)}')
++print(f'Div: {div_(6, 1)}')
++print(f'Div: {div_(6, 2)}')
++print(f'Sub: {sub_(6, 2)}')
++print(f'Sub: {sub_(6, 1)}')
++
+Index: lecture#8/hw#27.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lecture#8/hw#27.py b/lecture#8/hw#27.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#8/hw#27.py	
+@@ -0,0 +1,32 @@
++"""Task 27. My version, but it`s not entirely correct"""
++# def generator(lst: list, iter_num: int = None):
++#     while iter_num is None:
++#         for i_lst in range(len(lst)):
++#             yield lst[i_lst]
++#     else:
++#         for i_len in range(iter_num):
++#             for item_lst in range(len(lst)):
++#                 yield lst[item_lst]
++
++
++def generator(lst: list, iter_num: int = None):
++    """Correct version of generator function"""
++    while True:
++        if iter_num is None:
++            for items in lst:
++                yield items
++        else:
++            for _ in range(iter_num):
++                for item_lst in lst:
++                    yield item_lst
++            break
++
++
++lst_obj = ['a', 'b']
++for item in generator(lst_obj, 4):
++    print(item)
++
++
++"""Iteration option when the iter_num is None"""
++# for item in generator(lst_obj):
++#     print(item)
+Index: lecture#9/hw#28.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lecture#9/hw#28.py b/lecture#9/hw#28.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#9/hw#28.py	
+@@ -0,0 +1,63 @@
++"""Task 28. Email address validator using regular expressions"""
++import re
++
++
++def email_validator(email: str):
++    """Function to validate email address using regular expressions"""
++    email_pattern_true = r'^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+$'
++
++    if re.findall(email_pattern_true, email):
++        return f'Email verification result: {email} - "True"'
++    else:
++        return f'Email verification result: {email} - "False"'
++
++
++print(email_validator('aaa123@bbb.ccc'))  # True
++print(email_validator('123@bbb.ccc')) # True
++print('-----Email isn`t starts with @/.and isn`t ends @/.-----')
++print(email_validator('@aaa123@bbb.ccc'))
++print(email_validator('aaa123@bbb.ccc.'))
++print(email_validator('.aaa123@bbb.ccc'))
++print(email_validator('aaa123@bbb.ccc@'))
++print(email_validator('@aaa123@bbb.ccc.'))
++print('-----Email has more than one @/.-----')
++print(email_validator('.aaa123bbb.ccc'))
++print(email_validator('@aaa123bbb@ccc'))
++print(email_validator('aaa123@@bbb.ccc'))
++print(email_validator('aaa123@bbb..ccc'))
++print('-----Email has space-----')
++print(email_validator('aaa 123@bbb.ccc'))
++print('-----In email . stands before @-----')
++print(email_validator('aaa123.bbb@ccc'))
++print('-----Email has more one ./@-----')
++print(email_validator('aaa123@@bbb.ccc'))
++print(email_validator('aaa123@bbb..ccc'))
++print(email_validator('aaa123@@bbb..ccc'))
++print('-----Email has more one ./@-----')
++print(email_validator('aaa123@bbb.c.c.c'))
++print(email_validator('a@aa@123@bbb.ccc'))
++print(email_validator('a@aa@123@bbb.c.c.c'))
++print('-----Email has space/empty-----')
++print(email_validator(' aaa123 @b bb.ccc '))
++print(email_validator(' aaa123@bbb.ccc '))
++print(email_validator(' '))
++print('-----Email has more one ./@-----')
++print(email_validator('aaa123@@bbbccc'))
++print(email_validator('aaa123bbb..ccc'))
++print('-----Email starts/ends with special characters-----')
++print(email_validator('_aaa123@bbb.ccc'))
++print(email_validator('aaa123@bbb.ccc_'))
++print(email_validator('!aaa123@bbb.ccc'))
++print(email_validator('aaa123@bbb.ccc#'))
++print(email_validator('~aaa123@bbb.ccc'))
++print(email_validator('aaa123@bbb.ccc$'))
++print(email_validator('aaa123@bbb.ccc|'))
++print(email_validator('[aaa123@bbb.ccc'))
++print('-----Email has special characters-----')
++print(email_validator('aaa_123@bbb.ccc'))
++print(email_validator('aaa#123@bbb.ccc'))
++print(email_validator('aaa*123@bbb.ccc'))
++print(email_validator('a#a%a*1&2)3@b:bb].c-c+c'))
++print(email_validator('"aaa✳123@bbb.ccc"'))
++print(email_validator('"aaa№123@bbb.ccc"'))
++
+Index: lecture#9/hw#30.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lecture#9/hw#30.py b/lecture#9/hw#30.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#9/hw#30.py	
+@@ -0,0 +1,68 @@
++"""Task 30. Time schedule"""
++from datetime import timedelta, datetime
++
++
++def time_schedule(date: str, time: str, total_lectures: int):
++    """Version 1 of the solution: Generator Function that returns the time schedule lecture(my favorite version)"""
++    days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
++    months = ['Jany', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
++    date = datetime.strptime(date, '%d%m%Y')
++    time = datetime.strptime(time, '%H%M')
++    if date.strftime('%A') == 'Thursday':
++        for number in range(1, total_lectures + 1):
++            yield (f'Lecture {number:>2}: {date.strftime("%d")} {months[date.month - 1]} '
++                   f'{date.year} {time.strftime("%H:%M")}')
++            if number % 2 != 0:
++                date += timedelta(days=4)
++            if number % 2 == 0:
++                date += timedelta(days=3)
++
++    elif date.strftime('%A') == 'Monday':
++        for number in range(1, total_lectures + 1):
++            yield (f'Lecture {number:>2}: {date.strftime("%d")} {months[date.month - 1]} '
++                   f'{date.year} {time.strftime("%H:%M")}')
++            if number % 2 != 0:
++                date += timedelta(days=3)
++            if number % 2 == 0:
++                date += timedelta(days=4)
++
++    else:
++        yield 'Sorry, there are no lectures on this day.'
++
++
++# res = time_schedule('11042024', '1915', 32)
++# print(res.__sizeof__()) # 320 bytes
++# print(time_schedule('11042024', '1915', 32))
++for item in time_schedule('11042024', '1915', 32):
++    print(item)
++
++
++print('-----------------Version 2 of the solution-----------------------')
++start_lectures_date = '11042024'
++time_start_lecture = '1915'
++total_lessons = 32
++
++list_days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
++list_months = ['Jany', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
++date_ = datetime.strptime(start_lectures_date, '%d%m%Y')
++time_ = datetime.strptime(time_start_lecture, '%H%M')
++if date_.strftime('%A') == 'Thursday':
++    for i in range(1, total_lessons + 1):
++        print(f'Lecture {i:>2}: {date_.strftime("%d")} {list_months[date_.month - 1]} '
++              f'{date_.year} {time_.strftime("%H:%M")}')
++        if i % 2 != 0:
++            date_ += timedelta(days=4)
++        if i % 2 == 0:
++            date_ += timedelta(days=3)
++
++elif date_.strftime('%A') == 'Monday':
++    for i in range(1, total_lessons + 1):
++        print(f'Lecture {i:>2}: {date_.strftime("%d")} {list_months[date_.month - 1]} '
++              f'{date_.year} {time_.strftime("%H:%M")}')
++        if i % 2 != 0:
++            date_ += timedelta(days=3)
++        if i % 2 == 0:
++            date_ += timedelta(days=4)
++else:
++    print('Sorry, there are no lectures on this day.')
++
+Index: lecture#2/hw#2.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lecture#2/hw#2.py b/lecture#2/hw#2.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#2/hw#2.py	
+@@ -0,0 +1,3 @@
++
++item_list = ['Murzik', 'Barsik', 'Pantera']
++print(', '.join(map(str, item_list)))
+Index: lecture#9/hw#29.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lecture#9/hw#29.py b/lecture#9/hw#29.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#9/hw#29.py	
+@@ -0,0 +1,45 @@
++"""Task 29. List linearization"""
++
++
++def linearize_list(lst):
++    result = []
++    for i in lst:
++        if type(i) is list:
++            result += linearize_list(i)
++        else:
++            result.append(i)
++    return result
++
++
++def linearize_list_v2(lst, is_first_call=True):
++    if is_first_call:
++        global result_v2
++        result_v2 = []
++    for i in lst:
++        if type(i) is list:
++            linearize_list_v2(i, False)
++        else:
++            result_v2.append(i)
++    return result_v2
++
++
++def linearize_list_v3(lst):
++    result_v3 = []
++    for i in lst:
++        if isinstance(i, list):
++            result_v3 += linearize_list(i)
++        else:
++            result_v3.append(i)
++    return result_v3
++
++
++lst_obj = [1, 2, [3, 4, [5, 6], 7], 8, [9, [10]], 11]
++# lst_obj = [1, 2, [3, [4, 5, [6, 7]]], 8, 9, [10, [11, 12]], 13, [14, 15, [16, 17, [18, 19, [20, 21]]]]]
++# lst_obj = ['a', 'b', ['c', 'c', [1, 2], 'z'], 'z', [5, ['y']], 'i']
++# lst_obj = ['a', 'b', ['c', 'c', ['d', 'e'], 'z'], 'z', ['v', ['y']], 'i']
++
++print(linearize_list(lst_obj))
++print(linearize_list_v2(lst_obj))
++print(linearize_list_v3(lst_obj))
++
++
+Index: lecture#2/hw#4.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lecture#2/hw#4.py b/lecture#2/hw#4.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#2/hw#4.py	
+@@ -0,0 +1,7 @@
++
++x = int(input('Enter a: '))
++y = int(input('Enter b: '))
++res_sum = x + y
++res_product = x * y
++print(f'{x} + {y} = {res_sum}')
++print(f'{x} + {y} = {res_product}')
+Index: lecture#9/hw#31.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lecture#9/hw#31.py b/lecture#9/hw#31.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#9/hw#31.py	
+@@ -0,0 +1,34 @@
++"""Task 31. Please look at the wiki_page.txt file because I have changed it."""
++import re
++
++
++def get_links_re(html_file):
++    """Get value of href attribute for tag 'a'. Do it: using regular expressions"""
++    with open(html_file, 'r') as file:
++        for line in file:
++            if 'href' in line:
++                yield from re.findall(r'<a.*?href="(.+?)"', line)
++
++
++for i in get_links_re('wiki_page.txt'):
++    print(i)
++
++print('------------------------------------------------')
++
++
++def get_links_str(html_file):
++    """Get value of href attribute for tag 'a'. Do it: using string methods"""
++    with open(html_file, 'r') as file:
++        for line in file:
++            start_of_range = line.find("<a", 0, len(line))
++            end_of_rnage = line.find("</a>", 0, len(line))
++            while start_of_range != -1:
++                yield line[line.find('href="', start_of_range, end_of_rnage) + len('href="'):
++                           line.find('"', line.find('href="', start_of_range,  end_of_rnage) + len('href="'), end_of_rnage)]
++                start_of_range = line.find("<a", start_of_range + 1, len(line))
++                end_of_rnage = line.find("</a>", end_of_rnage + 1, len(line))
++
++
++for item in get_links_str('wiki_page.txt'):
++    print(item)
++
+Index: lecture#2/hw#3.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lecture#2/hw#3.py b/lecture#2/hw#3.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#2/hw#3.py	
+@@ -0,0 +1,6 @@
++
++country = ['Ukraine', 'Spain', 'Italy']
++capital = ['Kyiv', 'Madrid', 'Rome']
++info = dict(zip(country, capital))
++for k, v in info.items():
++    print(f'{k} : {v}')
+Index: lecture#10/hw#33.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lecture#10/hw#33.py b/lecture#10/hw#33.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#10/hw#33.py	
+@@ -0,0 +1,19 @@
++"""
++Task 33.
++Name: Custom map
++"""
++
++
++def custom_map(func, *args):
++    return [func(*params) for params in zip(*args)]
++
++
++print(f'Sum item in two lists: {custom_map(sum, [[1, 2, 3], [3, 5, 0, 5]])}')
++print(f'Sum items from two lists: {custom_map(lambda x, y: x + y, [1, 2, 3], [3, 5, 0])}')
++print(f'List`s lenght in lists list: {custom_map(len, [[], (2, 4), [1, 3, 5, 7]])}')
++print('---------------------------')
++print(f'Sum items from lists: {custom_map(lambda x, y, z: x + y + z, [1, 2, 3, 4], [3, 5, 0], [1, 2, 3, 9])}')
++print(f'Minimum value in each list of the main list: {custom_map(min, [[1, 2, 3, 4, 5], [1, 2, 3], [3, 5, 1, 5]])}')
++print(f'Maximum value in each list of the main list: {custom_map(max, [[1, 2, 3, 4, 5], [1, 2, 3], [3, 5, 1, 5]])}')
++print(f'Prod: {custom_map(lambda x, y, z: x * y * z, [1, 2, 3, 4], [3, 5, 0], [1, 2, 3, 9])}')
++print(f'Division: {custom_map(lambda x, y, z: round(x / y / z, 2) if y != 0 and z !=0 else None, [1, 2, 3, 4], [3, 0, 1], [1, 2, 3, 9])}')
+Index: lecture#10/hw#32.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lecture#10/hw#32.py b/lecture#10/hw#32.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#10/hw#32.py	
+@@ -0,0 +1,20 @@
++"""Task 32. Random string"""
++import random
++
++
++def random_string(length):
++    """Generates a random string of the specified length"""
++    res = (
++        "".join(chr(random.randint(48, 57)) for _ in range(length)) +
++        "".join(chr(random.randint(65, 90)) for _ in range(length)) +
++        "".join(chr(random.randint(97, 122)) for _ in range(length))
++
++    )
++    return "".join(random.sample(res, length))
++
++
++print(f'Random string: {random_string(10)}')
++# print(type(random_string(10)))
++
++
++
+Index: lecture#3/hw#5.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lecture#3/hw#5.py b/lecture#3/hw#5.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#3/hw#5.py	
+@@ -0,0 +1,11 @@
++
++value_a = int(input('Enter "a": '))
++value_b = int(input('Enter "b": '))
++value_c = int(input('Enter "c": '))
++
++if value_a > value_b and value_a > value_c:
++    print(f'Max_value "a": {value_a}')
++elif value_b > value_a and value_b > value_c:
++    print(f'Max_value "b": {value_b}')
++else:
++    print(f'Max_value "c": {value_c}')
+Index: lecture#10/hw#34.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lecture#10/hw#34.py b/lecture#10/hw#34.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#10/hw#34.py	
+@@ -0,0 +1,27 @@
++"""
++Task 34.
++Name: Custom zip
++"""
++
++
++def custom_zip(*args, full=False, default=None):
++    if full:
++        max_len = max(len(arg) for arg in args)
++        res = []
++        for i in range(max_len):
++            res.append(tuple(arg[i] if i < len(arg) else default for arg in args))
++        return res
++    else:
++        return [tuple(arg[i] for arg in args) for i in range(min(len(arg) for arg in args))]
++
++
++# lst = [1, 3, 5, 7, 8, 9, 10, 11]
++# lst2 = [2, 4, 6]
++lst = [1, 3, 5, 7]
++lst2 = [2, 4, 6, 8, 9, 10, 11]
++print(custom_zip(lst, lst2))
++print(type(custom_zip(lst, lst2)))
++print('----------------------------')
++print(custom_zip(lst, lst2, full=True, default="X"))
++print(type(custom_zip(lst, lst2, full=True, default="X")))
++
+Index: lecture#3/hw#7.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lecture#3/hw#7.py b/lecture#3/hw#7.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#3/hw#7.py	
+@@ -0,0 +1,11 @@
++
++triangle = int(input('Enter size of triangle: '))
++symbol = '*'
++
++for item in range(triangle):
++    for j in range(triangle-1, -1, -1):
++        if j > item:
++            print(" ", end="")
++        else:
++            print(symbol, end="")
++    print()
+Index: lecture#3/hw#6.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lecture#3/hw#6.py b/lecture#3/hw#6.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#3/hw#6.py	
+@@ -0,0 +1,8 @@
++
++height = int(input('Enter height of rectangle: '))
++weight = int(input('Enter weight of rectangle: '))
++symbol = input('Enter symbol to build rectangular with: ')
++
++for h in range(height):
++    print(symbol * weight)
++
+Index: lecture#11/hw#35.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lecture#11/hw#35.py b/lecture#11/hw#35.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#11/hw#35.py	
+@@ -0,0 +1,161 @@
++"""
++Task 35. Classes creation
++"""
++import datetime
++
++
++class BankAccount:
++    """According to the bank's terms, an account is opened for the client, provided that the initial
++    deposit to the account is at least 100,000 US dollars"""
++
++    date = datetime.datetime.utcnow()
++    inflation_percentage = 7.5
++
++    def __init__(self, name, balance=1000000):
++        """Initializes the BankAccount class with the name and balance of the account holder.
++        The default balance is 1000000."""
++        self.name = name
++        self.balance = balance
++
++    def deposit(self, amount):
++        """Adds the amount to the balance of the account holder."""
++        self.balance += amount
++        return f'Operation “Replenishment account” of the account owner\n' \
++               f'Account holder: {self.name}\nBalance: {self.balance}$\nDate of operation: {self.date}'
++
++    def withdraw(self, amount):
++        """Subtracts the amount from the balance of the account holder."""
++        if amount > self.balance:
++            return 'Insufficient funds for transaction!'
++        self.balance -= amount
++        return f'Operation "Withdraw money" of the account owner\n' \
++               f'Account holder: {self.name}\nBalance: {self.balance}$\nDate of operation: {self.date}'
++
++    @staticmethod
++    def annual_percentage(balance, percentage):
++        """Calculates the annual percentage of the account holder's balance."""
++        return f'Account balance: {balance}$\nAnnual percentage {percentage}%\n' \
++               f'Income: {(balance /100) * percentage}$\n' \
++               f'Balance after annual percentage: {balance + (balance / 100) * percentage}$\n'
++
++    @classmethod
++    def inflation(cls, new_inflation_percentage, percentage, balance):
++        """Calculates the inflation of the account holder's balance at the end of the year"""
++        cls.inflation_percentage = new_inflation_percentage
++        if new_inflation_percentage > percentage:
++            result_losses = ((percentage - new_inflation_percentage) / 100) * balance
++            return f'If the inflation rate has increased during the current year since your deposit, then:\n' \
++                   f'At the end of the year your losses: {round(result_losses, 2)}$\nYour start balance: {balance}$\n'\
++                   f'Balance after inflation: {balance + result_losses}$\n'
++        else:
++            result_income = ((percentage - new_inflation_percentage) / 100) * balance
++            return f'If the inflation rate at the time of expiration of 365 days from the date\n' \
++                   f'of your deposit is lower than the inflation rate at the time you opened a \n' \
++                   f'deposit account with our bank, then:\n' \
++                   f'Your income at the end of the year: {round(result_income, 2)}$\nYour start balance: {balance}$\n' \
++                   f'Balance after inflation: {balance + result_income}$\n'
++
++    def __str__(self):
++        """Returns the account owner's name, balance, and account opening date.
++        String representation of an object, focusing on readability"""
++        return f'Account holder: {self.name}\nBalance: {self.balance}$\n' \
++               f'Account opening date: {self.date}'
++
++
++class BTCAccount(BankAccount):
++    """The BTCAccount class is inherited from the BankAccount class.
++    The BTCAccount class is designed"""
++
++    number_btc = 1
++    btc_exchange_rate_buy = 69074.44
++    btc_exchange_rate_sell = 69089.79
++
++    def __init__(self, btc, name, balance=1000000):
++        """Initializes the BTCAccount class with the name, balance, and number of bitcoins of the account holder.
++        The default balance is 1000000, the default number of bitcoins is 0."""
++        super().__init__(name, balance)
++        self.btc = btc
++
++    def buy_btc(self, btc_price):
++        """The method calculates the cost of buying bitcoins and subtracts the amount from
++        the balance of the account holder."""
++        cost = self.btc * btc_price
++        if cost > self.balance:
++            return 'Insufficient funds for transaction!'
++        self.balance -= cost
++        return f'Operation “Buy BTC” of the account owner\n' \
++               f'Account holder: {self.name}\nNumber of bitcoins purchased: {self.btc}\n' \
++               f'Price of one BTC: {btc_price}\nYour balance after purchase BTC: {self.balance}$\n' \
++               f'Date of operation: {self.date}'
++
++    def sell_btc(self, btc_price):
++        """The method calculates the cost of selling bitcoins and adds the amount to the
++        balance of the account holder."""
++        cost = self.btc * btc_price
++        self.balance += cost
++        return f'Operation “Sell BTC” of the account owner\n' \
++               f'Account holder: {self.name}\nNumber of bitcoins for sale: {self.btc}\n' \
++               f'Price of one BTC: {btc_price}\nYour balance after sale BTC: {self.balance}$\n' \
++               f'Date of operation: {self.date}'
++
++    @staticmethod
++    def btc_delta(bid, ask):
++        """Bitcoin cumulative delta indicator for the one day"""
++        cum_delta = bid - ask
++        if cum_delta > 0:
++            return f'Bitcoin cumulative delta indicator for the month V: +{cum_delta}\n' \
++                   f'The market is dominated by buyers'
++        else:
++            return f'Bitcoin cumulative delta indicator for the month: {cum_delta}\n' \
++                   f'The market is dominated by sellers'
++
++    @classmethod
++    def btc_change(cls, new_btc_exchange_rate_buy, new_btc_exchange_rate_sell, total_btc):
++        """The method calculates the cost of buying and selling bitcoins and returns the difference
++        at the changed bitcoin rate"""
++        cls.number_btc = total_btc
++        cls.btc_exchange_rate_buy = new_btc_exchange_rate_buy
++        cls.btc_exchange_rate_sell = new_btc_exchange_rate_sell
++        cost = total_btc * new_btc_exchange_rate_buy
++        income = total_btc * new_btc_exchange_rate_sell
++        return f'Cost of buying {total_btc} bitcoins: {cost}$\nIncome from selling {total_btc} bitcoins: {income}$\n' \
++               f'Difference: {income - cost}$'
++
++    def __str__(self):
++        """Returns the account owner's name, balance, number of bitcoins, and account opening date.
++        String representation of an object, focusing on readability"""
++        return f'Account holder: {self.name}\nBalance: {self.balance}$\n' \
++               f'Number of bitcoins: {self.btc}\nAccount opening date: {self.date}'
++
++
++print('-------------------------Results Jane Doe-------------------------')
++account = BankAccount('Jane Doe')
++print(str(account))
++print()
++print(str(account.deposit(1000)))
++print()
++print(str(account.withdraw(500)))
++print()
++print(str(BankAccount.annual_percentage(100000, 6.5)))
++print(str(account.annual_percentage(100000, 6.5)))
++print()
++print(str(BankAccount.inflation(13, 6.5, 100000)))
++print('-------------------------Results Nik Smith-------------------------')
++btc_account = BTCAccount(5, 'Nik Smith', 1000000)
++print(str(btc_account))
++print()
++print(str(btc_account.buy_btc(69074.44)))
++print()
++print(str(btc_account.sell_btc(69089.79)))
++print()
++print(str(BTCAccount.btc_delta(1300000, 1700060)))
++print(str(btc_account.btc_delta(1300000, 1700060)))
++print()
++print(f'Old BTC exchange rate buy: {str(BTCAccount.btc_exchange_rate_buy)}')
++print(f'Old BTC exchange rate sell: {str(BTCAccount.btc_exchange_rate_sell)}')
++print(str(BTCAccount.btc_change(69079.45, 69099.45, 5)))
++print()
++
++
++
++
+Index: lecture#3/hw#9.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lecture#3/hw#9.py b/lecture#3/hw#9.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#3/hw#9.py	
+@@ -0,0 +1,10 @@
++
++
++n = int(input("Enter value 'n': "))
++for j in range(1, n+1):
++    print(' ' * 2 * (n-j), end='')
++    for i in range(1, 2 * j):
++        print(i if i <= j else 2 * j-i, end='')
++        if i < 2 * j - 1:
++            print(' ', end='')
++    print()
+\ No newline at end of file
+Index: lecture#3/hw#8.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lecture#3/hw#8.py b/lecture#3/hw#8.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#3/hw#8.py	
+@@ -0,0 +1,28 @@
++
++print('To test this file, read the teachers requirements \n'
++      'at the link: https://lms.ithillel.ua/groups/65b95f9a581cb89d38bea262/homeworks/66213c710eb47a7edbd54707')
++min_width = int(input('Enter minimal width: '))
++max_width = int(input('Enter maximal width: '))
++
++if min_width > max_width:
++    print('Error: Sorry, your values min_width and max_width of the diamond pattern incorrect. \n'
++          'Please enter correct values min_width and max_width and try again!')
++elif (max_width - min_width) % 2 != 0:
++    print('Error: Sorry, your values min_width and max_width of the diamond pattern incorrect. \n'
++          'Please enter the correct min_width and max_width values so that the difference between \n'
++          'these values is a multiple of 2 and try again!')
++else:
++    for row in range(min_width, max_width+2, 2):
++        if row == min_width:
++            row = ' ' * ((max_width-row) // 2) + "*" * min_width
++            print(row)
++        else:
++            print(' ' * ((max_width-row) // 2) + "*" + ' '*(row-2) + "*")
++    for row in range(max_width-2, min_width-2, -2):
++        if row > min_width:
++            row = ' ' * ((max_width-row) // 2) + '*' + ' '*(row-2) + "*"
++            print(row)
++        else:
++            print(' ' * ((max_width-row) // 2) + "*" * min_width)
++
++
+Index: lecture#13/Diagramm for hw#36.drawio.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lecture#13/Diagramm for hw#36.drawio.xml b/lecture#13/Diagramm for hw#36.drawio.xml
+new file mode 100644
+--- /dev/null	
++++ b/lecture#13/Diagramm for hw#36.drawio.xml	
+@@ -0,0 +1,127 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<mxfile host="app.diagrams.net" modified="2024-06-07T11:09:06.304Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36" etag="5b7oIhO1pzQ697UzOaXv" version="24.5.1" type="google">
++  <diagram name="Страница — 1" id="C7zsDLVsdGY93kK5nq6R">
++    <mxGraphModel dx="1621" dy="412" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
++      <root>
++        <mxCell id="0" />
++        <mxCell id="1" parent="0" />
++        <mxCell id="JQNjE-N_aRSqGxlrevs1-1" value="&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;font style=&quot;vertical-align: inherit;&quot;&gt;&lt;b&gt;Person&lt;/b&gt;&lt;/font&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
++          <mxGeometry x="200" y="40" width="480" height="20" as="geometry" />
++        </mxCell>
++        <mxCell id="JQNjE-N_aRSqGxlrevs1-2" value="+ name: str&lt;div&gt;+ position: str&lt;/div&gt;&lt;div&gt;+ level: str&lt;/div&gt;&lt;div&gt;+departament: str&lt;/div&gt;&lt;div&gt;+ working_hours: None | int&amp;nbsp;&lt;/div&gt;&lt;div&gt;+ salary: None | int&lt;/div&gt;&lt;div&gt;+bonus: None | int&lt;/div&gt;&lt;div&gt;- uuid: None | UUID&lt;/div&gt;&lt;div&gt;+ bank_account: None, list[UUID | int]&lt;/div&gt;&lt;div&gt;+ bank_card: None&amp;nbsp;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
++          <mxGeometry x="200" y="60" width="480" height="160" as="geometry" />
++        </mxCell>
++        <mxCell id="JQNjE-N_aRSqGxlrevs1-3" value="+ say(): None&lt;div&gt;+ create_id(): UUID&lt;/div&gt;&lt;div&gt;+ get_exit_time(): datetime&lt;/div&gt;&lt;div&gt;+ create_bank_account(): list[UUID | int]&lt;/div&gt;&lt;div&gt;+ get_bonus(): float&lt;/div&gt;&lt;div&gt;+ get_salary(): float&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ &lt;u&gt;create_bank_card(number: int): str&lt;/u&gt;&lt;/div&gt;&lt;div&gt;&lt;u&gt;+ opened_and_write_info_to_file(file_path: str, mode: str, data: str): None&lt;/u&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+get_data_about_employee(): str&lt;/div&gt;&lt;div&gt;+ get_data_for_checkpoint(): str&lt;/div&gt;&lt;div&gt;+ write_employee_in_db(path: str): None&lt;/div&gt;&lt;div&gt;+ write_data_for_checkpoint(path: str): None&amp;nbsp;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
++          <mxGeometry x="200" y="220" width="480" height="220" as="geometry" />
++        </mxCell>
++        <mxCell id="JQNjE-N_aRSqGxlrevs1-4" value="&lt;b&gt;Subordinate&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
++          <mxGeometry x="-40" y="520" width="280" height="30" as="geometry" />
++        </mxCell>
++        <mxCell id="JQNjE-N_aRSqGxlrevs1-5" value="+ projects: list[str]&lt;div&gt;+ started_to_work: int&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
++          <mxGeometry x="-40" y="550" width="280" height="40" as="geometry" />
++        </mxCell>
++        <mxCell id="JQNjE-N_aRSqGxlrevs1-6" value="+ get_projects(): list[str]&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ get_profit_from_the_project(): float&lt;/span&gt;&lt;div&gt;+ get_experience(): int&lt;/div&gt;&lt;div&gt;+ get_latest_data(): str&lt;/div&gt;&lt;div&gt;+ write_latest_data(path: str): None&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
++          <mxGeometry x="-40" y="590" width="280" height="90" as="geometry" />
++        </mxCell>
++        <mxCell id="JQNjE-N_aRSqGxlrevs1-7" value="&lt;b&gt;Supervisor&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
++          <mxGeometry x="600" y="520" width="280" height="30" as="geometry" />
++        </mxCell>
++        <mxCell id="JQNjE-N_aRSqGxlrevs1-8" value="+ places_of_work: list[str]&lt;div&gt;+ term: int&amp;nbsp;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
++          <mxGeometry x="600" y="550" width="280" height="40" as="geometry" />
++        </mxCell>
++        <mxCell id="JQNjE-N_aRSqGxlrevs1-9" value="+ get_places_of_work(): list[str]&lt;div&gt;&lt;br&gt;&lt;div&gt;&lt;u&gt;+ get_term_of_work(): int&lt;/u&gt;&lt;/div&gt;&lt;div&gt;&lt;u&gt;&lt;br&gt;&lt;/u&gt;&lt;/div&gt;&lt;div&gt;+ get_latest_data(): str&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ write_last_data(path: str): None&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
++          <mxGeometry x="600" y="590" width="280" height="100" as="geometry" />
++        </mxCell>
++        <mxCell id="JQNjE-N_aRSqGxlrevs1-10" value="&lt;b&gt;Company&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
++          <mxGeometry x="240" y="770" width="360" height="30" as="geometry" />
++        </mxCell>
++        <mxCell id="JQNjE-N_aRSqGxlrevs1-11" value="+ name: str&lt;div&gt;+ subordinates: None | list&lt;/div&gt;&lt;div&gt;+ supervisors: None | list&lt;/div&gt;&lt;div&gt;+ list_uuid: None | ist&lt;/div&gt;&lt;div&gt;+ visitors: None | list&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
++          <mxGeometry x="240" y="800" width="360" height="90" as="geometry" />
++        </mxCell>
++        <mxCell id="JQNjE-N_aRSqGxlrevs1-12" value="+ add_subordinate(subordanate: object): None&lt;div&gt;+ add_supervisor(supervisor: object): None&lt;/div&gt;&lt;div&gt;+ add_uuid(number: object): None&lt;/div&gt;&lt;div&gt;+ add_visitor(visitor: object): None&amp;nbsp;&lt;/div&gt;&lt;div&gt;+ show_employees(): None&lt;/div&gt;&lt;div&gt;+ show_visitors(): None&lt;/div&gt;&lt;div&gt;+ get_info_for_checkpoint(person: object): str&lt;/div&gt;&lt;div&gt;+ register_visitor_at_the_checkpoint(person: object): None&amp;nbsp;&lt;/div&gt;&lt;div&gt;+ scan_pass_card(person: object): None&amp;nbsp;&lt;/div&gt;&lt;div&gt;+ run_elevator(person: object): None&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;u&gt;+ get_data(): str&lt;/u&gt;&lt;/div&gt;&lt;div&gt;&lt;u&gt;&lt;br&gt;&lt;/u&gt;&lt;/div&gt;&lt;div&gt;+ get_info_employees(category: str): str&lt;/div&gt;&lt;div&gt;+get_info_checkpoint(): str&lt;/div&gt;&lt;div&gt;+ get_latest_data_of_employee(): str&amp;nbsp;&lt;/div&gt;&lt;div&gt;+ run(person: object): str&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
++          <mxGeometry x="240" y="890" width="360" height="270" as="geometry" />
++        </mxCell>
++        <mxCell id="JQNjE-N_aRSqGxlrevs1-15" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;entryX=0;entryY=0.111;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="JQNjE-N_aRSqGxlrevs1-12" edge="1">
++          <mxGeometry width="160" relative="1" as="geometry">
++            <mxPoint x="120" y="920" as="sourcePoint" />
++            <mxPoint x="260" y="800" as="targetPoint" />
++            <Array as="points" />
++          </mxGeometry>
++        </mxCell>
++        <mxCell id="JQNjE-N_aRSqGxlrevs1-16" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;" parent="1" edge="1">
++          <mxGeometry width="160" relative="1" as="geometry">
++            <mxPoint x="720" y="920" as="sourcePoint" />
++            <mxPoint x="601" y="920" as="targetPoint" />
++            <Array as="points">
++              <mxPoint x="640" y="920" />
++            </Array>
++          </mxGeometry>
++        </mxCell>
++        <mxCell id="JQNjE-N_aRSqGxlrevs1-17" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.568;entryY=1.03;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="JQNjE-N_aRSqGxlrevs1-6" edge="1">
++          <mxGeometry width="50" height="50" relative="1" as="geometry">
++            <mxPoint x="120" y="920" as="sourcePoint" />
++            <mxPoint x="140" y="610" as="targetPoint" />
++          </mxGeometry>
++        </mxCell>
++        <mxCell id="JQNjE-N_aRSqGxlrevs1-18" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.43;entryY=1.033;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="JQNjE-N_aRSqGxlrevs1-9" edge="1">
++          <mxGeometry width="50" height="50" relative="1" as="geometry">
++            <mxPoint x="720" y="920" as="sourcePoint" />
++            <mxPoint x="720" y="630" as="targetPoint" />
++          </mxGeometry>
++        </mxCell>
++        <mxCell id="-XZDcgLJvsIOYETBdgK9-10" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;" parent="1" edge="1">
++          <mxGeometry width="160" relative="1" as="geometry">
++            <mxPoint x="130" y="160" as="sourcePoint" />
++            <mxPoint x="200" y="160" as="targetPoint" />
++          </mxGeometry>
++        </mxCell>
++        <mxCell id="-XZDcgLJvsIOYETBdgK9-11" value="" style="endArrow=none;html=1;rounded=0;exitX=0.43;exitY=-0.044;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" edge="1">
++          <mxGeometry width="50" height="50" relative="1" as="geometry">
++            <mxPoint x="130.4000000000001" y="520" as="sourcePoint" />
++            <mxPoint x="130" y="161.32" as="targetPoint" />
++          </mxGeometry>
++        </mxCell>
++        <mxCell id="-XZDcgLJvsIOYETBdgK9-12" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
++          <mxGeometry width="50" height="50" relative="1" as="geometry">
++            <mxPoint x="130" y="160" as="sourcePoint" />
++            <mxPoint x="160" y="160" as="targetPoint" />
++            <Array as="points">
++              <mxPoint x="180" y="160" />
++            </Array>
++          </mxGeometry>
++        </mxCell>
++        <mxCell id="-XZDcgLJvsIOYETBdgK9-13" value="" style="endArrow=none;html=1;rounded=0;" parent="1" source="JQNjE-N_aRSqGxlrevs1-7" edge="1">
++          <mxGeometry width="50" height="50" relative="1" as="geometry">
++            <mxPoint x="760" y="470" as="sourcePoint" />
++            <mxPoint x="740" y="160" as="targetPoint" />
++            <Array as="points">
++              <mxPoint x="740" y="350" />
++            </Array>
++          </mxGeometry>
++        </mxCell>
++        <mxCell id="-XZDcgLJvsIOYETBdgK9-14" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;entryX=1.002;entryY=0.629;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="JQNjE-N_aRSqGxlrevs1-2" edge="1">
++          <mxGeometry width="160" relative="1" as="geometry">
++            <mxPoint x="680" y="160" as="sourcePoint" />
++            <mxPoint x="790" y="100" as="targetPoint" />
++          </mxGeometry>
++        </mxCell>
++        <mxCell id="Cb8gh8W8s5_hVqLXOUMp-1" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;" edge="1" parent="1">
++          <mxGeometry width="160" relative="1" as="geometry">
++            <mxPoint x="740" y="160" as="sourcePoint" />
++            <mxPoint x="680" y="160" as="targetPoint" />
++            <Array as="points">
++              <mxPoint x="740" y="160" />
++            </Array>
++          </mxGeometry>
++        </mxCell>
++        <mxCell id="Cb8gh8W8s5_hVqLXOUMp-3" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
++          <mxGeometry width="50" height="50" relative="1" as="geometry">
++            <mxPoint x="700" y="160" as="sourcePoint" />
++            <mxPoint x="740" y="160" as="targetPoint" />
++            <Array as="points" />
++          </mxGeometry>
++        </mxCell>
++      </root>
++    </mxGraphModel>
++  </diagram>
++</mxfile>
+Index: lecture#4/hw#11.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lecture#4/hw#11.py b/lecture#4/hw#11.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#4/hw#11.py	
+@@ -0,0 +1,19 @@
++
++sentences = "Hello all. Here`s pretty cold and hot. Choose yourself"
++arr = sentences.split('.')
++print(f'Sentences: {arr}')
++result = []
++for i in arr:
++    result += str(len(i.split()))
++print(f'Result: [{", ".join(result)}]')
++
++
++
++
++
++
++
++
++
++
++
+Index: lecture#4/hw#10.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lecture#4/hw#10.py b/lecture#4/hw#10.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#4/hw#10.py	
+@@ -0,0 +1,22 @@
++# var1
++word = input('Enter word:').casefold().strip()
++reversed_word = word[::-1]
++
++comparison_result = (reversed_word == word)
++
++if comparison_result:
++    print(f'Comparison result var1: {comparison_result}')
++else:
++    print(f'Comparison result var1: {comparison_result}')
++
++# or var2
++result = ''.join(reversed(word))
++print(f'Comparison result var2: {result == word}')
++
++
++# or var3
++for i, j in enumerate(word):
++    if j != word[-i - 1]:
++        print(f'Comparison result var3: False')
++    else:
++        print(f'Comparison result var3: True')
+\ No newline at end of file
+Index: lecture#4/hw#13.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lecture#4/hw#13.py b/lecture#4/hw#13.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#4/hw#13.py	
+@@ -0,0 +1,45 @@
++#   List of email addresses for verification
++# email = ' '
++# email = 'aaa277@bbb.ccc'    # var: True
++# email = '@aaa277bbbccc.'
++# email = '@aaa277bbbccc'
++# email = '.aaa277bbbccc'
++# email = 'aaa277bbbccc@'
++# email = 'aaa277bbbccc.'
++# email = '@aaa277@bbb.ccc'
++# email = 'aaa277@bbbccc'
++# email = 'aaa277@bbb.ccc.'
++# email = 'aaa277bbb.ccc'
++# email = 'aaa277@bbbccc'
++# email = 'aaa277@bbb.c.cc'
++# email = 'aaa@277@bbb.ccc'
++# email = 'a_aa@bbb.cc/c'
++# email = '_aaa@bbb.ccc/'
++# email = 'aaa@bbb..c@c@c'
++# email = 'aaa.bbb.ccc@c@c.c'
++
++#   List TestCases for email verification
++check_email = ((email.find('@') < email.find('.'))
++               and email.find('@') != 0
++               and email.find('.') != len(email) - 1
++               and (email.replace('@', '').replace('.', '').isalnum())
++               and email.count('@') == 1
++               and email.count('.') == 1)
++
++#   Result of email verification
++if check_email:
++    print(f'Email verification result: {email} - "True"')
++else:
++    print(f'Email verification result: {email} - "False"')
++
++
++
++
++
++
++
++
++
++
++
++
+Index: lecture#13/data_of_employees.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lecture#13/data_of_employees.txt b/lecture#13/data_of_employees.txt
+new file mode 100644
+--- /dev/null	
++++ b/lecture#13/data_of_employees.txt	
+@@ -0,0 +1,17 @@
++
++Latest data of Daria Veresha ->
++Level: Junior
++Position: Tester
++Experience: 5 years
++Project: Selenium
++Profit from the project: 1300.0$
++Project: Pytest
++Profit from the project: 1300.0$
++
++Latest data of Alex Litvinov ->
++Level: Senior
++Position: Qa Engineer
++Place of work: Epam
++Term of work: 7 years
++Place of work: Google
++Term of work: 6 years
+Index: lecture#13/checkpoint.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lecture#13/checkpoint.txt b/lecture#13/checkpoint.txt
+new file mode 100644
+--- /dev/null	
++++ b/lecture#13/checkpoint.txt	
+@@ -0,0 +1,24 @@
++Employee: Daria Veresha
++UUID: a9dd715d-80d2-4fd5-a697-ede615f1f9c1
++Position: Tester
++Department: IT
++Limelight Networks login time: 2024-06-07 14:10:17.299218
++Working hours: 10
++Approximate Limelight Networks exit time: 2024-06-08 00:10:17.299218
++
++Employee: Alex Litvinov
++UUID: 82a2235f-092e-4c9b-a2b2-f5a08cf7269d
++Position: Qa Engineer
++Department: IT
++Limelight Networks login time: 2024-06-07 14:10:33.886504
++Working hours: 7
++Approximate Limelight Networks exit time: 2024-06-07 21:10:33.886504
++
++Visitor: Jon Smith
++Meeting curator: Alex Litvinov
++Position: Back-End
++Level: Trainee
++Department: IT
++Limelight Networks login time: 2024-06-07 14:10:45.797650
++Approximate Limelight Networks exit time: 2024-06-07 14:30:45.797650
++
+Index: lecture#4/hw#12.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lecture#4/hw#12.py b/lecture#4/hw#12.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#4/hw#12.py	
+@@ -0,0 +1,23 @@
++
++string = "This tool is cool. But that owl is awful. MAGIC TOOLS Ltd."
++# string = "This tol is cool. But that owl is awful. MAGIC TOOOLS Ltd."
++
++print(f'String: {string}')
++symbol = "o"
++result = ''
++for item in string.lower().split('.'):
++    for i in item.split():
++        if i.count(symbol) == 2:
++            result += i.capitalize() + ' '
++print(f'Result: {". ".join(result.split())}')
++
++# symbol = "o"
++# result = []
++# for item in string.lower().split():
++#     if item.count(symbol) == 2:
++#         result.append(item)
++# print(f'Result: {" ".join(result).title()}')
++
++
++
++
+diff --git a/lecture#6/source_directory/dorectory2/f2.txt b/lecture#6/source_directory/dorectory2/f2.txt
+new file mode 100644
+diff --git a/lecture#6/source_directory/dorectory2/d2/d2_2/f2_2_2.txt b/lecture#6/source_directory/dorectory2/d2/d2_2/f2_2_2.txt
+new file mode 100644
