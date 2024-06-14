@@ -55,3 +55,5 @@ class Car:
                f'Travel duration: {self.calculate_time()}\n'
 
 
+
+
