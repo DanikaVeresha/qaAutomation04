@@ -1,0 +1,1242 @@
+Index: lecture#7/hw#23.py
+===================================================================
+diff --git a/lecture#7/hw#23.py b/lecture#7/hw#23.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#7/hw#23.py	
+@@ -0,0 +1,28 @@
++import math
++
++# second_largest_number = ([])  # None
++# second_largest_number = ([1, 1])  # None
++# second_largest_number = ([1, 2, 3, 4, 5])  # 4
++# second_largest_number = ([-1, -2, -3, -4, -5]) # -2
++# second_largest_number = [-2, -5, -6] # -5
++second_largest_number = ([0, 0, 0, 0, 0, 0]) # None
++
++
++def second_largest_number_(lst):
++    if len(lst) == 0:
++        return None
++    print(f'List`s len: {len(lst)}')
++    max_number = -math.inf
++    second_max_number = -math.inf
++    for i in lst:
++        if i > max_number:
++            second_max_number = max_number
++            max_number = i
++        elif i > second_max_number and i != max_number:
++            second_max_number = i
++    if second_max_number == -math.inf:
++        return None
++    return second_max_number
++
++
++print(second_largest_number_(second_largest_number))
+Index: lecture#7/hw#22.py
+===================================================================
+diff --git a/lecture#7/hw#22.py b/lecture#7/hw#22.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#7/hw#22.py	
+@@ -0,0 +1,22 @@
++
++# lst2dict = ([0, 1, 2, 3])
++lst2dict = (['a', 'A', 'b', 'B', 'c'])
++# lst2dict = (['a', None, 'C'])
++# lst2dict = ([])
++
++
++def list2dict_(lst):
++    test_lst = lst.copy()
++    if len(test_lst) % 2 != 0:
++        test_lst.pop()
++    return {test_lst[i]: test_lst[i + 1] for i in range(0, len(test_lst), 2)}
++
++
++# Output
++print(f'Result of a copy of the input list after running the function: {list2dict_(lst2dict)}')
++print(f'Source list: {lst2dict}')
++
++
++
++
++
+Index: lecture#7/hw#24.py
+===================================================================
+diff --git a/lecture#7/hw#24.py b/lecture#7/hw#24.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#7/hw#24.py	
+@@ -0,0 +1,15 @@
++# dates = ['14-Dec', '12-Apr', '13-Apr', '31-Dec', '1-Jan', '12-Jan']
++dates = ['1-Dec', '12-Apr', '17-Apr', '31-Dec', '19-Jan', '4-Jan', '12-Dec']
++
++
++def sortdates(dates):
++    month_ = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
++    month = month_.index(dates.split('-')[1])
++    day = int(dates.split('-')[0])
++    return month, day
++
++
++dates.sort(key=sortdates)
++print(dates)
++
++
+Index: lecture#2/hw#3.py
+===================================================================
+diff --git a/lecture#2/hw#3.py b/lecture#2/hw#3.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#2/hw#3.py	
+@@ -0,0 +1,6 @@
++
++country = ['Ukraine', 'Spain', 'Italy']
++capital = ['Kyiv', 'Madrid', 'Rome']
++info = dict(zip(country, capital))
++for k, v in info.items():
++    print(f'{k} : {v}')
+Index: lecture#2/hw#2.py
+===================================================================
+diff --git a/lecture#2/hw#2.py b/lecture#2/hw#2.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#2/hw#2.py	
+@@ -0,0 +1,3 @@
++
++item_list = ['Murzik', 'Barsik', 'Pantera']
++print(', '.join(map(str, item_list)))
+Index: lecture#2/hw#4.py
+===================================================================
+diff --git a/lecture#2/hw#4.py b/lecture#2/hw#4.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#2/hw#4.py	
+@@ -0,0 +1,7 @@
++
++x = int(input('Enter a: '))
++y = int(input('Enter b: '))
++res_sum = x + y
++res_product = x * y
++print(f'{x} + {y} = {res_sum}')
++print(f'{x} + {y} = {res_product}')
+Index: lecture#8/hw#25.py
+===================================================================
+diff --git a/lecture#8/hw#25.py b/lecture#8/hw#25.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#8/hw#25.py	
+@@ -0,0 +1,28 @@
++
++def skip_if(condition, reason=''):
++    def decorator(func):
++        def wrapper(*args, **kwargs):
++            if condition:
++                print(f'Skipping test "{func.__name__}". Reason: {reason}')
++            else:
++                return func(*args, **kwargs)
++        return wrapper
++    return decorator
++
++
++values = [10, 5, 5]
++if_ = 25
++
++
++@skip_if(condition=sum(values) == if_,
++         reason=f'becouse sum entered values is equal to {sum(values)} and so condition is met.')
++def test_func(values):
++    result = sum(values)
++    return f'{result == if_}'
++
++
++print(test_func(values))
++
++
++
++
+Index: lecture#8/data.txt
+===================================================================
+diff --git a/lecture#8/data.txt b/lecture#8/data.txt
+new file mode 100644
+--- /dev/null	
++++ b/lecture#8/data.txt	
+@@ -0,0 +1,56 @@
++Function "sum_". Information below:
++Was called 1 times
++Args: (1, 2)
++Return: Sum of numbers
++Function start time: 2024-05-13 23:10:57.979106
++Function execution time: 0.0013667999301105738
++
++Function "sum_". Information below:
++Was called 2 times
++Args: (3, 4)
++Return: Sum of numbers
++Function start time: 2024-05-13 23:10:57.981096
++Function execution time: 0.000443900004029274
++
++Function "mul_". Information below:
++Was called 1 times
++Args: (2, 3)
++Return: Multiplication of numbers
++Function start time: 2024-05-13 23:10:57.982098
++Function execution time: 0.0003877999261021614
++
++Function "div_". Information below:
++Was called 1 times
++Args: (6, 3)
++Return: Division of numbers
++Function start time: 2024-05-13 23:10:57.982098
++Function execution time: 0.00044950004667043686
++
++Function "div_". Information below:
++Was called 2 times
++Args: (6, 1)
++Return: Division of numbers
++Function start time: 2024-05-13 23:10:57.984219
++Function execution time: 0.0006148999091237783
++
++Function "div_". Information below:
++Was called 3 times
++Args: (6, 2)
++Return: Division of numbers
++Function start time: 2024-05-13 23:10:57.985211
++Function execution time: 0.00041470001451671124
++
++Function "sub_". Information below:
++Was called 1 times
++Args: (6, 2)
++Return: Subtraction of numbers
++Function start time: 2024-05-13 23:10:57.985211
++Function execution time: 0.00032839993946254253
++
++Function "sub_". Information below:
++Was called 2 times
++Args: (6, 1)
++Return: Subtraction of numbers
++Function start time: 2024-05-13 23:10:57.986211
++Function execution time: 0.00046989996917545795
++
+Index: lecture#8/hw#27.py
+===================================================================
+diff --git a/lecture#8/hw#27.py b/lecture#8/hw#27.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#8/hw#27.py	
+@@ -0,0 +1,32 @@
++"""Task 27. My version, but it`s not entirely correct"""
++# def generator(lst: list, iter_num: int = None):
++#     while iter_num is None:
++#         for i_lst in range(len(lst)):
++#             yield lst[i_lst]
++#     else:
++#         for i_len in range(iter_num):
++#             for item_lst in range(len(lst)):
++#                 yield lst[item_lst]
++
++
++def generator(lst: list, iter_num: int = None):
++    """Correct version of generator function"""
++    while True:
++        if iter_num is None:
++            for items in lst:
++                yield items
++        else:
++            for _ in range(iter_num):
++                for item_lst in lst:
++                    yield item_lst
++            break
++
++
++lst_obj = ['a', 'b']
++for item in generator(lst_obj, 4):
++    print(item)
++
++
++"""Iteration option when the iter_num is None"""
++# for item in generator(lst_obj):
++#     print(item)
+Index: lecture#8/hw#26.py
+===================================================================
+diff --git a/lecture#8/hw#26.py b/lecture#8/hw#26.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#8/hw#26.py	
+@@ -0,0 +1,83 @@
++"""Task 26. My decorator`s version"""
++import time
++from datetime import datetime
++
++
++# def call_counter(path):
++#
++#     def inner(func):
++#         func.calls = 0
++#
++#         def wrapper(*args):
++#             start_time = datetime.now()
++#             func(*args)
++#             func.calls += 1
++#             with open(path, 'a') as file:
++#                 file.write(f'Function "{func.__name__}". Information below:\n'
++#                            f'Was called {func.calls} times\n'
++#                            f'Args: {args}\n'
++#                            f'Return: {func.__doc__}\n'
++#                            f'Function start time: {datetime.now()}\n'
++#                            f'Function execution time: {datetime.now() - start_time}\n\n')
++#             return func(*args)
++#         return wrapper
++#     return inner
++
++
++"""Task 26. Correct decorator`s version"""
++
++
++def call_counter(path):
++
++    def inner(func):
++        func.calls = 0
++
++        def wrapper(*args):
++            start_time = time.perf_counter()
++            func(*args)
++            func.calls += 1
++            with open(path, 'a') as file:
++                file.write(f'Function "{func.__name__}". Information below:\n'
++                           f'Was called {func.calls} times\n'
++                           f'Args: {args}\n'
++                           f'Return: {func.__doc__}\n'
++                           f'Function start time: {datetime.now()}\n'
++                           f'Function execution time: {time.perf_counter() - start_time}\n\n')
++            return func(*args)
++        return wrapper
++    return inner
++
++
++@call_counter('data.txt')
++def sum_(a, b):
++    """Sum of numbers"""
++    return sum((a, b))
++
++
++@call_counter('data.txt')
++def mul_(a, b):
++    """Multiplication of numbers"""
++    return a * b
++
++
++@call_counter('data.txt')
++def div_(a, b):
++    """Division of numbers"""
++    return a / b
++
++
++@call_counter('data.txt')
++def sub_(a, b):
++    """Subtraction of numbers"""
++    return a - b
++
++
++print(f'Sum: {sum_(1, 2)}')
++print(f'Sum: {sum_(3, 4)}')
++print(f'Mul: {mul_(2, 3)}')
++print(f'Div: {div_(6, 3)}')
++print(f'Div: {div_(6, 1)}')
++print(f'Div: {div_(6, 2)}')
++print(f'Sub: {sub_(6, 2)}')
++print(f'Sub: {sub_(6, 1)}')
++
+Index: lecture#3/hw#6.py
+===================================================================
+diff --git a/lecture#3/hw#6.py b/lecture#3/hw#6.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#3/hw#6.py	
+@@ -0,0 +1,8 @@
++
++height = int(input('Enter height of rectangle: '))
++weight = int(input('Enter weight of rectangle: '))
++symbol = input('Enter symbol to build rectangular with: ')
++
++for h in range(height):
++    print(symbol * weight)
++
+Index: lecture#9/hw#28.py
+===================================================================
+diff --git a/lecture#9/hw#28.py b/lecture#9/hw#28.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#9/hw#28.py	
+@@ -0,0 +1,63 @@
++"""Task 28. Email address validator using regular expressions"""
++import re
++
++
++def email_validator(email: str):
++    """Function to validate email address using regular expressions"""
++    email_pattern_true = r'^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+$'
++
++    if re.findall(email_pattern_true, email):
++        return f'Email verification result: {email} - "True"'
++    else:
++        return f'Email verification result: {email} - "False"'
++
++
++print(email_validator('aaa123@bbb.ccc'))  # True
++print(email_validator('123@bbb.ccc')) # True
++print('-----Email isn`t starts with @/.and isn`t ends @/.-----')
++print(email_validator('@aaa123@bbb.ccc'))
++print(email_validator('aaa123@bbb.ccc.'))
++print(email_validator('.aaa123@bbb.ccc'))
++print(email_validator('aaa123@bbb.ccc@'))
++print(email_validator('@aaa123@bbb.ccc.'))
++print('-----Email has more than one @/.-----')
++print(email_validator('.aaa123bbb.ccc'))
++print(email_validator('@aaa123bbb@ccc'))
++print(email_validator('aaa123@@bbb.ccc'))
++print(email_validator('aaa123@bbb..ccc'))
++print('-----Email has space-----')
++print(email_validator('aaa 123@bbb.ccc'))
++print('-----In email . stands before @-----')
++print(email_validator('aaa123.bbb@ccc'))
++print('-----Email has more one ./@-----')
++print(email_validator('aaa123@@bbb.ccc'))
++print(email_validator('aaa123@bbb..ccc'))
++print(email_validator('aaa123@@bbb..ccc'))
++print('-----Email has more one ./@-----')
++print(email_validator('aaa123@bbb.c.c.c'))
++print(email_validator('a@aa@123@bbb.ccc'))
++print(email_validator('a@aa@123@bbb.c.c.c'))
++print('-----Email has space/empty-----')
++print(email_validator(' aaa123 @b bb.ccc '))
++print(email_validator(' aaa123@bbb.ccc '))
++print(email_validator(' '))
++print('-----Email has more one ./@-----')
++print(email_validator('aaa123@@bbbccc'))
++print(email_validator('aaa123bbb..ccc'))
++print('-----Email starts/ends with special characters-----')
++print(email_validator('_aaa123@bbb.ccc'))
++print(email_validator('aaa123@bbb.ccc_'))
++print(email_validator('!aaa123@bbb.ccc'))
++print(email_validator('aaa123@bbb.ccc#'))
++print(email_validator('~aaa123@bbb.ccc'))
++print(email_validator('aaa123@bbb.ccc$'))
++print(email_validator('aaa123@bbb.ccc|'))
++print(email_validator('[aaa123@bbb.ccc'))
++print('-----Email has special characters-----')
++print(email_validator('aaa_123@bbb.ccc'))
++print(email_validator('aaa#123@bbb.ccc'))
++print(email_validator('aaa*123@bbb.ccc'))
++print(email_validator('a#a%a*1&2)3@b:bb].c-c+c'))
++print(email_validator('"aaa✳123@bbb.ccc"'))
++print(email_validator('"aaa№123@bbb.ccc"'))
++
+Index: lecture#3/hw#5.py
+===================================================================
+diff --git a/lecture#3/hw#5.py b/lecture#3/hw#5.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#3/hw#5.py	
+@@ -0,0 +1,11 @@
++
++value_a = int(input('Enter "a": '))
++value_b = int(input('Enter "b": '))
++value_c = int(input('Enter "c": '))
++
++if value_a > value_b and value_a > value_c:
++    print(f'Max_value "a": {value_a}')
++elif value_b > value_a and value_b > value_c:
++    print(f'Max_value "b": {value_b}')
++else:
++    print(f'Max_value "c": {value_c}')
+Index: lecture#9/hw#30.py
+===================================================================
+diff --git a/lecture#9/hw#30.py b/lecture#9/hw#30.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#9/hw#30.py	
+@@ -0,0 +1,68 @@
++"""Task 30. Time schedule"""
++from datetime import timedelta, datetime
++
++
++def time_schedule(date: str, time: str, total_lectures: int):
++    """Version 1 of the solution: Generator Function that returns the time schedule lecture(my favorite version)"""
++    days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
++    months = ['Jany', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
++    date = datetime.strptime(date, '%d%m%Y')
++    time = datetime.strptime(time, '%H%M')
++    if date.strftime('%A') == 'Thursday':
++        for number in range(1, total_lectures + 1):
++            yield (f'Lecture {number:>2}: {date.strftime("%d")} {months[date.month - 1]} '
++                   f'{date.year} {time.strftime("%H:%M")}')
++            if number % 2 != 0:
++                date += timedelta(days=4)
++            if number % 2 == 0:
++                date += timedelta(days=3)
++
++    elif date.strftime('%A') == 'Monday':
++        for number in range(1, total_lectures + 1):
++            yield (f'Lecture {number:>2}: {date.strftime("%d")} {months[date.month - 1]} '
++                   f'{date.year} {time.strftime("%H:%M")}')
++            if number % 2 != 0:
++                date += timedelta(days=3)
++            if number % 2 == 0:
++                date += timedelta(days=4)
++
++    else:
++        yield 'Sorry, there are no lectures on this day.'
++
++
++# res = time_schedule('11042024', '1915', 32)
++# print(res.__sizeof__()) # 320 bytes
++# print(time_schedule('11042024', '1915', 32))
++for item in time_schedule('11042024', '1915', 32):
++    print(item)
++
++
++print('-----------------Version 2 of the solution-----------------------')
++start_lectures_date = '11042024'
++time_start_lecture = '1915'
++total_lessons = 32
++
++list_days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
++list_months = ['Jany', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
++date_ = datetime.strptime(start_lectures_date, '%d%m%Y')
++time_ = datetime.strptime(time_start_lecture, '%H%M')
++if date_.strftime('%A') == 'Thursday':
++    for i in range(1, total_lessons + 1):
++        print(f'Lecture {i:>2}: {date_.strftime("%d")} {list_months[date_.month - 1]} '
++              f'{date_.year} {time_.strftime("%H:%M")}')
++        if i % 2 != 0:
++            date_ += timedelta(days=4)
++        if i % 2 == 0:
++            date_ += timedelta(days=3)
++
++elif date_.strftime('%A') == 'Monday':
++    for i in range(1, total_lessons + 1):
++        print(f'Lecture {i:>2}: {date_.strftime("%d")} {list_months[date_.month - 1]} '
++              f'{date_.year} {time_.strftime("%H:%M")}')
++        if i % 2 != 0:
++            date_ += timedelta(days=3)
++        if i % 2 == 0:
++            date_ += timedelta(days=4)
++else:
++    print('Sorry, there are no lectures on this day.')
++
+Index: lecture#3/hw#8.py
+===================================================================
+diff --git a/lecture#3/hw#8.py b/lecture#3/hw#8.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#3/hw#8.py	
+@@ -0,0 +1,28 @@
++
++print('To test this file, read the teachers requirements \n'
++      'at the link: https://lms.ithillel.ua/groups/65b95f9a581cb89d38bea262/homeworks/66213c710eb47a7edbd54707')
++min_width = int(input('Enter minimal width: '))
++max_width = int(input('Enter maximal width: '))
++
++if min_width > max_width:
++    print('Error: Sorry, your values min_width and max_width of the diamond pattern incorrect. \n'
++          'Please enter correct values min_width and max_width and try again!')
++elif (max_width - min_width) % 2 != 0:
++    print('Error: Sorry, your values min_width and max_width of the diamond pattern incorrect. \n'
++          'Please enter the correct min_width and max_width values so that the difference between \n'
++          'these values is a multiple of 2 and try again!')
++else:
++    for row in range(min_width, max_width+2, 2):
++        if row == min_width:
++            row = ' ' * ((max_width-row) // 2) + "*" * min_width
++            print(row)
++        else:
++            print(' ' * ((max_width-row) // 2) + "*" + ' '*(row-2) + "*")
++    for row in range(max_width-2, min_width-2, -2):
++        if row > min_width:
++            row = ' ' * ((max_width-row) // 2) + '*' + ' '*(row-2) + "*"
++            print(row)
++        else:
++            print(' ' * ((max_width-row) // 2) + "*" * min_width)
++
++
+Index: lecture#3/hw#7.py
+===================================================================
+diff --git a/lecture#3/hw#7.py b/lecture#3/hw#7.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#3/hw#7.py	
+@@ -0,0 +1,11 @@
++
++triangle = int(input('Enter size of triangle: '))
++symbol = '*'
++
++for item in range(triangle):
++    for j in range(triangle-1, -1, -1):
++        if j > item:
++            print(" ", end="")
++        else:
++            print(symbol, end="")
++    print()
+Index: lecture#9/hw#29.py
+===================================================================
+diff --git a/lecture#9/hw#29.py b/lecture#9/hw#29.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#9/hw#29.py	
+@@ -0,0 +1,45 @@
++"""Task 29. List linearization"""
++
++
++def linearize_list(lst):
++    result = []
++    for i in lst:
++        if type(i) is list:
++            result += linearize_list(i)
++        else:
++            result.append(i)
++    return result
++
++
++def linearize_list_v2(lst, is_first_call=True):
++    if is_first_call:
++        global result_v2
++        result_v2 = []
++    for i in lst:
++        if type(i) is list:
++            linearize_list_v2(i, False)
++        else:
++            result_v2.append(i)
++    return result_v2
++
++
++def linearize_list_v3(lst):
++    result_v3 = []
++    for i in lst:
++        if isinstance(i, list):
++            result_v3 += linearize_list(i)
++        else:
++            result_v3.append(i)
++    return result_v3
++
++
++lst_obj = [1, 2, [3, 4, [5, 6], 7], 8, [9, [10]], 11]
++# lst_obj = [1, 2, [3, [4, 5, [6, 7]]], 8, 9, [10, [11, 12]], 13, [14, 15, [16, 17, [18, 19, [20, 21]]]]]
++# lst_obj = ['a', 'b', ['c', 'c', [1, 2], 'z'], 'z', [5, ['y']], 'i']
++# lst_obj = ['a', 'b', ['c', 'c', ['d', 'e'], 'z'], 'z', ['v', ['y']], 'i']
++
++print(linearize_list(lst_obj))
++print(linearize_list_v2(lst_obj))
++print(linearize_list_v3(lst_obj))
++
++
+Index: lecture#9/wiki_page.txt
+===================================================================
+diff --git a/lecture#9/wiki_page.txt b/lecture#9/wiki_page.txt
+new file mode 100644
+--- /dev/null	
++++ b/lecture#9/wiki_page.txt	
+@@ -0,0 +1,17 @@
++<link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1211633275"><blockquote class="templatequote"><p><code>https://example.com/path/to/page?name=ferret&amp;color=purple</code></p></blockquote>
++<p>The exact structure of the query string is not standardized. Methods used to parse the query string may differ between websites.
++</p><p>A link in a web page may have a URL that contains a query string. <a href="111/wiki/HTML111" title="HTML">HTML</a> defines three ways a user agent can generate the query string:
++</p>
++<ul><li>an <a href="222/wiki/Form_(HTML)222" class="mw-redirect" title="Form (HTML)">HTML form</a> via the <code class="nowrap" style="">&lt;form&gt;...&lt;&#47;form&gt;</code> element</li><a href="333NEW333" class="mw-redirect" title="Form (HTML)">HTML form</a>
++<li>a <a href="444/wiki/Image_map#Server-side444" title="Image map">server-side image map</a> via the <code class="mw-highlight mw-highlight-lang-text mw-content-ltr" id="" style="" dir="ltr">ismap</code> attribute on the <code class="nowrap" style="">&lt;img&gt;</code> element with an <code class="nowrap" style="">&lt;img&#32;ismap&gt;</code> construction</li>
++<li>an indexed search via the now deprecated <code class="nowrap" style="">&lt;isindex&gt;</code> element</li></ul>
++<h3><span class="mw-headline" id="Web_forms">Web forms</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="555/w/index.php?title=Query_string&amp;action=edit&amp;section=2555" title="Edit section: Web forms"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></h3>
++<p>One of the original uses was to contain the content of an <a href="666/wiki/Form_(HTML)666" class="mw-redirect" title="Form (HTML)">HTML form</a>, also known as web form. In particular, when a form containing the fields <code>field1</code>, <code>field2</code>, <code>field3</code> is submitted, the content of the fields is encoded as a query string as follows:
++</p>
++
++<a class="mw-redirect" title="Form (HTML)" href="000/wiki/Form_(HTML)000">HTML form</a>
++
++<ul><li>an <a href="001/wiki/Form_(HTML)001" <b href="002/wiki/Form_(HTML)002" </b> class="mw-redirect" title="Form (HTML)">HTML form</a>
++<ul><li>an <b href="003/wiki/Form_(HTML)003" <a href="004/wiki/Form_(HTML)004" </a> class="mw-redirect" title="Form (HTML)">HTML form</b> via the <code class="nowrap" style="">&lt;form&gt;...&lt;&#47;form&gt;</code> element</li><h href="005NEW005" class="mw-redirect" title="Form (HTML)">HTML form</h>
++
++<ul><li>an <a href="333/wiki/Form_(HTML)333" <a href="333/wiki/Form_(HTML)333" </a> class="mw-redirect" title="Form (HTML)">HTML form</a> via the <code class="nowrap" style="">&lt;form&gt;...&lt;&#47;form&gt;</code> element</li><a href="003NEW003" class="mw-redirect" title="Form (HTML)">HTML form</a><a href="003NEW003" class="mw-redirect" title="Form (HTML)">HTML form</a><a href="003NEW003" class="mw-redirect" title="Form (HTML)">HTML form</a><a href="003NEW003" class="mw-redirect" title="Form (HTML)">HTML form</a>
+Index: lecture#9/hw#31.py
+===================================================================
+diff --git a/lecture#9/hw#31.py b/lecture#9/hw#31.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#9/hw#31.py	
+@@ -0,0 +1,34 @@
++"""Task 31. Please look at the wiki_page.txt file because I have changed it."""
++import re
++
++
++def get_links_re(html_file):
++    """Get value of href attribute for tag 'a'. Do it: using regular expressions"""
++    with open(html_file, 'r') as file:
++        for line in file:
++            if 'href' in line:
++                yield from re.findall(r'<a.*?href="(.+?)"', line)
++
++
++for i in get_links_re('wiki_page.txt'):
++    print(i)
++
++print('------------------------------------------------')
++
++
++def get_links_str(html_file):
++    """Get value of href attribute for tag 'a'. Do it: using string methods"""
++    with open(html_file, 'r') as file:
++        for line in file:
++            start_of_range = line.find("<a", 0, len(line))
++            end_of_rnage = line.find("</a>", 0, len(line))
++            while start_of_range != -1:
++                yield line[line.find('href="', start_of_range, end_of_rnage) + len('href="'):
++                           line.find('"', line.find('href="', start_of_range,  end_of_rnage) + len('href="'), end_of_rnage)]
++                start_of_range = line.find("<a", start_of_range + 1, len(line))
++                end_of_rnage = line.find("</a>", end_of_rnage + 1, len(line))
++
++
++for item in get_links_str('wiki_page.txt'):
++    print(item)
++
+Index: lecture#3/hw#9.py
+===================================================================
+diff --git a/lecture#3/hw#9.py b/lecture#3/hw#9.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#3/hw#9.py	
+@@ -0,0 +1,10 @@
++
++
++n = int(input("Enter value 'n': "))
++for j in range(1, n+1):
++    print(' ' * 2 * (n-j), end='')
++    for i in range(1, 2 * j):
++        print(i if i <= j else 2 * j-i, end='')
++        if i < 2 * j - 1:
++            print(' ', end='')
++    print()
+\ No newline at end of file
+Index: lecture#4/hw#10.py
+===================================================================
+diff --git a/lecture#4/hw#10.py b/lecture#4/hw#10.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#4/hw#10.py	
+@@ -0,0 +1,22 @@
++# var1
++word = input('Enter word:').casefold().strip()
++reversed_word = word[::-1]
++
++comparison_result = (reversed_word == word)
++
++if comparison_result:
++    print(f'Comparison result var1: {comparison_result}')
++else:
++    print(f'Comparison result var1: {comparison_result}')
++
++# or var2
++result = ''.join(reversed(word))
++print(f'Comparison result var2: {result == word}')
++
++
++# or var3
++for i, j in enumerate(word):
++    if j != word[-i - 1]:
++        print(f'Comparison result var3: False')
++    else:
++        print(f'Comparison result var3: True')
+\ No newline at end of file
+Index: lecture#4/hw#12.py
+===================================================================
+diff --git a/lecture#4/hw#12.py b/lecture#4/hw#12.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#4/hw#12.py	
+@@ -0,0 +1,23 @@
++
++string = "This tool is cool. But that owl is awful. MAGIC TOOLS Ltd."
++# string = "This tol is cool. But that owl is awful. MAGIC TOOOLS Ltd."
++
++print(f'String: {string}')
++symbol = "o"
++result = ''
++for item in string.lower().split('.'):
++    for i in item.split():
++        if i.count(symbol) == 2:
++            result += i.capitalize() + ' '
++print(f'Result: {". ".join(result.split())}')
++
++# symbol = "o"
++# result = []
++# for item in string.lower().split():
++#     if item.count(symbol) == 2:
++#         result.append(item)
++# print(f'Result: {" ".join(result).title()}')
++
++
++
++
+Index: lecture#10/hw#33.py
+===================================================================
+diff --git a/lecture#10/hw#33.py b/lecture#10/hw#33.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#10/hw#33.py	
+@@ -0,0 +1,19 @@
++"""
++Task 33.
++Name: Custom map
++"""
++
++
++def custom_map(func, *args):
++    return [func(*params) for params in zip(*args)]
++
++
++print(f'Sum item in two lists: {custom_map(sum, [[1, 2, 3], [3, 5, 0, 5]])}')
++print(f'Sum items from two lists: {custom_map(lambda x, y: x + y, [1, 2, 3], [3, 5, 0])}')
++print(f'List`s lenght in lists list: {custom_map(len, [[], (2, 4), [1, 3, 5, 7]])}')
++print('---------------------------')
++print(f'Sum items from lists: {custom_map(lambda x, y, z: x + y + z, [1, 2, 3, 4], [3, 5, 0], [1, 2, 3, 9])}')
++print(f'Minimum value in each list of the main list: {custom_map(min, [[1, 2, 3, 4, 5], [1, 2, 3], [3, 5, 1, 5]])}')
++print(f'Maximum value in each list of the main list: {custom_map(max, [[1, 2, 3, 4, 5], [1, 2, 3], [3, 5, 1, 5]])}')
++print(f'Prod: {custom_map(lambda x, y, z: x * y * z, [1, 2, 3, 4], [3, 5, 0], [1, 2, 3, 9])}')
++print(f'Division: {custom_map(lambda x, y, z: round(x / y / z, 2) if y != 0 and z !=0 else None, [1, 2, 3, 4], [3, 0, 1], [1, 2, 3, 9])}')
+Index: lecture#10/hw#32.py
+===================================================================
+diff --git a/lecture#10/hw#32.py b/lecture#10/hw#32.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#10/hw#32.py	
+@@ -0,0 +1,20 @@
++"""Task 32. Random string"""
++import random
++
++
++def random_string(length):
++    """Generates a random string of the specified length"""
++    res = (
++        "".join(chr(random.randint(48, 57)) for _ in range(length)) +
++        "".join(chr(random.randint(65, 90)) for _ in range(length)) +
++        "".join(chr(random.randint(97, 122)) for _ in range(length))
++
++    )
++    return "".join(random.sample(res, length))
++
++
++print(f'Random string: {random_string(10)}')
++# print(type(random_string(10)))
++
++
++
+Index: lecture#4/hw#11.py
+===================================================================
+diff --git a/lecture#4/hw#11.py b/lecture#4/hw#11.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#4/hw#11.py	
+@@ -0,0 +1,19 @@
++
++sentences = "Hello all. Here`s pretty cold and hot. Choose yourself"
++arr = sentences.split('.')
++print(f'Sentences: {arr}')
++result = []
++for i in arr:
++    result += str(len(i.split()))
++print(f'Result: [{", ".join(result)}]')
++
++
++
++
++
++
++
++
++
++
++
+Index: lecture#4/hw#13.py
+===================================================================
+diff --git a/lecture#4/hw#13.py b/lecture#4/hw#13.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#4/hw#13.py	
+@@ -0,0 +1,45 @@
++#   List of email addresses for verification
++# email = ' '
++# email = 'aaa277@bbb.ccc'    # var: True
++# email = '@aaa277bbbccc.'
++# email = '@aaa277bbbccc'
++# email = '.aaa277bbbccc'
++# email = 'aaa277bbbccc@'
++# email = 'aaa277bbbccc.'
++# email = '@aaa277@bbb.ccc'
++# email = 'aaa277@bbbccc'
++# email = 'aaa277@bbb.ccc.'
++# email = 'aaa277bbb.ccc'
++# email = 'aaa277@bbbccc'
++# email = 'aaa277@bbb.c.cc'
++# email = 'aaa@277@bbb.ccc'
++# email = 'a_aa@bbb.cc/c'
++# email = '_aaa@bbb.ccc/'
++# email = 'aaa@bbb..c@c@c'
++# email = 'aaa.bbb.ccc@c@c.c'
++
++#   List TestCases for email verification
++check_email = ((email.find('@') < email.find('.'))
++               and email.find('@') != 0
++               and email.find('.') != len(email) - 1
++               and (email.replace('@', '').replace('.', '').isalnum())
++               and email.count('@') == 1
++               and email.count('.') == 1)
++
++#   Result of email verification
++if check_email:
++    print(f'Email verification result: {email} - "True"')
++else:
++    print(f'Email verification result: {email} - "False"')
++
++
++
++
++
++
++
++
++
++
++
++
+Index: lecture#10/hw#34.py
+===================================================================
+diff --git a/lecture#10/hw#34.py b/lecture#10/hw#34.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#10/hw#34.py	
+@@ -0,0 +1,27 @@
++"""
++Task 34.
++Name: Custom zip
++"""
++
++
++def custom_zip(*args, full=False, default=None):
++    if full:
++        max_len = max(len(arg) for arg in args)
++        res = []
++        for i in range(max_len):
++            res.append(tuple(arg[i] if i < len(arg) else default for arg in args))
++        return res
++    else:
++        return [tuple(arg[i] for arg in args) for i in range(min(len(arg) for arg in args))]
++
++
++# lst = [1, 3, 5, 7, 8, 9, 10, 11]
++# lst2 = [2, 4, 6]
++lst = [1, 3, 5, 7]
++lst2 = [2, 4, 6, 8, 9, 10, 11]
++print(custom_zip(lst, lst2))
++print(type(custom_zip(lst, lst2)))
++print('----------------------------')
++print(custom_zip(lst, lst2, full=True, default="X"))
++print(type(custom_zip(lst, lst2, full=True, default="X")))
++
+Index: lecture#5/hw#15.py
+===================================================================
+diff --git a/lecture#5/hw#15.py b/lecture#5/hw#15.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#5/hw#15.py	
+@@ -0,0 +1,42 @@
++lst = [2, 4, 6, 2, 1, 1, 9, 4, 6]   # True
++# lst = [2, 9, 9, 2, 1, 1, 9, 9, 9]
++# lst = [2, 1, 1, 2, 1, 1, 9, 1, 1]
++# lst = []
++# lst = [0, 0, 0, 0, 0, 0, 0, 0, 0]
++
++MIN = 3
++MAX = 6
++
++# for item in lst:
++check = [x for x in lst if MIN <= x <= MAX]
++# product of all elements in the new list
++value_0 = 1
++for i in check:
++    value_0 *= i
++
++# checking the sum of all elements of the new list and their product
++if check:
++    print(f'Sum_: {sum(check)}; Product: {value_0}; '
++          f'List is: {check}')
++else:
++    print(f'Sum_: {None}; Product: {None}; '
++          f'List is: {check}')
++
++# if check:
++#     sum_ = sum(check)
++#     value_0 = 1
++#     for i in check:
++#         value_0 *= i
++# else:
++#     sum_ = None
++#     value_0 = None
++#
++# print(f'Sum_: {sum(check)}; Product: {value_0}; '
++#       f'List is: {check}')
++
++
++
++
++
++
++
+Index: lecture#16/hw#39.py
+===================================================================
+diff --git a/lecture#16/hw#39.py b/lecture#16/hw#39.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#16/hw#39.py	
+@@ -0,0 +1,34 @@
++"""Task 39.
++Create class Timer for measuring time of code execution.
++
++It should return elapsed time in field elapsed_time.
++
++Class should be applicable as context manager.
++
++Class should have reset method.
++
++If reset method was called between two measurements, measured time should be reset.
++
++If reset method wasn't called between two measurements, elapsed_time should contain time for execution of both pieces of code."""
++import time
++
++
++class Timer:
++    """Timer class."""
++
++    def __init__(self):
++        self.__start = 0
++        self.__end = 0
++        self.elapsed_time = 0
++
++    def __enter__(self):
++        self.__start = time.perf_counter_ns()
++        return self
++
++    def __exit__(self, exc_type, exc_val, exc_tb):
++        self.__end = time.perf_counter_ns()
++        self.elapsed_time = self.__end - self.__start
++
++    def reset(self):
++        """Reset elapsed time."""
++        self.elapsed_time = 0
+Index: lecture#5/hw#14.py
+===================================================================
+diff --git a/lecture#5/hw#14.py b/lecture#5/hw#14.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#5/hw#14.py	
+@@ -0,0 +1,16 @@
++number_list = range(16)
++print(list(number_list))    # List of numbers from 0 to 15
++
++# Elements are divisible by 3 but not by 5
++print(list(item for item in number_list if item % 3 == 0 and item % 5 != 0))
++
++# Elements are divisible by 5 but not by 3
++print(list(item for item in number_list if item % 5 == 0 and item % 3 != 0))
++
++# Elements are divisible by 3 and 5
++print(list(item for item in number_list if item % 3 == 0 and item % 5 == 0))
++
++# Output:
++print(list(item for item in range(16) if item % 3 == 0 and item % 5 != 0))
++print(list(item for item in range(16) if item % 5 == 0 and item % 3 != 0))
++print(list(item for item in range(16) if item % 3 == 0 and item % 5 == 0))
+Index: lecture#5/hw#17.py
+===================================================================
+diff --git a/lecture#5/hw#17.py b/lecture#5/hw#17.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#5/hw#17.py	
+@@ -0,0 +1,30 @@
++
++arr = [['a', 'c', 'e'],
++       ['f', 'b', 'a'],
++       ['a', 'n', 'k'],
++       ['e', 'l', 'i']]
++
++
++# Method
++print('------Source arry below-----------')
++for i in arr:
++    print(i)
++print('------Result(sort for columns) below----------------')
++result = [[sorted(arr, key=lambda x: x[j])[i][j] for i in range(len(arr))] for j in range(len(arr[0]))]
++output = [[result[i][j] for i in range(len(result))] for j in range(len(result[0]))]
++for item in output:
++    print(item)
++
++
++
++
++
++
++
++
++
++
++
++
++
++
+Index: lecture#5/hw#16.py
+===================================================================
+diff --git a/lecture#5/hw#16.py b/lecture#5/hw#16.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#5/hw#16.py	
+@@ -0,0 +1,13 @@
++# lst = [1, 2, 3, 4, 5]
++# lst = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
++# lst = [10, 12, 30]
++# lst = [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5]
++lst = [7, 9, 45, 78]
++
++# Method 1
++lst1 = lst.copy()
++result = [(lst1[i]+(lst1[i+1]))/2 for i in range(len(lst1)-1) if i != lst1[-1]]
++for item in result:
++    lst1.insert(result.index(item)*2+1, item)
++print(lst1)
++
+Index: lecture#6/hw#18.py
+===================================================================
+diff --git a/lecture#6/hw#18.py b/lecture#6/hw#18.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#6/hw#18.py	
+@@ -0,0 +1,33 @@
++test_design_writers = [1, 3, 5]
++test_scripters = [2, 3, 4, 6, 7, 8]
++reviewers = [1, 2, 3, 9, 10]
++out_of_office_today = [2, 5, 6, 1]
++
++print(f'-----------------Source data------------------\n'
++      f'Test design writers: {test_design_writers}\n'
++      f'Test scripters: {test_scripters}\n'
++      f'Reviewers: {reviewers}\n'
++      f'Out of office today: {out_of_office_today}')
++
++print('--------------------Result--------------------')
++all_testers = set(test_design_writers + test_scripters + reviewers)
++print(f'All testers in the team: {sorted(all_testers)}')
++
++only_testers_scripts = (
++      set(test_scripters) - (set(test_scripters) & set(test_design_writers)) -
++      (set(test_scripters) & set(reviewers)) - (set(test_design_writers) & set(reviewers))
++)
++print(f'Testers who can only write scripts: {sorted(only_testers_scripts)}')
++# print(f'Testers who can only write scripts: '
++#       f'{sorted(set(test_scripters) - (set(test_design_writers) | set(reviewers)))}')
++
++all_testers_on_work = (
++      set(all_testers) - set(out_of_office_today)
++)
++print(f'All testers who are at work today: {sorted(all_testers_on_work)}')
++
++all_tester_in_all_group_and_working_today = (
++      (set(all_testers) - set(out_of_office_today)) & set(test_design_writers) & set(test_scripters) & set(reviewers)
++)
++print(f'Testers who could write and review scripts, and are at work today: '
++      f'{sorted(all_tester_in_all_group_and_working_today)}')
+Index: lecture#6/hw#20.py
+===================================================================
+diff --git a/lecture#6/hw#20.py b/lecture#6/hw#20.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#6/hw#20.py	
+@@ -0,0 +1,13 @@
++
++
++with open('hw#20.txt', 'w') as f:
++    f.writelines(['line2\n', '\n', 'line3\n',
++                  'line444444 444\n', 'line555555 555\n', 'line6\n'])
++print('--------Result------------')
++max_val = ''
++for item in open('hw#20.txt', 'r'):
++    if len(item) >= len(max_val):
++        max_val = item
++print(f'The last word in the file with the maximum lengthh: {max_val}')
++
++
+Index: lecture#6/hw#19.py
+===================================================================
+diff --git a/lecture#6/hw#19.py b/lecture#6/hw#19.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#6/hw#19.py	
+@@ -0,0 +1,20 @@
++users = [
++    {'name': 'Luarvik L. Luarvik',
++     'age': 17},
++    {'name': 'Olaf Andvarafors',
++     'age': 18},
++    {'name': 'Brun Du Barnstokr',
++     'age': 19},
++    {'name': 'Bob Anderwood',
++     'age': 11},
++    {'name': 'Anny Winchester',
++     'age': 15},
++]
++
++# Method
++print(f'------Source data------')
++for item in users:
++    print(f'{item["name"]} - {item["age"]}')
++result = [user['name'] for user in users if user['age'] >= 18]
++print(f'--------Result---------\n'
++      f'Result: {result}')
+Index: lecture#6/hw#21.py
+===================================================================
+diff --git a/lecture#6/hw#21.py b/lecture#6/hw#21.py
+new file mode 100644
+--- /dev/null	
++++ b/lecture#6/hw#21.py	
+@@ -0,0 +1,20 @@
++import glob
++import os
++
++
++path = "source_directory"
++os.chdir(path)
++
++res = glob.glob('**/*.txt', recursive=True)
++for items in res:
++    print(f'file: {os.path.basename(items)} - size: {os.path.getsize(items)} bytes')
++
++result = [i for i in res if os.path.getsize(i) <= 120]
++with open('combined_files.txt', 'w') as x:
++    for item in result:
++        with open(item, 'r') as f:
++            x.write(f'{os.path.basename(item)}\n')
++            x.write(f'{f.read()}\n')
++
++
++
+Index: lecture#6/hw#20.txt
+===================================================================
+diff --git a/lecture#6/hw#20.txt b/lecture#6/hw#20.txt
+new file mode 100644
+--- /dev/null	
++++ b/lecture#6/hw#20.txt	
+@@ -0,0 +1,6 @@
++line2
++
++line3
++line444444 444
++line555555 555
++line6
+diff --git a/lecture#6/source_directory/directory2/d2/d2_2/f2_2_2.txt b/lecture#6/source_directory/directory2/d2/d2_2/f2_2_2.txt
+new file mode 100644
+diff --git a/lecture#6/source_directory/directory2/d2/f2.txt b/lecture#6/source_directory/directory2/d2/f2.txt
+new file mode 100644

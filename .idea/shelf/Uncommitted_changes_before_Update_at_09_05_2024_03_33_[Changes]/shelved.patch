@@ -1,0 +1,1297 @@
+Index: lecture#6/combined_files.txt
+===================================================================
+diff --git a/lecture#6/combined_files.txt b/lecture#6/combined_files.txt
+deleted file mode 100644
+--- a/lecture#6/combined_files.txt	(revision 9403bec5c401058d436ebaba6505bc4f7b72fc76)
++++ /dev/null	(revision 9403bec5c401058d436ebaba6505bc4f7b72fc76)
+@@ -1,15 +0,0 @@
+-['hw#20.txt', 'f2.txt', 'f2_2_2.txt', 'f3.txt', 'f4_4_4.txt']
+-line2
+-
+-line3
+-line444444 444
+-line555555 555
+-line6
+-
+-
+-
+-
+-dddddddddddddddddddddddddddd
+-dddddddddddddddddddddddddddd
+-dddddddddddddddddddddddddddd
+-dddddddddddddddddddddddddddddd
+Index: .idea/inspectionProfiles/profiles_settings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/inspectionProfiles/profiles_settings.xml b/.idea/inspectionProfiles/profiles_settings.xml
+new file mode 100644
+--- /dev/null	(date 1713214480586)
++++ b/.idea/inspectionProfiles/profiles_settings.xml	(date 1713214480586)
+@@ -0,0 +1,6 @@
++<component name="InspectionProjectProfileManager">
++  <settings>
++    <option name="USE_PROJECT_PROFILE" value="false" />
++    <version value="1.0" />
++  </settings>
++</component>
+\ No newline at end of file
+Index: .idea/inspectionProfiles/Project_Default.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/inspectionProfiles/Project_Default.xml b/.idea/inspectionProfiles/Project_Default.xml
+new file mode 100644
+--- /dev/null	(date 1713214479695)
++++ b/.idea/inspectionProfiles/Project_Default.xml	(date 1713214479695)
+@@ -0,0 +1,355 @@
++<component name="InspectionProjectProfileManager">
++  <profile version="1.0">
++    <option name="myName" value="Project Default" />
++    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
++      <option name="ignoredPackages">
++        <value>
++          <list size="335">
++            <item index="0" class="java.lang.String" itemvalue="mysqlclient" />
++            <item index="1" class="java.lang.String" itemvalue="notebook_shim" />
++            <item index="2" class="java.lang.String" itemvalue="numba" />
++            <item index="3" class="java.lang.String" itemvalue="greenlet" />
++            <item index="4" class="java.lang.String" itemvalue="pywinpty" />
++            <item index="5" class="java.lang.String" itemvalue="ypy-websocket" />
++            <item index="6" class="java.lang.String" itemvalue="scikit-learn" />
++            <item index="7" class="java.lang.String" itemvalue="PyYAML" />
++            <item index="8" class="java.lang.String" itemvalue="psycopg2" />
++            <item index="9" class="java.lang.String" itemvalue="psycopg2-binary" />
++            <item index="10" class="java.lang.String" itemvalue="srsly" />
++            <item index="11" class="java.lang.String" itemvalue="kivy-deps.sdl2" />
++            <item index="12" class="java.lang.String" itemvalue="frozenlist" />
++            <item index="13" class="java.lang.String" itemvalue="jupyter_server_ydoc" />
++            <item index="14" class="java.lang.String" itemvalue="spacy" />
++            <item index="15" class="java.lang.String" itemvalue="pyzmq" />
++            <item index="16" class="java.lang.String" itemvalue="jupyter_server_terminals" />
++            <item index="17" class="java.lang.String" itemvalue="jsonschema" />
++            <item index="18" class="java.lang.String" itemvalue="xxhash" />
++            <item index="19" class="java.lang.String" itemvalue="pywin32" />
++            <item index="20" class="java.lang.String" itemvalue="jupyter_client" />
++            <item index="21" class="java.lang.String" itemvalue="aiogram" />
++            <item index="22" class="java.lang.String" itemvalue="asgiref" />
++            <item index="23" class="java.lang.String" itemvalue="kiwisolver" />
++            <item index="24" class="java.lang.String" itemvalue="orjson" />
++            <item index="25" class="java.lang.String" itemvalue="pyod" />
++            <item index="26" class="java.lang.String" itemvalue="jupyterlab_server" />
++            <item index="27" class="java.lang.String" itemvalue="contourpy" />
++            <item index="28" class="java.lang.String" itemvalue="openai" />
++            <item index="29" class="java.lang.String" itemvalue="jupyter_server" />
++            <item index="30" class="java.lang.String" itemvalue="regex" />
++            <item index="31" class="java.lang.String" itemvalue="kivy-deps.angle" />
++            <item index="32" class="java.lang.String" itemvalue="pydantic_core" />
++            <item index="33" class="java.lang.String" itemvalue="cymem" />
++            <item index="34" class="java.lang.String" itemvalue="matplotlib" />
++            <item index="35" class="java.lang.String" itemvalue="murmurhash" />
++            <item index="36" class="java.lang.String" itemvalue="plotly-resampler" />
++            <item index="37" class="java.lang.String" itemvalue="cffi" />
++            <item index="38" class="java.lang.String" itemvalue="llvmlite" />
++            <item index="39" class="java.lang.String" itemvalue="numpy" />
++            <item index="40" class="java.lang.String" itemvalue="jupyter_core" />
++            <item index="41" class="java.lang.String" itemvalue="pycaret" />
++            <item index="42" class="java.lang.String" itemvalue="preshed" />
++            <item index="43" class="java.lang.String" itemvalue="rpds-py" />
++            <item index="44" class="java.lang.String" itemvalue="jupyter_server_fileid" />
++            <item index="45" class="java.lang.String" itemvalue="blis" />
++            <item index="46" class="java.lang.String" itemvalue="scikit-base" />
++            <item index="47" class="java.lang.String" itemvalue="jupyterlab" />
++            <item index="48" class="java.lang.String" itemvalue="Flask" />
++            <item index="49" class="java.lang.String" itemvalue="scipy" />
++            <item index="50" class="java.lang.String" itemvalue="Kivy" />
++            <item index="51" class="java.lang.String" itemvalue="python-rapidjson" />
++            <item index="52" class="java.lang.String" itemvalue="y-py" />
++            <item index="53" class="java.lang.String" itemvalue="pandas" />
++            <item index="54" class="java.lang.String" itemvalue="sktime" />
++            <item index="55" class="java.lang.String" itemvalue="typing_extensions" />
++            <item index="56" class="java.lang.String" itemvalue="aiohttp" />
++            <item index="57" class="java.lang.String" itemvalue="jupyter-ydoc" />
++            <item index="58" class="java.lang.String" itemvalue="multidict" />
++            <item index="59" class="java.lang.String" itemvalue="thinc" />
++            <item index="60" class="java.lang.String" itemvalue="grpcio" />
++            <item index="61" class="java.lang.String" itemvalue="yarl" />
++            <item index="62" class="java.lang.String" itemvalue="pmdarima" />
++            <item index="63" class="java.lang.String" itemvalue="Pillow" />
++            <item index="64" class="java.lang.String" itemvalue="dlib" />
++            <item index="65" class="java.lang.String" itemvalue="face-recognition" />
++            <item index="66" class="java.lang.String" itemvalue="jupyter-events" />
++            <item index="67" class="java.lang.String" itemvalue="pymessenger" />
++            <item index="68" class="java.lang.String" itemvalue="Babel" />
++            <item index="69" class="java.lang.String" itemvalue="boltons" />
++            <item index="70" class="java.lang.String" itemvalue="executing" />
++            <item index="71" class="java.lang.String" itemvalue="patsy" />
++            <item index="72" class="java.lang.String" itemvalue="ipython-genutils" />
++            <item index="73" class="java.lang.String" itemvalue="trio" />
++            <item index="74" class="java.lang.String" itemvalue="pycryptodomex" />
++            <item index="75" class="java.lang.String" itemvalue="starlette" />
++            <item index="76" class="java.lang.String" itemvalue="bleach" />
++            <item index="77" class="java.lang.String" itemvalue="soupsieve" />
++            <item index="78" class="java.lang.String" itemvalue="clarifai-grpc" />
++            <item index="79" class="java.lang.String" itemvalue="instabot" />
++            <item index="80" class="java.lang.String" itemvalue="nbclassic" />
++            <item index="81" class="java.lang.String" itemvalue="Werkzeug" />
++            <item index="82" class="java.lang.String" itemvalue="proglog" />
++            <item index="83" class="java.lang.String" itemvalue="click" />
++            <item index="84" class="java.lang.String" itemvalue="instagrapi" />
++            <item index="85" class="java.lang.String" itemvalue="asttokens" />
++            <item index="86" class="java.lang.String" itemvalue="imageio" />
++            <item index="87" class="java.lang.String" itemvalue="dash-core-components" />
++            <item index="88" class="java.lang.String" itemvalue="Mako" />
++            <item index="89" class="java.lang.String" itemvalue="httpcore" />
++            <item index="90" class="java.lang.String" itemvalue="idna" />
++            <item index="91" class="java.lang.String" itemvalue="referencing" />
++            <item index="92" class="java.lang.String" itemvalue="motor" />
++            <item index="93" class="java.lang.String" itemvalue="wasabi" />
++            <item index="94" class="java.lang.String" itemvalue="networkx" />
++            <item index="95" class="java.lang.String" itemvalue="confection" />
++            <item index="96" class="java.lang.String" itemvalue="json5" />
++            <item index="97" class="java.lang.String" itemvalue="trio-websocket" />
++            <item index="98" class="java.lang.String" itemvalue="pluggy" />
++            <item index="99" class="java.lang.String" itemvalue="apiai" />
++            <item index="100" class="java.lang.String" itemvalue="exceptiongroup" />
++            <item index="101" class="java.lang.String" itemvalue="celery" />
++            <item index="102" class="java.lang.String" itemvalue="selenium" />
++            <item index="103" class="java.lang.String" itemvalue="Deprecated" />
++            <item index="104" class="java.lang.String" itemvalue="smart-open" />
++            <item index="105" class="java.lang.String" itemvalue="prompt-toolkit" />
++            <item index="106" class="java.lang.String" itemvalue="PyMeeus" />
++            <item index="107" class="java.lang.String" itemvalue="annotated-types" />
++            <item index="108" class="java.lang.String" itemvalue="api-display-purposes" />
++            <item index="109" class="java.lang.String" itemvalue="aiofiles" />
++            <item index="110" class="java.lang.String" itemvalue="jsonpointer" />
++            <item index="111" class="java.lang.String" itemvalue="Send2Trash" />
++            <item index="112" class="java.lang.String" itemvalue="clarifai" />
++            <item index="113" class="java.lang.String" itemvalue="face" />
++            <item index="114" class="java.lang.String" itemvalue="dash-table" />
++            <item index="115" class="java.lang.String" itemvalue="Flask-Migrate" />
++            <item index="116" class="java.lang.String" itemvalue="email_validator" />
++            <item index="117" class="java.lang.String" itemvalue="debugpy" />
++            <item index="118" class="java.lang.String" itemvalue="statsmodels" />
++            <item index="119" class="java.lang.String" itemvalue="argon2-cffi" />
++            <item index="120" class="java.lang.String" itemvalue="click-repl" />
++            <item index="121" class="java.lang.String" itemvalue="pytz" />
++            <item index="122" class="java.lang.String" itemvalue="spacy-lookups-data" />
++            <item index="123" class="java.lang.String" itemvalue="requests-toolbelt" />
++            <item index="124" class="java.lang.String" itemvalue="traitlets" />
++            <item index="125" class="java.lang.String" itemvalue="protobuf" />
++            <item index="126" class="java.lang.String" itemvalue="shapely" />
++            <item index="127" class="java.lang.String" itemvalue="cmdstanpy" />
++            <item index="128" class="java.lang.String" itemvalue="haversine" />
++            <item index="129" class="java.lang.String" itemvalue="joblib" />
++            <item index="130" class="java.lang.String" itemvalue="nltk" />
++            <item index="131" class="java.lang.String" itemvalue="python-dotenv" />
++            <item index="132" class="java.lang.String" itemvalue="h11" />
++            <item index="133" class="java.lang.String" itemvalue="instapy" />
++            <item index="134" class="java.lang.String" itemvalue="convertdate" />
++            <item index="135" class="java.lang.String" itemvalue="tinycss2" />
++            <item index="136" class="java.lang.String" itemvalue="python-json-logger" />
++            <item index="137" class="java.lang.String" itemvalue="semantic-version" />
++            <item index="138" class="java.lang.String" itemvalue="docopt" />
++            <item index="139" class="java.lang.String" itemvalue="filelock" />
++            <item index="140" class="java.lang.String" itemvalue="holidays" />
++            <item index="141" class="java.lang.String" itemvalue="mysql" />
++            <item index="142" class="java.lang.String" itemvalue="pyparsing" />
++            <item index="143" class="java.lang.String" itemvalue="beautifulsoup4" />
++            <item index="144" class="java.lang.String" itemvalue="isoduration" />
++            <item index="145" class="java.lang.String" itemvalue="fqdn" />
++            <item index="146" class="java.lang.String" itemvalue="iniconfig" />
++            <item index="147" class="java.lang.String" itemvalue="cryptography" />
++            <item index="148" class="java.lang.String" itemvalue="deprecation" />
++            <item index="149" class="java.lang.String" itemvalue="pathy" />
++            <item index="150" class="java.lang.String" itemvalue="catalogue" />
++            <item index="151" class="java.lang.String" itemvalue="MeaningCloud-python" />
++            <item index="152" class="java.lang.String" itemvalue="bcrypt" />
++            <item index="153" class="java.lang.String" itemvalue="django-tastypie" />
++            <item index="154" class="java.lang.String" itemvalue="widgetsnbextension" />
++            <item index="155" class="java.lang.String" itemvalue="argon2-cffi-bindings" />
++            <item index="156" class="java.lang.String" itemvalue="distlib" />
++            <item index="157" class="java.lang.String" itemvalue="pypiwin32" />
++            <item index="158" class="java.lang.String" itemvalue="polyline" />
++            <item index="159" class="java.lang.String" itemvalue="geopy" />
++            <item index="160" class="java.lang.String" itemvalue="osmnx" />
++            <item index="161" class="java.lang.String" itemvalue="pep517" />
++            <item index="162" class="java.lang.String" itemvalue="matplotlib-inline" />
++            <item index="163" class="java.lang.String" itemvalue="webcolors" />
++            <item index="164" class="java.lang.String" itemvalue="wcwidth" />
++            <item index="165" class="java.lang.String" itemvalue="webdriver-manager" />
++            <item index="166" class="java.lang.String" itemvalue="spacy-legacy" />
++            <item index="167" class="java.lang.String" itemvalue="Jinja2" />
++            <item index="168" class="java.lang.String" itemvalue="rfc3986-validator" />
++            <item index="169" class="java.lang.String" itemvalue="mysql-connector-python" />
++            <item index="170" class="java.lang.String" itemvalue="jupyter-dash" />
++            <item index="171" class="java.lang.String" itemvalue="uri-template" />
++            <item index="172" class="java.lang.String" itemvalue="LunarCalendar" />
++            <item index="173" class="java.lang.String" itemvalue="googlemaps" />
++            <item index="174" class="java.lang.String" itemvalue="billiard" />
++            <item index="175" class="java.lang.String" itemvalue="six" />
++            <item index="176" class="java.lang.String" itemvalue="typer" />
++            <item index="177" class="java.lang.String" itemvalue="parso" />
++            <item index="178" class="java.lang.String" itemvalue="magic-filter" />
++            <item index="179" class="java.lang.String" itemvalue="pyTelegramBotAPI" />
++            <item index="180" class="java.lang.String" itemvalue="schemdraw" />
++            <item index="181" class="java.lang.String" itemvalue="kaleido" />
++            <item index="182" class="java.lang.String" itemvalue="ipython" />
++            <item index="183" class="java.lang.String" itemvalue="packaging" />
++            <item index="184" class="java.lang.String" itemvalue="fastjsonschema" />
++            <item index="185" class="java.lang.String" itemvalue="pipenv" />
++            <item index="186" class="java.lang.String" itemvalue="python-telegram-bot" />
++            <item index="187" class="java.lang.String" itemvalue="chardet" />
++            <item index="188" class="java.lang.String" itemvalue="face-recognition-models" />
++            <item index="189" class="java.lang.String" itemvalue="huepy" />
++            <item index="190" class="java.lang.String" itemvalue="schedule" />
++            <item index="191" class="java.lang.String" itemvalue="paho-mqtt" />
++            <item index="192" class="java.lang.String" itemvalue="click-plugins" />
++            <item index="193" class="java.lang.String" itemvalue="webdriverdownloader" />
++            <item index="194" class="java.lang.String" itemvalue="Flask-RESTful" />
++            <item index="195" class="java.lang.String" itemvalue="httpx" />
++            <item index="196" class="java.lang.String" itemvalue="kivy-deps.glew" />
++            <item index="197" class="java.lang.String" itemvalue="yarg" />
++            <item index="198" class="java.lang.String" itemvalue="pickleshare" />
++            <item index="199" class="java.lang.String" itemvalue="defusedxml" />
++            <item index="200" class="java.lang.String" itemvalue="pycparser" />
++            <item index="201" class="java.lang.String" itemvalue="Pygments" />
++            <item index="202" class="java.lang.String" itemvalue="moviepy" />
++            <item index="203" class="java.lang.String" itemvalue="docutils" />
++            <item index="204" class="java.lang.String" itemvalue="pyproj" />
++            <item index="205" class="java.lang.String" itemvalue="uvicorn" />
++            <item index="206" class="java.lang.String" itemvalue="terminado" />
++            <item index="207" class="java.lang.String" itemvalue="comm" />
++            <item index="208" class="java.lang.String" itemvalue="pydantic" />
++            <item index="209" class="java.lang.String" itemvalue="yellowbrick" />
++            <item index="210" class="java.lang.String" itemvalue="asyncpg" />
++            <item index="211" class="java.lang.String" itemvalue="aniso8601" />
++            <item index="212" class="java.lang.String" itemvalue="jupyterlab-pygments" />
++            <item index="213" class="java.lang.String" itemvalue="Flask-SQLAlchemy" />
++            <item index="214" class="java.lang.String" itemvalue="ipykernel" />
++            <item index="215" class="java.lang.String" itemvalue="nbconvert" />
++            <item index="216" class="java.lang.String" itemvalue="wsproto" />
++            <item index="217" class="java.lang.String" itemvalue="attrs" />
++            <item index="218" class="java.lang.String" itemvalue="psutil" />
++            <item index="219" class="java.lang.String" itemvalue="jedi" />
++            <item index="220" class="java.lang.String" itemvalue="pure-eval" />
++            <item index="221" class="java.lang.String" itemvalue="platformdirs" />
++            <item index="222" class="java.lang.String" itemvalue="install" />
++            <item index="223" class="java.lang.String" itemvalue="plyer" />
++            <item index="224" class="java.lang.String" itemvalue="fastapi-users-db-sqlalchemy" />
++            <item index="225" class="java.lang.String" itemvalue="PyMySQL" />
++            <item index="226" class="java.lang.String" itemvalue="lightgbm" />
++            <item index="227" class="java.lang.String" itemvalue="ansi2html" />
++            <item index="228" class="java.lang.String" itemvalue="PyJWT" />
++            <item index="229" class="java.lang.String" itemvalue="decorator" />
++            <item index="230" class="java.lang.String" itemvalue="alembic" />
++            <item index="231" class="java.lang.String" itemvalue="pip-tools" />
++            <item index="232" class="java.lang.String" itemvalue="ephem" />
++            <item index="233" class="java.lang.String" itemvalue="prophet" />
++            <item index="234" class="java.lang.String" itemvalue="pandocfilters" />
++            <item index="235" class="java.lang.String" itemvalue="requests" />
++            <item index="236" class="java.lang.String" itemvalue="sniffio" />
++            <item index="237" class="java.lang.String" itemvalue="websocket-client" />
++            <item index="238" class="java.lang.String" itemvalue="pyrsistent" />
++            <item index="239" class="java.lang.String" itemvalue="stack-data" />
++            <item index="240" class="java.lang.String" itemvalue="zipp" />
++            <item index="241" class="java.lang.String" itemvalue="nest-asyncio" />
++            <item index="242" class="java.lang.String" itemvalue="tenacity" />
++            <item index="243" class="java.lang.String" itemvalue="itsdangerous" />
++            <item index="244" class="java.lang.String" itemvalue="outcome" />
++            <item index="245" class="java.lang.String" itemvalue="Flask-Session" />
++            <item index="246" class="java.lang.String" itemvalue="ipywidgets" />
++            <item index="247" class="java.lang.String" itemvalue="fastapi-users" />
++            <item index="248" class="java.lang.String" itemvalue="tornado" />
++            <item index="249" class="java.lang.String" itemvalue="aenum" />
++            <item index="250" class="java.lang.String" itemvalue="opencv-python" />
++            <item index="251" class="java.lang.String" itemvalue="trace-updater" />
++            <item index="252" class="java.lang.String" itemvalue="amqp" />
++            <item index="253" class="java.lang.String" itemvalue="plotly" />
++            <item index="254" class="java.lang.String" itemvalue="python-multipart" />
++            <item index="255" class="java.lang.String" itemvalue="sortedcontainers" />
++            <item index="256" class="java.lang.String" itemvalue="langcodes" />
++            <item index="257" class="java.lang.String" itemvalue="mistune" />
++            <item index="258" class="java.lang.String" itemvalue="fiona" />
++            <item index="259" class="java.lang.String" itemvalue="makefun" />
++            <item index="260" class="java.lang.String" itemvalue="Django" />
++            <item index="261" class="java.lang.String" itemvalue="future" />
++            <item index="262" class="java.lang.String" itemvalue="cmake" />
++            <item index="263" class="java.lang.String" itemvalue="responses" />
++            <item index="264" class="java.lang.String" itemvalue="imbalanced-learn" />
++            <item index="265" class="java.lang.String" itemvalue="webencodings" />
++            <item index="266" class="java.lang.String" itemvalue="setuptools-rust" />
++            <item index="267" class="java.lang.String" itemvalue="rfc3339-validator" />
++            <item index="268" class="java.lang.String" itemvalue="EasyProcess" />
++            <item index="269" class="java.lang.String" itemvalue="emoji" />
++            <item index="270" class="java.lang.String" itemvalue="threadpoolctl" />
++            <item index="271" class="java.lang.String" itemvalue="arrow" />
++            <item index="272" class="java.lang.String" itemvalue="googleapis-common-protos" />
++            <item index="273" class="java.lang.String" itemvalue="python-dateutil" />
++            <item index="274" class="java.lang.String" itemvalue="tritonclient" />
++            <item index="275" class="java.lang.String" itemvalue="nbclient" />
++            <item index="276" class="java.lang.String" itemvalue="virtualenvwrapper-win" />
++            <item index="277" class="java.lang.String" itemvalue="types-PyYAML" />
++            <item index="278" class="java.lang.String" itemvalue="cycler" />
++            <item index="279" class="java.lang.String" itemvalue="kombu" />
++            <item index="280" class="java.lang.String" itemvalue="MarkupSafe" />
++            <item index="281" class="java.lang.String" itemvalue="jupyterlab-widgets" />
++            <item index="282" class="java.lang.String" itemvalue="certifi" />
++            <item index="283" class="java.lang.String" itemvalue="anyio" />
++            <item index="284" class="java.lang.String" itemvalue="instapy2" />
++            <item index="285" class="java.lang.String" itemvalue="vine" />
++            <item index="286" class="java.lang.String" itemvalue="notebook" />
++            <item index="287" class="java.lang.String" itemvalue="dnspython" />
++            <item index="288" class="java.lang.String" itemvalue="Kivy-Garden" />
++            <item index="289" class="java.lang.String" itemvalue="cligj" />
++            <item index="290" class="java.lang.String" itemvalue="wrapt" />
++            <item index="291" class="java.lang.String" itemvalue="fonttools" />
++            <item index="292" class="java.lang.String" itemvalue="korean-lunar-calendar" />
++            <item index="293" class="java.lang.String" itemvalue="backcall" />
++            <item index="294" class="java.lang.String" itemvalue="PySocks" />
++            <item index="295" class="java.lang.String" itemvalue="fbchat" />
++            <item index="296" class="java.lang.String" itemvalue="configparser" />
++            <item index="297" class="java.lang.String" itemvalue="geopandas" />
++            <item index="298" class="java.lang.String" itemvalue="retrying" />
++            <item index="299" class="java.lang.String" itemvalue="virtualenv" />
++            <item index="300" class="java.lang.String" itemvalue="charset-normalizer" />
++            <item index="301" class="java.lang.String" itemvalue="mock" />
++            <item index="302" class="java.lang.String" itemvalue="dash" />
++            <item index="303" class="java.lang.String" itemvalue="async-timeout" />
++            <item index="304" class="java.lang.String" itemvalue="spacy-loggers" />
++            <item index="305" class="java.lang.String" itemvalue="hijri-converter" />
++            <item index="306" class="java.lang.String" itemvalue="SQLAlchemy" />
++            <item index="307" class="java.lang.String" itemvalue="imageio-ffmpeg" />
++            <item index="308" class="java.lang.String" itemvalue="cloudpickle" />
++            <item index="309" class="java.lang.String" itemvalue="click-didyoumean" />
++            <item index="310" class="java.lang.String" itemvalue="importlib-metadata" />
++            <item index="311" class="java.lang.String" itemvalue="sqlparse" />
++            <item index="312" class="java.lang.String" itemvalue="jsonschema-specifications" />
++            <item index="313" class="java.lang.String" itemvalue="aiosqlite" />
++            <item index="314" class="java.lang.String" itemvalue="geographiclib" />
++            <item index="315" class="java.lang.String" itemvalue="urllib3" />
++            <item index="316" class="java.lang.String" itemvalue="Cython" />
++            <item index="317" class="java.lang.String" itemvalue="python-mimeparse" />
++            <item index="318" class="java.lang.String" itemvalue="tbats" />
++            <item index="319" class="java.lang.String" itemvalue="pymongo" />
++            <item index="320" class="java.lang.String" itemvalue="pytest" />
++            <item index="321" class="java.lang.String" itemvalue="dash-html-components" />
++            <item index="322" class="java.lang.String" itemvalue="nbformat" />
++            <item index="323" class="java.lang.String" itemvalue="tzdata" />
++            <item index="324" class="java.lang.String" itemvalue="cachelib" />
++            <item index="325" class="java.lang.String" itemvalue="pipreqs" />
++            <item index="326" class="java.lang.String" itemvalue="prometheus-client" />
++            <item index="327" class="java.lang.String" itemvalue="scikit-plot" />
++            <item index="328" class="java.lang.String" itemvalue="tqdm" />
++            <item index="329" class="java.lang.String" itemvalue="fastapi" />
++            <item index="330" class="java.lang.String" itemvalue="pwdlib" />
++            <item index="331" class="java.lang.String" itemvalue="category-encoders" />
++            <item index="332" class="java.lang.String" itemvalue="build" />
++            <item index="333" class="java.lang.String" itemvalue="colorama" />
++            <item index="334" class="java.lang.String" itemvalue="aiosignal" />
++          </list>
++        </value>
++      </option>
++    </inspection_tool>
++    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
++      <option name="ignoredErrors">
++        <list>
++          <option value="N806" />
++        </list>
++      </option>
++    </inspection_tool>
++  </profile>
++</component>
+\ No newline at end of file
+Index: lecture#5/hw#16.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># lst = [1, 2, 3, 4, 5]\r\n# lst = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]\r\n# lst = [10, 12, 30]\r\n# lst = [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5]\r\nlst = [7, 9, 45, 78]\r\n\r\n# Method 1\r\nlst1 = lst.copy()\r\nresult = [(lst1[i]+(lst1[i+1]))/2 for i in range(len(lst1)-1) if i != lst1[-1]]\r\nfor item in result:\r\n    lst1.insert(result.index(item)*2+1, item)\r\nprint(lst1)\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lecture#5/hw#16.py b/lecture#5/hw#16.py
+--- a/lecture#5/hw#16.py	(revision 9403bec5c401058d436ebaba6505bc4f7b72fc76)
++++ b/lecture#5/hw#16.py	(date 1714572919249)
+@@ -1,8 +1,8 @@
+ # lst = [1, 2, 3, 4, 5]
+ # lst = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+ # lst = [10, 12, 30]
+-# lst = [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5]
+-lst = [7, 9, 45, 78]
++lst = [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5]
++# lst = [7, 9, 45, 78]
+ 
+ # Method 1
+ lst1 = lst.copy()
+Index: lecture#5/hw#17.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\r\narr = [['a', 'c', 'e'],\r\n       ['f', 'b', 'a'],\r\n       ['a', 'n', 'k'],\r\n       ['e', 'l', 'i']]\r\n\r\n\r\n# Method\r\nprint('------Source arry below-----------')\r\nfor i in arr:\r\n    print(i)\r\nprint('------Result(sort for columns) below----------------')\r\nresult = [[sorted(arr, key=lambda x: x[j])[i][j] for i in range(len(arr))] for j in range(len(arr[0]))]\r\noutput = [[result[i][j] for i in range(len(result))] for j in range(len(result[0]))]\r\nfor item in output:\r\n    print(item)\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lecture#5/hw#17.py b/lecture#5/hw#17.py
+--- a/lecture#5/hw#17.py	(revision 9403bec5c401058d436ebaba6505bc4f7b72fc76)
++++ b/lecture#5/hw#17.py	(date 1714818268592)
+@@ -27,4 +27,3 @@
+ 
+ 
+ 
+-
+Index: .idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/modules.xml b/.idea/modules.xml
+new file mode 100644
+--- /dev/null	(date 1713214480401)
++++ b/.idea/modules.xml	(date 1713214480401)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectModuleManager">
++    <modules>
++      <module fileurl="file://$PROJECT_DIR$/.idea/qaAutomation04.iml" filepath="$PROJECT_DIR$/.idea/qaAutomation04.iml" />
++    </modules>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+new file mode 100644
+--- /dev/null	(date 1715203115276)
++++ b/.idea/workspace.xml	(date 1715203115276)
+@@ -0,0 +1,683 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="AutoImportSettings">
++    <option name="autoReloadType" value="SELECTIVE" />
++  </component>
++  <component name="ChangeListManager">
++    <list default="true" id="f5ffb87c-aa6a-4257-b001-77ec1eb59bbc" name="Changes" comment="HW#22">
++      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/qaAutomation04.iml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/lecture#7/hw#23.py" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/lecture#7/hw#24.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/hw#10/hw#10.py" beforeDir="false" afterPath="$PROJECT_DIR$/lecture#4/hw#10.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/hw#11/hw#11.py" beforeDir="false" afterPath="$PROJECT_DIR$/lecture#4/hw#11.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/hw#12/hw#12.py" beforeDir="false" afterPath="$PROJECT_DIR$/lecture#4/hw#12.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/hw#13/hw#13.py" beforeDir="false" afterPath="$PROJECT_DIR$/lecture#4/hw#13.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/hw#2/hw#2.py" beforeDir="false" afterPath="$PROJECT_DIR$/lecture#2/hw#2.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/hw#3/hw#3.py" beforeDir="false" afterPath="$PROJECT_DIR$/lecture#2/hw#3.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/hw#4/hw#4.py" beforeDir="false" afterPath="$PROJECT_DIR$/lecture#2/hw#4.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/hw#5/hw#5.py" beforeDir="false" afterPath="$PROJECT_DIR$/lecture#3/hw#5.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/hw#6/hw#6.py" beforeDir="false" afterPath="$PROJECT_DIR$/lecture#3/hw#6.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/hw#7/hw#7.py" beforeDir="false" afterPath="$PROJECT_DIR$/lecture#3/hw#7.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/hw#8/hw#8.py" beforeDir="false" afterPath="$PROJECT_DIR$/lecture#3/hw#8.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/hw#9/hw#9.py" beforeDir="false" afterPath="$PROJECT_DIR$/lecture#3/hw#9.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/lecture#5/hw#16.py" beforeDir="false" afterPath="$PROJECT_DIR$/lecture#5/hw#16.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/lecture#5/hw#17.py" beforeDir="false" afterPath="$PROJECT_DIR$/lecture#5/hw#17.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/lecture#6/combined_files.txt" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/lecture#7/hw#22.py" beforeDir="false" afterPath="$PROJECT_DIR$/lecture#7/hw#22.py" afterDir="false" />
++    </list>
++    <option name="SHOW_DIALOG" value="false" />
++    <option name="HIGHLIGHT_CONFLICTS" value="true" />
++    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
++    <option name="LAST_RESOLUTION" value="IGNORE" />
++  </component>
++  <component name="FileTemplateManagerImpl">
++    <option name="RECENT_TEMPLATES">
++      <list>
++        <option value="Python Script" />
++      </list>
++    </option>
++  </component>
++  <component name="Git.Settings">
++    <option name="RECENT_BRANCH_BY_REPOSITORY">
++      <map>
++        <entry key="$PROJECT_DIR$" value="lecture#6" />
++      </map>
++    </option>
++    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++  </component>
++  <component name="ProjectColorInfo">{
++  &quot;associatedIndex&quot;: 6
++}</component>
++  <component name="ProjectId" id="2f9XhcNqQqaPDfDuOByTMIj4uWl" />
++  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
++    <ConfirmationsSetting value="2" id="Add" />
++  </component>
++  <component name="ProjectViewState">
++    <option name="hideEmptyMiddlePackages" value="true" />
++    <option name="showLibraryContents" value="true" />
++  </component>
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "ASKED_ADD_EXTERNAL_FILES": "true",
++    "Python.1.executor": "Run",
++    "Python.hw#10.executor": "Run",
++    "Python.hw#11.executor": "Run",
++    "Python.hw#12.executor": "Run",
++    "Python.hw#13.executor": "Run",
++    "Python.hw#14.executor": "Run",
++    "Python.hw#15.executor": "Run",
++    "Python.hw#16.executor": "Run",
++    "Python.hw#17.executor": "Run",
++    "Python.hw#18.executor": "Run",
++    "Python.hw#19.executor": "Run",
++    "Python.hw#2.executor": "Run",
++    "Python.hw#20.executor": "Run",
++    "Python.hw#21.executor": "Run",
++    "Python.hw#22.executor": "Run",
++    "Python.hw#23.executor": "Run",
++    "Python.hw#3.executor": "Run",
++    "Python.hw#4.executor": "Run",
++    "Python.hw#5.executor": "Run",
++    "Python.hw#6.executor": "Run",
++    "Python.hw#7.executor": "Run",
++    "Python.hw#8.executor": "Run",
++    "Python.hw#9.executor": "Run",
++    "Python.test.executor": "Run",
++    "RunOnceActivity.OpenProjectViewOnStart": "true",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "git-widget-placeholder": "lecture#7",
++    "last_opened_file_path": "C:/Users/daria/projects/qaAutomation04",
++    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
++  }
++}]]></component>
++  <component name="RecentsManager">
++    <key name="MoveFile.RECENT_KEYS">
++      <recent name="C:\Users\daria\projects\qaAutomation04\lecture#4" />
++      <recent name="C:\Users\daria\projects\qaAutomation04\lecture#3" />
++      <recent name="C:\Users\daria\projects\qaAutomation04\lecture#2" />
++    </key>
++  </component>
++  <component name="RunManager" selected="Python.hw#22">
++    <configuration name="hw#19" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
++      <module name="qaAutomation04" />
++      <option name="ENV_FILES" value="" />
++      <option name="INTERPRETER_OPTIONS" value="" />
++      <option name="PARENT_ENVS" value="true" />
++      <envs>
++        <env name="PYTHONUNBUFFERED" value="1" />
++      </envs>
++      <option name="SDK_HOME" value="" />
++      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lecture#6" />
++      <option name="IS_MODULE_SDK" value="true" />
++      <option name="ADD_CONTENT_ROOTS" value="true" />
++      <option name="ADD_SOURCE_ROOTS" value="true" />
++      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lecture#6/hw#19.py" />
++      <option name="PARAMETERS" value="" />
++      <option name="SHOW_COMMAND_LINE" value="false" />
++      <option name="EMULATE_TERMINAL" value="false" />
++      <option name="MODULE_MODE" value="false" />
++      <option name="REDIRECT_INPUT" value="false" />
++      <option name="INPUT_FILE" value="" />
++      <method v="2" />
++    </configuration>
++    <configuration name="hw#20" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
++      <module name="qaAutomation04" />
++      <option name="ENV_FILES" value="" />
++      <option name="INTERPRETER_OPTIONS" value="" />
++      <option name="PARENT_ENVS" value="true" />
++      <envs>
++        <env name="PYTHONUNBUFFERED" value="1" />
++      </envs>
++      <option name="SDK_HOME" value="" />
++      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lecture#6" />
++      <option name="IS_MODULE_SDK" value="true" />
++      <option name="ADD_CONTENT_ROOTS" value="true" />
++      <option name="ADD_SOURCE_ROOTS" value="true" />
++      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lecture#6/hw#20.py" />
++      <option name="PARAMETERS" value="" />
++      <option name="SHOW_COMMAND_LINE" value="false" />
++      <option name="EMULATE_TERMINAL" value="false" />
++      <option name="MODULE_MODE" value="false" />
++      <option name="REDIRECT_INPUT" value="false" />
++      <option name="INPUT_FILE" value="" />
++      <method v="2" />
++    </configuration>
++    <configuration name="hw#21" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
++      <option name="ENV_FILES" value="" />
++      <option name="INTERPRETER_OPTIONS" value="" />
++      <option name="PARENT_ENVS" value="true" />
++      <envs>
++        <env name="PYTHONUNBUFFERED" value="1" />
++      </envs>
++      <option name="SDK_HOME" value="" />
++      <option name="SDK_NAME" value="Python 3.11 (qaAutomation04)" />
++      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lecture#6" />
++      <option name="IS_MODULE_SDK" value="false" />
++      <option name="ADD_CONTENT_ROOTS" value="true" />
++      <option name="ADD_SOURCE_ROOTS" value="true" />
++      <module name="" />
++      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lecture#6/hw#21.py" />
++      <option name="PARAMETERS" value="" />
++      <option name="SHOW_COMMAND_LINE" value="true" />
++      <option name="EMULATE_TERMINAL" value="false" />
++      <option name="MODULE_MODE" value="false" />
++      <option name="REDIRECT_INPUT" value="false" />
++      <option name="INPUT_FILE" value="" />
++      <method v="2" />
++    </configuration>
++    <configuration name="hw#22" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
++      <module name="qaAutomation04" />
++      <option name="ENV_FILES" value="" />
++      <option name="INTERPRETER_OPTIONS" value="" />
++      <option name="PARENT_ENVS" value="true" />
++      <envs>
++        <env name="PYTHONUNBUFFERED" value="1" />
++      </envs>
++      <option name="SDK_HOME" value="" />
++      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lecture#7" />
++      <option name="IS_MODULE_SDK" value="true" />
++      <option name="ADD_CONTENT_ROOTS" value="true" />
++      <option name="ADD_SOURCE_ROOTS" value="true" />
++      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lecture#7/hw#22.py" />
++      <option name="PARAMETERS" value="" />
++      <option name="SHOW_COMMAND_LINE" value="false" />
++      <option name="EMULATE_TERMINAL" value="false" />
++      <option name="MODULE_MODE" value="false" />
++      <option name="REDIRECT_INPUT" value="false" />
++      <option name="INPUT_FILE" value="" />
++      <method v="2" />
++    </configuration>
++    <configuration name="hw#23" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
++      <module name="qaAutomation04" />
++      <option name="ENV_FILES" value="" />
++      <option name="INTERPRETER_OPTIONS" value="" />
++      <option name="PARENT_ENVS" value="true" />
++      <envs>
++        <env name="PYTHONUNBUFFERED" value="1" />
++      </envs>
++      <option name="SDK_HOME" value="" />
++      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lecture#7" />
++      <option name="IS_MODULE_SDK" value="true" />
++      <option name="ADD_CONTENT_ROOTS" value="true" />
++      <option name="ADD_SOURCE_ROOTS" value="true" />
++      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lecture#7/hw#23.py" />
++      <option name="PARAMETERS" value="" />
++      <option name="SHOW_COMMAND_LINE" value="false" />
++      <option name="EMULATE_TERMINAL" value="false" />
++      <option name="MODULE_MODE" value="false" />
++      <option name="REDIRECT_INPUT" value="false" />
++      <option name="INPUT_FILE" value="" />
++      <method v="2" />
++    </configuration>
++    <list>
++      <item itemvalue="Python.hw#22" />
++      <item itemvalue="Python.hw#23" />
++      <item itemvalue="Python.hw#19" />
++      <item itemvalue="Python.hw#20" />
++      <item itemvalue="Python.hw#21" />
++    </list>
++    <recent_temporary>
++      <list>
++        <item itemvalue="Python.hw#22" />
++        <item itemvalue="Python.hw#23" />
++        <item itemvalue="Python.hw#21" />
++        <item itemvalue="Python.hw#20" />
++        <item itemvalue="Python.hw#19" />
++      </list>
++    </recent_temporary>
++  </component>
++  <component name="SharedIndexes">
++    <attachedChunks>
++      <set>
++        <option value="bundled-python-sdk-09665e90c3a7-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.15026.15" />
++      </set>
++    </attachedChunks>
++  </component>
++  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
++  <component name="TaskManager">
++    <task active="true" id="Default" summary="Default task">
++      <changelist id="f5ffb87c-aa6a-4257-b001-77ec1eb59bbc" name="Changes" comment="" />
++      <created>1713214406308</created>
++      <option name="number" value="Default" />
++      <option name="presentableId" value="Default" />
++      <updated>1713214406308</updated>
++    </task>
++    <task id="LOCAL-00041" summary="hw#13">
++      <option name="closed" value="true" />
++      <created>1714208529416</created>
++      <option name="number" value="00041" />
++      <option name="presentableId" value="LOCAL-00041" />
++      <option name="project" value="LOCAL" />
++      <updated>1714208529416</updated>
++    </task>
++    <task id="LOCAL-00042" summary="hw#13">
++      <option name="closed" value="true" />
++      <created>1714208650512</created>
++      <option name="number" value="00042" />
++      <option name="presentableId" value="LOCAL-00042" />
++      <option name="project" value="LOCAL" />
++      <updated>1714208650512</updated>
++    </task>
++    <task id="LOCAL-00043" summary="hw#13">
++      <option name="closed" value="true" />
++      <created>1714208920391</created>
++      <option name="number" value="00043" />
++      <option name="presentableId" value="LOCAL-00043" />
++      <option name="project" value="LOCAL" />
++      <updated>1714208920391</updated>
++    </task>
++    <task id="LOCAL-00044" summary="hw#13">
++      <option name="closed" value="true" />
++      <created>1714225825139</created>
++      <option name="number" value="00044" />
++      <option name="presentableId" value="LOCAL-00044" />
++      <option name="project" value="LOCAL" />
++      <updated>1714225825139</updated>
++    </task>
++    <task id="LOCAL-00045" summary="hw#13">
++      <option name="closed" value="true" />
++      <created>1714225944433</created>
++      <option name="number" value="00045" />
++      <option name="presentableId" value="LOCAL-00045" />
++      <option name="project" value="LOCAL" />
++      <updated>1714225944434</updated>
++    </task>
++    <task id="LOCAL-00046" summary="hw#14">
++      <option name="closed" value="true" />
++      <created>1714502728159</created>
++      <option name="number" value="00046" />
++      <option name="presentableId" value="LOCAL-00046" />
++      <option name="project" value="LOCAL" />
++      <updated>1714502728159</updated>
++    </task>
++    <task id="LOCAL-00047" summary="hw#14">
++      <option name="closed" value="true" />
++      <created>1714507819757</created>
++      <option name="number" value="00047" />
++      <option name="presentableId" value="LOCAL-00047" />
++      <option name="project" value="LOCAL" />
++      <updated>1714507819757</updated>
++    </task>
++    <task id="LOCAL-00048" summary="hw#15">
++      <option name="closed" value="true" />
++      <created>1714531272748</created>
++      <option name="number" value="00048" />
++      <option name="presentableId" value="LOCAL-00048" />
++      <option name="project" value="LOCAL" />
++      <updated>1714531272749</updated>
++    </task>
++    <task id="LOCAL-00049" summary="hw#15">
++      <option name="closed" value="true" />
++      <created>1714535323151</created>
++      <option name="number" value="00049" />
++      <option name="presentableId" value="LOCAL-00049" />
++      <option name="project" value="LOCAL" />
++      <updated>1714535323152</updated>
++    </task>
++    <task id="LOCAL-00050" summary="hw#15">
++      <option name="closed" value="true" />
++      <created>1714535506295</created>
++      <option name="number" value="00050" />
++      <option name="presentableId" value="LOCAL-00050" />
++      <option name="project" value="LOCAL" />
++      <updated>1714535506303</updated>
++    </task>
++    <task id="LOCAL-00051" summary="hw#15">
++      <option name="closed" value="true" />
++      <created>1714535903367</created>
++      <option name="number" value="00051" />
++      <option name="presentableId" value="LOCAL-00051" />
++      <option name="project" value="LOCAL" />
++      <updated>1714535903368</updated>
++    </task>
++    <task id="LOCAL-00052" summary="hw#15">
++      <option name="closed" value="true" />
++      <created>1714535996533</created>
++      <option name="number" value="00052" />
++      <option name="presentableId" value="LOCAL-00052" />
++      <option name="project" value="LOCAL" />
++      <updated>1714535996534</updated>
++    </task>
++    <task id="LOCAL-00053" summary="hw#15">
++      <option name="closed" value="true" />
++      <created>1714537687362</created>
++      <option name="number" value="00053" />
++      <option name="presentableId" value="LOCAL-00053" />
++      <option name="project" value="LOCAL" />
++      <updated>1714537687372</updated>
++    </task>
++    <task id="LOCAL-00054" summary="hw#15">
++      <option name="closed" value="true" />
++      <created>1714537977056</created>
++      <option name="number" value="00054" />
++      <option name="presentableId" value="LOCAL-00054" />
++      <option name="project" value="LOCAL" />
++      <updated>1714537977059</updated>
++    </task>
++    <task id="LOCAL-00055" summary="hw#15">
++      <option name="closed" value="true" />
++      <created>1714559153776</created>
++      <option name="number" value="00055" />
++      <option name="presentableId" value="LOCAL-00055" />
++      <option name="project" value="LOCAL" />
++      <updated>1714559153779</updated>
++    </task>
++    <task id="LOCAL-00056" summary="hw#15">
++      <option name="closed" value="true" />
++      <created>1714560419253</created>
++      <option name="number" value="00056" />
++      <option name="presentableId" value="LOCAL-00056" />
++      <option name="project" value="LOCAL" />
++      <updated>1714560419253</updated>
++    </task>
++    <task id="LOCAL-00057" summary="hw#16">
++      <option name="closed" value="true" />
++      <created>1714563050392</created>
++      <option name="number" value="00057" />
++      <option name="presentableId" value="LOCAL-00057" />
++      <option name="project" value="LOCAL" />
++      <updated>1714563050393</updated>
++    </task>
++    <task id="LOCAL-00058" summary="hw#16">
++      <option name="closed" value="true" />
++      <created>1714564516680</created>
++      <option name="number" value="00058" />
++      <option name="presentableId" value="LOCAL-00058" />
++      <option name="project" value="LOCAL" />
++      <updated>1714564516680</updated>
++    </task>
++    <task id="LOCAL-00059" summary="hw#16">
++      <option name="closed" value="true" />
++      <created>1714572777848</created>
++      <option name="number" value="00059" />
++      <option name="presentableId" value="LOCAL-00059" />
++      <option name="project" value="LOCAL" />
++      <updated>1714572777850</updated>
++    </task>
++    <task id="LOCAL-00060" summary="hw#16">
++      <option name="closed" value="true" />
++      <created>1714572823636</created>
++      <option name="number" value="00060" />
++      <option name="presentableId" value="LOCAL-00060" />
++      <option name="project" value="LOCAL" />
++      <updated>1714572823636</updated>
++    </task>
++    <task id="LOCAL-00061" summary="hw#16">
++      <option name="closed" value="true" />
++      <created>1714572867320</created>
++      <option name="number" value="00061" />
++      <option name="presentableId" value="LOCAL-00061" />
++      <option name="project" value="LOCAL" />
++      <updated>1714572867320</updated>
++    </task>
++    <task id="LOCAL-00062" summary="hw#17">
++      <option name="closed" value="true" />
++      <created>1714816280725</created>
++      <option name="number" value="00062" />
++      <option name="presentableId" value="LOCAL-00062" />
++      <option name="project" value="LOCAL" />
++      <updated>1714816280726</updated>
++    </task>
++    <task id="LOCAL-00063" summary="hw#17">
++      <option name="closed" value="true" />
++      <created>1714817839248</created>
++      <option name="number" value="00063" />
++      <option name="presentableId" value="LOCAL-00063" />
++      <option name="project" value="LOCAL" />
++      <updated>1714817839249</updated>
++    </task>
++    <task id="LOCAL-00064" summary="hw#18">
++      <option name="closed" value="true" />
++      <created>1714835370133</created>
++      <option name="number" value="00064" />
++      <option name="presentableId" value="LOCAL-00064" />
++      <option name="project" value="LOCAL" />
++      <updated>1714835370134</updated>
++    </task>
++    <task id="LOCAL-00065" summary="hw#18">
++      <option name="closed" value="true" />
++      <created>1714839688465</created>
++      <option name="number" value="00065" />
++      <option name="presentableId" value="LOCAL-00065" />
++      <option name="project" value="LOCAL" />
++      <updated>1714839688466</updated>
++    </task>
++    <task id="LOCAL-00066" summary="hw#19">
++      <option name="closed" value="true" />
++      <created>1714839844049</created>
++      <option name="number" value="00066" />
++      <option name="presentableId" value="LOCAL-00066" />
++      <option name="project" value="LOCAL" />
++      <updated>1714839844051</updated>
++    </task>
++    <task id="LOCAL-00067" summary="hw#19">
++      <option name="closed" value="true" />
++      <created>1714840431972</created>
++      <option name="number" value="00067" />
++      <option name="presentableId" value="LOCAL-00067" />
++      <option name="project" value="LOCAL" />
++      <updated>1714840431973</updated>
++    </task>
++    <task id="LOCAL-00068" summary="hw#18">
++      <option name="closed" value="true" />
++      <created>1714840739123</created>
++      <option name="number" value="00068" />
++      <option name="presentableId" value="LOCAL-00068" />
++      <option name="project" value="LOCAL" />
++      <updated>1714840739123</updated>
++    </task>
++    <task id="LOCAL-00069" summary="hw#19">
++      <option name="closed" value="true" />
++      <created>1714843427740</created>
++      <option name="number" value="00069" />
++      <option name="presentableId" value="LOCAL-00069" />
++      <option name="project" value="LOCAL" />
++      <updated>1714843427741</updated>
++    </task>
++    <task id="LOCAL-00070" summary="hw#19">
++      <option name="closed" value="true" />
++      <created>1714843541279</created>
++      <option name="number" value="00070" />
++      <option name="presentableId" value="LOCAL-00070" />
++      <option name="project" value="LOCAL" />
++      <updated>1714843541279</updated>
++    </task>
++    <task id="LOCAL-00071" summary="hw#20">
++      <option name="closed" value="true" />
++      <created>1714869324396</created>
++      <option name="number" value="00071" />
++      <option name="presentableId" value="LOCAL-00071" />
++      <option name="project" value="LOCAL" />
++      <updated>1714869324406</updated>
++    </task>
++    <task id="LOCAL-00072" summary="hw#20">
++      <option name="closed" value="true" />
++      <created>1714869353329</created>
++      <option name="number" value="00072" />
++      <option name="presentableId" value="LOCAL-00072" />
++      <option name="project" value="LOCAL" />
++      <updated>1714869353329</updated>
++    </task>
++    <task id="LOCAL-00073" summary="hw#20">
++      <option name="closed" value="true" />
++      <created>1714870219529</created>
++      <option name="number" value="00073" />
++      <option name="presentableId" value="LOCAL-00073" />
++      <option name="project" value="LOCAL" />
++      <updated>1714870219529</updated>
++    </task>
++    <task id="LOCAL-00074" summary="hw#20">
++      <option name="closed" value="true" />
++      <created>1714871063685</created>
++      <option name="number" value="00074" />
++      <option name="presentableId" value="LOCAL-00074" />
++      <option name="project" value="LOCAL" />
++      <updated>1714871063687</updated>
++    </task>
++    <task id="LOCAL-00075" summary="hw#20">
++      <option name="closed" value="true" />
++      <created>1714897835244</created>
++      <option name="number" value="00075" />
++      <option name="presentableId" value="LOCAL-00075" />
++      <option name="project" value="LOCAL" />
++      <updated>1714897835244</updated>
++    </task>
++    <task id="LOCAL-00076" summary="hw#20">
++      <option name="closed" value="true" />
++      <created>1714897881935</created>
++      <option name="number" value="00076" />
++      <option name="presentableId" value="LOCAL-00076" />
++      <option name="project" value="LOCAL" />
++      <updated>1714897881936</updated>
++    </task>
++    <task id="LOCAL-00077" summary="hw#20">
++      <option name="closed" value="true" />
++      <created>1714901725384</created>
++      <option name="number" value="00077" />
++      <option name="presentableId" value="LOCAL-00077" />
++      <option name="project" value="LOCAL" />
++      <updated>1714901725385</updated>
++    </task>
++    <task id="LOCAL-00078" summary="hw#20">
++      <option name="closed" value="true" />
++      <created>1714901823857</created>
++      <option name="number" value="00078" />
++      <option name="presentableId" value="LOCAL-00078" />
++      <option name="project" value="LOCAL" />
++      <updated>1714901823857</updated>
++    </task>
++    <task id="LOCAL-00079" summary="hw#20">
++      <option name="closed" value="true" />
++      <created>1714912984351</created>
++      <option name="number" value="00079" />
++      <option name="presentableId" value="LOCAL-00079" />
++      <option name="project" value="LOCAL" />
++      <updated>1714912984353</updated>
++    </task>
++    <task id="LOCAL-00080" summary="hw#20">
++      <option name="closed" value="true" />
++      <created>1715019561767</created>
++      <option name="number" value="00080" />
++      <option name="presentableId" value="LOCAL-00080" />
++      <option name="project" value="LOCAL" />
++      <updated>1715019561768</updated>
++    </task>
++    <task id="LOCAL-00081" summary="hw#21">
++      <option name="closed" value="true" />
++      <created>1715019769345</created>
++      <option name="number" value="00081" />
++      <option name="presentableId" value="LOCAL-00081" />
++      <option name="project" value="LOCAL" />
++      <updated>1715019769347</updated>
++    </task>
++    <task id="LOCAL-00082" summary="hw#21">
++      <option name="closed" value="true" />
++      <created>1715021144117</created>
++      <option name="number" value="00082" />
++      <option name="presentableId" value="LOCAL-00082" />
++      <option name="project" value="LOCAL" />
++      <updated>1715021144129</updated>
++    </task>
++    <task id="LOCAL-00083" summary="hw#21">
++      <option name="closed" value="true" />
++      <created>1715021384054</created>
++      <option name="number" value="00083" />
++      <option name="presentableId" value="LOCAL-00083" />
++      <option name="project" value="LOCAL" />
++      <updated>1715021384057</updated>
++    </task>
++    <task id="LOCAL-00084" summary="hw#21">
++      <option name="closed" value="true" />
++      <created>1715067320068</created>
++      <option name="number" value="00084" />
++      <option name="presentableId" value="LOCAL-00084" />
++      <option name="project" value="LOCAL" />
++      <updated>1715067320077</updated>
++    </task>
++    <task id="LOCAL-00085" summary="hw#22">
++      <option name="closed" value="true" />
++      <created>1715192724870</created>
++      <option name="number" value="00085" />
++      <option name="presentableId" value="LOCAL-00085" />
++      <option name="project" value="LOCAL" />
++      <updated>1715192724871</updated>
++    </task>
++    <task id="LOCAL-00086" summary="HW#22">
++      <option name="closed" value="true" />
++      <created>1715192799488</created>
++      <option name="number" value="00086" />
++      <option name="presentableId" value="LOCAL-00086" />
++      <option name="project" value="LOCAL" />
++      <updated>1715192799488</updated>
++    </task>
++    <task id="LOCAL-00087" summary="HW#22">
++      <option name="closed" value="true" />
++      <created>1715199707752</created>
++      <option name="number" value="00087" />
++      <option name="presentableId" value="LOCAL-00087" />
++      <option name="project" value="LOCAL" />
++      <updated>1715199707753</updated>
++    </task>
++    <task id="LOCAL-00088" summary="HW#22">
++      <option name="closed" value="true" />
++      <created>1715199930222</created>
++      <option name="number" value="00088" />
++      <option name="presentableId" value="LOCAL-00088" />
++      <option name="project" value="LOCAL" />
++      <updated>1715199930222</updated>
++    </task>
++    <task id="LOCAL-00089" summary="HW#22">
++      <option name="closed" value="true" />
++      <created>1715202939948</created>
++      <option name="number" value="00089" />
++      <option name="presentableId" value="LOCAL-00089" />
++      <option name="project" value="LOCAL" />
++      <updated>1715202939949</updated>
++    </task>
++    <option name="localTasksCounter" value="90" />
++    <servers />
++  </component>
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="TAB_STATES">
++      <map>
++        <entry key="MAIN">
++          <value>
++            <State />
++          </value>
++        </entry>
++      </map>
++    </option>
++  </component>
++  <component name="VcsManagerConfiguration">
++    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
++    <MESSAGE value="Initial" />
++    <MESSAGE value="hw#2#3#4" />
++    <MESSAGE value="hw#2#4" />
++    <MESSAGE value="hw#2" />
++    <MESSAGE value="hw#5#6#7#8#9" />
++    <MESSAGE value="hw#10" />
++    <MESSAGE value="hw#11" />
++    <MESSAGE value="hw#12" />
++    <MESSAGE value="hw#13" />
++    <MESSAGE value="hw#14" />
++    <MESSAGE value="hw#15" />
++    <MESSAGE value="hw#16" />
++    <MESSAGE value="hw#17" />
++    <MESSAGE value="hw#18" />
++    <MESSAGE value="hw#19" />
++    <MESSAGE value="hw#20_txt" />
++    <MESSAGE value="hw#20.txt" />
++    <MESSAGE value="hw#20txt" />
++    <MESSAGE value="hw#20" />
++    <MESSAGE value="hw#21" />
++    <MESSAGE value="hw#22" />
++    <MESSAGE value="HW#22" />
++    <option name="LAST_COMMIT_MESSAGE" value="HW#22" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/qaAutomation04.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/qaAutomation04.iml b/.idea/qaAutomation04.iml
+new file mode 100644
+--- /dev/null	(date 1713473408623)
++++ b/.idea/qaAutomation04.iml	(date 1713473408623)
+@@ -0,0 +1,10 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module type="PYTHON_MODULE" version="4">
++  <component name="NewModuleRootManager">
++    <content url="file://$MODULE_DIR$">
++      <excludeFolder url="file://$MODULE_DIR$/.venv" />
++    </content>
++    <orderEntry type="jdk" jdkName="Python 3.11 (qaAutomation04)" jdkType="Python SDK" />
++    <orderEntry type="sourceFolder" forTests="false" />
++  </component>
++</module>
+\ No newline at end of file
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+new file mode 100644
+--- /dev/null	(date 1713214480710)
++++ b/.idea/vcs.xml	(date 1713214480710)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="$PROJECT_DIR$" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: hw#13/hw#13.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/hw#13/hw#13.py b/lecture#4/hw#13.py
+rename from hw#13/hw#13.py
+rename to lecture#4/hw#13.py
+--- a/hw#13/hw#13.py	(revision 9403bec5c401058d436ebaba6505bc4f7b72fc76)
++++ b/lecture#4/hw#13.py	(date 1714225978203)
+@@ -16,7 +16,7 @@
+ # email = 'a_aa@bbb.cc/c'
+ # email = '_aaa@bbb.ccc/'
+ # email = 'aaa@bbb..c@c@c'
+-# email = 'aaa.bbb.ccc@c@c.c'
++email = 'aaa.bbb.ccc@c@c.c'
+ 
+ #   List TestCases for email verification
+ check_email = ((email.find('@') < email.find('.'))
+Index: lecture#7/hw#23.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lecture#7/hw#23.py b/lecture#7/hw#23.py
+new file mode 100644
+--- /dev/null	(date 1715194200496)
++++ b/lecture#7/hw#23.py	(date 1715194200496)
+@@ -0,0 +1,22 @@
++
++
++second_largest_number = ([])  # None
++second_largest_number1 = ([1, 1])  # None
++second_largest_number2 = ([1, 2, 3, 4, 5])  # 4
++print(f'List: {second_largest_number}; Type: {type(second_largest_number)}\n'
++      f'List: {second_largest_number1}; Type: {type(second_largest_number1)}\n'
++      f'List: {second_largest_number2}; Type: {type(second_largest_number2)}\n'
++      f'-----------------without using json-------------------------')
++
++
++def second_largest(lst):
++    if len(lst) == [] and [i for i in lst if i == i]:
++        return None
++    else:
++        return 'ok'
++
++
++print(f'Result: {second_largest(second_largest_number)}; Type: {type(second_largest(second_largest_number))}\n'
++      f'Result: {second_largest(second_largest_number1)}; Type: {type(second_largest(second_largest_number1))}\n'
++      f'Result: {second_largest(second_largest_number2)}; Type: {type(second_largest(second_largest_number2))}\n'
++      f'------------------using json------------------------')
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+new file mode 100644
+--- /dev/null	(date 1713214876765)
++++ b/.idea/misc.xml	(date 1713214876765)
+@@ -0,0 +1,7 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="Black">
++    <option name="sdkName" value="Python 3.11 (qaAutomation04)" />
++  </component>
++  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.11 (qaAutomation04)" project-jdk-type="Python SDK" />
++</project>
+\ No newline at end of file
+diff --git a/hw#2/hw#2.py b/lecture#2/hw#2.py
+rename from hw#2/hw#2.py
+rename to lecture#2/hw#2.py
+diff --git a/hw#6/hw#6.py b/lecture#3/hw#6.py
+rename from hw#6/hw#6.py
+rename to lecture#3/hw#6.py
+diff --git a/hw#3/hw#3.py b/lecture#2/hw#3.py
+rename from hw#3/hw#3.py
+rename to lecture#2/hw#3.py
+diff --git a/hw#7/hw#7.py b/lecture#3/hw#7.py
+rename from hw#7/hw#7.py
+rename to lecture#3/hw#7.py
+diff --git a/hw#8/hw#8.py b/lecture#3/hw#8.py
+rename from hw#8/hw#8.py
+rename to lecture#3/hw#8.py
+diff --git a/hw#4/hw#4.py b/lecture#2/hw#4.py
+rename from hw#4/hw#4.py
+rename to lecture#2/hw#4.py
+diff --git a/hw#9/hw#9.py b/lecture#3/hw#9.py
+rename from hw#9/hw#9.py
+rename to lecture#3/hw#9.py
+diff --git a/hw#10/hw#10.py b/lecture#4/hw#10.py
+rename from hw#10/hw#10.py
+rename to lecture#4/hw#10.py
+diff --git a/hw#11/hw#11.py b/lecture#4/hw#11.py
+rename from hw#11/hw#11.py
+rename to lecture#4/hw#11.py
+diff --git a/hw#12/hw#12.py b/lecture#4/hw#12.py
+rename from hw#12/hw#12.py
+rename to lecture#4/hw#12.py
+diff --git a/hw#5/hw#5.py b/lecture#3/hw#5.py
+rename from hw#5/hw#5.py
+rename to lecture#3/hw#5.py
+diff --git a/lecture#7/hw#24.py b/lecture#7/hw#24.py
+new file mode 100644
