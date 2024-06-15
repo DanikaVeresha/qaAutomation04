@@ -23,6 +23,7 @@ class Facade:
             self._train.execute_the_request()
         )
 
+
 if __name__ == '__main__':
     facade = Facade()
     for info in facade.get_all_info():
