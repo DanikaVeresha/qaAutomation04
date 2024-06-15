@@ -54,9 +54,6 @@ class Car:
                f'Speed: {self.calculate_speed()} km/h\n' \
                f'Travel duration: {self.calculate_time()}\n'
 
-
-
-
-
-
-
+    def execute_the_request(self):
+        """-> Execute the request for find out information about the car."""
+        return self.the_car_started()

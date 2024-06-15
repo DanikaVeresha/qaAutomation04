@@ -92,17 +92,12 @@ print(factory.create_route('Audi', 'Kyiv', 'Dnipropetrovsk'))
 print(factory.create_route('car', 'Kyiv', 'Dnipropetrovsk'))
 print('----------------------------------------------------------------------------------')
 factory = factory_producer.get_factory('train')
-print(factory.create_route('Amtrak', 'New York', 'Los Angeles'))
-print(factory.create_route('train', 'New York', 'Los Angeles'))
+print(factory.create_route('Amtrak', 'Kyiv', 'Dnipropetrovsk'))
+print(factory.create_route('train', 'Kyiv', 'Dnipropetrovsk'))
 print('----------------------------------------------------------------------------------')
 factory = factory_producer.get_factory('airplane')
-print(factory.create_route('AmericanAirlines', 'Kyiv', 'New York'))
-print(factory.create_route('airplane', 'Kyiv', 'New York'))
+print(factory.create_route('AmericanAirlines', 'Kyiv', 'Dnipropetrovsk'))
+print(factory.create_route('airplane', 'Kyiv', 'Dnipropetrovsk'))
 print('----------------------------------------------------------------------------------')
 factory = factory_producer.get_factory('diesh')
-print(factory.create_route('diesh', 'Kyiv', 'New York'))
-
-
-
-
-
+print(factory.create_route('diesh', 'Kyiv', 'Dnipropetrovsk'))

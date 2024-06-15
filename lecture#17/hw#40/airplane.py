@@ -33,12 +33,13 @@ class Airplane:
         start_point_coordinates = (start_point.latitude, start_point.longitude)
         end_point_coordinates = (end_point.latitude, end_point.longitude)
         distance = haversine(start_point_coordinates, end_point_coordinates, unit=Unit.KILOMETERS)
+        # Convert distance from km to nautical miles
         return round((distance * 0.539957), 2)
 
     @staticmethod
     def calculate_speed():
         """Calculate speed for an airplane."""
-        speed = random.randint(300, 350)
+        speed = random.randint(800, 1000)
         return speed
 
     def calculate_time(self):
@@ -54,6 +55,8 @@ class Airplane:
                f'Speed: {self.calculate_speed()} km/h\n' \
                f'Flight duration: {self.calculate_time()}\n'
 
-
+    def execute_the_request(self):
+        """-> Execute the request for find out information about the airplane."""
+        return self.the_plane_took_off()
 
 

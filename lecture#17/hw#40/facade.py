@@ -14,17 +14,17 @@ class Facade:
 
     def get_all_info(self):
         """Get all information about transportation."""
-        return (self._airplane.the_plane_took_off(),
-                self._car.the_car_started(),
-                self._train.the_train_departed())
-
+        return (
+            self._airplane.execute_the_request.__doc__,
+            self._airplane.execute_the_request(),
+            self._car.execute_the_request.__doc__,
+            self._car.execute_the_request(),
+            self._train.execute_the_request.__doc__,
+            self._train.execute_the_request()
+        )
 
 if __name__ == '__main__':
     facade = Facade()
     for info in facade.get_all_info():
         print(info)
         print('----------------------------------------------------------------------------------')
-
-
-
-
