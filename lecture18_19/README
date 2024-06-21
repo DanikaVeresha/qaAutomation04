@@ -1,0 +1,8 @@
+In the app file, I created a primitive application that creates an object of the User
+class with data, the essence of the application is that the user can create an order
+(a link to the site, or manually enter the value of what he wants to buy) and also
+register and log in to the site, the program remembers the order and forms it with
+probable date of receipt (the date of receipt is calculated randomly from 1-4 days
+from the day the user created the order). Tests for the validity of user data during
+its creation and class methods are developed in the tests directory. I decided to play
+a little with the pytest.
