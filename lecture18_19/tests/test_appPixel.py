@@ -6,13 +6,27 @@ import re
 @pytest.mark.parametrize('x', ['0'])
 @pytest.mark.parametrize('y', ['0'])
 @pytest.mark.parametrize('z', ['255'])
-def test_create_pixel(x, y, z):
+def test_check_pixel_x(x, y, z):
     pixel = Pixel(x, y, z)
     assert re.match(r'[0-9]', pixel.x), f'X {pixel.x} is not valid'
-    assert re.match(r'[0-9]', pixel.y), f'Y {pixel.y} is not valid'
-    assert re.match(r'[0-9]', pixel.z), f'Z {pixel.z} is not valid'
     assert 0 <= int(pixel.x) <= 255, f'X {pixel.x} is not valid'
+
+
+@pytest.mark.parametrize('x', ['0'])
+@pytest.mark.parametrize('y', ['0'])
+@pytest.mark.parametrize('z', ['255'])
+def test_check_pixel_y(x, y, z):
+    pixel = Pixel(x, y, z)
+    assert re.match(r'[0-9]', pixel.y), f'Y {pixel.y} is not valid'
     assert 0 <= int(pixel.y) <= 255, f'Y {pixel.y} is not valid'
+
+
+@pytest.mark.parametrize('x', ['0'])
+@pytest.mark.parametrize('y', ['0'])
+@pytest.mark.parametrize('z', ['255'])
+def test_check_pixel_z(x, y, z):
+    pixel = Pixel(x, y, z)
+    assert re.match(r'[0-9]', pixel.z), f'Z {pixel.z} is not valid'
     assert 0 <= int(pixel.z) <= 255, f'Z {pixel.z} is not valid'
 
 
