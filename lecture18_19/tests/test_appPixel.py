@@ -45,12 +45,18 @@ def pixel(request):
     return Pixel(*request.param)
 
 
-def test_create_pixel_fixture(pixel):
+def test_create_pixel_x_fixture(pixel):
     assert re.match(r'[0-9]', pixel.x), f'X {pixel.x} is not valid'
-    assert re.match(r'[0-9]', pixel.y), f'Y {pixel.y} is not valid'
-    assert re.match(r'[0-9]', pixel.z), f'Z {pixel.z} is not valid'
     assert 0 <= int(pixel.x) <= 255, f'X {pixel.x} is not valid'
+
+
+def test_create_pixel_y_fixture(pixel):
+    assert re.match(r'[0-9]', pixel.y), f'Y {pixel.y} is not valid'
     assert 0 <= int(pixel.y) <= 255, f'Y {pixel.y} is not valid'
+
+
+def test_create_pixel_z_fixture(pixel):
+    assert re.match(r'[0-9]', pixel.z), f'Z {pixel.z} is not valid'
     assert 0 <= int(pixel.z) <= 255, f'Z {pixel.z} is not valid'
 
 
@@ -68,7 +74,15 @@ def invalid_pixel(request):
 
 def test_create_invalid_pixel_fixture(invalid_pixel):
     assert re.match(r'[0-9]', invalid_pixel.x), f'X {invalid_pixel.x} is not valid'
+    assert 0 <= int(invalid_pixel.x) <= 255, f'X {invalid_pixel.x} is valid'
+
+
+def test_create_invalid_pixel_y_fixture(invalid_pixel):
     assert re.match(r'[0-9]', invalid_pixel.y), f'Y {invalid_pixel.y} is not valid'
+    assert 0 <= int(invalid_pixel.y) <= 255, f'Y {invalid_pixel.y} is valid'
+
+
+def test_create_invalid_pixel_z_fixture(invalid_pixel):
     assert re.match(r'[0-9]', invalid_pixel.z), f'Z {invalid_pixel.z} is not valid'
     assert 255 >= int(invalid_pixel.x) >= 255, f'X {invalid_pixel.x} is valid'
 
