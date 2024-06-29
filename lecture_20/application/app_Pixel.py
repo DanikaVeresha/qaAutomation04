@@ -49,7 +49,7 @@ class Pixel:
 
     def __radd__(self, other):
         """Add the components of one pixel to the components of another pixel."""
-        logger.info(f'Result __radd__ -> {self.__red}, {self.__green}, {self.__blue} ')
+        logger.info(f'Result __radd__ -> {other.__add__(self)} ')
         return other.__add__(self)
 
     def __sub__(self, other):
@@ -68,7 +68,7 @@ class Pixel:
 
     def __rsub__(self, other):
         """Subtract the components of one pixel with the components of another pixel"""
-        logger.info(f'Result __rsub__ -> {self.__red}, {self.__green}, {self.__blue} ')
+        logger.info(f'Result __rsub__ -> {other.__sub__(self)} ')
         return other.__sub__(self)
 
     def __mul__(self, other):
@@ -90,7 +90,7 @@ class Pixel:
 
     def __rmul__(self, other):
         """Multiplying pixel components with any value > 0"""
-        logger.info(f'Result __rmul__ -> {self.__red}, {self.__green}, {self.__blue} ')
+        logger.info(f'Result __rmul__ -> {self.__red, self.__green, self.__blue} ')
         return self.__mul__(other)
 
     def __truediv__(self, other):
@@ -115,7 +115,7 @@ class Pixel:
         if not isinstance(other, Pixel):
             logger.info(f'Result __eq__ -> Exs(TypeError): Object "other" -> "{other}" is not a Pixel object')
             raise TypeError(f'Object "other" -> "{other}" is not a Pixel object')
-        logger.info(f'Result __eq__ -> {self.__red == other.__red and self.__green == other.__green and self.__blue == other.__blue}')
+        logger.info(f'Args: [{self.__red, self.__green, self.__green}, {repr(other)}]; Result __eq__ -> {self.__red == other.__red and self.__green == other.__green and self.__blue == other.__blue}')
         return self.__red == other.__red and self.__green == other.__green and self.__blue == other.__blue
 
     def __str__(self):

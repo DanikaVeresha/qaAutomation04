@@ -22,15 +22,15 @@ INFO:C:\Users\daria\projects\qaAutomation04\lecture_20\application\app_Pixel.py:
 INFO:C:\Users\daria\projects\qaAutomation04\lecture_20\application\app_Pixel.py:Pixel object created Pixel [1, 1, 1]
 INFO:C:\Users\daria\projects\qaAutomation04\lecture_20\application\app_Pixel.py:Result __mul__ -> 16, 16, 16 
 INFO:C:\Users\daria\projects\qaAutomation04\lecture_20\application\app_Pixel.py:Pixel object created Pixel [16, 16, 16]
-INFO:C:\Users\daria\projects\qaAutomation04\lecture_20\application\app_Pixel.py:Result __rmul__ -> 9, 9, 9 
+INFO:C:\Users\daria\projects\qaAutomation04\lecture_20\application\app_Pixel.py:Result __rmul__ -> (9, 9, 9) 
 INFO:C:\Users\daria\projects\qaAutomation04\lecture_20\application\app_Pixel.py:Result __mul__ -> 18, 18, 18 
 INFO:C:\Users\daria\projects\qaAutomation04\lecture_20\application\app_Pixel.py:Pixel object created Pixel [18, 18, 18]
 INFO:C:\Users\daria\projects\qaAutomation04\lecture_20\application\app_Pixel.py:Result __truediv__ -> 6.0, 6.0, 6.0 
 INFO:C:\Users\daria\projects\qaAutomation04\lecture_20\application\app_Pixel.py:Pixel object created Pixel [6, 6, 6]
 INFO:C:\Users\daria\projects\qaAutomation04\lecture_20\application\app_Pixel.py:Pixel object created Pixel [1, 1, 1]
-INFO:C:\Users\daria\projects\qaAutomation04\lecture_20\application\app_Pixel.py:Result __eq__ -> False
+INFO:C:\Users\daria\projects\qaAutomation04\lecture_20\application\app_Pixel.py:Args: [(255, 255, 255), 1, 1, 1]; Result __eq__ -> False
 INFO:C:\Users\daria\projects\qaAutomation04\lecture_20\application\app_Pixel.py:Pixel object created Pixel [255, 255, 255]
-INFO:C:\Users\daria\projects\qaAutomation04\lecture_20\application\app_Pixel.py:Result __eq__ -> True
+INFO:C:\Users\daria\projects\qaAutomation04\lecture_20\application\app_Pixel.py:Args: [(255, 255, 255), 255, 255, 255]; Result __eq__ -> True
 INFO:C:\Users\daria\projects\qaAutomation04\lecture_20\application\app_Pixel.py:Result __add__ -> 255, 255, 255 
 INFO:C:\Users\daria\projects\qaAutomation04\lecture_20\application\app_Pixel.py:Pixel object created Pixel [255, 255, 255]
 INFO:C:\Users\daria\projects\qaAutomation04\lecture_20\application\app_Pixel.py:Result __add__ -> 255, 255, 255 
@@ -41,7 +41,6 @@ INFO:C:\Users\daria\projects\qaAutomation04\lecture_20\application\app_Pixel.py:
 INFO:C:\Users\daria\projects\qaAutomation04\lecture_20\application\app_Pixel.py:Pixel object created Pixel [0, 0, 0]
 INFO:C:\Users\daria\projects\qaAutomation04\lecture_20\application\app_Pixel.py:Result __mul__ -> 255, 255, 255 
 INFO:C:\Users\daria\projects\qaAutomation04\lecture_20\application\app_Pixel.py:Pixel object created Pixel [255, 255, 255]
-INFO:C:\Users\daria\projects\qaAutomation04\lecture_20\application\app_Pixel.py:Result __rmul__ -> 255, 255, 255 
+INFO:C:\Users\daria\projects\qaAutomation04\lecture_20\application\app_Pixel.py:Result __rmul__ -> (255, 255, 255) 
 INFO:C:\Users\daria\projects\qaAutomation04\lecture_20\application\app_Pixel.py:Result __mul__ -> 255, 255, 255 
 INFO:C:\Users\daria\projects\qaAutomation04\lecture_20\application\app_Pixel.py:Pixel object created Pixel [255, 255, 255]
-
