@@ -5,7 +5,7 @@ import re
 
 #   In the lines of the document, I wrote the requirements for the Pixel class,
 #   which were given in the homework for the lecture -> 14.
-#   This file has 107 passed tests.
+#   This file has 108 tests.
 
 
 @pytest.mark.parametrize('pixel', [(1, 1, 1), (255, 255, 255), (0, 0, 0)])
@@ -494,3 +494,8 @@ def test_checks_str_pixel_object(pixel):
     assert re.match(r'^\tRed: \d+\n\tGreen: \d+\n\tBlue: \d+$', str(Pixel(*pixel))), 'String is not valid'
 
 
+@pytest.mark.parametrize('pixel', [(255, 0, 1)])
+def test_checks_repr_pixel_object(pixel):
+    """
+    1-> Method __repr__ should return string with constructor call."""
+    assert re.match(r'^\d+, \d+, \d+$', repr(Pixel(*pixel))), 'String is not valid'
