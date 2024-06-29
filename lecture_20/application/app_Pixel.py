@@ -1,4 +1,5 @@
 """Create a pixel application that will be used in the tests below."""
+
 import logging
 
 logging.basicConfig(level=logging.INFO, filename="py_log.log", filemode="w")

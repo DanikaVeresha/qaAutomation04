@@ -44,3 +44,4 @@ INFO:C:\Users\daria\projects\qaAutomation04\lecture_20\application\app_Pixel.py:
 INFO:C:\Users\daria\projects\qaAutomation04\lecture_20\application\app_Pixel.py:Result __rmul__ -> 255, 255, 255 
 INFO:C:\Users\daria\projects\qaAutomation04\lecture_20\application\app_Pixel.py:Result __mul__ -> 255, 255, 255 
 INFO:C:\Users\daria\projects\qaAutomation04\lecture_20\application\app_Pixel.py:Pixel object created Pixel [255, 255, 255]
+
