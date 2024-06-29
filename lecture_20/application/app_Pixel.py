@@ -10,6 +10,7 @@ class Pixel:
     def __init__(self, red, green, blue):
         """Initialize the pixel with red, green and blue components."""
         if not 0 <= red <= 255 or not 0 <= green <= 255 or not 0 <= blue <= 255:
+            logger.info(f'Exs(ValueError): Components must be in the range [0 .. 255]')
             raise ValueError('Components must be in the range [0 .. 255]')
         self.__red = red if isinstance(red, int) else int(red)
         self.__green = green if isinstance(green, int) else int(green)
@@ -34,6 +35,7 @@ class Pixel:
     def __add__(self, other):
         """Add the components of one pixel to the components of another pixel."""
         if not isinstance(other, Pixel):
+            logger.info(f'Result __add__ -> Exs(TypeError): Object "other" -> "{other}" is not a Pixel object')
             raise TypeError(f'Object "other" -> "{other}" is not a Pixel object')
         self.__red = 255 if self.__red + other.__red >= 255 else self.__red + other.__red or \
             0 if self.__red + other.__red <= 0 else self.__red + other.__red
@@ -52,6 +54,7 @@ class Pixel:
     def __sub__(self, other):
         """Subtract the components of one pixel with the components of another pixel"""
         if not isinstance(other, Pixel):
+            logger.info(f'Result __sub__ -> Exs(TypeError): Object "other" -> "{other}" is not a Pixel object')
             raise TypeError(f'Object "other" -> "{other}" is not a Pixel object')
         self.__red = 0 if self.__red - other.__red <= 0 else self.__red - other.__red or \
             255 if self.__red - other.__red >= 255 else self.__red - other.__red
@@ -70,8 +73,10 @@ class Pixel:
     def __mul__(self, other):
         """Multiplying pixel components with any value > 0"""
         if not isinstance(other, (int, float)):
+            logger.info(f'Result __mul__ -> Exs(TypeError): Object "other" -> "{other}" is not type of int or float')
             raise TypeError(f'Object "other" -> "{other}" is not type of int or float')
         if other <= 0:
+            logger.info(f'Result __mul__ -> Exs(ValueError): Object "other" -> "{other}" must be greater than 0')
             raise ValueError(f'Value "other" -> "{other}" must be greater than 0')
         self.__red = 255 if self.__red * other >= 255 else self.__red * other or \
             0 if self.__red * other <= 0 else self.__red * other
@@ -90,8 +95,10 @@ class Pixel:
     def __truediv__(self, other):
         """Divide pixel components by any value > 0"""
         if not isinstance(other, (int, float)):
+            logger.info(f'Result __truediv__ -> Exs(TypeError): Object "other" -> "{other}" is not type of int or float')
             raise TypeError(f'Object "other" -> "{other}" is not type of int or float')
         if other <= 0:
+            logger.info(f'Result __truediv__ -> Exs(ValueError): Value "other" -> "{other}" must be greater than 0')
             raise ValueError(f'Value "other" -> "{other}" must be greater than 0')
         self.__red = 0 if self.__red / other <= 0 else self.__red / other or \
             255 if self.__red / other >= 255 else self.__red / other
@@ -105,6 +112,7 @@ class Pixel:
     def __eq__(self, other):
         """Compare the components of two pixels for equality"""
         if not isinstance(other, Pixel):
+            logger.info(f'Result __eq__ -> Exs(TypeError): Object "other" -> "{other}" is not a Pixel object')
             raise TypeError(f'Object "other" -> "{other}" is not a Pixel object')
         logger.info(f'Result __eq__ -> {self.__red == other.__red and self.__green == other.__green and self.__blue == other.__blue}')
         return self.__red == other.__red and self.__green == other.__green and self.__blue == other.__blue
