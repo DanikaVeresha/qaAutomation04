@@ -1,4 +1,8 @@
 """Create a pixel application that will be used in the tests below."""
+import logging
+
+logging.basicConfig(level=logging.INFO, filename="py_log.log", filemode="w")
+logger = logging.getLogger(__name__)
 
 
 class Pixel:
@@ -10,17 +14,21 @@ class Pixel:
         self.__red = red if isinstance(red, int) else int(red)
         self.__green = green if isinstance(green, int) else int(green)
         self.__blue = blue if isinstance(blue, int) else int(blue)
+        logger.info(f'Pixel object created Pixel [{self.__red}, {self.__green}, {self.__blue}]')
 
     def red(self):
         """Return value the red component of the pixel."""
+        logger.info(f'Function red returned value [{self.__red}]')
         return self.__red
 
     def green(self):
         """Return value the green component of the pixel."""
+        logger.info(f'Function green returned value [{self.__green}]')
         return self.__green
 
     def blue(self):
         """Return value the blue component of the pixel."""
+        logger.info(f'Function blue returned value [{self.__blue}]')
         return self.__blue
 
     def __add__(self, other):
@@ -33,9 +41,12 @@ class Pixel:
             0 if self.__green + other.__green <= 0 else self.__green + other.__green
         self.__blue = 255 if self.__blue + other.__blue >= 255 else self.__blue + other.__blue or \
             0 if self.__blue + other.__blue <= 0 else self.__blue + other.__blue
+        logger.info(f'Result __add__ -> {self.__red}, {self.__green}, {self.__blue} ')
         return Pixel(self.__red, self.__green, self.__blue)
 
     def __radd__(self, other):
+        """Add the components of one pixel to the components of another pixel."""
+        logger.info(f'Result __radd__ -> {self.__red}, {self.__green}, {self.__blue} ')
         return other.__add__(self)
 
     def __sub__(self, other):
@@ -48,9 +59,12 @@ class Pixel:
             255 if self.__green - other.__green >= 255 else self.__green - other.__green
         self.__blue = 0 if self.__blue - other.__blue <= 0 else self.__blue - other.__blue or \
             255 if self.__blue - other.__blue >= 255 else self.__blue - other.__blue
+        logger.info(f'Result __sub__ -> {self.__red}, {self.__green}, {self.__blue} ')
         return Pixel(self.__red, self.__green, self.__blue)
 
     def __rsub__(self, other):
+        """Subtract the components of one pixel with the components of another pixel"""
+        logger.info(f'Result __rsub__ -> {self.__red}, {self.__green}, {self.__blue} ')
         return other.__sub__(self)
 
     def __mul__(self, other):
@@ -65,10 +79,12 @@ class Pixel:
             0 if self.__green * other <= 0 else self.__green * other
         self.__blue = 255 if self.__blue * other >= 255 else self.__blue * other or \
             0 if self.__blue * other <= 0 else self.__blue * other
+        logger.info(f'Result __mul__ -> {self.__red}, {self.__green}, {self.__blue} ')
         return Pixel(self.__red, self.__green, self.__blue)
 
     def __rmul__(self, other):
-        """Multiply by any value > 0 with pixel components"""
+        """Multiplying pixel components with any value > 0"""
+        logger.info(f'Result __rmul__ -> {self.__red}, {self.__green}, {self.__blue} ')
         return self.__mul__(other)
 
     def __truediv__(self, other):
@@ -83,12 +99,14 @@ class Pixel:
             255 if self.__green / other >= 255 else self.__green / other
         self.__blue = 0 if self.__blue / other <= 0 else self.__blue / other or \
             255 if self.__blue / other >= 255 else self.__blue / other
+        logger.info(f'Result __truediv__ -> {self.__red}, {self.__green}, {self.__blue} ')
         return Pixel(self.__red, self.__green, self.__blue)
 
     def __eq__(self, other):
         """Compare the components of two pixels for equality"""
         if not isinstance(other, Pixel):
             raise TypeError(f'Object "other" -> "{other}" is not a Pixel object')
+        logger.info(f'Result __eq__ -> {self.__red == other.__red and self.__green == other.__green and self.__blue == other.__blue}')
         return self.__red == other.__red and self.__green == other.__green and self.__blue == other.__blue
 
     def __str__(self):
@@ -144,8 +162,8 @@ print(f'__rmul__/2, pix10/: -> {repr(2 * pix10)}')
 print(f'__truediv__/pix13, 2/: -> {repr(pix13 / 2)}')
 # print(f'__truediv__/pix11, b/: -> {repr(pix11 / "b")}') # TypeError
 
-print(f'__eq__/pix1, pix2/: -> {repr(pix1 == pix2)}')
-print(f'__eq__/pix1, pix1/: -> {repr(pix1 == Pixel(0, 0, 0))}')
+print(f'__eq__/pix14, [1, 1, 1]/: -> {repr(pix14 == Pixel(1, 1, 1))}')
+print(f'__eq__/pix14, [255, 255, 255]/: -> {repr(pix14 == Pixel(255, 255, 255))}')
 # print(f'__eq__/pix1, 1/: -> {repr(pix1 == 1)}') # TypeError
 
 print(f'__add__/pix1, pix14/: -> {repr(pix1 + pix14)}')
