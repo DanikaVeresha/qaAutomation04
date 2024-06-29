@@ -2,7 +2,7 @@
 import logging
 
 logging.basicConfig(level=logging.INFO, filename="py_log.log", filemode="w")
-logger = logging.getLogger(__name__)
+logger = logging.getLogger(__file__)
 
 
 class Pixel:
