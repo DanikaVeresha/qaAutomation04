@@ -26,33 +26,45 @@ class Pixel:
     def __add__(self, other):
         """Add the components of one pixel to the components of another pixel."""
         if not isinstance(other, Pixel):
-            return f'Object "other" -> "{other}" is not a Pixel object'
-        self.__red = 255 if self.__red + other.__red > 255 else self.__red + other.__red
-        self.__green = 255 if self.__green + other.__green > 255 else self.__green + other.__green
-        self.__blue = 255 if self.__blue + other.__blue > 255 else self.__blue + other.__blue
-
+            raise TypeError(f'Object "other" -> "{other}" is not a Pixel object')
+        self.__red = 255 if self.__red + other.__red >= 255 else self.__red + other.__red or \
+            0 if self.__red + other.__red <= 0 else self.__red + other.__red
+        self.__green = 255 if self.__green + other.__green >= 255 else self.__green + other.__green or \
+            0 if self.__green + other.__green <= 0 else self.__green + other.__green
+        self.__blue = 255 if self.__blue + other.__blue >= 255 else self.__blue + other.__blue or \
+            0 if self.__blue + other.__blue <= 0 else self.__blue + other.__blue
         return Pixel(self.__red, self.__green, self.__blue)
+
+    def __radd__(self, other):
+        return other.__add__(self)
 
     def __sub__(self, other):
         """Subtract the components of one pixel with the components of another pixel"""
         if not isinstance(other, Pixel):
-            return f'Object "other" -> "{other}" is not a Pixel object'
-        self.__red = 0 if self.__red - other.__red <= 0 else self.__red - other.__red
-        self.__green = 0 if self.__green - other.__green <= 0 else self.__green - other.__green
-        self.__blue = 0 if self.__blue - other.__blue <= 0 else self.__blue - other.__blue
-
+            raise TypeError(f'Object "other" -> "{other}" is not a Pixel object')
+        self.__red = 0 if self.__red - other.__red <= 0 else self.__red - other.__red or \
+            255 if self.__red - other.__red >= 255 else self.__red - other.__red
+        self.__green = 0 if self.__green - other.__green <= 0 else self.__green - other.__green or \
+            255 if self.__green - other.__green >= 255 else self.__green - other.__green
+        self.__blue = 0 if self.__blue - other.__blue <= 0 else self.__blue - other.__blue or \
+            255 if self.__blue - other.__blue >= 255 else self.__blue - other.__blue
         return Pixel(self.__red, self.__green, self.__blue)
+
+    def __rsub__(self, other):
+        return other.__sub__(self)
 
     def __mul__(self, other):
         """Multiplying pixel components with any value > 0"""
         if not isinstance(other, (int, float)):
-            return f'Object "other" -> "{other}" is not type of int or float'
+            raise TypeError(f'Object "other" -> "{other}" is not type of int or float')
         if other <= 0:
-            return f'Value "other" -> "{other}" must be greater than 0'
-        self.__red = 255 if self.__red * other > 255 else self.__red * other
-        self.__green = 255 if self.__green * other > 255 else self.__green * other
-        self.__blue = 255 if self.__blue * other > 255 else self.__blue * other
-
+            raise ValueError(f'Value "other" -> "{other}" must be greater than 0')
+        self.__red = 255 if self.__red * other >= 255 else self.__red * other or \
+            0 if self.__red * other <= 0 else self.__red * other
+        self.__green = 255 if self.__green * other >= 255 else self.__green * other or \
+            0 if self.__green * other <= 0 else self.__green * other
+        self.__blue = 255 if self.__blue * other >= 255 else self.__blue * other or \
+            0 if self.__blue * other <= 0 else self.__blue * other
         return Pixel(self.__red, self.__green, self.__blue)
 
     def __rmul__(self, other):
@@ -62,33 +74,21 @@ class Pixel:
     def __truediv__(self, other):
         """Divide pixel components by any value > 0"""
         if not isinstance(other, (int, float)):
-            return f'Object "other" -> "{other}" is not type of int or float'
+            raise TypeError(f'Object "other" -> "{other}" is not type of int or float')
         if other <= 0:
-            return f'Value "other" -> "{other}" must be greater than 0'
-        self.__red = 255 if self.__red / other > 255 else self.__red / other
-        self.__green = 255 if self.__green / other > 255 else self.__green / other
-        self.__blue = 255 if self.__blue / other > 255 else self.__blue / other
-
-        return Pixel(self.__red, self.__green, self.__blue)
-
-    def __rtruediv__(self, other):
-        """Divide by any value > 0 with pixel components"""
-        if not isinstance(other, (int, float)):
-            return f'Object "other" -> "{other}" is not type of int or float'
-        elif other <= 0:
-            return f'Value "other" -> "{other}" must be greater than 0'
-        elif self.__red == 0 or self.__green == 0 or self.__blue == 0:
-            return f'Some pixel component is zero'
-        self.__red = 255 if other / self.__red > 255 else other / self.__red
-        self.__green = 255 if other / self.__green > 255 else other / self.__green
-        self.__blue = 255 if other / self.__blue > 255 else other / self.__blue
-
+            raise ValueError(f'Value "other" -> "{other}" must be greater than 0')
+        self.__red = 0 if self.__red / other <= 0 else self.__red / other or \
+            255 if self.__red / other >= 255 else self.__red / other
+        self.__green = 0 if self.__green / other <= 0 else self.__green / other or \
+            255 if self.__green / other >= 255 else self.__green / other
+        self.__blue = 0 if self.__blue / other <= 0 else self.__blue / other or \
+            255 if self.__blue / other >= 255 else self.__blue / other
         return Pixel(self.__red, self.__green, self.__blue)
 
     def __eq__(self, other):
         """Compare the components of two pixels for equality"""
         if not isinstance(other, Pixel):
-            return f'Object "other" -> "{other}" is not a Pixel object'
+            raise TypeError(f'Object "other" -> "{other}" is not a Pixel object')
         return self.__red == other.__red and self.__green == other.__green and self.__blue == other.__blue
 
     def __str__(self):
@@ -103,31 +103,60 @@ class Pixel:
         return f'{self.__red}, {self.__green}, {self.__blue}'
 
 
-pix1 = Pixel(0, 0, 255)
-pix2 = Pixel(255, 0, 0)
-pix3 = Pixel(1, 255, 1)
+pix1 = Pixel(0, 0, 0)
+pix2 = Pixel(1, 1, 1)
+
+pix3 = Pixel(2, 2, 2)
+pix4 = Pixel(3, 3, 3)
+
+pix5 = Pixel(4, 4, 4)
+pix6 = Pixel(5, 5, 5)
+
+pix7 = Pixel(6, 6, 6)
+pix8 = Pixel(7, 7, 7)
+
+pix9 = Pixel(8, 8, 8)
+pix10 = Pixel(9, 9, 9)
+
+pix11 = Pixel(10, 10, 10)
+pix12 = Pixel(11, 11, 11)
+
+pix13 = Pixel(12, 12, 12)
+
+pix14 = Pixel(255, 255, 255)
+
 
 print(f'Pixel 1:\t\n{pix1}')
 print(f'Pixel 2:\n\t{repr(pix2)}')
-print(f'Pixel 3:\n\t{repr(pix3)}')
 
 print(f'__add__/pix1, pix2/: -> {repr(pix1 + pix2)}')
-print(f'__sub__/pix1, pix2/: -> {repr(pix1 - pix2)}')
+print(f'__radd__/pix3, pix4/: -> {repr(pix4 + pix3)}')
+print(f'__sub__/pix5, pix6/: -> {repr(pix5 - pix6)}')
+print(f'__rsub__/pix7, pix8/: -> {repr(pix8 - pix7)}')
 
-print(f'__mul__/pix1, 2/: -> {repr(pix1 * 2)}')
-print(f'__rmul__/2, pix1/: -> {repr(2 * pix1)}')
-print(f'__mul__/pix1, b/: -> {repr(pix1 * "b")}')
-print(f'__rmul__/b, pix1/: -> {repr("b" * pix1)}')
+print(f'__mul__/pix9, 2/: -> {repr(pix9 * 2)}')
+print(f'__rmul__/2, pix10/: -> {repr(2 * pix10)}')
+# print(f'__mul__/pix9, b/: -> {repr(pix9 * "b")}') # TypeError
+# print(f'__rmul__/b, pix10/: -> {repr("b" * pix10)}') # TypeError
+# print(f'__mul__/pix11, 0/: -> {repr(pix11 * 0)}') # ValueError
+# print(f'__rmul__/2, pix12/: -> {repr(0 * pix12)}') # ValueError
 
-print(f'__truediv__/pix2, 2/: -> {repr(pix2 / 2)}')
-print(f'__rtruediv__/2, pix2/: -> {repr(2 / pix2)}')
-print(f'__truediv__/pix2, b/: -> {repr(pix2 / "b")}')
-print(f'__rtruediv__/b, pix2/: -> {repr("b" / pix2)}')
-print(f'__rtruediv__/2, pix3/: -> {repr(2 / pix3)}')
+print(f'__truediv__/pix13, 2/: -> {repr(pix13 / 2)}')
+# print(f'__truediv__/pix11, b/: -> {repr(pix11 / "b")}') # TypeError
 
 print(f'__eq__/pix1, pix2/: -> {repr(pix1 == pix2)}')
-print(f'__eq__/pix1, pix1/: -> {repr(pix1 == Pixel(0, 0, 255))}')
-print(f'__eq__/pix1, 1/: -> {repr(pix1 == 1)}')
+print(f'__eq__/pix1, pix1/: -> {repr(pix1 == Pixel(0, 0, 0))}')
+# print(f'__eq__/pix1, 1/: -> {repr(pix1 == 1)}') # TypeError
+
+print(f'__add__/pix1, pix14/: -> {repr(pix1 + pix14)}')
+print(f'__radd__/pix14, pix1/: -> {repr(pix14 + pix1)}')
+
+print(f'__sub__/pix1, pix14/: -> {repr(pix1 - pix14)}')
+print(f'__rsub__/pix2, pix14/: -> {repr(pix2 - pix14)}')
+
+print(f'__mul__/pix14, 2/: -> {repr(pix14 * 2)}')
+print(f'__rmul__/2, pix14/: -> {repr(2 * pix14)}')
+
 
 
 
