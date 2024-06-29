@@ -44,3 +44,4 @@ INFO:__main__:Pixel object created Pixel [255, 255, 255]
 INFO:__main__:Result __rmul__ -> 255, 255, 255 
 INFO:__main__:Result __mul__ -> 255, 255, 255 
 INFO:__main__:Pixel object created Pixel [255, 255, 255]
+
