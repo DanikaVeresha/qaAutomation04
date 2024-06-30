@@ -3,7 +3,7 @@
 import logging
 
 logging.basicConfig(level=logging.INFO, filename="py_log.log", filemode="w")
-logger = logging.getLogger(__file__)
+logger = logging.getLogger(__name__) # or __file__
 
 
 class Pixel:
@@ -21,28 +21,28 @@ class Pixel:
     def red(self):
         """Return value the red component of the pixel."""
         logger.info(f'Function red returned value [{self.__red}]')
-        return self.__red
+        return int(self.__red)
 
     def green(self):
         """Return value the green component of the pixel."""
         logger.info(f'Function green returned value [{self.__green}]')
-        return self.__green
+        return int(self.__green)
 
     def blue(self):
         """Return value the blue component of the pixel."""
         logger.info(f'Function blue returned value [{self.__blue}]')
-        return self.__blue
+        return int(self.__blue)
 
     def __add__(self, other):
         """Add the components of one pixel to the components of another pixel."""
         if not isinstance(other, Pixel):
             logger.info(f'Result __add__ -> Exs(TypeError): Object "other" -> "{other}" is not a Pixel object')
             raise TypeError(f'Object "other" -> "{other}" is not a Pixel object')
-        self.__red = 255 if self.__red + other.__red >= 255 else self.__red + other.__red or \
+        self.__red = 255 if self.__red + other.__red >= 255 else self.__red + other.__red and \
             0 if self.__red + other.__red <= 0 else self.__red + other.__red
-        self.__green = 255 if self.__green + other.__green >= 255 else self.__green + other.__green or \
+        self.__green = 255 if self.__green + other.__green >= 255 else self.__green + other.__green and \
             0 if self.__green + other.__green <= 0 else self.__green + other.__green
-        self.__blue = 255 if self.__blue + other.__blue >= 255 else self.__blue + other.__blue or \
+        self.__blue = 255 if self.__blue + other.__blue >= 255 else self.__blue + other.__blue and \
             0 if self.__blue + other.__blue <= 0 else self.__blue + other.__blue
         logger.info(f'Result __add__ -> {self.__red}, {self.__green}, {self.__blue} ')
         return Pixel(self.__red, self.__green, self.__blue)
@@ -57,11 +57,11 @@ class Pixel:
         if not isinstance(other, Pixel):
             logger.info(f'Result __sub__ -> Exs(TypeError): Object "other" -> "{other}" is not a Pixel object')
             raise TypeError(f'Object "other" -> "{other}" is not a Pixel object')
-        self.__red = 0 if self.__red - other.__red <= 0 else self.__red - other.__red or \
+        self.__red = 0 if self.__red - other.__red <= 0 else self.__red - other.__red and \
             255 if self.__red - other.__red >= 255 else self.__red - other.__red
-        self.__green = 0 if self.__green - other.__green <= 0 else self.__green - other.__green or \
+        self.__green = 0 if self.__green - other.__green <= 0 else self.__green - other.__green and \
             255 if self.__green - other.__green >= 255 else self.__green - other.__green
-        self.__blue = 0 if self.__blue - other.__blue <= 0 else self.__blue - other.__blue or \
+        self.__blue = 0 if self.__blue - other.__blue <= 0 else self.__blue - other.__blue and \
             255 if self.__blue - other.__blue >= 255 else self.__blue - other.__blue
         logger.info(f'Result __sub__ -> {self.__red}, {self.__green}, {self.__blue} ')
         return Pixel(self.__red, self.__green, self.__blue)
@@ -79,11 +79,11 @@ class Pixel:
         if other <= 0:
             logger.info(f'Result __mul__ -> Exs(ValueError): Object "other" -> "{other}" must be greater than 0')
             raise ValueError(f'Value "other" -> "{other}" must be greater than 0')
-        self.__red = 255 if self.__red * other >= 255 else self.__red * other or \
+        self.__red = 255 if self.__red * other >= 255 else self.__red * other and \
             0 if self.__red * other <= 0 else self.__red * other
-        self.__green = 255 if self.__green * other >= 255 else self.__green * other or \
+        self.__green = 255 if self.__green * other >= 255 else self.__green * other and \
             0 if self.__green * other <= 0 else self.__green * other
-        self.__blue = 255 if self.__blue * other >= 255 else self.__blue * other or \
+        self.__blue = 255 if self.__blue * other >= 255 else self.__blue * other and \
             0 if self.__blue * other <= 0 else self.__blue * other
         logger.info(f'Result __mul__ -> {self.__red}, {self.__green}, {self.__blue} ')
         return Pixel(self.__red, self.__green, self.__blue)
@@ -101,11 +101,11 @@ class Pixel:
         if other <= 0:
             logger.info(f'Result __truediv__ -> Exs(ValueError): Value "other" -> "{other}" must be greater than 0')
             raise ValueError(f'Value "other" -> "{other}" must be greater than 0')
-        self.__red = 0 if self.__red / other <= 0 else self.__red / other or \
+        self.__red = 0 if self.__red / other <= 0 else self.__red / other and \
             255 if self.__red / other >= 255 else self.__red / other
-        self.__green = 0 if self.__green / other <= 0 else self.__green / other or \
+        self.__green = 0 if self.__green / other <= 0 else self.__green / other and \
             255 if self.__green / other >= 255 else self.__green / other
-        self.__blue = 0 if self.__blue / other <= 0 else self.__blue / other or \
+        self.__blue = 0 if self.__blue / other <= 0 else self.__blue / other and \
             255 if self.__blue / other >= 255 else self.__blue / other
         logger.info(f'Result __truediv__ -> {self.__red}, {self.__green}, {self.__blue} ')
         return Pixel(self.__red, self.__green, self.__blue)
