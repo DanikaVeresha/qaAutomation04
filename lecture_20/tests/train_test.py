@@ -393,6 +393,7 @@ def test_P_repr_valid_pixel(pixel1, pixel2, pixel3):
     assert re.match(r'^\d+, \d+, \d+$', repr(pixel3)), \
         'String representation of pixel3 is not correct'
 
+
 ##############################################################################################
 
 
