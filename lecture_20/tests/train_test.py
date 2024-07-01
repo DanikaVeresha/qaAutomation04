@@ -4,7 +4,7 @@ import re
 
 #   In the lines of the document, I wrote the requirements for the Pixel class,
 #   which were given in the homework for the lecture -> 14.
-#   This file has 123 tests.
+#   This file has 60 tests.
 
 
 @pytest.mark.parametrize('pixel1', [(Pixel(0, 0, 0))])
