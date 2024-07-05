@@ -67,3 +67,4 @@ logger.info(f'The user has successfully closed all the tabs')
 
 
 
+
