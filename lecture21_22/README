@@ -1,0 +1,7 @@
+This project implements automation of login to the site https://www.saucedemo.com/
+and automated testing of login to this site, in accordance with the user data (name / password)
+specified on this site.
+The main file reproduces a simple automation of login to the site https://www.saucedemo.com/
+with randomly selected user data by the system.
+The file tests_for_automate_scenario.py implements automated testing of site login using specified
+user data (valid/invalid) and other user data (invalid)

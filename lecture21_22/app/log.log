@@ -1,0 +1,14 @@
+INFO:__main__:Connection with chrome along the path "https://www.saucedemo.com/" was successfully
+INFO:__main__:The field "username" is empty
+INFO:lecture21_22.conf.valid_users_data:Username -> is valid
+INFO:__main__:The USERNAME successfully recorded
+INFO:__main__:The field "password" is empty
+INFO:__main__:The PASSWORD successfully written
+INFO:__main__:The user has successfully logged in
+INFO:__main__:The screenshot of the successful login was saved
+INFO:__main__:The user has successfully selected the item
+INFO:__main__:The screenshot of the selected item was saved
+INFO:__main__:The user has successfully refreshed the page
+INFO:__main__:The user has successfully moved back
+INFO:__main__:The user has successfully moved back in main page
+INFO:__main__:The user has successfully closed all the tabs
