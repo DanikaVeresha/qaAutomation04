@@ -7,3 +7,4 @@ official site and specify the path to it in the PATH variable
 #
 # service = Service(exsecutive_path='/usr/local/bin/chromedriver')
 # driver = webdriver.Chrome(service=service)
+
