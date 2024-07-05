@@ -16,7 +16,7 @@ driver = webdriver.Chrome()
 @pytest.mark.parametrize('username', [valid_names[0]])
 def test_P_valid_standard_user(username):
     """
-    Test for valid username
+    Test username on type and pattern
     """
     username.strip()
     assert isinstance(username, str), 'Username must be a string'
@@ -26,7 +26,7 @@ def test_P_valid_standard_user(username):
 @pytest.mark.parametrize('username', [valid_names[2]])
 def test_P_valid_problem_user(username):
     """
-    Test for valid username
+    Test username on type and pattern
     """
     username.strip()
     assert isinstance(username, str), 'Username must be a string'
@@ -36,7 +36,7 @@ def test_P_valid_problem_user(username):
 @pytest.mark.parametrize('username', [valid_names[3]])
 def test_P_valid_performance_glitch_user(username):
     """
-    Test for valid username
+    Test username on type and pattern
     """
     assert isinstance(username, str), 'Username must be a string'
     assert re.match(r'^[a-z_]+$', username), 'Username must be performance_glitch_user'
@@ -45,7 +45,7 @@ def test_P_valid_performance_glitch_user(username):
 @pytest.mark.parametrize('username', [valid_names[4]])
 def test_P_valid_error_user(username):
     """
-    Test for valid username
+    Test username on type and pattern
     """
     assert isinstance(username, str), 'Username must be a string'
     assert re.match(r'^[a-z_]+$', username), 'Username must be error_user'
@@ -54,7 +54,7 @@ def test_P_valid_error_user(username):
 @pytest.mark.parametrize('username', [valid_names[5]])
 def test_P_valid_visual_user(username):
     """
-    Test for valid username
+    Test username on type and pattern
     """
     assert isinstance(username, str), 'Username must be a string'
     assert re.match(r'^[a-z_]+$', username), 'Username must be visual_user'
@@ -63,7 +63,7 @@ def test_P_valid_visual_user(username):
 @pytest.mark.parametrize('username', [valid_names[1]])
 def test_P_invalid_locked_out_user(username):
     """
-    Test for valid username
+    Test username on type and pattern
     """
     assert isinstance(username, str), 'Username must be a string'
     assert re.match(r'^[a-z_]+$', username), 'Username must be locked_out_user'
@@ -72,7 +72,7 @@ def test_P_invalid_locked_out_user(username):
 @pytest.mark.parametrize('password', [valid_passwords[0]])
 def test_P_valid_password_for_all_the_users(password):
     """
-    Test for valid password
+    Test password on type and pattern
     """
     assert isinstance(password, str), 'Password must be a string'
     assert re.match(r'^[a-z_]+$', password), 'Password must be secret_sauce'
@@ -82,7 +82,7 @@ def test_P_valid_password_for_all_the_users(password):
 @pytest.mark.parametrize('password', [valid_passwords[0]])
 def test_P_standard_user_login(username, password):
     """
-    Test for valid user login
+    Test login for standard_user
     """
     username.strip() # if user enter username with spaces
     password.strip() # if user enter password with spaces
@@ -104,7 +104,7 @@ def test_P_standard_user_login(username, password):
 @pytest.mark.parametrize('password', [valid_passwords[0]])
 def test_P_problem_user_login(username, password):
     """
-    Test for valid user login
+    Test login for problem_user
     """
     username.strip()  # if user enter username with spaces
     password.strip()  # if user enter password with spaces
@@ -126,7 +126,7 @@ def test_P_problem_user_login(username, password):
 @pytest.mark.parametrize('password', [valid_passwords[0]])
 def test_P_performance_glitch_user_login(username, password):
     """
-    Test for valid user login
+    Test login for performance_glitch_user
     """
     username.strip()  # if user enter username with spaces
     password.strip()  # if user enter password with spaces
@@ -148,7 +148,7 @@ def test_P_performance_glitch_user_login(username, password):
 @pytest.mark.parametrize('password', [valid_passwords[0]])
 def test_P_error_user_login(username, password):
     """
-    Test for valid user login
+    Test login for error_user
     """
     username.strip()  # if user enter username with spaces
     password.strip()  # if user enter password with spaces
@@ -170,7 +170,7 @@ def test_P_error_user_login(username, password):
 @pytest.mark.parametrize('password', [valid_passwords[0]])
 def test_P_visual_user_login(username, password):
     """
-    Test for valid user login
+    Test login for visual_user
     """
     username.strip()  # if user enter username with spaces
     password.strip()  # if user enter password with spaces
@@ -194,7 +194,7 @@ def test_P_visual_user_login(username, password):
 @pytest.mark.parametrize('password', [valid_passwords[0]])
 def test_N_locked_out_user_login(username, password):
     """
-    Test for invalid user login
+    Test login for locked_out_user
     """
     username.strip()
     password.strip()
@@ -216,7 +216,7 @@ def test_N_locked_out_user_login(username, password):
 @pytest.mark.parametrize('password', ['secret_sauce'])
 def test_N_if_enter_any_username_with_spaces_and_valid_password(username, password):
     """
-    Test for valid username
+    Test login for standard_user with spaces in username
     """
     timer(lambda: driver.get('https://www.saucedemo.com/'), 10)
     username_field = driver.find_element(By.ID, 'user-name')
@@ -236,7 +236,7 @@ def test_N_if_enter_any_username_with_spaces_and_valid_password(username, passwo
 @pytest.mark.parametrize('password', ['secret_sauce'])
 def test_N_if_enter_any_username_and_valid_password(username, password):
     """
-    Test for valid username
+    Test login for danika
     """
     timer(lambda: driver.get('https://www.saucedemo.com/'), 10)
     username_field = driver.find_element(By.ID, 'user-name')
@@ -256,7 +256,7 @@ def test_N_if_enter_any_username_and_valid_password(username, password):
 @pytest.mark.parametrize('password', ['12345678'])
 def test_N_if_enter_valid_username_and_invalid_password(username, password):
     """
-    Test for valid username
+    Test login for error_user if password is invalid
     """
     timer(lambda: driver.get('https://www.saucedemo.com/'), 10)
     username_field = driver.find_element(By.ID, 'user-name')
@@ -276,7 +276,7 @@ def test_N_if_enter_valid_username_and_invalid_password(username, password):
 @pytest.mark.parametrize('password', [' secret_sauce'])
 def test_N_if_enter_valid_username_and_valid_password_with_space(username, password):
     """
-    Test for valid username
+    Test login for standard_user if valid password with space
     """
     timer(lambda: driver.get('https://www.saucedemo.com/'), 10)
     username_field = driver.find_element(By.ID, 'user-name')
@@ -296,7 +296,7 @@ def test_N_if_enter_valid_username_and_valid_password_with_space(username, passw
 @pytest.mark.parametrize('password', [' 12345678'])
 def test_N_if_enter_invalid_username_password(username, password):
     """
-    Test for valid username
+    Test login for danika if password is invalid
     """
     timer(lambda: driver.get('https://www.saucedemo.com/'), 10)
     username_field = driver.find_element(By.ID, 'user-name')
