@@ -18,17 +18,11 @@ valid_names = [
     'visual_user'
 ]
 
-valid_passwords = [
-    'secret_sauce'
-]
+valid_passwords = 'secret_sauce'
 
 
 def get_valid_name():
-    if valid_names == 'locked_out_user':
-        logger.info(f'Exs(ValueError): Username is invalid')
-        raise ValueError('Username is invalid')
     logger.info(f'Username -> is valid')
     return random.choice(valid_names)
-
 
 
