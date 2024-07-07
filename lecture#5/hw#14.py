@@ -17,3 +17,4 @@ print(list(item for item in number_list if item % 3 == 0 and item % 5 == 0))
 print(list(item for item in range(16) if item % 3 == 0 and item % 5 != 0))
 print(list(item for item in range(16) if item % 5 == 0 and item % 3 != 0))
 print(list(item for item in range(16) if item % 3 == 0 and item % 5 == 0))
+

@@ -22,3 +22,4 @@ for i, j in enumerate(word):
         print(f'Comparison result var3: False')
     else:
         print(f'Comparison result var3: True')
+

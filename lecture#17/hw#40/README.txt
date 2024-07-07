@@ -45,3 +45,4 @@ Distance between points: real calculated using the Governors formula
 Travel time is calculated using the formula -> distance/speed
 Random only the speed of the object, but the start and end speed is taken from Google in
 accordance with real data
+

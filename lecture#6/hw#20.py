@@ -12,3 +12,4 @@ for item in open('hw#20.txt', 'r'):
 print(f'The last word in the file with the maximum lengthh: {max_val}')
 
 
+

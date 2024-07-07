@@ -21,3 +21,4 @@ for item in users:
 result = [user['name'] for user in users if user['age'] >= 18]
 print(f'--------Result---------\n'
       f'Result: {result}')
+

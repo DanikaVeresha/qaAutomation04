@@ -14,3 +14,4 @@ for item in result:
     lst1.insert(result.index(item)*2+1, item)
 print(lst1)
 
+

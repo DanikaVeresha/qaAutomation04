@@ -23,3 +23,4 @@ print(f'Result: {". ".join(result.split())}')
 
 
 
+

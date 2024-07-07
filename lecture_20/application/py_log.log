@@ -20,3 +20,4 @@ INFO:__main__:Args(for__eq__: [255, 255, 100 | 1, 2, 4]
 INFO:__main__:Result __eq__ -> False
 INFO:__main__:Args(for__eq__: [255, 255, 100 | 255, 255, 100]
 INFO:__main__:Result __eq__ -> True
+

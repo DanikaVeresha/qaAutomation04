@@ -11,3 +11,4 @@ for item in range(triangle):
         else:
             print(symbol, end="")
     print()
+

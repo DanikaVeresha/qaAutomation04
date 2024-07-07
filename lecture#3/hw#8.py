@@ -28,3 +28,4 @@ else:
             print(' ' * ((max_width-row) // 2) + "*" * min_width)
 
 
+

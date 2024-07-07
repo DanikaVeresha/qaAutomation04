@@ -2,7 +2,7 @@
 
 
 # email = ' '
-# email = 'aaa277@bbb.ccc'    # var: True
+email = 'aaa277@bbb.ccc'    # var: True
 # email = '@aaa277bbbccc.'
 # email = '@aaa277bbbccc'
 # email = '.aaa277bbbccc'
@@ -33,6 +33,7 @@ if check_email:
     print(f'Email verification result: {email} - "True"')
 else:
     print(f'Email verification result: {email} - "False"')
+
 
 
 

@@ -24,3 +24,4 @@ with open('combined_files.txt', 'w') as x:
 # res = glob.glob(pattern_to_search, recursive=True)
 
 
+

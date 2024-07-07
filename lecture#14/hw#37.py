@@ -149,3 +149,4 @@ print(repr(pixel1 == 123))
 print('-------------------------------------------')
 # print(repr(id(pixel5)))
 # print(repr(id(pixel5 * 2.5)))
+

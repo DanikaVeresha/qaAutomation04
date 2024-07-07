@@ -1061,3 +1061,4 @@ def test_N_eq_pixel_with_object_wich_is_not_type_pixel(pixel):
             'Pixel1 is not equal to [0, 0, 0]'
     assert str(ex.value) == 'Object "other" -> "[0, 0, 0]" is not a Pixel object', \
         'Object [1, 1, 1] is type Pixel'
+

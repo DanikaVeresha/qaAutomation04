@@ -382,3 +382,4 @@ def test_login_for_valid_username_and_valid_password_where_space_in_password(nam
     driver.save_screenshot('login_for_standard_user_with_space_in_password.png')
     assert driver.current_url == 'https://www.saucedemo.com/', \
         'The user has not logged in'
+

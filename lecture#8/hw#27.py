@@ -32,3 +32,4 @@ for item in generator(lst_obj, 4):
 """Iteration option when the iter_num is None"""
 # for item in generator(lst_obj):
 #     print(item)
+

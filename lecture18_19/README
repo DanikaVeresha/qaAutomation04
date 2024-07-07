@@ -6,3 +6,4 @@ probable date of receipt (the date of receipt is calculated randomly from 1-4 da
 from the day the user created the order). Tests for the validity of user data during
 its creation and class methods are developed in the tests directory. I decided to play
 a little with the pytest.
+

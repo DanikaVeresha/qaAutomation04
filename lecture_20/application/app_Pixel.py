@@ -151,3 +151,4 @@ print(repr(pix2 / 9))
 print(repr(pix1 == pix2))
 print(repr(pix1 == pix1))
 
+

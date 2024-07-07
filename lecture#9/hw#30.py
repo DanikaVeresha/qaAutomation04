@@ -68,3 +68,4 @@ elif date_.strftime('%A') == 'Monday':
 else:
     print('Sorry, there are no lectures on this day.')
 
+

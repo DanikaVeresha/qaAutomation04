@@ -23,3 +23,4 @@ print(custom_zip(lst, lst2, full=True, default="X"))
 print(type(custom_zip(lst, lst2, full=True, default="X")))
 
 
+

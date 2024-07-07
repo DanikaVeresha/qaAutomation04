@@ -63,3 +63,4 @@ print(email_validator('a#a%a*1&2)3@b:bb].c-c+c'))
 print(email_validator('"aaa✳123@bbb.ccc"'))
 print(email_validator('"aaa№123@bbb.ccc"'))
 
+

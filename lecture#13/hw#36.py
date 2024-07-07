@@ -397,3 +397,4 @@ print(company.get_latest_data_of_employee.__doc__)
 delay_time()
 print(company.get_latest_data_of_employee())
 print('-------------------------------------------')
+

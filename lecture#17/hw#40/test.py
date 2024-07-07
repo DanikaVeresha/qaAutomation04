@@ -20,3 +20,4 @@ def delete_function(func):
 print(f())
 print(f1())
 print(delete_function(print(f())))
+

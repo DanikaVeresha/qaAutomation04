@@ -34,3 +34,4 @@ all_tester_in_all_group_and_working_today = (
 )
 print(f'Testers who could write and review scripts, and are at work today: '
       f'{sorted(all_tester_in_all_group_and_working_today)}')
+
