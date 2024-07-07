@@ -207,12 +207,16 @@ def test_login_for_locked_out_user(name, password):
     login_button = driver.find_element(By.ID, 'login-button')
     login_button.click()
     driver.save_screenshot('login_for_locked_out_user.png')
-    with (pytest.raises(AssertionError)):
-        # Asserting that the resulting URL matches https://www.saucedemo.com/inventory.html,
-        # proving that the user has visited the site and has successfully logged in, raises an
-        # exception of type "AssertionError".
-        assert driver.current_url == 'https://www.saucedemo.com/inventory.html', \
-            'The user has not logged in'
+    # This statement shows that the user is not logged in but remains on the main page
+    assert driver.current_url == 'https://www.saucedemo.com/', \
+        'The user has not logged in'
+
+    # with (pytest.raises(AssertionError)):
+    #     # Asserting that the resulting URL matches https://www.saucedemo.com/inventory.html,
+    #     # proving that the user has visited the site and has successfully logged in, raises an
+    #     # exception of type "AssertionError".
+    #     assert driver.current_url == 'https://www.saucedemo.com/inventory.html', \
+    #         'The user has not logged in'
 
 
 @pytest.mark.parametrize('name', ['invalid_username'])
@@ -244,9 +248,8 @@ def test_login_for_invalid_username(name, password):
     login_button = driver.find_element(By.ID, 'login-button')
     login_button.click()
     driver.save_screenshot('login_for_invalid_username.png')
-    with (pytest.raises(AssertionError)):
-        assert driver.current_url == 'https://www.saucedemo.com/inventory.html', \
-            'The user has not logged in'
+    assert driver.current_url == 'https://www.saucedemo.com/', \
+        'The user has not logged in'
 
 
 @pytest.mark.parametrize('name', [(valid_names[0])])
@@ -278,9 +281,8 @@ def test_login_for_standard_user_where_invalid_password(name, password):
     login_button = driver.find_element(By.ID, 'login-button')
     login_button.click()
     driver.save_screenshot('login_for_standard_user_with_invalid_password.png')
-    with (pytest.raises(AssertionError)):
-        assert driver.current_url == 'https://www.saucedemo.com/inventory.html', \
-            'The user has not logged in'
+    assert driver.current_url == 'https://www.saucedemo.com/', \
+        'The user has not logged in'
 
 
 @pytest.mark.parametrize('name', ['invalid_username'])
@@ -312,9 +314,8 @@ def test_login_for_user_where_all_the_data_is_invalid(name, password):
     login_button = driver.find_element(By.ID, 'login-button')
     login_button.click()
     driver.save_screenshot('login_for_invalid_username_with_invalid_password.png')
-    with (pytest.raises(AssertionError)):
-        assert driver.current_url == 'https://www.saucedemo.com/inventory.html', \
-            'The user has not logged in'
+    assert driver.current_url == 'https://www.saucedemo.com/', \
+        'The user has not logged in'
 
 
 @pytest.mark.parametrize('name', [' standard_user '])
@@ -346,9 +347,8 @@ def test_login_for_valid_username_and_valid_password_where_space_in_username(nam
     login_button = driver.find_element(By.ID, 'login-button')
     login_button.click()
     driver.save_screenshot('login_for_standard_user_with_space_in_name.png')
-    with (pytest.raises(AssertionError)):
-        assert driver.current_url == 'https://www.saucedemo.com/inventory.html', \
-            'The user has not logged in'
+    assert driver.current_url == 'https://www.saucedemo.com/', \
+        'The user has not logged in'
 
 
 @pytest.mark.parametrize('name', [(valid_names[0])])
@@ -380,6 +380,5 @@ def test_login_for_valid_username_and_valid_password_where_space_in_password(nam
     login_button = driver.find_element(By.ID, 'login-button')
     login_button.click()
     driver.save_screenshot('login_for_standard_user_with_space_in_password.png')
-    with (pytest.raises(AssertionError)):
-        assert driver.current_url == 'https://www.saucedemo.com/inventory.html', \
-            'The user has not logged in'
+    assert driver.current_url == 'https://www.saucedemo.com/', \
+        'The user has not logged in'
