@@ -25,74 +25,75 @@ import sqlite3
 def create_tables():
     with sqlite3.connect('db/database.db') as db:
         cursor = db.cursor()
-        query_persons = """ CREATE TABLE IF NOT EXISTS Persons(name text, favorite_color text, profit float); """
-        with open('db/requests.sql', 'a') as file:
-            file.write(f'{query_persons}\n\n')
-        cursor.execute(query_persons)
-        cursor.close()
 
-    with sqlite3.connect('db/database.db') as db:
-        cursor = db.cursor()
-        query_cars = """ CREATE TABLE IF NOT EXISTS Cars(model text, color text, price float); """
-        with open('db/requests.sql', 'a') as file:
-            file.write(f'{query_cars}\n\n')
-        cursor.execute(query_cars)
-        cursor.close()
+        query_create_table_persons = """ CREATE TABLE IF NOT EXISTS Persons(
+        name text, favorite_color text, profit float
+        ); """
+        cursor.execute(query_create_table_persons)
 
-    return 'Tables created successfully!'
+        query_create_table_cars = """ CREATE TABLE IF NOT EXISTS Cars(
+        model text, color text, price float
+        ); """
+        cursor.execute(query_create_table_cars)
+
+    with open('db/requests.sql', 'a') as file:
+        file.write(f'{query_create_table_persons}\n\n{query_create_table_cars}\n\n')
+
+    return (cursor.execute('SELECT name FROM sqlite_master WHERE type="table"').fetchall(),
+            '->  Tables created successfully!')
 
 
 def fill_tables():
     with sqlite3.connect('db/database.db') as db:
         cursor = db.cursor()
-        query_persons = """ INSERT INTO Persons(name, favorite_color, profit)
+
+        query_insert_info_persons = """ INSERT INTO Persons(name, favorite_color, profit)
                     VALUES('John', 'red', 1000), ('Anna', 'red', 2000),
                     ('James', 'green', 500), ('Karl', 'black', 2500); """
-        with open('db/requests.sql', 'a') as file:
-            file.write(f'{query_persons}\n\n')
-        cursor.execute(query_persons)
-        cursor.close()
+        cursor.execute(query_insert_info_persons)
 
-    with sqlite3.connect('db/database.db') as db:
-        cursor = db.cursor()
-        query_cars = """ INSERT INTO Cars(model, color, price)
+        query_insert_info_cars = """ INSERT INTO Cars(model, color, price)
                     VALUES('BMW M1', 'blue', 700), ('BMW M2', 'black', 1700), ('BMW M3', 'black', 2300),
                     ('Fiat M1', 'red', 1500), ('Fiat M2', 'red', 1000), ('Chevrolet M1', 'green', 501); """
-        with open('db/requests.sql', 'a') as file:
-            file.write(f'{query_cars}\n\n')
-        cursor.execute(query_cars)
-        cursor.close()
+        cursor.execute(query_insert_info_cars)
 
-    return 'Tables filled successfully!'
+    with open('db/requests.sql', 'a') as file:
+        file.write(f'{query_insert_info_persons}\n\n{query_insert_info_cars}\n\n')
+
+    return f"\nTables filled successfully!"\
+           f"\nPersons info -> \n{cursor.execute('SELECT * FROM Persons').fetchall()}" \
+           f"\nCars info -> \n{cursor.execute('SELECT * FROM Cars').fetchall()}"
 
 
 def select_data():
     with sqlite3.connect('db/database.db') as db:
         cursor = db.cursor()
+
         query = """ SELECT Persons.name, Cars.model, Cars.color, Cars.price, Persons.profit
                     FROM Persons INNER JOIN Cars ON Persons.profit >= Cars.price
                     AND Persons.favorite_color = Cars.color Group by Persons.name having min(Cars.price); """
-        with open('db/requests.sql', 'a') as file:
-            file.write(f'{query}\n\n')
         cursor.execute(query)
-        cursor.close()
 
-    return 'Data selected successfully!'
+    with open('db/requests.sql', 'a') as file:
+        file.write(f'{query}\n\n')
+
+    return f'\nFirst query result -> \n{cursor.fetchall()}'
 
 
 def select_data_optional():
     with sqlite3.connect('db/database.db') as db:
         cursor = db.cursor()
+
         query = """ SELECT Persons.name, Cars.model, Persons.favorite_color, Cars.price, Persons.profit
-                    FROM Persons LEFT JOIN Cars ON Persons.favorite_color = Cars.color 
+                    FROM Persons LEFT JOIN Cars ON Persons.favorite_color = Cars.color
                     and Persons.profit >= Cars.price
                     Group by Persons.name having min(Cars.price) is null or min(Cars.price) is not null; """
-        with open('db/requests.sql', 'a') as file:
-            file.write(f'{query}\n\n')
         cursor.execute(query)
-        cursor.close()
 
-    return 'Data selected successfully!'
+    with open('db/requests.sql', 'a') as file:
+        file.write(f'{query}\n\n')
+
+    return f'\nSecond query result -> \n{cursor.fetchall()}'
 
 
 print(create_tables())
