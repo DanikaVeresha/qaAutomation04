@@ -111,8 +111,8 @@ db_person.add_record(
     ('John', 'red', 1000), ('Anna', 'red', 2000), ('James', 'green', 500), ('Karl', 'black', 2500)
 )
 db_car.add_record(
-    ('BMW M1', 'blue', 700), ('BMW M2', 'black', 1700), ('BMW M3', 'black', 2300),
-    ('Fiat M1', 'red', 1500), ('Fiat M2', 'red', 1000), ('Chevrolet M1', 'green', 501)
+    [('BMW M1', 'blue', 700), ('BMW M2', 'black', 1700), ('BMW M3', 'black', 2300),
+    ('Fiat M1', 'red', 1500), ('Fiat M2', 'red', 1000), ('Chevrolet M1', 'green', 501)]
 )
 
 print(f'Tables info -> \n{db_person.get_all_tables()}\n')
