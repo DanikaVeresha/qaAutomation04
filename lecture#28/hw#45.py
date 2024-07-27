@@ -91,7 +91,7 @@ class Database:
     def __del__(self):
         """Close connection to the database when the object is deleted"""
         self.close_connection()
-        print(f'Connection to the database {self.db_name} with {self.table_name} is closed')
+        print(f'Connection to the database {self.db_name} with table {self.table_name} is closed')
 
 
 # Example of usage
@@ -136,8 +136,28 @@ print(f'Cars info after delete data(price < 1000) -> \n{db_car.get_all_records()
 db_person.drop_table()
 print(f'Tables info after drop Persons table -> \n{db_person.get_all_tables()}\n')
 
+db_user = Database(
+    'user_db',
+    'Users',
+    'name TEXT, age INTEGER, address TEXT'
+)
+print(f'Tables info -> \n{db_user.get_all_tables()}\n')
 
+db_user.add_record(
+    ('John', 25, 'NY'), ('Anna', 30, 'LA'), ('James', 35, 'SF'), ('Karl', 40, 'CH')
+)
+print(f'Users info -> \n{db_user.get_all_records()}\n')
 
+db_user.update_record('age=18', 'name="Anna"', 'name="James"')
+print(f'Users info after update data(age=18) -> \n{db_user.get_all_records()}\n')
+
+print(f'Users info where age=18 -> \n{db_user.get_records_by_condition("age = 18")}\n')
+
+db_user.delete_records_by_condition('age <= 18')
+print(f'Users info after delete data(age <= 18) -> \n{db_user.get_all_records()}\n')
+
+db_user.drop_table()
+print(f'Tables info after drop Users table -> \n{db_user.get_all_tables()}\n')
 
 
 
