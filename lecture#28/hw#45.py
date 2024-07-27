@@ -19,75 +19,74 @@ class Database:
         self.db_name = db_name
         self.table_name = table_name
         self.columns = columns
-        self.connection = None
-        self.cursor = None
+        self._connection = None
+        self._cursor = None
         self.create_table()
 
     def create_connection(self):
         """Create a database connection to a SQLite database"""
         try:
-            self.connection = sqlite3.connect(self.db_name)
-            self.cursor = self.connection.cursor()
-            # print(f'Connection to the database {self.db_name} with table {self.table_name} is established')
+            self._connection = sqlite3.connect(self.db_name)
+            self._cursor = self._connection.cursor()
         except Error as ex:
             print(f'Error: {ex} with database {self.db_name}')
 
     def create_table(self):
         """Create a table in the database if it does not exist"""
         self.create_connection()
-        self.cursor.execute(f"CREATE TABLE IF NOT EXISTS {self.table_name} ({self.columns})")
-        self.connection.commit()
+        self._cursor.execute(f"CREATE TABLE IF NOT EXISTS {self.table_name} ({self.columns})")
+        self._connection.commit()
 
     def get_all_tables(self):
         """Get all tables from the database"""
         self.create_connection()
-        self.cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
-        return self.cursor.fetchall()
+        self._cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
+        return self._cursor.fetchall()
 
     def get_all_records(self):
         """Get all records from the table"""
         self.create_connection()
-        self.cursor.execute(f"SELECT * FROM {self.table_name}")
-        return self.cursor.fetchall()
+        self._cursor.execute(f"SELECT * FROM {self.table_name}")
+        return self._cursor.fetchall()
 
     def add_record(self, *records):
         """Add records to the table"""
         self.create_connection()
         for record in records:
             if isinstance(record, tuple):
-                self.cursor.execute(f"INSERT INTO {self.table_name} VALUES {record}")
+                self._cursor.execute(f"INSERT INTO {self.table_name} VALUES {record}")
             elif isinstance(record, list):
-                self.cursor.executemany(f"INSERT INTO {self.table_name} VALUES (?, ?, ?)", record)
-        self.connection.commit()
+                self._cursor.executemany(f"INSERT INTO {self.table_name} VALUES (?, ?, ?)", record)
+        self._connection.commit()
 
     def update_record(self, new_values, *condition):
         """Update records by condition"""
         self.create_connection()
         for cond in condition:
-            self.cursor.execute(f"UPDATE {self.table_name} SET {new_values} WHERE {cond}")
-        self.connection.commit()
+            self._cursor.execute(f"UPDATE {self.table_name} SET {new_values} WHERE {cond}")
+        self._connection.commit()
 
     def get_records_by_condition(self, condition):
         """Get records by condition"""
         self.create_connection()
-        self.cursor.execute(f"SELECT * FROM {self.table_name} WHERE {condition}")
-        return self.cursor.fetchall()
+        self._cursor.execute(f"SELECT * FROM {self.table_name} WHERE {condition}")
+        return self._cursor.fetchall()
 
     def delete_records_by_condition(self, condition):
         """Delete records by condition"""
         self.create_connection()
-        self.cursor.execute(f"DELETE FROM {self.table_name} WHERE {condition}")
-        self.connection.commit()
+        self._cursor.execute(f"DELETE FROM {self.table_name} WHERE {condition}")
+        self._connection.commit()
 
     def drop_table(self):
         """Drop the table from the database"""
         self.create_connection()
-        self.cursor.execute(f"DROP TABLE {self.table_name}")
-        self.connection.commit()
+        self._cursor.execute(f"DROP TABLE {self.table_name}")
+        self._connection.commit()
 
     def close_connection(self):
         """Close connection to the database"""
-        self.connection.close()
+        self._connection.close()
 
     def __del__(self):
         """Close connection to the database when the object is deleted"""
