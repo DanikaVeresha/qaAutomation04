@@ -92,12 +92,10 @@ def main():
     t2 = datetime.datetime.now() - time2
     print(f'Lead time "Threads" -> {t2}\n------------------------------------------------')
 
-    if t1 < t2:
-        print(f'"Thread" lead time is {round((t2 / t1), 4)}..... times faster than "Threads" lead time\n'
-              f'------------------------------------------------')
+    if t1 > t2:
+        print(f'Threads is faster than Thread on -> {t1 - t2}')
     else:
-        print(f'"Threads" lead time is {round((t1 / t2), 4)}..... times faster than "Thread" lead time\n'
-              f'------------------------------------------------')
+        print(f'Thread is faster than Threads on -> {t2 - t1}')
 
 
 if __name__ == '__main__':
