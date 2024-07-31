@@ -88,15 +88,15 @@ def main():
     print(f'Lead time "Thread" -> {t1}\n------------------------------------------------')
 
     time2 = datetime.datetime.now()
-    letter_counter_in_n_threads('files', 'A', 6)
+    letter_counter_in_n_threads('files', 'A', 4)
     t2 = datetime.datetime.now() - time2
     print(f'Lead time "Threads" -> {t2}\n------------------------------------------------')
 
     if t1 > t2:
-        print(f'"Thread" lead time is {round((t2 / t1), 4)}..... times faster than "Threads" lead time\n'
+        print(f'"Thread" lead time is {round((t2 / t1), 4)}..... times slower than "Threads" lead time\n'
               f'------------------------------------------------')
     else:
-        print(f'"Threads" lead time is {round((t1 / t2), 4)}..... times slower than "Thread" lead time\n'
+        print(f'"Threads" lead time is {round((t1 / t2), 4)}..... times faster than "Thread" lead time\n'
               f'------------------------------------------------')
 
 
