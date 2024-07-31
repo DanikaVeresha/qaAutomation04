@@ -81,7 +81,7 @@ def main():
           f"------------------------------------------------")
 
     time2 = datetime.datetime.now()
-    letter_counter_in_n_threads('files', 'A', 8)
+    letter_counter_in_n_threads('files', 'A', 6)
     t2 = datetime.datetime.now() - time2
 
     time1 = datetime.datetime.now()
