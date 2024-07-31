@@ -37,8 +37,8 @@ def letter_counter_in_one_thread(directory, letter_to_find):
         with open(f'{directory}/{file}') as f:
             count_letters += f.read().count(letter_to_find)
 
-    time.sleep(0.5)
-    print(f'Result "Thread" -> {count_letters} times')
+    time.sleep(0.1)
+    print(f'--> Result "Thread" -> {count_letters} times')
     return count_letters
 
 
@@ -64,7 +64,7 @@ def letter_counter_in_n_threads(directory, letter_to_find, number_of_threads):
                     count_letters += f.read().count(letter_to_find)
             counter += count_letters
 
-            time.sleep(0.1)
+            time.sleep(0.5)
             print(f'Result "Threads" -> {count_letters} times')
             return count_letters
 
@@ -72,7 +72,7 @@ def letter_counter_in_n_threads(directory, letter_to_find, number_of_threads):
         thread.start()
         thread.join(timeout=0.2)
 
-    print(f'Total count result "Threads" -> {counter} times')
+    print(f'--> Total count result "Threads" -> {counter} times')
     return counter
 
 
@@ -80,22 +80,22 @@ def main():
     print(f"{file_generator('files', 12, 100)} files were created\n"
           f"------------------------------------------------")
 
+    time2 = datetime.datetime.now()
+    letter_counter_in_n_threads('files', 'A', 8)
+    t2 = datetime.datetime.now() - time2
+
     time1 = datetime.datetime.now()
     thread1 = Thread(target=letter_counter_in_one_thread, args=('files', 'A'))
     thread1.start()
     thread1.join()
     t1 = datetime.datetime.now() - time1
-    print(f'Lead time "Thread" -> {t1}\n------------------------------------------------')
 
-    time2 = datetime.datetime.now()
-    letter_counter_in_n_threads('files', 'A', 4)
-    t2 = datetime.datetime.now() - time2
-    print(f'Lead time "Threads" -> {t2}\n------------------------------------------------')
+    print(f'\nLead time "Thread" -> {t1}\nLead time "Threads" -> {t2}')
 
     if t1 > t2:
-        print(f'Threads is faster than Thread on -> {t1 - t2}')
+        print(f'Threads is faster than Thread on -> {t1 - t2}\n')
     else:
-        print(f'Thread is faster than Threads on -> {t2 - t1}')
+        print(f'Thread is faster than Threads on -> {t2 - t1}\n')
 
 
 if __name__ == '__main__':
