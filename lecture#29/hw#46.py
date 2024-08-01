@@ -95,6 +95,7 @@ def client_code(directory, number_of_files, size, letter_to_find, number_of_thre
     time4 = datetime.datetime.now() - start4
 
     total_count_letters = sum(results_threads)
+    assert counter == total_count_letters, 'The results are different'
 
     if time3 > time4:
         print(f'-> The "Threads" method is faster on {time3 - time4}')
@@ -119,7 +120,7 @@ if __name__ == '__main__':
     print(f'-> Lead time "Threads": {datetime.datetime.now() - start2}\n')
 
     print(f'-> Result Client Code: \n'
-          f'\tNumber of files -> File size | Number of letters -> Time "Thread" | Number of letters -> Time "Threads" | \n'
+          f'\tNumber of files -> Size | Number of letters -> Time "Thread" | Number of letters -> Time "Threads" | \n'
           f'\t{client_code("files", 12, 50, "A", 4)}\n')
 
 
