@@ -96,7 +96,7 @@ def client_code(directory, number_of_files, size, letter_to_find, number_of_thre
 
     total_count_letters = sum(results_threads)
     # assert counter == total_count_letters, 'The results are different'
-    equal_res = counter == total_count_letters
+    equal_res = [counter == total_count_letters]
 
     if time3 > time4 and counter == total_count_letters:
         print(f'-> The "Threads" method is faster on {time3 - time4}')
